@@ -180,7 +180,7 @@ aghogho-meyoron-nextjs/
 
 ### Source: `docs/aghogho-meyoron.json`
 
-This JSON file provides **reference data and content ideas** to understand the structure. Use it as inspiration, but create improved TypeScript interfaces. The file was originally from a database, so **ignore database artifacts** like `id`, `profile_id`, and `created_at` fields. Create cleaner interfaces focused on the actual application needs.
+This JSON file provides **reference data and content ideas** to understand the structure. Use it as inspiration, but create improved TypeScript interfaces. The file was originally from a database, so **ignore database artifacts** like `id`, `profile_id`, `created_at`, and `image_ai_hint` fields. Create cleaner interfaces focused on the actual application needs.
 
 #### Core Data Models
 

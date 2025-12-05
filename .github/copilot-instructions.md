@@ -74,7 +74,7 @@ This is a NextJS-based portfolio application showcasing Meyoron Aghogho's profes
 ### Data Management
 
 - Use `docs/aghogho-meyoron.json` as a **reference for understanding the data structure and content ideas**, not as a strict blueprint
-- The JSON file was originally from a database, so ignore database-specific fields like `id`, `profile_id`, `created_at`
+- The JSON file was originally from a database, so ignore database-specific fields like `id`, `profile_id`, `created_at`, `image_ai_hint`
 - Create improved TypeScript interfaces without unnecessary fields
 - Use `slug` fields for items that need their own pages (projects, announcements, etc.)
 - Implement type-safe data access patterns
@@ -168,7 +168,7 @@ Many data structures include `show` and `priority` fields:
 ## Best Practices
 
 1. **Reference the data**: Use `docs/aghogho-meyoron.json` to understand content and structure, but improve upon it
-2. **Clean data models**: Remove database artifacts (id, profile_id, created_at) and create focused TypeScript interfaces
+2. **Clean data models**: Remove database artifacts (id, profile_id, created_at, image_ai_hint) and create focused TypeScript interfaces
 3. **Use slugs for routing**: Add slug fields to items that need their own pages (projects, announcements)
 4. **Filter properly**: Use `show: true` to filter displayable items
 5. **Sort by priority**: Higher priority items should appear first
