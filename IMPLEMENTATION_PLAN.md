@@ -1,6 +1,6 @@
 # Comprehensive Implementation Plan
 
-## Meyoron Aghogho Portfolio - Next.js Application
+## Aghogho Meyoron Portfolio - Next.js Application
 
 > **Last Updated**: 2025-12-05
 > **Project Version**: 0.1.0
@@ -27,7 +27,7 @@
 
 ### Purpose
 
-A sophisticated, SEO-optimized, and highly customizable portfolio application showcasing Meyoron Aghogho's professional career, technical expertise, projects, and achievements. The portfolio serves as both a personal website and a platform for professional engagement (mentorship, contact, resume generation).
+A sophisticated, SEO-optimized, and highly customizable portfolio application showcasing Aghogho Meyoron's professional career, technical expertise, projects, and achievements. The portfolio serves as both a personal website and a platform for professional engagement (mentorship, contact, resume generation).
 
 ### Key Objectives
 
@@ -416,13 +416,13 @@ NEXT_PUBLIC_APP_URL=https://yourdomain.com
 
 - [ ] Create TypeScript data files from `docs/aghogho-meyoron.json`
   - `lib/data/profile.ts`
-  - `lib/data/academic_records.ts`
-  - `lib/data/career_items.ts`
+  - `lib/data/academic_history.ts`
+  - `lib/data/career_history.ts`
   - `lib/data/projects.ts`
   - `lib/data/skills.ts`
   - `lib/data/articles.ts`
   - `lib/data/testimonials.ts`
-  - `lib/data/socials.ts`
+  - `lib/data/social_links.ts`
   - `lib/data/hobbies.ts`
   - `lib/data/badges.ts`
 - [ ] Implement data utility functions:
@@ -1006,9 +1006,9 @@ interface ModalProps {
 
   ```json
   {
-    "name": "Meyoron Aghogho Portfolio",
+    "name": "Aghogho Meyoron Portfolio",
     "short_name": "MA Portfolio",
-    "description": "Professional portfolio of Meyoron Aghogho",
+    "description": "Professional portfolio of Aghogho Meyoron",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
@@ -1060,33 +1060,33 @@ interface ModalProps {
 export const metadata: Metadata = {
   metadataBase: new URL('https://yourdomain.com'),
   title: {
-    default: 'Meyoron Aghogho | Software Engineer',
-    template: '%s | Meyoron Aghogho'
+    default: 'Aghogho Meyoron | Software Engineer',
+    template: '%s | Aghogho Meyoron'
   },
-  description: 'Portfolio of Meyoron Aghogho, a seasoned full-stack software engineer...',
+  description: 'Portfolio of Aghogho Meyoron, a seasoned full-stack software engineer...',
   keywords: ['Software Engineer', 'Full-Stack Developer', 'Laravel', 'Next.js', ...],
-  authors: [{ name: 'Meyoron Aghogho' }],
-  creator: 'Meyoron Aghogho',
+  authors: [{ name: 'Aghogho Meyoron' }],
+  creator: 'Aghogho Meyoron',
   publisher: 'MayR Labs',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://yourdomain.com',
-    siteName: 'Meyoron Aghogho Portfolio',
-    title: 'Meyoron Aghogho | Software Engineer',
+    siteName: 'Aghogho Meyoron Portfolio',
+    title: 'Aghogho Meyoron | Software Engineer',
     description: '...',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Meyoron Aghogho'
+        alt: 'Aghogho Meyoron'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Meyoron Aghogho | Software Engineer',
+    title: 'Aghogho Meyoron | Software Engineer',
     description: '...',
     images: ['/twitter-image.png'],
     creator: '@youngmayor_dev'
@@ -1134,7 +1134,7 @@ export const metadata: Metadata = {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Meyoron Aghogho",
+    "name": "Aghogho Meyoron",
     "jobTitle": "Software Engineer",
     "url": "https://yourdomain.com",
     "sameAs": [
@@ -1654,7 +1654,7 @@ Development (.env.example):
 
 ## Conclusion
 
-This comprehensive implementation plan provides a detailed roadmap for building the Meyoron Aghogho Portfolio application. Each phase builds upon the previous, ensuring a structured and organized development process. The plan emphasizes code quality, performance, accessibility, and user experience.
+This comprehensive implementation plan provides a detailed roadmap for building the Aghogho Meyoron Portfolio application. Each phase builds upon the previous, ensuring a structured and organized development process. The plan emphasizes code quality, performance, accessibility, and user experience.
 
 **Estimated Total Development Time**: 12 weeks (3 months)
 

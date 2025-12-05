@@ -2,7 +2,7 @@
 
 ## Date: December 5, 2025
 
-This document summarizes the completion of Phase 1 of the Meyoron Aghogho Portfolio implementation.
+This document summarizes the completion of Phase 1 of the Aghogho Meyoron Portfolio implementation.
 
 ## What Was Accomplished
 

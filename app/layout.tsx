@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://mayrlabs.com'),
   title: {
-    default: 'Meyoron Aghogho | Software Engineer',
-    template: '%s | Meyoron Aghogho',
+    default: 'Aghogho Meyoron | Software Engineer',
+    template: '%s | Aghogho Meyoron',
   },
   description:
-    'Portfolio of Meyoron Aghogho, a seasoned full-stack software engineer specializing in Laravel, Next.js, React, and modern web development.',
+    'Portfolio of Aghogho Meyoron, a seasoned full-stack software engineer specializing in Laravel, Next.js, React, and modern web development.',
   keywords: [
     'Software Engineer',
     'Full-Stack Developer',
@@ -19,24 +19,29 @@ export const metadata: Metadata = {
     'Web Development',
     'Mobile Development',
     'Meyoron Aghogho',
+    'Aghogho Meyoron',
+    'Young Mayor',
+    'MayR Labs',
+    'YoungMayor',
+    'YoungMayorDev'
   ],
-  authors: [{ name: 'Meyoron Aghogho' }],
-  creator: 'Meyoron Aghogho',
+  authors: [{ name: 'Aghogho Meyoron', url: 'https://mayrlabs.com' }],
+  creator: 'Aghogho Meyoron',
   publisher: 'MayR Labs',
   manifest: '/manifest.json',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-    siteName: 'Meyoron Aghogho Portfolio',
-    title: 'Meyoron Aghogho | Software Engineer',
+    siteName: 'Aghogho Meyoron',
+    title: 'Aghogho Meyoron | Software Engineer',
     description:
-      'Portfolio of Meyoron Aghogho, a seasoned full-stack software engineer specializing in Laravel, Next.js, React, and modern web development.',
+      'Portfolio of Aghogho Meyoron, a seasoned full-stack software engineer specializing in Laravel, Next.js, React, and modern web development.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Meyoron Aghogho | Software Engineer',
-    description: 'Portfolio of Meyoron Aghogho, a seasoned full-stack software engineer.',
+    title: 'Aghogho Meyoron | Software Engineer',
+    description: 'Portfolio of Aghogho Meyoron, a seasoned full-stack software engineer.',
     creator: '@youngmayor_dev',
   },
   robots: {

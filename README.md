@@ -1,4 +1,4 @@
-# Meyoron Aghogho Portfolio
+# Aghogho Meyoron Portfolio
 
 A sophisticated, highly customizable, and SEO-optimized portfolio built with Next.js 16. This project showcases professional history, projects, mentorship, and more, featuring a robust internal API and seamless integrations.
 

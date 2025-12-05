@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a NextJS-based portfolio application showcasing Meyoron Aghogho's professional career, projects, skills, and expertise. The portfolio is built with modern web technologies and follows industry best practices.
+This is a NextJS-based portfolio application showcasing Aghogho Meyoron's professional career, projects, skills, and expertise. The portfolio is built with modern web technologies and follows industry best practices.
 
 ## Technology Stack
 

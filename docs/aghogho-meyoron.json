@@ -1,11 +1,11 @@
 {
   "id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
-  "name": "Meyoron Aghogho",
+  "name": "Aghogho Meyoron",
   "main_job_title": "Software Engineer",
   "tagline_hero": "Building the future, one line at a time...",
   "persona_note": "Problem Solver, Gamer and Swimmer. And best of all good fucker",
   "long_note": "MayR Loves solving real-world problems with scalable systems.",
-  "about_biography": "<div>     Hi, I'm <b class='text-primary'>Meyoron Aghogho</b>, a seasoned full-stack     software engineer specializing in crafting and overseeing web applications.     With a proven history of bringing projects to life, I handle everything     from inception to planning, wireframing, user experience (UX) design,     coding, SEO, optimizations, and ongoing maintenance. My work embodies     modernity and adheres to industry standards, featuring rigorous unit and     feature testing and efficient coding to guarantee a flawless user experience.     My ultimate aim is to deliver a seamless and efficient user journey for my clients. </div>",
+  "about_biography": "<div>     Hi, I'm <b class='text-primary'>Aghogho Meyoron</b>, a seasoned full-stack     software engineer specializing in crafting and overseeing web applications.     With a proven history of bringing projects to life, I handle everything     from inception to planning, wireframing, user experience (UX) design,     coding, SEO, optimizations, and ongoing maintenance. My work embodies     modernity and adheres to industry standards, featuring rigorous unit and     feature testing and efficient coding to guarantee a flawless user experience.     My ultimate aim is to deliver a seamless and efficient user journey for my clients. </div>",
   "contact_email": "youngmayor.dev@gmail.com",
   "contact_phone": "+2348075178485",
   "contact_message": "Lets work together!",
@@ -342,7 +342,11 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "iJokes",
         "description": "iJokes is a frontend API bridge application that fetches and displays jokes from a 3rd party open-source API for users. The application also includes a Telegram bot for more user-friendly interaction.",
-        "features": ["API consumption", "Telegram Bot", "Interactive UIX"],
+        "features": [
+          "API consumption",
+          "Telegram Bot",
+          "Interactive UIX"
+        ],
         "technologies_used": [
           {
             "name": "NextJS",
@@ -639,7 +643,9 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "PrepAI",
         "description": "Your personalised prep tool for WAEC, NECO, JAMB, and GCE.",
-        "features": ["Study Smarter with AI"],
+        "features": [
+          "Study Smarter with AI"
+        ],
         "technologies_used": [
           {
             "name": "NextJS"
@@ -666,7 +672,11 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "QuizWise",
         "description": "The smart quiz platform built for thinkers, tinkerers, and trailblazers in tech. Every question is generated in real-time using Google’s Gemini AI, so no two quiz sessions are ever quite the same.",
-        "features": ["Brainy", "Fast-paced", "AI-powered"],
+        "features": [
+          "Brainy",
+          "Fast-paced",
+          "AI-powered"
+        ],
         "technologies_used": [
           {
             "name": "NextJS"
@@ -819,7 +829,12 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "PayLighter",
         "description": "A fintech application that enables unrestricted and decentralized fund payments. I was responsible for the development and maintenance of this platform, utilizing my skills in backend engineering and web development. Please note that information about this project is protected by a non-disclosure agreement (NDA).",
-        "features": ["Payment management", "User wallets", "Fund transfer", "Payment requests"],
+        "features": [
+          "Payment management",
+          "User wallets",
+          "Fund transfer",
+          "Payment requests"
+        ],
         "technologies_used": [
           {
             "name": "Vue.js"
@@ -926,7 +941,11 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "CalcPlay",
         "description": "A playground for unusual, humorous, and eye-opening calculations.",
-        "features": ["Unusual calculations", "Humorous calculations", "Eye-opening calculations"],
+        "features": [
+          "Unusual calculations",
+          "Humorous calculations",
+          "Eye-opening calculations"
+        ],
         "technologies_used": [
           {
             "name": "NextJS"
@@ -1788,7 +1807,7 @@
       "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
       "name": "Tovia Amadi",
       "role": "Digital Marketer | Product Manager",
-      "review": "Meyoron Aghogho is an incredible Fullstack developer whose talents never ceases to amaze me, from crafting seamless user experiences to building robust backend systems. \nHe pours skills and passion into every line of code. \nBeyond his tech brilliance, he is sharp witted, supportive, dedicated, innovative, and consistently delivers high quality work. ",
+      "review": "Aghogho Meyoron is an incredible Fullstack developer whose talents never ceases to amaze me, from crafting seamless user experiences to building robust backend systems. \nHe pours skills and passion into every line of code. \nBeyond his tech brilliance, he is sharp witted, supportive, dedicated, innovative, and consistently delivers high quality work. ",
       "photo": "https://res.cloudinary.com/meyoron-aghogho/image/upload/v1751832104/people/Tovia-Amadi_rml20q.png",
       "image_ai_hint": "tovia-amadi",
       "bio": "A dedicated digital marketing and design professional who blends creative visions with practical business insights. ",

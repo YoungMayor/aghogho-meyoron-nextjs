@@ -1,7 +1,7 @@
 {
-  "name": "Meyoron Aghogho Portfolio",
+  "name": "Aghogho Meyoron Portfolio",
   "short_name": "MA Portfolio",
-  "description": "Professional portfolio of Meyoron Aghogho - Full-Stack Software Engineer",
+  "description": "Professional portfolio of Aghogho Meyoron - Full-Stack Software Engineer",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -14,6 +14,10 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "portfolio", "development"],
+  "categories": [
+    "business",
+    "portfolio",
+    "development"
+  ],
   "orientation": "any"
 }
