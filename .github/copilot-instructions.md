@@ -25,7 +25,7 @@ This is a NextJS-based portfolio application showcasing Meyoron Aghogho's profes
 ## Key Features
 
 1. **Hero Section**: Introduction with avatar, name, specializations, tagline, and CTAs
-2. **Career History**: Timeline-based professional experience display
+2. **Career History**: Full timeline-based professional experience display on home page
 3. **Projects Showcase**: Categorized project listings with detailed views
 4. **Skills & Expertise**: Technology proficiencies organized by categories (Frontend, Backend, Mobile, Database, Cloud, Other)
 5. **Mentorship Section**: Metrics, reviews, and application form
@@ -73,7 +73,10 @@ This is a NextJS-based portfolio application showcasing Meyoron Aghogho's profes
 
 ### Data Management
 
-- Source data from `docs/aghogho-meyoron.json` for portfolio content
+- Use `docs/aghogho-meyoron.json` as a **reference for understanding the data structure and content ideas**, not as a strict blueprint
+- The JSON file was originally from a database, so ignore database-specific fields like `id`, `profile_id`, `created_at`
+- Create improved TypeScript interfaces without unnecessary fields
+- Use `slug` fields for items that need their own pages (projects, announcements, etc.)
 - Implement type-safe data access patterns
 - Use TypeScript files for structured data when appropriate
 - Support Markdown processing (gray-matter) for rich content (projects, announcements)
@@ -123,19 +126,21 @@ This is a NextJS-based portfolio application showcasing Meyoron Aghogho's profes
 
 ## Data Models Reference
 
-Key data structures from `docs/aghogho-meyoron.json`:
+The `docs/aghogho-meyoron.json` file provides **reference data and content ideas**. Use it to understand the structure, but create improved TypeScript interfaces. Ignore database artifacts like `id`, `profile_id`, and `created_at` fields.
 
 ### Profile
-- id, name, main_job_title, tagline_hero, persona_note, long_note
+- name, main_job_title, tagline_hero, persona_note, long_note
 - about_biography, contact_email, contact_phone, contact_message
 - profile_image_url, copyright information
 
 ### History
 - **academic**: array of education records (school, degree, start_year, end_year, achievements, location, show, priority)
 - **career**: array of work experience (company_name, role, start_date, end_date, description, location, duties, show, priority)
+  - **Note**: Career history should be displayed as a full section on the home page
 
 ### Portfolio
-- **projects**: array of project items (name, description, features, technologies_used, link, demo_link, image, repository, show, is_inhouse, priority)
+- **projects**: array of project items (slug, name, description, features, technologies_used, link, demo_link, image, repository, show, is_inhouse, priority)
+  - Use `slug` for routing to individual project pages
 - **articles**: array of article entries (title, summary, link, cover, platform, show, priority)
 
 ### Skills
@@ -162,16 +167,17 @@ Many data structures include `show` and `priority` fields:
 
 ## Best Practices
 
-1. **Read the data**: Always reference `docs/aghogho-meyoron.json` for accurate content structure
-2. **Respect the data model**: Don't add fields that don't exist in the JSON
-3. **Filter properly**: Use `show: true` to filter displayable items
-4. **Sort by priority**: Higher priority items should appear first
-5. **Type safety**: Create TypeScript interfaces matching the JSON structure
-6. **Responsive design**: Ensure all components work on mobile, tablet, and desktop
-7. **Theme support**: Components should work in both light and dark modes
-8. **Performance**: Optimize for fast loading and smooth interactions
-9. **Accessibility**: Make the portfolio usable for everyone
-10. **SEO**: Ensure good search engine visibility
+1. **Reference the data**: Use `docs/aghogho-meyoron.json` to understand content and structure, but improve upon it
+2. **Clean data models**: Remove database artifacts (id, profile_id, created_at) and create focused TypeScript interfaces
+3. **Use slugs for routing**: Add slug fields to items that need their own pages (projects, announcements)
+4. **Filter properly**: Use `show: true` to filter displayable items
+5. **Sort by priority**: Higher priority items should appear first
+6. **Type safety**: Create clean TypeScript interfaces based on the data
+7. **Responsive design**: Ensure all components work on mobile, tablet, and desktop
+8. **Theme support**: Components should work in both light and dark modes
+9. **Performance**: Optimize for fast loading and smooth interactions
+10. **Accessibility**: Make the portfolio usable for everyone
+11. **SEO**: Ensure good search engine visibility
 
 ## Common Tasks
 

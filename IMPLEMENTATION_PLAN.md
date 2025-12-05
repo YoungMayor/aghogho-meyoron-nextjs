@@ -60,9 +60,10 @@ A sophisticated, SEO-optimized, and highly customizable portfolio application sh
 - Custom CSS Variables for theming
 
 #### Data Management
-- **Static Data**: TypeScript files and JSON (`docs/aghogho-meyoron.json`)
+- **Static Data**: TypeScript files (using `docs/aghogho-meyoron.json` as reference for content ideas)
 - **MongoDB**: Form submissions and persistent data storage
 - **Markdown Processing**: gray-matter for rich content (projects, announcements)
+- **Note**: The JSON file was originally from a database - ignore database artifacts (id, profile_id, created_at)
 
 #### Integrations
 - **Telegram Bot API**: Real-time form submission notifications
@@ -88,8 +89,7 @@ aghogho-meyoron-nextjs/
 │   │   ├── page.tsx                  # Projects listing
 │   │   └── [slug]/
 │   │       └── page.tsx              # Individual project detail
-│   ├── career/
-│   │   └── page.tsx                  # Career history timeline
+
 │   ├── mentorship/
 │   │   └── page.tsx                  # Mentorship info + application form
 │   ├── contact/
@@ -180,14 +180,13 @@ aghogho-meyoron-nextjs/
 
 ### Source: `docs/aghogho-meyoron.json`
 
-This JSON file serves as the single source of truth for portfolio data. All TypeScript interfaces should mirror this structure.
+This JSON file provides **reference data and content ideas** to understand the structure. Use it as inspiration, but create improved TypeScript interfaces. The file was originally from a database, so **ignore database artifacts** like `id`, `profile_id`, and `created_at` fields. Create cleaner interfaces focused on the actual application needs.
 
 #### Core Data Models
 
 ##### 1. Profile
 ```typescript
 interface Profile {
-  id: string;
   name: string;
   main_job_title: string;
   tagline_hero: string;
@@ -201,22 +200,18 @@ interface Profile {
   copyright_year: string;
   copyright_creator_name: string;
   copyright_creator_link: string;
-  created_at: string;
 }
 ```
 
 ##### 2. Academic History
 ```typescript
 interface AcademicRecord {
-  id: string;
-  profile_id: string;
   school: string;
   degree: string;
   start_year: number;
   end_year: number;
   achievements: string[];
   location: string;
-  created_at: string;
   show: boolean;
   priority: number;
 }
@@ -225,8 +220,6 @@ interface AcademicRecord {
 ##### 3. Career History
 ```typescript
 interface CareerItem {
-  id: string;
-  profile_id: string;
   company_name: string;
   role: string;
   start_date: string; // ISO date or "YYYY-MM-DD"
@@ -234,7 +227,6 @@ interface CareerItem {
   description: string;
   location: string;
   duties: string[];
-  created_at: string;
   show: boolean;
   priority: number;
 }
@@ -248,18 +240,15 @@ interface Technology {
 }
 
 interface Project {
-  id: string;
-  profile_id: string;
+  slug: string; // For routing to individual project pages
   name: string;
   description: string;
   features: string[];
   technologies_used: Technology[];
   link: string | null;
   demo_link: string | null;
-  image_ai_hint: string | null;
   image: string | null;
   repository: string | null;
-  created_at: string;
   show: boolean;
   is_inhouse: boolean; // Differentiates personal vs client projects
   priority: number;
@@ -269,34 +258,25 @@ interface Project {
 ##### 5. Skills
 ```typescript
 interface SkillTechnology {
-  id: string;
-  category_id: string;
   name: string;
   icon_name: string;
-  created_at: string;
   show: boolean;
   priority: number;
 }
 
 interface SkillCategory {
-  id: string;
-  profile_id: string;
   category_name: string;
   display_order: number;
-  created_at: string;
   show: boolean;
   priority: number;
   technologies: SkillTechnology[];
 }
 
 interface Expertise {
-  id: string;
-  profile_id: string;
   title: string;
   note: string;
   icon_name: string;
   icon_color: string;
-  created_at: string;
   show: boolean;
   priority: number;
 }
@@ -305,12 +285,9 @@ interface Expertise {
 ##### 6. Social Links
 ```typescript
 interface SocialLink {
-  id: string;
-  profile_id: string;
   name: string;
   url: string;
   icon: string;
-  created_at: string;
   show: boolean;
   priority: number;
 }
@@ -319,17 +296,13 @@ interface SocialLink {
 ##### 7. Testimonials
 ```typescript
 interface Testimonial {
-  id: string;
-  profile_id: string;
   name: string;
   role: string;
   review: string;
   photo: string;
-  image_ai_hint: string | null;
   bio: string | null;
   profile_link: string | null;
   rating: number; // 1-5
-  created_at: string;
   show: boolean;
   priority: number;
 }
@@ -338,15 +311,11 @@ interface Testimonial {
 ##### 8. Articles
 ```typescript
 interface Article {
-  id: string;
-  profile_id: string;
   title: string;
   summary: string;
   link: string;
   cover: string;
-  image_ai_hint: string | null;
   platform: string; // e.g., "medium"
-  created_at: string;
   show: boolean;
   priority: number;
 }
@@ -355,12 +324,9 @@ interface Article {
 ##### 9. Hobbies
 ```typescript
 interface Hobby {
-  id: string;
-  profile_id: string;
   name: string;
   color: string;
   percentage: number; // 0-100
-  created_at: string;
   show: boolean;
   priority: number;
 }
@@ -369,11 +335,8 @@ interface Hobby {
 ##### 10. Badges
 ```typescript
 interface Badge {
-  id: string;
-  profile_id: string;
   name: string;
   icon_name: string;
-  created_at: string;
 }
 ```
 
@@ -491,9 +454,10 @@ Create secure API endpoints for external data access:
 
 ##### `/api/career`
 - **Method**: GET
-- **Purpose**: Retrieve career history
+- **Purpose**: Retrieve career history (for external API access)
 - **Response**: Array of CareerItem objects (sorted by date)
 - **Authentication**: Required
+- **Note**: Career is displayed on the home page, not a separate page
 
 ##### `/api/skills`
 - **Method**: GET
@@ -741,10 +705,22 @@ interface ModalProps {
   - Links (demo, GitHub if available)
 - [ ] "View All Projects" CTA → `/projects`
 
-##### Career Snapshot
-- [ ] Summary of experience (years, companies)
-- [ ] Recent/current position highlight
-- [ ] "View Full History" CTA → `/career`
+##### Career History Section
+- [ ] Full timeline-based display of professional experience
+- [ ] Vertical timeline with alternating sides (desktop)
+- [ ] Single-column timeline (mobile)
+- [ ] Timeline items for each position:
+  - Company logo/icon
+  - Company name
+  - Role/title
+  - Date range
+  - Location
+  - Description
+  - Duties/achievements (expandable or full list)
+  - Current position badge
+- [ ] Interactive hover effects
+- [ ] Smooth scroll animations
+- [ ] Academic history subsection (optional toggle or separate area)
 
 ##### Articles Preview
 - [ ] Latest 3-4 articles
@@ -804,33 +780,7 @@ interface ModalProps {
 - [ ] Share buttons
 - [ ] Back to projects link
 
-#### 4.3 Career Page (`app/career/page.tsx`)
-
-##### Timeline Component
-- [ ] Vertical timeline with alternating sides (desktop)
-- [ ] Single-column timeline (mobile)
-- [ ] Timeline items:
-  - Company logo/icon
-  - Company name
-  - Role/title
-  - Date range
-  - Location
-  - Description
-  - Duties/achievements (expandable)
-  - Current position badge
-- [ ] Interactive hover effects
-- [ ] Smooth scroll animations
-
-##### Academic Section
-- [ ] Similar timeline for education
-- [ ] Academic records with:
-  - Institution
-  - Degree
-  - Date range
-  - Achievements
-  - Location
-
-#### 4.4 Mentorship Page (`app/mentorship/page.tsx`)
+#### 4.3 Mentorship Page (`app/mentorship/page.tsx`)
 
 ##### Overview Section
 - [ ] Introduction to mentorship program
@@ -866,7 +816,7 @@ interface ModalProps {
   - Clear form
 - [ ] Error handling and feedback
 
-#### 4.5 Contact Page (`app/contact/page.tsx`)
+#### 4.4 Contact Page (`app/contact/page.tsx`)
 
 ##### Contact Information Display
 - [ ] Email (with copy button)
@@ -891,13 +841,13 @@ interface ModalProps {
 - [ ] Response time expectations
 - [ ] Preferred contact methods
 
-#### 4.6 Articles Page (optional separate page)
+#### 4.5 Articles Page (optional separate page)
 - [ ] Grid of all articles
 - [ ] Filter by platform
 - [ ] Search functionality
 - [ ] Pagination
 
-#### 4.7 Testimonials Page (optional separate page)
+#### 4.6 Testimonials Page (optional separate page)
 - [ ] All testimonials display
 - [ ] Filter by rating
 - [ ] Search by name/company
