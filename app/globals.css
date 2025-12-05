@@ -1,26 +1,61 @@
 @import 'tailwindcss';
 
+/* Theme Variables - Light Mode (Black primary) */
 :root {
+  /* Primary Colors */
+  --color-primary: #000000;
+  --color-background: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #666666;
+  --color-border: #e5e5e5;
+  
+  /* Legacy variables for compatibility */
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Theme Variables - Dark Mode (White primary) */
+[data-theme='dark'] {
+  /* Primary Colors */
+  --color-primary: #ffffff;
+  --color-background: #0a0a0a;
+  --color-text: #e5e5e5;
+  --color-text-secondary: #a0a0a0;
+  --color-border: #2a2a2a;
+  
+  /* Legacy variables for compatibility */
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
+/* Auto dark mode based on system preference */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
+    --color-primary: #ffffff;
+    --color-background: #0a0a0a;
+    --color-text: #e5e5e5;
+    --color-text-secondary: #a0a0a0;
+    --color-border: #2a2a2a;
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
 
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
