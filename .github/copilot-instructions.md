@@ -74,7 +74,7 @@ This is a NextJS-based portfolio application showcasing Meyoron Aghogho's profes
 ### Data Management
 
 - Use `docs/aghogho-meyoron.json` as a **reference for understanding the data structure and content ideas**, not as a strict blueprint
-- The JSON file was originally from a database, so ignore database-specific fields like `id`, `profile_id`, `created_at`, `image_ai_hint`
+- The JSON file was originally from a database, so ignore database-specific fields like `id`, `profile_id`, `created_at`, `image_ai_hint` (used for internal operations)
 - Create improved TypeScript interfaces without unnecessary fields
 - Use `slug` fields for items that need their own pages (projects, announcements, etc.)
 - Implement type-safe data access patterns
@@ -136,7 +136,6 @@ The `docs/aghogho-meyoron.json` file provides **reference data and content ideas
 ### History
 - **academic**: array of education records (school, degree, start_year, end_year, achievements, location, show, priority)
 - **career**: array of work experience (company_name, role, start_date, end_date, description, location, duties, show, priority)
-  - **Note**: Career history should be displayed as a full section on the home page
 
 ### Portfolio
 - **projects**: array of project items (slug, name, description, features, technologies_used, link, demo_link, image, repository, show, is_inhouse, priority)

@@ -180,7 +180,7 @@ aghogho-meyoron-nextjs/
 
 ### Source: `docs/aghogho-meyoron.json`
 
-This JSON file provides **reference data and content ideas** to understand the structure. Use it as inspiration, but create improved TypeScript interfaces. The file was originally from a database, so **ignore database artifacts** like `id`, `profile_id`, `created_at`, and `image_ai_hint` fields. Create cleaner interfaces focused on the actual application needs.
+This JSON file provides **reference data and content ideas** to understand the structure. Use it as inspiration, but create improved TypeScript interfaces. The file was originally from a database, so **ignore database artifacts** like `id`, `profile_id`, `created_at`, and `image_ai_hint` fields (these were used for internal database operations and AI image generation prompts). Create cleaner interfaces focused on the actual application needs.
 
 #### Core Data Models
 
@@ -454,10 +454,10 @@ Create secure API endpoints for external data access:
 
 ##### `/api/career`
 - **Method**: GET
-- **Purpose**: Retrieve career history (for external API access)
+- **Purpose**: Retrieve career history for external applications to access portfolio data
 - **Response**: Array of CareerItem objects (sorted by date)
 - **Authentication**: Required
-- **Note**: Career is displayed on the home page, not a separate page
+- **Note**: This API is for external integrations; career is displayed on the home page within the portfolio app
 
 ##### `/api/skills`
 - **Method**: GET
