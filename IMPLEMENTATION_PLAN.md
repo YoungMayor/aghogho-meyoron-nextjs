@@ -196,7 +196,7 @@ This JSON file provides **reference data and content ideas** to understand the s
 
 ```typescript
 interface Icon {
-  type: "devicon" | "simpleicon" | "image";
+  type: 'devicon' | 'simpleicon' | 'image';
   value: string; // Name of the icon or image path
   color: string | null;
 }
@@ -258,7 +258,7 @@ interface AcademicRecord extends HasVisibility {
 ##### 3. Career History
 
 ```typescript
-interface CareerItem extends HasVisibility{
+interface CareerItem extends HasVisibility {
   company_name: string;
   role: string;
   start_date: string; // ISO date or "YYYY-MM-DD"
@@ -278,8 +278,8 @@ interface Project extends HasVisibility {
   description: string;
   features: string[];
   technologies: Technology[];
-  type: "js-pkg" | "dart-pkg" | "web-app" | "mobile-app" | "api" | "other";
-  owner: "personal" | "client" | "open-source" | "other";
+  type: 'js-pkg' | 'dart-pkg' | 'web-app' | 'mobile-app' | 'api' | 'other';
+  owner: 'personal' | 'client' | 'open-source' | 'other';
   demo_link: string | null;
   repo_link: string | null;
   images: string[]; // First image would be used as the main image
@@ -292,7 +292,7 @@ interface Project extends HasVisibility {
 interface Skill extends HasVisibility {
   name: string; // Eg. Frontend Development
   description: string | null;
-  type: "tech" | "soft" | "other";
+  type: 'tech' | 'soft' | 'other';
   technologies: Technology[];
 }
 ```
@@ -315,7 +315,7 @@ interface Testimonial extends HasVisibility {
   person: Person;
   review: string;
   rating: number; // 1-5
-  type: "personal" | "colleague" | "client" | "mentee" | "other";
+  type: 'personal' | 'colleague' | 'client' | 'mentee' | 'other';
 }
 ```
 
@@ -357,8 +357,8 @@ interface Hobby extends HasVisibility {
 
 - [x] Initialize Next.js project with TypeScript ✅
 - [x] Configure Tailwind CSS ✅
-- [ ] Set up ESLint and Prettier
-- [ ] Configure PWA (manifest.json, service worker)
+- [x] Set up ESLint and Prettier
+- [x] Configure PWA (manifest.json, service worker)
 - [ ] Set up Git workflow and branching strategy
 
 #### 1.2 Environment Variables
@@ -387,13 +387,13 @@ NEXT_PUBLIC_APP_URL=https://yourdomain.com
 #### 1.3 TypeScript Configuration
 
 - [x] Define all interfaces matching `docs/aghogho-meyoron.json`
-- [ ] Create type definition files in `lib/types/`
+- [x] Create type definition files in `lib/types.ts`
 - [ ] Set up strict TypeScript rules
 
 #### 1.4 Project Structure
 
 - [ ] Create directory structure as outlined above
-- [ ] Set up path aliases in `tsconfig.json`:
+- [x] Set up path aliases in `tsconfig.json`:
 
   ```json
   {

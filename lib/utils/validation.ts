@@ -1,7 +1,3 @@
-/**
- * Form validation utilities
- */
-
 export interface ValidationError {
   field: string;
   message: string;
@@ -31,11 +27,7 @@ export function isValidPhone(phone: string): boolean {
 /**
  * Validate string length
  */
-export function isValidLength(
-  value: string,
-  min: number,
-  max: number
-): boolean {
+export function isValidLength(value: string, min: number, max: number): boolean {
   const length = value.trim().length;
   return length >= min && length <= max;
 }

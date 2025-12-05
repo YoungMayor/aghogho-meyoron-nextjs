@@ -1,6 +1,3 @@
-/**
- * Utility functions for filtering and sorting data
- */
 import { HasVisibility } from '@/lib/types';
 
 /**
@@ -29,10 +26,7 @@ export function getVisibleAndSorted<T extends HasVisibility>(items: T[]): T[] {
  * @param items Array of items with date properties
  * @param dateField Name of the date field to sort by
  */
-export function sortByDate<T extends Record<string, unknown>>(
-  items: T[],
-  dateField: keyof T
-): T[] {
+export function sortByDate<T extends Record<string, unknown>>(items: T[], dateField: keyof T): T[] {
   return [...items].sort((a, b) => {
     const dateA = new Date(a[dateField] as string).getTime();
     const dateB = new Date(b[dateField] as string).getTime();
@@ -43,7 +37,11 @@ export function sortByDate<T extends Record<string, unknown>>(
 /**
  * Paginate items
  */
-export function paginateItems<T>(items: T[], page: number = 1, perPage: number = 10): {
+export function paginateItems<T>(
+  items: T[],
+  page: number = 1,
+  perPage: number = 10
+): {
   items: T[];
   page: number;
   perPage: number;
@@ -56,7 +54,7 @@ export function paginateItems<T>(items: T[], page: number = 1, perPage: number =
   const totalPages = Math.ceil(total / perPage);
   const start = (page - 1) * perPage;
   const end = start + perPage;
-  
+
   return {
     items: items.slice(start, end),
     page,

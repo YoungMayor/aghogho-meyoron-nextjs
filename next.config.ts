@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  
+
   /* Headers for PWA support */
   async headers() {
     return [

@@ -36,8 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Meyoron Aghogho | Software Engineer',
-    description:
-      'Portfolio of Meyoron Aghogho, a seasoned full-stack software engineer.',
+    description: 'Portfolio of Meyoron Aghogho, a seasoned full-stack software engineer.',
     creator: '@youngmayor_dev',
   },
   robots: {

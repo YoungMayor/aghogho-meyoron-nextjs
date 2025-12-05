@@ -1,7 +1,4 @@
-/**
- * Core Type Definitions for Portfolio Application
- * Based on data structure from docs/aghogho-meyoron.json
- */
+
 
 // Utility Types
 export interface Icon {
