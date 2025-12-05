@@ -1268,13 +1268,17 @@ export const metadata: Metadata = {
 #### ReCAPTCHA Integration
 ```typescript
 // Client-side
-import { useReCaptcha } from 'next-recaptcha-v3';
-
-const { executeRecaptcha } = useReCaptcha();
+// Load reCAPTCHA v3 script in app/layout.tsx:
+// <Script src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`} />
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-  const token = await executeRecaptcha('contact_form');
+  
+  // Execute reCAPTCHA v3
+  const token = await grecaptcha.execute(
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+    { action: 'contact_form' }
+  );
   
   const response = await fetch('/api/contact', {
     method: 'POST',
