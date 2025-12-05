@@ -173,7 +173,7 @@ aghogho-meyoron-nextjs/
 ├── content/
 │   ├── projects/                     # Markdown files for project details
 │   └── announcements/                # Markdown files for announcements
-├── .env.local                        # Environment variables (gitignored)
+├── .env.example                        # Environment variables (gitignored)
 ├── .gitignore
 ├── next.config.ts                    # Next.js configuration
 ├── tsconfig.json                     # TypeScript configuration
@@ -363,7 +363,7 @@ interface Hobby extends HasVisibility {
 
 #### 1.2 Environment Variables
 
-Create `.env.local` with:
+Create `.env.example` with:
 
 ```env
 # Database
@@ -1512,7 +1512,7 @@ Production (.env.production):
 Staging (.env.staging):
 - Same variables with staging values
 
-Development (.env.local):
+Development (.env.example):
 - Same variables with development values
 ```
 
