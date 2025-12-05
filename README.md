@@ -1,6 +1,6 @@
-# Portfolio Project
+# Meyoron Aghogho Portfolio
 
-A sophisticated, highly customizable, and SEO-optimized portfolio built with Next.js. This project showcases professional history, projects, mentorship, and more, featuring a robust internal API and seamless integrations.
+A sophisticated, highly customizable, and SEO-optimized portfolio built with Next.js 16. This project showcases professional history, projects, mentorship, and more, featuring a robust internal API and seamless integrations.
 
 ## Overview
 
@@ -43,11 +43,91 @@ This portfolio is designed to be a central hub for my professional identity, off
 
 ## Tech Stack
 
-- **Framework**: Next.js (React)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS (presumed based on "sophisticated" and "customizable" needs, or Vanilla CSS if strictly preferred, but Tailwind is standard for this complexity). _Note: User specified Vanilla CSS in system prompt rules, but for a complex Next.js app, Tailwind is often requested. Will adhere to user preference if specified, otherwise standard Next.js styling._ -> _User's prompt didn't explicitly forbid Tailwind for this new project, but system rules say "Avoid using TailwindCSS unless the USER explicitly requests it". However, for a "sophisticated" Next.js app, I will plan for standard CSS modules or styled-components unless otherwise directed, OR use the system rule exception if the user implies modern stack. Let's stick to the prompt's "sophisticated" requirement. Actually, the user's prompt didn't specify CSS framework, so I will stick to the System Prompt's "Vanilla CSS" or ask. BUT, for the sake of this README, I will list "CSS / Tailwind (TBD)" or just "Modern CSS". Let's assume standard Next.js CSS Modules for now to be safe._
+- **Framework**: Next.js 16.0.7 with App Router
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4
 - **Database**: MongoDB (for form submissions)
-- **Data Source**: TypeScript files (e.g., `academic_records.ts`, `projects.ts`) and Markdown files.
+- **Data Source**: TypeScript files and Markdown files with gray-matter
+- **PWA**: Service Worker for offline support
+- **Integrations**: Telegram Bot API, Google ReCAPTCHA v3
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20 or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env.local` file based on `.env.example`:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Fill in the environment variables in `.env.local`
+
+### Development
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the site.
+
+### Build
+
+Build for production:
+
+```bash
+npm run build
+```
+
+### Lint
+
+Check code quality:
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```
+├── app/                    # Next.js app directory
+│   ├── layout.tsx         # Root layout with metadata
+│   ├── page.tsx           # Home page
+│   └── globals.css        # Global styles with theme variables
+├── components/            # React components
+│   ├── layout/           # Layout components (Header, Footer)
+│   ├── sections/         # Page sections
+│   ├── ui/               # Reusable UI components
+│   └── features/         # Feature-specific components
+├── lib/                  # Utility functions and data
+│   ├── data/            # Data files (TypeScript)
+│   ├── utils/           # Utility functions
+│   ├── db/              # Database connections
+│   └── types/           # TypeScript type definitions
+├── content/             # Markdown content
+│   ├── projects/        # Project detail pages
+│   └── announcements/   # Announcement pages
+├── public/              # Static assets
+│   ├── icons/          # App icons
+│   ├── manifest.json   # PWA manifest
+│   └── sw.js           # Service worker
+└── docs/               # Documentation
+    └── aghogho-meyoron.json  # Portfolio data reference
+```
 
 ## Data Structure
 
