@@ -129,38 +129,47 @@ This is a NextJS-based portfolio application showcasing Meyoron Aghogho's profes
 The `docs/aghogho-meyoron.json` file provides **reference data and content ideas**. Use it to understand the structure, but create improved TypeScript interfaces. Ignore database artifacts like `id`, `profile_id`, and `created_at` fields.
 
 ### Profile
+
 - name, main_job_title, tagline_hero, persona_note, long_note
 - about_biography, contact_email, contact_phone, contact_message
 - profile_image_url, copyright information
 
 ### History
+
 - **academic**: array of education records (school, degree, start_year, end_year, achievements, location, show, priority)
 - **career**: array of work experience (company_name, role, start_date, end_date, description, location, duties, show, priority)
 
 ### Portfolio
+
 - **projects**: array of project items (slug, name, description, features, technologies_used, link, demo_link, image, repository, show, is_inhouse, priority)
   - Use `slug` for routing to individual project pages
 - **articles**: array of article entries (title, summary, link, cover, platform, show, priority)
 
 ### Skills
+
 - **categories**: array of skill categories (category_name, display_order, technologies array)
 - **expertise**: array of expertise areas (title, note, icon_name, icon_color, show, priority)
 
 ### Social Links
+
 - Array of social media profiles (name, url, icon, show, priority)
 
 ### Testimonials
+
 - Array of testimonials (name, role, review, photo, bio, profile_link, rating, show, priority)
 
 ### Hobbies
+
 - Array of hobbies (name, color, percentage, show, priority)
 
 ### Badges
+
 - Array of badges (name, icon_name)
 
 ## Priority Fields
 
 Many data structures include `show` and `priority` fields:
+
 - **show**: Boolean indicating if item should be displayed
 - **priority**: Integer for sorting (higher priority = more prominent)
 
@@ -181,6 +190,7 @@ Many data structures include `show` and `priority` fields:
 ## Common Tasks
 
 ### Adding a New Section
+
 1. Review the data in `docs/aghogho-meyoron.json`
 2. Create TypeScript interfaces for the data structure
 3. Build the component with proper typing
@@ -190,6 +200,7 @@ Many data structures include `show` and `priority` fields:
 7. Add SEO metadata
 
 ### Styling Components
+
 1. Use Tailwind utility classes
 2. Follow mobile-first approach
 3. Use theme colors from CSS variables
@@ -197,6 +208,7 @@ Many data structures include `show` and `priority` fields:
 5. Test in both light and dark modes
 
 ### Working with Forms
+
 1. Implement client-side validation
 2. Add ReCAPTCHA v3
 3. Create API route for submission
