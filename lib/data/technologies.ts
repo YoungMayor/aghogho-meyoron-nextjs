@@ -1,7 +1,7 @@
 import { Technology } from '@/lib/types';
 import { icons } from './icons';
 
-export const technologies: Record<string, Technology> = {
+export const technologies = {
   // Languages
   // Languages
   HTML5: { name: 'HTML5', icon: icons.HTML5 },
@@ -21,6 +21,10 @@ export const technologies: Record<string, Technology> = {
   Solidity: { name: 'Solidity', icon: icons.Solidity },
   Less: { name: 'Less', icon: icons.Less },
   C: { name: 'C', icon: icons.C },
+  // Ruby: { name: 'Ruby', icon: icons.Ruby },
+  // Rust: { name: 'Rust', icon: icons.Rust },
+  SQL: { name: 'SQL', icon: icons.SQL },
+  // Lua: { name: 'Lua', icon: icons.Lua },
 
   // Frameworks & Libraries
   VueJS: { name: 'Vue.js', icon: icons.VueJS },
@@ -49,6 +53,20 @@ export const technologies: Record<string, Technology> = {
   WordPress: { name: 'WordPress', icon: icons.WordPress },
   ElectronJS: { name: 'ElectronJS', icon: icons.ElectronJS },
   Tauri: { name: 'Tauri', icon: icons.Tauri },
+  Angular: { name: 'Angular', icon: icons.Angular },
+  // Svelte: { name: 'Svelte', icon: icons.Svelte },
+  // Spring: { name: 'Spring', icon: icons.Spring },
+  // Rails: { name: 'Rails', icon: icons.Rails },
+  // FastAPI: { name: 'FastAPI', icon: icons.FastAPI },
+  Flask: { name: 'Flask', icon: icons.Flask },
+  GraphQL: { name: 'GraphQL', icon: icons.GraphQL },
+  // Apollo: { name: 'Apollo', icon: icons.Apollo },
+  // Redux: { name: 'Redux', icon: icons.Redux },
+  // Pandas: { name: 'Pandas', icon: icons.Pandas },
+  // NumPy: { name: 'NumPy', icon: icons.NumPy },
+  // ScikitLearn: { name: 'Scikit Learn', icon: icons.ScikitLearn },
+  // TensorFlow: { name: 'TensorFlow', icon: icons.TensorFlow },
+  // PyTorch: { name: 'PyTorch', icon: icons.PyTorch },
 
   // Databases
   MySQL: { name: 'MySQL', icon: icons.MySQL },
@@ -59,6 +77,13 @@ export const technologies: Record<string, Technology> = {
   Firebase: { name: 'Firebase', icon: icons.Firebase },
   Supabase: { name: 'Supabase', icon: icons.Supabase },
   Prisma: { name: 'Prisma', icon: icons.Prisma },
+  MariaDB: { name: 'MariaDB', icon: icons.MariaDB },
+  Oracle: { name: 'Oracle', icon: icons.Oracle },
+  MSSQL: { name: 'MSSQL', icon: icons.MSSQL },
+  DynamoDB: { name: 'DynamoDB', icon: icons.DynamoDB },
+  Elasticsearch: { name: 'Elasticsearch', icon: icons.Elasticsearch },
+  Cassandra: { name: 'Cassandra', icon: icons.Cassandra },
+  // Realm: { name: 'Realm', icon: icons.Realm },
 
   // DevOps & Cloud
   Docker: { name: 'Docker', icon: icons.Docker },
@@ -71,6 +96,13 @@ export const technologies: Record<string, Technology> = {
   DigitalOcean: { name: 'Digital Ocean', icon: icons.DigitalOcean },
   CloudfareWorkers: { name: 'Cloudfare Workers', icon: icons.CloudfareWorkers },
   Cloudflare: { name: 'Cloudflare', icon: icons.Cloudflare },
+  // Azure: { name: 'Azure', icon: icons.Azure },
+  // Kubernetes: { name: 'Kubernetes', icon: icons.Kubernetes },
+  // Terraform: { name: 'Terraform', icon: icons.Terraform },
+  // Ansible: { name: 'Ansible', icon: icons.Ansible },
+  // Jenkins: { name: 'Jenkins', icon: icons.Jenkins },
+  // CircleCI: { name: 'CircleCI', icon: icons.CircleCI },
+  // TravisCI: { name: 'TravisCI', icon: icons.TravisCI },
 
   // Tools
   Git: { name: 'Git', icon: icons.Git },
@@ -89,6 +121,16 @@ export const technologies: Record<string, Technology> = {
   Vite: { name: 'Vite', icon: icons.Vite },
   Figma: { name: 'Figma', icon: icons.Figma },
   Canva: { name: 'Canva', icon: icons.Canva },
+  Postman: { name: 'Postman', icon: icons.Postman },
+  Slack: { name: 'Slack', icon: icons.Slack },
+  Trello: { name: 'Trello', icon: icons.Trello },
+  Jira: { name: 'Jira', icon: icons.Jira },
+  VSCode: { name: 'VS Code', icon: icons.VSCode },
+  IntelliJ: { name: 'IntelliJ', icon: icons.IntelliJ },
+  AndroidStudio: { name: 'Android Studio', icon: icons.AndroidStudio },
+  Xcode: { name: 'Xcode', icon: icons.Xcode },
+  PyCharm: { name: 'PyCharm', icon: icons.PyCharm },
+  WebStorm: { name: 'WebStorm', icon: icons.WebStorm },
 
   // Other
   Gemini: { name: 'Gemini', icon: icons.GoogleGemini },
@@ -97,4 +139,4 @@ export const technologies: Record<string, Technology> = {
   Web3: { name: 'Web3', icon: icons.Web3 },
   RestAPI: { name: 'Rest API', icon: icons.RestAPI },
   API: { name: 'API', icon: icons.API },
-};
+} as const;
