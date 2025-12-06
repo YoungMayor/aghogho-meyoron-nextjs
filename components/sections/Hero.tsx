@@ -4,6 +4,7 @@ import { profile } from '@/lib/data/profile';
 import { socialLinks as allSocialLinks } from '@/lib/data/social_links';
 import { getVisibleAndSorted } from '@/lib/utils/data';
 import Button from '@/components/ui/Button';
+import Icon from '@/components/ui/Icon';
 
 export default function Hero() {
   const socialLinks = getVisibleAndSorted(allSocialLinks).slice(0, 5);
@@ -67,10 +68,13 @@ export default function Hero() {
               className="transform text-gray-600 transition-all duration-200 hover:scale-110 hover:text-black dark:text-gray-400 dark:hover:text-white"
               aria-label={social.label}
             >
-              <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                {/* Generic icon - will be replaced with actual social icons */}
-                <circle cx="12" cy="12" r="10" />
-              </svg>
+              <Icon
+                type={social.icon.type}
+                value={social.icon.value}
+                color={social.icon.color}
+                size={24}
+                className="flex-shrink-0"
+              />
             </a>
           ))}
         </div>

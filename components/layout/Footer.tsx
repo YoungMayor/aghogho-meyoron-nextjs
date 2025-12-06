@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { profile } from '@/lib/data/profile';
 import { socialLinks as allSocialLinks } from '@/lib/data/social_links';
 import { getVisibleAndSorted } from '@/lib/utils/data';
+import Icon from '@/components/ui/Icon';
 
 export default function Footer() {
   const socialLinks = getVisibleAndSorted(allSocialLinks);
@@ -23,9 +24,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* About Column */}
           <div>
-            <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-white">
-              {profile.name}
-            </h3>
+            <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-white">{profile.name}</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">{profile.notes.tagline}</p>
           </div>
 
@@ -87,14 +86,13 @@ export default function Footer() {
                 >
                   <span className="sr-only">{social.label}</span>
                   {/* Icon placeholder - will be replaced with actual icons */}
-                  <svg
-                    className="h-5 w-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
-                  </svg>
+                  <Icon
+                    type={social.icon.type}
+                    value={social.icon.value}
+                    color={social.icon.color}
+                    size={20}
+                    className="flex-shrink-0"
+                  />
                 </a>
               ))}
             </div>

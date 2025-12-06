@@ -1,7 +1,7 @@
 export const icons = {
   // Languages
   HTML5: { type: 'devicon', value: 'html5-plain', color: null },
-  CSS3: { type: 'devicon', value: 'language-css3', color: null },
+  CSS3: { type: 'devicon', value: 'css3-original', color: null },
   SASS: { type: 'devicon', value: 'sass', color: null },
   JavaScript: { type: 'devicon', value: 'language-javascript', color: null },
   TypeScript: { type: 'devicon', value: 'language-typescript', color: null },
