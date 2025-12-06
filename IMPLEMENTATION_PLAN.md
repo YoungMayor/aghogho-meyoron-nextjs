@@ -601,6 +601,7 @@ Implement custom authentication for internal APIs:
 #### 3.1 Theme System - Soft UI Design Principles ✅
 
 **Design Philosophy**: The application follows a **Soft UI** design approach:
+
 - **No hard borders** - Use subtle shadows and gradients instead
 - **Ambient shadows** - Soft, layered shadows for depth (0.04-0.12 opacity)
 - **Gradient backgrounds** - Subtle linear/radial gradients instead of solid colors
@@ -634,7 +635,7 @@ Implement custom authentication for internal APIs:
     --color-surface: #ffffff;
     --color-text: #1a1a1a;
     --color-text-secondary: #666666;
-    
+
     /* Gradients for soft UI */
     --gradient-start: #f0f2f5;
     --gradient-end: #e8ebef;
@@ -649,7 +650,7 @@ Implement custom authentication for internal APIs:
     --color-surface: #1a1f28;
     --color-text: #e5e5e5;
     --color-text-secondary: #a0a0a0;
-    
+
     /* Gradients for soft UI */
     --gradient-start: #1a1f28;
     --gradient-end: #0f1419;
@@ -674,7 +675,6 @@ Implement custom authentication for internal APIs:
   - Minimal nav: View Resume, Theme Toggle, Contact icon
   - Ambient shadow effects
   - No borders, only soft shadows
-  
 - [x] **Other Pages**: Standard header with soft UI ✅
   - Removed from global layout
   - Available for other pages if needed
@@ -697,6 +697,7 @@ Built comprehensive component library with soft UI principles:
 ##### Button Component ✅
 
 **Soft UI Features Implemented**:
+
 - `rounded-xl` instead of `rounded-lg` for softer corners
 - Gradient backgrounds (`bg-gradient-to-br`) instead of solid colors
 - Subtle shadows on hover (`shadow-[0_4px_12px_rgba(...)]`)
@@ -720,6 +721,7 @@ interface ButtonProps {
 ##### Card Component ✅
 
 **Soft UI Features Implemented**:
+
 - `rounded-2xl` for very soft corners
 - Gradient backgrounds (`from-white to-gray-50`)
 - Ambient shadows with low opacity (`shadow-[0_2px_8px_rgba(0,0,0,0.04)]`)

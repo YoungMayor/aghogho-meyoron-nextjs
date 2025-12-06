@@ -24,9 +24,7 @@ export default function SectionHeader({
   return (
     <div className={`mb-16 ${alignmentClasses[alignment]}`}>
       <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">{title}</h2>
-      {subtitle && (
-        <p className="mb-4 text-lg text-gray-600 dark:text-gray-400">{subtitle}</p>
-      )}
+      {subtitle && <p className="mb-4 text-lg text-gray-600 dark:text-gray-400">{subtitle}</p>}
       <div
         className={`h-1 w-24 rounded-full bg-gradient-to-r from-gray-400 via-gray-600 to-gray-400 dark:from-gray-600 dark:via-gray-400 dark:to-gray-600 ${underlineClasses[alignment]}`}
       ></div>

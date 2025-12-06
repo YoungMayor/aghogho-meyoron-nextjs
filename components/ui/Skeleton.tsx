@@ -3,10 +3,7 @@ interface SkeletonProps {
   variant?: 'text' | 'circular' | 'rectangular';
 }
 
-export default function Skeleton({
-  className = '',
-  variant = 'rectangular',
-}: SkeletonProps) {
+export default function Skeleton({ className = '', variant = 'rectangular' }: SkeletonProps) {
   const variantStyles = {
     text: 'h-4 w-full rounded',
     circular: 'rounded-full',
