@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'Young Mayor',
     'MayR Labs',
     'YoungMayor',
-    'YoungMayorDev'
+    'YoungMayorDev',
   ],
   authors: [{ name: 'Aghogho Meyoron', url: 'https://mayrlabs.com' }],
   creator: 'Aghogho Meyoron',

@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { validateMentorshipForm } from '@/lib/utils/validation';
-import { connectDB, MentorshipApplication } from '@/lib/db/mongodb';
+import connectDB from '@/lib/db/mongodb';
+import { MentorshipApplication } from '@/lib/db/models/mentorship_application';
 
 /**
  * Verify ReCAPTCHA token
@@ -16,19 +17,16 @@ async function verifyRecaptcha(token: string): Promise<{
     throw new Error('ReCAPTCHA secret key not configured');
   }
 
-  const response = await fetch(
-    'https://www.google.com/recaptcha/api/siteverify',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        secret: secretKey,
-        response: token,
-      }),
-    }
-  );
+  const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      secret: secretKey,
+      response: token,
+    }),
+  });
 
   const data = await response.json();
   return {
@@ -50,20 +48,17 @@ async function sendTelegramNotification(message: string): Promise<boolean> {
   }
 
   try {
-    const response = await fetch(
-      `https://api.telegram.org/bot${botToken}/sendMessage`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-          parse_mode: 'Markdown',
-        }),
-      }
-    );
+    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'Markdown',
+      }),
+    });
 
     const data = await response.json();
     return data.ok;
@@ -82,10 +77,7 @@ export async function POST(request: Request) {
   const secret = process.env.INTERNAL_API_SECRET;
 
   if (!secret) {
-    return NextResponse.json(
-      { error: 'Server configuration error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
   }
 
   // Verify authentication
@@ -95,8 +87,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { name, email, phone, background, goals, commitment, recaptchaToken } =
-      body;
+    const { name, email, phone, background, goals, commitment, recaptchaToken } = body;
 
     // Validate input
     const validation = validateMentorshipForm({
@@ -120,17 +111,12 @@ export async function POST(request: Request) {
     // Verify ReCAPTCHA
     const recaptchaResult = await verifyRecaptcha(recaptchaToken);
     if (!recaptchaResult.success) {
-      return NextResponse.json(
-        { error: 'ReCAPTCHA verification failed' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'ReCAPTCHA verification failed' }, { status: 400 });
     }
 
     // Get client information
     const ipAddress =
-      request.headers.get('x-forwarded-for') ||
-      request.headers.get('x-real-ip') ||
-      'unknown';
+      request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
     const userAgent = request.headers.get('user-agent') || 'unknown';
 
     // Connect to MongoDB

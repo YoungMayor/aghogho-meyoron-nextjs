@@ -342,11 +342,7 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "iJokes",
         "description": "iJokes is a frontend API bridge application that fetches and displays jokes from a 3rd party open-source API for users. The application also includes a Telegram bot for more user-friendly interaction.",
-        "features": [
-          "API consumption",
-          "Telegram Bot",
-          "Interactive UIX"
-        ],
+        "features": ["API consumption", "Telegram Bot", "Interactive UIX"],
         "technologies_used": [
           {
             "name": "NextJS",
@@ -643,9 +639,7 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "PrepAI",
         "description": "Your personalised prep tool for WAEC, NECO, JAMB, and GCE.",
-        "features": [
-          "Study Smarter with AI"
-        ],
+        "features": ["Study Smarter with AI"],
         "technologies_used": [
           {
             "name": "NextJS"
@@ -672,11 +666,7 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "QuizWise",
         "description": "The smart quiz platform built for thinkers, tinkerers, and trailblazers in tech. Every question is generated in real-time using Google’s Gemini AI, so no two quiz sessions are ever quite the same.",
-        "features": [
-          "Brainy",
-          "Fast-paced",
-          "AI-powered"
-        ],
+        "features": ["Brainy", "Fast-paced", "AI-powered"],
         "technologies_used": [
           {
             "name": "NextJS"
@@ -829,12 +819,7 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "PayLighter",
         "description": "A fintech application that enables unrestricted and decentralized fund payments. I was responsible for the development and maintenance of this platform, utilizing my skills in backend engineering and web development. Please note that information about this project is protected by a non-disclosure agreement (NDA).",
-        "features": [
-          "Payment management",
-          "User wallets",
-          "Fund transfer",
-          "Payment requests"
-        ],
+        "features": ["Payment management", "User wallets", "Fund transfer", "Payment requests"],
         "technologies_used": [
           {
             "name": "Vue.js"
@@ -941,11 +926,7 @@
         "profile_id": "3ccba5e5-2f1d-4481-9e26-bb22c6bd5cc1",
         "name": "CalcPlay",
         "description": "A playground for unusual, humorous, and eye-opening calculations.",
-        "features": [
-          "Unusual calculations",
-          "Humorous calculations",
-          "Eye-opening calculations"
-        ],
+        "features": ["Unusual calculations", "Humorous calculations", "Eye-opening calculations"],
         "technologies_used": [
           {
             "name": "NextJS"

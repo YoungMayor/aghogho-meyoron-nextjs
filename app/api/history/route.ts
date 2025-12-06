@@ -2,11 +2,7 @@ import { NextResponse } from 'next/server';
 import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { academicRecords } from '@/lib/data/academic_history';
 import { careerItems } from '@/lib/data/career_history';
-import {
-  getVisibleItems,
-  sortByDate,
-  paginateItems,
-} from '@/lib/utils/data';
+import { getVisibleItems, sortByDate, paginateItems } from '@/lib/utils/data';
 
 /**
  * GET /api/history
@@ -21,10 +17,7 @@ export async function GET(request: Request) {
   const secret = process.env.INTERNAL_API_SECRET;
 
   if (!secret) {
-    return NextResponse.json(
-      { error: 'Server configuration error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
   }
 
   // Verify authentication
@@ -78,10 +71,7 @@ export async function GET(request: Request) {
     } else {
       // Return both if no type specified
       const career = sortByDate(getVisibleItems(careerItems), 'start_date');
-      const academic = sortByDate(
-        getVisibleItems(academicRecords),
-        'start_year'
-      );
+      const academic = sortByDate(getVisibleItems(academicRecords), 'start_year');
 
       return NextResponse.json({
         success: true,

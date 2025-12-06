@@ -1,5 +1,3 @@
-
-
 // Utility Types
 export interface Icon {
   type: 'devicon' | 'simpleicon' | 'image';

@@ -14,10 +14,6 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": [
-    "business",
-    "portfolio",
-    "development"
-  ],
+  "categories": ["business", "portfolio", "development"],
   "orientation": "any"
 }

@@ -50,7 +50,7 @@ export const careerItems: CareerItem[] = [
     start_date: '2019-01-01',
     end_date: '2019-01-01',
     description:
-      "An Information Technology company with a goal of providing top notch internet solutions to companies globally",
+      'An Information Technology company with a goal of providing top notch internet solutions to companies globally',
     location: 'Remote',
     duties: [
       'Developed a total of two 2 web solutions to client companies in my one month contract period',

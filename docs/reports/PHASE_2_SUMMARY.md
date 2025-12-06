@@ -92,6 +92,7 @@ All data files are located in `lib/data/` and properly typed:
 ### Validation Utilities (`lib/utils/validation.ts`)
 
 Already existed, includes:
+
 - Email validation
 - Phone validation
 - String length validation
@@ -127,21 +128,25 @@ Already existed, includes:
 ### MongoDB Connection (`lib/db/mongodb.ts`)
 
 Features:
+
 - Lazy initialization (only connects when needed)
 - Global connection caching in development
 - Separate connection per request in production
 - Type-safe collection access
 
 Functions:
+
 - **`getClientPromise()`** - Get or create MongoDB client
 - **`getDatabase()`** - Get database instance
 - **`getCollection<T>(name: string)`** - Get typed collection
 
 Collections:
+
 - **`CONTACTS`** - Contact form submissions
 - **`MENTORSHIP_APPLICATIONS`** - Mentorship applications
 
 Document Schemas:
+
 - **`ContactDocument`** - Contact form data with metadata
 - **`MentorshipApplicationDocument`** - Mentorship application data with metadata
 
@@ -156,6 +161,7 @@ All API routes are secured with time-based token authentication.
 **Purpose:** Retrieve complete profile with all nested data
 
 **Response:**
+
 ```typescript
 {
   success: true,
@@ -177,6 +183,7 @@ All API routes are secured with time-based token authentication.
 **Purpose:** List projects with filtering and pagination
 
 **Query Parameters:**
+
 - `type` - Filter by project type (js-pkg, dart-pkg, web-app, mobile-app, api, other)
 - `owner` - Filter by owner (personal, client, open-source, other)
 - `technologies` - Comma-separated technology names
@@ -184,6 +191,7 @@ All API routes are secured with time-based token authentication.
 - `offset` - Pagination offset (default: 0)
 
 **Response:**
+
 ```typescript
 {
   success: true,
@@ -204,11 +212,13 @@ All API routes are secured with time-based token authentication.
 **Purpose:** Retrieve career and/or academic history
 
 **Query Parameters:**
+
 - `type` - Filter by type ('career' or 'academic', omit for both)
 - `limit` - Items per page (default: 10)
 - `offset` - Pagination offset (default: 0)
 
 **Response:**
+
 ```typescript
 // With type parameter:
 {
@@ -232,6 +242,7 @@ All API routes are secured with time-based token authentication.
 **Purpose:** Retrieve all skills categorized
 
 **Response:**
+
 ```typescript
 {
   success: true,
@@ -248,6 +259,7 @@ All API routes are secured with time-based token authentication.
 **Purpose:** Submit contact form
 
 **Request Body:**
+
 ```typescript
 {
   name: string,
@@ -259,6 +271,7 @@ All API routes are secured with time-based token authentication.
 ```
 
 **Process:**
+
 1. Verify authentication token
 2. Validate form data
 3. Verify ReCAPTCHA (score > 0.5)
@@ -267,6 +280,7 @@ All API routes are secured with time-based token authentication.
 6. Return success response
 
 **Response:**
+
 ```typescript
 {
   success: true,
@@ -279,6 +293,7 @@ All API routes are secured with time-based token authentication.
 **Purpose:** Submit mentorship application
 
 **Request Body:**
+
 ```typescript
 {
   name: string,
@@ -294,6 +309,7 @@ All API routes are secured with time-based token authentication.
 **Process:** Same as contact endpoint
 
 **Response:**
+
 ```typescript
 {
   success: true,
@@ -308,11 +324,13 @@ All API routes are secured with time-based token authentication.
 ### Time-Based Token Authentication
 
 **Client Side:**
+
 1. Generate current timestamp
 2. Encrypt timestamp with `INTERNAL_API_SECRET`
 3. Send encrypted token in `X-Auth-Token` header
 
 **Server Side:**
+
 1. Receive `X-Auth-Token` header
 2. Decrypt token with `INTERNAL_API_SECRET`
 3. Parse timestamp
@@ -320,6 +338,7 @@ All API routes are secured with time-based token authentication.
 5. Return 401 if invalid or expired
 
 **Security Features:**
+
 - 5-minute token expiry
 - AES-256-CBC encryption
 - No token reuse attacks
@@ -356,11 +375,13 @@ All API routes are secured with time-based token authentication.
 **Command:** `npm run lint`
 
 **Purpose:**
+
 - Run ESLint before every commit
 - Prevent commits with linting errors
 - Maintain code quality standards
 
 **Installation:**
+
 ```bash
 npm install --save-dev husky
 npx husky init
@@ -457,6 +478,7 @@ const response = await fetch('/api/contact', {
 ## 11. Next Steps (Phase 3)
 
 Phase 3 will focus on:
+
 1. Theme system implementation
 2. Layout components (Header, Footer, ThemeToggle)
 3. Reusable UI components library
@@ -469,18 +491,21 @@ Phase 3 will focus on:
 When implementing tests in Phase 10:
 
 ### Unit Tests
+
 - Data utility functions (filtering, sorting, pagination)
 - Validation functions
 - Encryption/decryption functions
 - Token generation and verification
 
 ### Integration Tests
+
 - API routes with mocked MongoDB and Telegram
 - Authentication middleware
 - Form submission workflows
 - ReCAPTCHA verification
 
 ### E2E Tests (Optional)
+
 - Complete form submission flows
 - API authentication flows
 

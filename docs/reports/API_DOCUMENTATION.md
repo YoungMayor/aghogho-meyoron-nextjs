@@ -45,6 +45,7 @@ Retrieve complete profile with all nested data.
 **Authentication:** Required
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -91,28 +92,29 @@ List projects with optional filtering and pagination.
 
 **Query Parameters:**
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `type` | string | Project type filter | `web-app`, `mobile-app`, `api`, `js-pkg`, `dart-pkg`, `other` |
-| `owner` | string | Owner filter | `personal`, `client`, `open-source`, `other` |
-| `technologies` | string | Comma-separated tech names | `Laravel,Vue.js,React` |
-| `limit` | number | Items per page (default: 10) | `20` |
-| `offset` | number | Pagination offset (default: 0) | `40` |
+| Parameter      | Type   | Description                    | Example                                                       |
+| -------------- | ------ | ------------------------------ | ------------------------------------------------------------- |
+| `type`         | string | Project type filter            | `web-app`, `mobile-app`, `api`, `js-pkg`, `dart-pkg`, `other` |
+| `owner`        | string | Owner filter                   | `personal`, `client`, `open-source`, `other`                  |
+| `technologies` | string | Comma-separated tech names     | `Laravel,Vue.js,React`                                        |
+| `limit`        | number | Items per page (default: 10)   | `20`                                                          |
+| `offset`       | number | Pagination offset (default: 0) | `40`                                                          |
 
 **Examples:**
 
 ```typescript
 // Get all web apps
-fetch('/api/projects?type=web-app', { headers })
+fetch('/api/projects?type=web-app', { headers });
 
 // Get projects using Laravel and Vue.js
-fetch('/api/projects?technologies=Laravel,Vue.js', { headers })
+fetch('/api/projects?technologies=Laravel,Vue.js', { headers });
 
 // Get page 2 with 20 items per page
-fetch('/api/projects?limit=20&offset=20', { headers })
+fetch('/api/projects?limit=20&offset=20', { headers });
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -153,26 +155,27 @@ Retrieve career and/or academic history.
 
 **Query Parameters:**
 
-| Parameter | Type | Description | Example |
-|-----------|------|-------------|---------|
-| `type` | string | History type (`career` or `academic`) | `career` |
-| `limit` | number | Items per page (default: 10) | `20` |
-| `offset` | number | Pagination offset (default: 0) | `20` |
+| Parameter | Type   | Description                           | Example  |
+| --------- | ------ | ------------------------------------- | -------- |
+| `type`    | string | History type (`career` or `academic`) | `career` |
+| `limit`   | number | Items per page (default: 10)          | `20`     |
+| `offset`  | number | Pagination offset (default: 0)        | `20`     |
 
 **Examples:**
 
 ```typescript
 // Get all career items
-fetch('/api/history?type=career', { headers })
+fetch('/api/history?type=career', { headers });
 
 // Get all academic records
-fetch('/api/history?type=academic', { headers })
+fetch('/api/history?type=academic', { headers });
 
 // Get both career and academic (no type parameter)
-fetch('/api/history', { headers })
+fetch('/api/history', { headers });
 ```
 
 **Response (with type parameter):**
+
 ```json
 {
   "success": true,
@@ -194,6 +197,7 @@ fetch('/api/history', { headers })
 ```
 
 **Response (without type parameter):**
+
 ```json
 {
   "success": true,
@@ -213,6 +217,7 @@ Retrieve all skills categorized.
 **Authentication:** Required
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -251,6 +256,7 @@ Submit contact form.
 **Authentication:** Required
 
 **Request Body:**
+
 ```json
 {
   "name": "John Doe",
@@ -262,6 +268,7 @@ Submit contact form.
 ```
 
 **Validation Rules:**
+
 - `name`: 2-100 characters
 - `email`: Valid email format
 - `subject`: 5-200 characters
@@ -269,6 +276,7 @@ Submit contact form.
 - `recaptchaToken`: Valid ReCAPTCHA v3 token (score > 0.5)
 
 **Process:**
+
 1. Verify authentication token
 2. Validate form data
 3. Verify ReCAPTCHA
@@ -277,6 +285,7 @@ Submit contact form.
 6. Return success response
 
 **Response (Success):**
+
 ```json
 {
   "success": true,
@@ -285,6 +294,7 @@ Submit contact form.
 ```
 
 **Response (Error):**
+
 ```json
 {
   "error": "Validation error",
@@ -306,6 +316,7 @@ Submit mentorship application.
 **Authentication:** Required
 
 **Request Body:**
+
 ```json
 {
   "name": "Jane Smith",
@@ -319,6 +330,7 @@ Submit mentorship application.
 ```
 
 **Validation Rules:**
+
 - `name`: 2-100 characters
 - `email`: Valid email format
 - `phone`: Valid phone format (optional)
@@ -328,6 +340,7 @@ Submit mentorship application.
 - `recaptchaToken`: Valid ReCAPTCHA v3 token (score > 0.5)
 
 **Process:**
+
 1. Verify authentication token
 2. Validate form data
 3. Verify ReCAPTCHA
@@ -336,6 +349,7 @@ Submit mentorship application.
 6. Return success response
 
 **Response (Success):**
+
 ```json
 {
   "success": true,
@@ -358,6 +372,7 @@ Submit mentorship application.
 ```
 
 **Causes:**
+
 - Missing `X-Auth-Token` header
 - Invalid token
 - Expired token (>5 minutes old)
@@ -402,7 +417,7 @@ Submit mentorship application.
 
 ```typescript
 // Load ReCAPTCHA script in your layout
-<Script 
+<Script
   src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
 />
 
@@ -540,6 +555,7 @@ curl -X POST http://localhost:3000/api/contact \
 ## Support
 
 For questions or issues with the API, please:
+
 1. Check this documentation first
 2. Review the implementation in `app/api/`
 3. Check environment variables in `.env.example`

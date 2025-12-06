@@ -18,10 +18,7 @@ export async function GET(request: Request) {
   const secret = process.env.INTERNAL_API_SECRET;
 
   if (!secret) {
-    return NextResponse.json(
-      { error: 'Server configuration error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
   }
 
   // Verify authentication
@@ -47,18 +44,14 @@ export async function GET(request: Request) {
 
     // Apply owner filter
     if (ownerFilter) {
-      filteredProjects = filteredProjects.filter(
-        (p) => p.owner === ownerFilter
-      );
+      filteredProjects = filteredProjects.filter((p) => p.owner === ownerFilter);
     }
 
     // Apply technologies filter
     if (technologiesFilter) {
       const techArray = technologiesFilter.split(',').map((t) => t.trim().toLowerCase());
       filteredProjects = filteredProjects.filter((p) =>
-        p.technologies.some((tech) =>
-          techArray.includes(tech.name.toLowerCase())
-        )
+        p.technologies.some((tech) => techArray.includes(tech.name.toLowerCase()))
       );
     }
 
