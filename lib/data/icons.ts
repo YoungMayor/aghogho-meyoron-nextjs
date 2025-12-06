@@ -3,8 +3,9 @@ import { Icon } from '../types';
 const devicon = (value: string, variant: string = 'original'): Icon => ({
   type: 'devicon',
   value: `${value}-${variant}`,
-  color: null,
 });
+
+const simpleicon = (value: string): Icon => ({ type: 'simpleicon', value });
 
 export const icons = {
   // Languages
@@ -24,7 +25,7 @@ export const icons = {
   Swift: devicon('swift'),
   Solidity: devicon('solidity'),
   Less: devicon('less', 'plain-wordmark'),
-  C: { type: 'skillicon', value: 'c', color: null },
+  C: devicon('c'), // I think I will remove this
   Ruby: devicon('ruby'),
   Rust: devicon('rust'),
   SQL: devicon('mysql'),
@@ -36,17 +37,17 @@ export const icons = {
   React: devicon('react'),
   NextJS: devicon('nextjs'),
   Bootstrap: devicon('bootstrap'),
-  TailwindCSS: { type: 'devicon', value: 'tailwindcss-original', color: '06B6D4' },
+  TailwindCSS: devicon('tailwindcss'),
   Vuetify: devicon('vuetify'),
   Laravel: devicon('laravel'),
   NODEJS: devicon('nodejs'),
   Django: devicon('django'),
   Flutter: devicon('flutter'),
   ReactNative: devicon('react'),
-  Expo: { type: 'devicon', value: 'expo-original', color: '000020' },
+  Expo: devicon('expo'),
   jQuery: devicon('jquery'),
-  GenKit: { type: 'devicon', value: 'googlecloud-original', color: '4285F4' },
-  ChartJS: devicon('chartjs'), // Not in list
+  GenKit: devicon('googlecloud'),
+  ChartJS: devicon('chartjs'),
   DOTNET: devicon('dot-net'),
   Symfony: devicon('symfony'),
   CakePHP: devicon('cakephp'),
@@ -93,12 +94,12 @@ export const icons = {
   AWS: devicon('amazonwebservices', 'line-wordmark'),
   GoogleCloud: devicon('googlecloud'),
   Heroku: devicon('heroku'),
-  Vercel: { type: 'simpleicon', value: 'vercel', color: '000000' },
-  Netlify: { type: 'simpleicon', value: 'netlify', color: '00C7B7' },
-  Render: { type: 'simpleicon', value: 'render', color: '46E3B7' },
+  Vercel: devicon('vercel'),
+  Netlify: devicon('netlify'),
+  Render: simpleicon('render'),
   DigitalOcean: devicon('digitalocean'),
-  CloudfareWorkers: { type: 'simpleicon', value: 'cloudflareworkers', color: 'F38020' },
-  Cloudflare: { type: 'simpleicon', value: 'cloudflare', color: 'F38020' },
+  CloudfareWorkers: devicon('cloudflareworkers'),
+  Cloudflare: devicon('cloudflare'),
   Azure: devicon('azure'),
   Kubernetes: devicon('kubernetes'),
   Terraform: devicon('terraform'),
@@ -111,7 +112,7 @@ export const icons = {
   Git: devicon('git'),
   GitHub: devicon('github'),
   GitLab: devicon('gitlab'),
-  GitHubActions: { type: 'simpleicon', value: 'githubactions', color: '2088FF' },
+  GitHubActions: devicon('githubactions'),
   npm: devicon('npm', 'original-wordmark'),
   Yarn: devicon('yarn'),
   Composer: devicon('composer'),
@@ -120,8 +121,8 @@ export const icons = {
   Apache: devicon('apache'),
   Nginx: devicon('nginx'),
   Webpack: devicon('webpack'),
-  Sentry: { type: 'simpleicon', value: 'sentry', color: '362D59' },
-  Vite: { type: 'simpleicon', value: 'vite', color: '646CFF' },
+  Sentry: devicon('sentry'),
+  Vite: devicon('vite'),
   Figma: devicon('figma'),
   Canva: devicon('canva'),
   Postman: devicon('postman'),
@@ -139,17 +140,17 @@ export const icons = {
   Github: devicon('github'),
   Instagram: devicon('instagram'),
   Linkedin: devicon('linkedin'),
-  // Need linktree
+  Linktree: simpleicon('linktree'),
   Link: devicon('link'), // incorrect
-  Medium: devicon('medium'), // Incorrect
+  Medium: simpleicon('medium'),
   TikTok: devicon('tiktok'),
   Whatsapp: devicon('whatsapp'),
   Telegram: devicon('telegram'),
   Website: devicon('website'),
 
   // Other
-  GoogleGemini: { type: 'simpleicon', value: 'GoogleGemini', color: null },
+  GoogleGemini: simpleicon('googlegemini'),
   Markdown: devicon('markdown'),
-  RestAPI: { type: 'devicon', value: 'rest-api', color: null },
-  API: { type: 'devicon', value: 'api', color: null },
+  RestAPI: devicon('rest-api'),
+  API: devicon('api'),
 } as const;

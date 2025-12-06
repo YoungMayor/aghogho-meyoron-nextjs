@@ -1,8 +1,7 @@
 // Utility Types
 export interface Icon {
-  type: 'devicon' | 'simpleicon' | 'skillicon' | 'image';
-  value: string; // Name of the icon or image path
-  color: string | null;
+  type: 'devicon' | 'simpleicon';
+  value: string;
 }
 
 export interface HasVisibility {

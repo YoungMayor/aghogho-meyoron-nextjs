@@ -30,7 +30,7 @@ export const socialLinks: SocialLink[] = [
     platform: 'LinkTree',
     url: 'https://linktr.ee/YoungMayor',
     label: 'LinkTree',
-    icon: icons.Link,
+    icon: icons.Linktree,
     show: true,
     priority: 0,
   },
