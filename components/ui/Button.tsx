@@ -20,25 +20,25 @@ export default function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  // Base styles
+  // Base styles - Soft UI with rounded corners
   const baseStyles = [
     'inline-flex items-center justify-center gap-2',
-    'rounded-lg font-medium',
+    'rounded-xl font-medium',
     'transition-all duration-200',
-    'focus:outline-none focus:ring-2 focus:ring-offset-2',
+    'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-opacity-50',
     'disabled:cursor-not-allowed disabled:opacity-50',
   ].join(' ');
 
-  // Variant styles
+  // Variant styles - Soft UI with gradients and subtle shadows
   const variantStyles = {
     primary:
-      'bg-black text-white hover:bg-gray-800 focus:ring-black dark:bg-white dark:text-black dark:hover:bg-gray-200 dark:focus:ring-white',
+      'bg-gradient-to-br from-gray-900 to-black text-white hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:scale-[1.02] focus:ring-black dark:from-white dark:to-gray-100 dark:text-black dark:hover:shadow-[0_4px_12px_rgba(255,255,255,0.2)] dark:focus:ring-white',
     secondary:
-      'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-400',
+      'bg-gradient-to-br from-gray-100 to-gray-200 text-gray-900 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:scale-[1.02] focus:ring-gray-500 dark:from-gray-800 dark:to-gray-900 dark:text-white dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)] dark:focus:ring-gray-400',
     outline:
-      'border-2 border-black bg-transparent text-black hover:bg-black hover:text-white focus:ring-black dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black dark:focus:ring-white',
+      'bg-transparent text-black hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:scale-[1.02] focus:ring-black dark:text-white dark:hover:from-gray-900 dark:hover:to-gray-800 dark:hover:shadow-[0_2px_8px_rgba(255,255,255,0.1)] dark:focus:ring-white',
     ghost:
-      'bg-transparent text-gray-900 hover:bg-gray-100 focus:ring-gray-500 dark:text-white dark:hover:bg-gray-800 dark:focus:ring-gray-400',
+      'bg-transparent text-gray-900 hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 focus:ring-gray-500 dark:text-white dark:hover:from-gray-900 dark:hover:to-gray-800 dark:focus:ring-gray-400',
   };
 
   // Size styles

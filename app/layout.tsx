@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/contexts/ThemeContext';
-import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
@@ -92,7 +91,6 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
-            <Header />
             <main className="flex-1">{children}</main>
             <Footer />
           </div>

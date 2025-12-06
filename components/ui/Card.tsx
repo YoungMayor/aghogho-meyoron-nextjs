@@ -15,16 +15,16 @@ export default function Card({
   className = '',
   ...props
 }: CardProps) {
-  // Base styles
-  const baseStyles = 'rounded-lg transition-all duration-200';
+  // Base styles - Soft UI with gradients
+  const baseStyles = 'rounded-2xl transition-all duration-200';
 
-  // Variant styles
+  // Variant styles - Using soft gradients and ambient shadows
   const variantStyles = {
-    default: 'bg-white dark:bg-gray-900',
+    default: 'bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-950',
     bordered:
-      'bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-800',
+      'bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]',
     elevated:
-      'bg-white shadow-lg dark:bg-gray-900 dark:shadow-gray-900/50',
+      'bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.3)]',
   };
 
   // Padding styles
@@ -35,9 +35,9 @@ export default function Card({
     lg: 'p-8',
   };
 
-  // Hoverable styles
+  // Hoverable styles - Soft UI hover effects
   const hoverStyles = hoverable
-    ? 'cursor-pointer hover:shadow-xl hover:-translate-y-1'
+    ? 'cursor-pointer hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)] hover:-translate-y-1'
     : '';
 
   return (

@@ -195,6 +195,11 @@ export const skills: Skill[] = [
   },
 ];
 
-// Separate exports for convenience
-export const technicalSkills = skills.filter((s) => s.type === 'tech');
-export const softSkills = skills.filter((s) => s.type === 'soft');
+// Separate exports for convenience - properly sorted by priority
+export const technicalSkills = skills
+  .filter((s) => s.type === 'tech')
+  .sort((a, b) => b.priority - a.priority);
+
+export const softSkills = skills
+  .filter((s) => s.type === 'soft')
+  .sort((a, b) => b.priority - a.priority);

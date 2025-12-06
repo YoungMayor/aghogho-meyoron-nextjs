@@ -9,19 +9,14 @@ export default function Hero() {
   const socialLinks = getVisibleAndSorted(allSocialLinks).slice(0, 5);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
-      {/* Background Pattern */}
-      <div 
-        className="absolute inset-0 opacity-5" 
-        style={{
-          backgroundImage: 'linear-gradient(#00000008 1px, transparent 1px), linear-gradient(to right, #00000008 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }}
-      />
+    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+      {/* Ambient Background Gradient Orbs */}
+      <div className="absolute top-20 left-20 w-96 h-96 bg-blue-200/20 dark:bg-blue-900/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-200/20 dark:bg-purple-900/20 rounded-full blur-3xl" />
 
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-4 py-20 sm:px-6 lg:px-8">
-        {/* Avatar */}
-        <div className="mb-8 overflow-hidden rounded-full border-4 border-black dark:border-white">
+        {/* Avatar with soft shadow instead of border */}
+        <div className="mb-8 overflow-hidden rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
           <Image
             src={profile.avatar_url || '/placeholder-avatar.png'}
             alt={profile.name}
