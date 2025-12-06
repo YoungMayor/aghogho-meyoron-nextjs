@@ -58,7 +58,7 @@ export default function Header() {
           <ThemeToggle />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="rounded-xl p-2 transition-all duration-200 hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:hover:from-gray-900 dark:hover:to-gray-800"
+            className="rounded-xl p-2 transition-all duration-200 hover:bg-gradient-to-br hover:from-[var(--gradient-start)] hover:to-[var(--gradient-end)] hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
             aria-label="Toggle mobile menu"
             type="button"
           >
@@ -107,7 +107,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block rounded-xl px-3 py-2 text-base font-medium text-gray-700 transition-all duration-200 hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 dark:text-gray-300 dark:hover:from-gray-800 dark:hover:to-gray-900"
+                className="block rounded-xl px-3 py-2 text-base font-medium text-gray-700 transition-all duration-200 hover:bg-gradient-to-br hover:from-[var(--gradient-start)] hover:to-[var(--gradient-end)] dark:text-gray-300"
               >
                 {link.label}
               </Link>

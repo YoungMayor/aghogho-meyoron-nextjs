@@ -19,12 +19,13 @@ export default function Card({
   const baseStyles = 'rounded-2xl transition-all duration-200';
 
   // Variant styles - Using soft gradients and ambient shadows
+  // Variant styles - Using soft gradients and ambient shadows
   const variantStyles = {
-    default: 'bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-950',
+    default: 'bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)]',
     bordered:
-      'bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]',
+      'bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)]',
     elevated:
-      'bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.3)]',
+      'bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] shadow-[0_8px_24px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_24px_rgba(0,0,0,0.3)]',
   };
 
   // Padding styles

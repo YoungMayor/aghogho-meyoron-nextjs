@@ -21,9 +21,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const setTheme = useCallback((newTheme: Theme) => {
     setThemeState(newTheme);
     
-    // Update DOM
+    // Update DOM - set both data-theme attribute and dark class for Tailwind
     if (typeof document !== 'undefined') {
       document.documentElement.setAttribute('data-theme', newTheme);
+      if (newTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     }
 
     // Persist to localStorage
@@ -66,6 +71,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       setThemeState(savedTheme);
       if (typeof document !== 'undefined') {
         document.documentElement.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
       }
     };
 
@@ -82,6 +92,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
             const newTheme = e.matches ? 'dark' : 'light';
             setThemeState(newTheme);
             document.documentElement.setAttribute('data-theme', newTheme);
+            if (newTheme === 'dark') {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
           }
         } catch {
           // ignore

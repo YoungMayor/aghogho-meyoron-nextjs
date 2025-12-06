@@ -71,6 +71,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -79,8 +83,10 @@ export default function RootLayout({
                   var theme = localStorage.getItem('theme-preference');
                   if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                     document.documentElement.setAttribute('data-theme', 'dark');
+                    document.documentElement.classList.add('dark');
                   } else {
                     document.documentElement.setAttribute('data-theme', 'light');
+                    document.documentElement.classList.remove('dark');
                   }
                 } catch (e) {}
               })();

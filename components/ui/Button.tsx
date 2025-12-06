@@ -34,11 +34,11 @@ export default function Button({
     primary:
       'bg-gradient-to-br from-gray-900 to-black text-white hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:scale-[1.02] focus:ring-black dark:from-white dark:to-gray-100 dark:text-black dark:hover:shadow-[0_4px_12px_rgba(255,255,255,0.2)] dark:focus:ring-white',
     secondary:
-      'bg-gradient-to-br from-gray-100 to-gray-200 text-gray-900 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:scale-[1.02] focus:ring-gray-500 dark:from-gray-800 dark:to-gray-900 dark:text-white dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)] dark:focus:ring-gray-400',
+      'bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] text-gray-900 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:scale-[1.02] focus:ring-gray-500 dark:text-white dark:hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)] dark:focus:ring-gray-400',
     outline:
-      'bg-transparent text-black hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:scale-[1.02] focus:ring-black dark:text-white dark:hover:from-gray-900 dark:hover:to-gray-800 dark:hover:shadow-[0_2px_8px_rgba(255,255,255,0.1)] dark:focus:ring-white',
+      'bg-transparent text-black hover:bg-gradient-to-br hover:from-[var(--gradient-start)] hover:to-[var(--gradient-end)] hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:scale-[1.02] focus:ring-black dark:text-white dark:hover:shadow-[0_2px_8px_rgba(255,255,255,0.1)] dark:focus:ring-white',
     ghost:
-      'bg-transparent text-gray-900 hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 focus:ring-gray-500 dark:text-white dark:hover:from-gray-900 dark:hover:to-gray-800 dark:focus:ring-gray-400',
+      'bg-transparent text-gray-900 hover:bg-gradient-to-br hover:from-[var(--gradient-start)] hover:to-[var(--gradient-end)] focus:ring-gray-500 dark:text-white dark:focus:ring-gray-400',
   };
 
   // Size styles

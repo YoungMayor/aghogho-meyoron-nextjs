@@ -9,7 +9,7 @@ export default function Hero() {
   const socialLinks = getVisibleAndSorted(allSocialLinks).slice(0, 5);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)]">
       {/* Ambient Background Gradient Orbs */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-blue-200/20 dark:bg-blue-900/20 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-200/20 dark:bg-purple-900/20 rounded-full blur-3xl" />

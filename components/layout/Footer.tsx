@@ -108,24 +108,7 @@ export default function Footer() {
               &copy; {currentYear} {profile.copyright.creator_name}. All rights reserved.
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Built with{' '}
-              <a
-                href="https://nextjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium transition-colors hover:text-gray-900 dark:hover:text-white"
-              >
-                Next.js
-              </a>{' '}
-              &{' '}
-              <a
-                href="https://tailwindcss.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium transition-colors hover:text-gray-900 dark:hover:text-white"
-              >
-                Tailwind CSS
-              </a>
+              Built with ❤️ by {profile.name}
             </p>
           </div>
         </div>
