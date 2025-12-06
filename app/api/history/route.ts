@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
+
 import { verifyApiAuth } from '@/lib/utils/api-auth';
+import { ApiResponse } from '@/lib/utils/api-response';
 import { academicRecords } from '@/lib/data/academic_history';
 import { careerItems } from '@/lib/data/career_history';
 import { getVisibleItems, sortByDate, paginateItems } from '@/lib/utils/data';
@@ -17,12 +18,12 @@ export async function GET(request: Request) {
   const secret = process.env.INTERNAL_API_SECRET;
 
   if (!secret) {
-    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+    return ApiResponse.serverError('Server configuration error');
   }
 
   // Verify authentication
   if (!verifyApiAuth(request, secret)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return ApiResponse.unauthorized();
   }
 
   try {
@@ -38,17 +39,13 @@ export async function GET(request: Request) {
       const sortedItems = sortByDate(items, 'start_date');
       const paginatedResult = paginateItems(sortedItems, page, limit);
 
-      return NextResponse.json({
-        success: true,
-        data: paginatedResult.items,
-        pagination: {
-          total: paginatedResult.total,
-          page: paginatedResult.page,
-          perPage: paginatedResult.perPage,
-          totalPages: paginatedResult.totalPages,
-          hasNext: paginatedResult.hasNext,
-          hasPrev: paginatedResult.hasPrev,
-        },
+      return ApiResponse.success(paginatedResult.items, undefined, 200, {
+        total: paginatedResult.total,
+        page: paginatedResult.page,
+        perPage: paginatedResult.perPage,
+        totalPages: paginatedResult.totalPages,
+        hasNext: paginatedResult.hasNext,
+        hasPrev: paginatedResult.hasPrev,
       });
     } else if (typeFilter === 'academic') {
       // Get academic records
@@ -56,39 +53,26 @@ export async function GET(request: Request) {
       const sortedItems = sortByDate(items, 'start_year');
       const paginatedResult = paginateItems(sortedItems, page, limit);
 
-      return NextResponse.json({
-        success: true,
-        data: paginatedResult.items,
-        pagination: {
-          total: paginatedResult.total,
-          page: paginatedResult.page,
-          perPage: paginatedResult.perPage,
-          totalPages: paginatedResult.totalPages,
-          hasNext: paginatedResult.hasNext,
-          hasPrev: paginatedResult.hasPrev,
-        },
+      return ApiResponse.success(paginatedResult.items, undefined, 200, {
+        total: paginatedResult.total,
+        page: paginatedResult.page,
+        perPage: paginatedResult.perPage,
+        totalPages: paginatedResult.totalPages,
+        hasNext: paginatedResult.hasNext,
+        hasPrev: paginatedResult.hasPrev,
       });
     } else {
       // Return both if no type specified
       const career = sortByDate(getVisibleItems(careerItems), 'start_date');
       const academic = sortByDate(getVisibleItems(academicRecords), 'start_year');
 
-      return NextResponse.json({
-        success: true,
-        data: {
-          career,
-          academic,
-        },
+      return ApiResponse.success({
+        career,
+        academic,
       });
     }
   } catch (error) {
     console.error('History API error:', error);
-    return NextResponse.json(
-      {
-        error: 'Internal server error',
-        message: 'Failed to fetch history data',
-      },
-      { status: 500 }
-    );
+    return ApiResponse.serverError('Failed to fetch history data');
   }
 }

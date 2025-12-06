@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
+
 import { verifyApiAuth } from '@/lib/utils/api-auth';
+import { ApiResponse } from '@/lib/utils/api-response';
 import { profile } from '@/lib/data/profile';
 import { academicRecords } from '@/lib/data/academic_history';
 import { careerItems } from '@/lib/data/career_history';
@@ -21,12 +22,12 @@ export async function GET(request: Request) {
   const secret = process.env.INTERNAL_API_SECRET;
 
   if (!secret) {
-    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+    return ApiResponse.serverError('Server configuration error');
   }
 
   // Verify authentication
   if (!verifyApiAuth(request, secret)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return ApiResponse.unauthorized();
   }
 
   try {
@@ -48,18 +49,9 @@ export async function GET(request: Request) {
       badges,
     };
 
-    return NextResponse.json({
-      success: true,
-      data: completeProfile,
-    });
+    return ApiResponse.success(completeProfile);
   } catch (error) {
     console.error('Profile API error:', error);
-    return NextResponse.json(
-      {
-        error: 'Internal server error',
-        message: 'Failed to fetch profile data',
-      },
-      { status: 500 }
-    );
+    return ApiResponse.serverError('Failed to fetch profile data');
   }
 }

@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
+
 import { verifyApiAuth } from '@/lib/utils/api-auth';
+import { ApiResponse } from '@/lib/utils/api-response';
 import { validateContactForm } from '@/lib/utils/validation';
 import connectDB from '@/lib/db/mongodb';
 import { Contact } from '@/lib/db/models/contact';
@@ -15,12 +16,12 @@ export async function POST(request: Request) {
   const secret = process.env.INTERNAL_API_SECRET;
 
   if (!secret) {
-    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+    return ApiResponse.serverError('Server configuration error');
   }
 
   // Verify authentication
   if (!verifyApiAuth(request, secret)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return ApiResponse.unauthorized();
   }
 
   try {
@@ -30,19 +31,13 @@ export async function POST(request: Request) {
     // Validate input
     const validation = validateContactForm({ name, email, subject, message });
     if (!validation.isValid) {
-      return NextResponse.json(
-        {
-          error: 'Validation error',
-          details: validation.errors,
-        },
-        { status: 400 }
-      );
+      return ApiResponse.validationError(validation.errors);
     }
 
     // Verify ReCAPTCHA
     const recaptchaResult = await verifyRecaptcha(recaptchaToken);
     if (!recaptchaResult.success) {
-      return NextResponse.json({ error: 'ReCAPTCHA verification failed' }, { status: 400 });
+      return ApiResponse.error('ReCAPTCHA verification failed', 400);
     }
 
     // Get client information
@@ -81,18 +76,9 @@ ${message}
 
     await sendTelegramNotification(telegramMessage);
 
-    return NextResponse.json({
-      success: true,
-      message: 'Your message has been sent successfully!',
-    });
+    return ApiResponse.success(null, 'Your message has been sent successfully!');
   } catch (error) {
     console.error('Contact form error:', error);
-    return NextResponse.json(
-      {
-        error: 'Internal server error',
-        message: 'Failed to submit contact form',
-      },
-      { status: 500 }
-    );
+    return ApiResponse.serverError('Failed to submit contact form');
   }
 }

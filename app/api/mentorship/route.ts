@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
+
 import { verifyApiAuth } from '@/lib/utils/api-auth';
+import { ApiResponse } from '@/lib/utils/api-response';
 import { validateMentorshipForm } from '@/lib/utils/validation';
 import connectDB from '@/lib/db/mongodb';
 import { MentorshipApplication } from '@/lib/db/models/mentorship_application';
@@ -15,12 +16,12 @@ export async function POST(request: Request) {
   const secret = process.env.INTERNAL_API_SECRET;
 
   if (!secret) {
-    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+    return ApiResponse.serverError('Server configuration error');
   }
 
   // Verify authentication
   if (!verifyApiAuth(request, secret)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return ApiResponse.unauthorized();
   }
 
   try {
@@ -36,20 +37,15 @@ export async function POST(request: Request) {
       goals,
       commitment,
     });
+
     if (!validation.isValid) {
-      return NextResponse.json(
-        {
-          error: 'Validation error',
-          details: validation.errors,
-        },
-        { status: 400 }
-      );
+      return ApiResponse.validationError(validation.errors);
     }
 
     // Verify ReCAPTCHA
     const recaptchaResult = await verifyRecaptcha(recaptchaToken);
     if (!recaptchaResult.success) {
-      return NextResponse.json({ error: 'ReCAPTCHA verification failed' }, { status: 400 });
+      return ApiResponse.error('ReCAPTCHA verification failed', 400);
     }
 
     // Get client information
@@ -94,18 +90,9 @@ ${goals}
 
     await sendTelegramNotification(telegramMessage);
 
-    return NextResponse.json({
-      success: true,
-      message: 'Your mentorship application has been submitted successfully!',
-    });
+    return ApiResponse.success(null, 'Your mentorship application has been submitted successfully!');
   } catch (error) {
     console.error('Mentorship application error:', error);
-    return NextResponse.json(
-      {
-        error: 'Internal server error',
-        message: 'Failed to submit mentorship application',
-      },
-      { status: 500 }
-    );
+    return ApiResponse.serverError('Failed to submit mentorship application');
   }
 }

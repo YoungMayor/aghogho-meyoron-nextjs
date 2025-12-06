@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
+
 import { verifyApiAuth } from '@/lib/utils/api-auth';
+import { ApiResponse } from '@/lib/utils/api-response';
 import { projects } from '@/lib/data/projects';
 import { getVisibleItems, sortByPriority, paginateItems } from '@/lib/utils/data';
 
@@ -18,12 +19,12 @@ export async function GET(request: Request) {
   const secret = process.env.INTERNAL_API_SECRET;
 
   if (!secret) {
-    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+    return ApiResponse.serverError('Server configuration error');
   }
 
   // Verify authentication
   if (!verifyApiAuth(request, secret)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return ApiResponse.unauthorized();
   }
 
   try {
@@ -62,26 +63,16 @@ export async function GET(request: Request) {
     const page = Math.floor(offset / limit) + 1;
     const paginatedResult = paginateItems(filteredProjects, page, limit);
 
-    return NextResponse.json({
-      success: true,
-      data: paginatedResult.items,
-      pagination: {
-        total: paginatedResult.total,
-        page: paginatedResult.page,
-        perPage: paginatedResult.perPage,
-        totalPages: paginatedResult.totalPages,
-        hasNext: paginatedResult.hasNext,
-        hasPrev: paginatedResult.hasPrev,
-      },
+    return ApiResponse.success(paginatedResult.items, undefined, 200, {
+      total: paginatedResult.total,
+      page: paginatedResult.page,
+      perPage: paginatedResult.perPage,
+      totalPages: paginatedResult.totalPages,
+      hasNext: paginatedResult.hasNext,
+      hasPrev: paginatedResult.hasPrev,
     });
   } catch (error) {
     console.error('Projects API error:', error);
-    return NextResponse.json(
-      {
-        error: 'Internal server error',
-        message: 'Failed to fetch projects',
-      },
-      { status: 500 }
-    );
+    return ApiResponse.serverError('Failed to fetch projects');
   }
 }
