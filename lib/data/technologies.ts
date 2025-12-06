@@ -3,6 +3,7 @@ import { icons } from './icons';
 
 export const technologies: Record<string, Technology> = {
   // Languages
+  // Languages
   HTML5: { name: 'HTML5', icon: icons.HTML5 },
   CSS3: { name: 'CSS3', icon: icons.CSS3 },
   SASS: { name: 'SASS', icon: icons.SASS },
@@ -18,6 +19,8 @@ export const technologies: Record<string, Technology> = {
   Kotlin: { name: 'Kotlin', icon: icons.Kotlin },
   Swift: { name: 'Swift', icon: icons.Swift },
   Solidity: { name: 'Solidity', icon: icons.Solidity },
+  Less: { name: 'Less', icon: icons.Less },
+  C: { name: 'C', icon: icons.C },
 
   // Frameworks & Libraries
   VueJS: { name: 'Vue.js', icon: icons.VueJS },
@@ -38,6 +41,14 @@ export const technologies: Record<string, Technology> = {
   GenKit: { name: 'GenKit', icon: icons.GenKit },
   ChartJS: { name: 'ChartJS', icon: icons.ChartJS },
   DOTNET: { name: '.NET', icon: icons.CSharp }, // Using C# icon for .NET
+  Symfony: { name: 'Symfony', icon: icons.Symfony },
+  CakePHP: { name: 'CakePHP', icon: icons.CakePHP },
+  Yii: { name: 'Yii', icon: icons.Yii },
+  MaterialUI: { name: 'Material UI', icon: icons.MaterialUI },
+  Bulma: { name: 'Bulma', icon: icons.Bulma },
+  WordPress: { name: 'WordPress', icon: icons.WordPress },
+  ElectronJS: { name: 'ElectronJS', icon: icons.ElectronJS },
+  Tauri: { name: 'Tauri', icon: icons.Tauri },
 
   // Databases
   MySQL: { name: 'MySQL', icon: icons.MySQL },
@@ -46,6 +57,8 @@ export const technologies: Record<string, Technology> = {
   MongoDB: { name: 'MongoDB', icon: icons.MongoDB },
   Redis: { name: 'Redis', icon: icons.Redis },
   Firebase: { name: 'Firebase', icon: icons.Firebase },
+  Supabase: { name: 'Supabase', icon: icons.Supabase },
+  Prisma: { name: 'Prisma', icon: icons.Prisma },
 
   // DevOps & Cloud
   Docker: { name: 'Docker', icon: icons.Docker },
@@ -57,6 +70,25 @@ export const technologies: Record<string, Technology> = {
   Render: { name: 'Render', icon: icons.Render },
   DigitalOcean: { name: 'Digital Ocean', icon: icons.DigitalOcean },
   CloudfareWorkers: { name: 'Cloudfare Workers', icon: icons.CloudfareWorkers },
+  Cloudflare: { name: 'Cloudflare', icon: icons.Cloudflare },
+
+  // Tools
+  Git: { name: 'Git', icon: icons.Git },
+  GitHub: { name: 'GitHub', icon: icons.GitHub },
+  GitLab: { name: 'GitLab', icon: icons.GitLab },
+  GitHubActions: { name: 'GitHub Actions', icon: icons.GitHubActions },
+  npm: { name: 'npm', icon: icons.npm },
+  Yarn: { name: 'Yarn', icon: icons.Yarn },
+  Composer: { name: 'Composer', icon: icons.Composer },
+  Bash: { name: 'Bash', icon: icons.Bash },
+  Linux: { name: 'Linux', icon: icons.Linux },
+  Apache: { name: 'Apache', icon: icons.Apache },
+  Nginx: { name: 'Nginx', icon: icons.Nginx },
+  Webpack: { name: 'Webpack', icon: icons.Webpack },
+  Sentry: { name: 'Sentry', icon: icons.Sentry },
+  Vite: { name: 'Vite', icon: icons.Vite },
+  Figma: { name: 'Figma', icon: icons.Figma },
+  Canva: { name: 'Canva', icon: icons.Canva },
 
   // Other
   Gemini: { name: 'Gemini', icon: icons.GoogleGemini },

@@ -15,6 +15,8 @@ export const icons = {
   Kotlin: { type: 'devicon', value: 'language-kotlin', color: null },
   Swift: { type: 'devicon', value: 'language-swift', color: null },
   Solidity: { type: 'devicon', value: 'ethereum', color: null },
+  Less: { type: 'devicon', value: 'less-plain-wordmark', color: null },
+  C: { type: 'devicon', value: 'c-plain', color: null },
 
   // Frameworks & Libraries
   VueJS: { type: 'devicon', value: 'vuejs', color: null },
@@ -33,6 +35,14 @@ export const icons = {
   jQuery: { type: 'devicon', value: 'jquery', color: null },
   GenKit: { type: 'devicon', value: 'genkit', color: null },
   ChartJS: { type: 'devicon', value: 'chartjs', color: null },
+  Symfony: { type: 'devicon', value: 'symfony-original', color: null },
+  CakePHP: { type: 'devicon', value: 'cakephp-plain', color: null },
+  Yii: { type: 'devicon', value: 'yii-plain', color: null },
+  MaterialUI: { type: 'devicon', value: 'materialui-plain', color: null },
+  Bulma: { type: 'devicon', value: 'bulma-plain', color: null },
+  WordPress: { type: 'devicon', value: 'wordpress-plain', color: null },
+  ElectronJS: { type: 'devicon', value: 'electron-original', color: null },
+  Tauri: { type: 'devicon', value: 'tauri-plain', color: null },
 
   // Databases
   MySQL: { type: 'devicon', value: 'database', color: null },
@@ -41,6 +51,8 @@ export const icons = {
   MongoDB: { type: 'devicon', value: 'database', color: null },
   Redis: { type: 'devicon', value: 'database', color: null },
   Firebase: { type: 'devicon', value: 'firebase', color: null },
+  Supabase: { type: 'devicon', value: 'supabase-plain', color: null },
+  Prisma: { type: 'devicon', value: 'prisma-original', color: null },
 
   // DevOps & Cloud
   Docker: { type: 'devicon', value: 'docker', color: null },
@@ -52,6 +64,25 @@ export const icons = {
   Render: { type: 'devicon', value: 'server', color: null },
   DigitalOcean: { type: 'devicon', value: 'digital-ocean', color: null },
   CloudfareWorkers: { type: 'devicon', value: 'cloudfare-workers', color: null },
+  Cloudflare: { type: 'devicon', value: 'cloudflare-plain', color: null },
+
+  // Tools
+  Git: { type: 'devicon', value: 'git-plain', color: null },
+  GitHub: { type: 'devicon', value: 'github-original', color: null },
+  GitLab: { type: 'devicon', value: 'gitlab-plain', color: null },
+  GitHubActions: { type: 'devicon', value: 'githubactions-plain', color: null },
+  npm: { type: 'devicon', value: 'npm-original-wordmark', color: null },
+  Yarn: { type: 'devicon', value: 'yarn-plain', color: null },
+  Composer: { type: 'devicon', value: 'composer-original', color: null },
+  Bash: { type: 'devicon', value: 'bash-plain', color: null },
+  Linux: { type: 'devicon', value: 'linux-plain', color: null },
+  Apache: { type: 'devicon', value: 'apache-plain', color: null },
+  Nginx: { type: 'devicon', value: 'nginx-original', color: null },
+  Webpack: { type: 'devicon', value: 'webpack-plain', color: null },
+  Sentry: { type: 'devicon', value: 'sentry-original', color: null },
+  Vite: { type: 'devicon', value: 'vitejs-plain', color: null },
+  Figma: { type: 'devicon', value: 'figma-plain', color: null },
+  Canva: { type: 'devicon', value: 'canva-original', color: null },
 
   // Socials
   Github: { type: 'simpleicon', value: 'Github', color: null },
