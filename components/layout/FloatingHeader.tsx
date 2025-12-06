@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { profile } from '@/lib/data/profile';
+import ThemeToggleButton from '@/components/ui/ThemeToggleButton';
 
 export default function FloatingHeader() {
   const [isVisible, setIsVisible] = useState(false);
@@ -46,6 +47,9 @@ export default function FloatingHeader() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
+          {/* Theme Toggle Button */}
+          <ThemeToggleButton />
+
           {/* View Resume Button */}
           <Link
             href="/resume"
