@@ -1,11 +1,7 @@
 import { NextResponse } from 'next/server';
 import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { validateContactForm } from '@/lib/utils/validation';
-import {
-  getCollection,
-  Collections,
-  ContactDocument,
-} from '@/lib/db/mongodb';
+import { connectDB, Contact } from '@/lib/db/mongodb';
 
 /**
  * Verify ReCAPTCHA token
@@ -131,12 +127,11 @@ export async function POST(request: Request) {
       'unknown';
     const userAgent = request.headers.get('user-agent') || 'unknown';
 
-    // Save to MongoDB
-    const collection = await getCollection<ContactDocument>(
-      Collections.CONTACTS
-    );
+    // Connect to MongoDB
+    await connectDB();
 
-    const document: ContactDocument = {
+    // Save to MongoDB using Mongoose
+    await Contact.create({
       name,
       email,
       subject,
@@ -146,9 +141,7 @@ export async function POST(request: Request) {
       user_agent: userAgent,
       recaptcha_score: recaptchaResult.score,
       status: 'new',
-    };
-
-    await collection.insertOne(document);
+    });
 
     // Send Telegram notification
     const telegramMessage = `🔔 *New Contact Form Submission*

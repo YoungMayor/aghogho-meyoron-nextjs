@@ -1,17 +1,28 @@
-import { MongoClient, Db, Collection, Document } from 'mongodb';
+import mongoose, { Schema, Model } from 'mongoose';
 
-let clientPromise: Promise<MongoClient> | null = null;
+/**
+ * Mongoose connection state
+ */
+let isConnected = false;
 
 declare global {
-  var _mongoClientPromise: Promise<MongoClient> | undefined;
+  var mongooseCache: {
+    conn: typeof mongoose | null;
+    promise: Promise<typeof mongoose> | null;
+  };
+}
+
+// Initialize global mongoose cache if not exists
+if (!global.mongooseCache) {
+  global.mongooseCache = { conn: null, promise: null };
 }
 
 /**
- * Get or create MongoDB client promise
+ * Connect to MongoDB using Mongoose
  */
-function getClientPromise(): Promise<MongoClient> {
-  if (clientPromise) {
-    return clientPromise;
+export async function connectDB(): Promise<typeof mongoose> {
+  if (isConnected && global.mongooseCache.conn) {
+    return global.mongooseCache.conn;
   }
 
   const uri = process.env.MONGODB_URI;
@@ -19,60 +30,28 @@ function getClientPromise(): Promise<MongoClient> {
     throw new Error('Please add your MONGODB_URI to .env.local');
   }
 
-  const options = {};
+  if (!global.mongooseCache.promise) {
+    const opts = {
+      bufferCommands: false,
+    };
 
-  if (process.env.NODE_ENV === 'development') {
-    // In development mode, use a global variable so that the value
-    // is preserved across module reloads caused by HMR (Hot Module Replacement).
-    if (!global._mongoClientPromise) {
-      const client = new MongoClient(uri, options);
-      global._mongoClientPromise = client.connect();
-    }
-    clientPromise = global._mongoClientPromise;
-  } else {
-    // In production mode, it's best to not use a global variable.
-    const client = new MongoClient(uri, options);
-    clientPromise = client.connect();
+    global.mongooseCache.promise = mongoose.connect(uri, opts);
   }
 
-  return clientPromise;
-}
-
-// Export a module-scoped MongoClient promise. By doing this in a
-// separate module, the client can be shared across functions.
-const clientPromiseGetter = () => getClientPromise();
-export default clientPromiseGetter;
-
-/**
- * Get MongoDB database instance
- */
-export async function getDatabase(): Promise<Db> {
-  const client = await getClientPromise();
-  return client.db();
+  try {
+    global.mongooseCache.conn = await global.mongooseCache.promise;
+    isConnected = true;
+    return global.mongooseCache.conn;
+  } catch (error) {
+    global.mongooseCache.promise = null;
+    throw error;
+  }
 }
 
 /**
- * Get a specific collection
+ * Contact document interface
  */
-export async function getCollection<T extends Document = Document>(
-  name: string
-): Promise<Collection<T>> {
-  const db = await getDatabase();
-  return db.collection<T>(name);
-}
-
-/**
- * Collection names
- */
-export const Collections = {
-  CONTACTS: 'contacts',
-  MENTORSHIP_APPLICATIONS: 'mentorship_applications',
-} as const;
-
-/**
- * Database schema types
- */
-export interface ContactDocument {
+export interface IContact {
   name: string;
   email: string;
   subject: string;
@@ -85,7 +64,10 @@ export interface ContactDocument {
   replied_at?: Date;
 }
 
-export interface MentorshipApplicationDocument {
+/**
+ * Mentorship application document interface
+ */
+export interface IMentorshipApplication {
   name: string;
   email: string;
   phone?: string;
@@ -100,3 +82,76 @@ export interface MentorshipApplicationDocument {
   reviewed_at?: Date;
   notes?: string;
 }
+
+/**
+ * Contact schema
+ */
+const ContactSchema = new Schema<IContact>(
+  {
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    subject: { type: String, required: true },
+    message: { type: String, required: true },
+    submitted_at: { type: Date, required: true, default: Date.now },
+    ip_address: { type: String, required: true },
+    user_agent: { type: String, required: true },
+    recaptcha_score: { type: Number, required: true },
+    status: {
+      type: String,
+      enum: ['new', 'read', 'replied'],
+      default: 'new',
+    },
+    replied_at: { type: Date },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+/**
+ * Mentorship application schema
+ */
+const MentorshipApplicationSchema = new Schema<IMentorshipApplication>(
+  {
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    phone: { type: String },
+    background: { type: String, required: true },
+    goals: { type: String, required: true },
+    commitment: { type: String, required: true },
+    submitted_at: { type: Date, required: true, default: Date.now },
+    ip_address: { type: String, required: true },
+    user_agent: { type: String, required: true },
+    recaptcha_score: { type: Number, required: true },
+    status: {
+      type: String,
+      enum: ['pending', 'approved', 'rejected', 'completed'],
+      default: 'pending',
+    },
+    reviewed_at: { type: Date },
+    notes: { type: String },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+/**
+ * Get or create Contact model
+ */
+export const Contact: Model<IContact> =
+  mongoose.models.Contact || mongoose.model<IContact>('Contact', ContactSchema);
+
+/**
+ * Get or create MentorshipApplication model
+ */
+export const MentorshipApplication: Model<IMentorshipApplication> =
+  mongoose.models.MentorshipApplication ||
+  mongoose.model<IMentorshipApplication>(
+    'MentorshipApplication',
+    MentorshipApplicationSchema
+  );
+
+// Export for backward compatibility
+export type ContactDocument = IContact;
+export type MentorshipApplicationDocument = IMentorshipApplication;

@@ -1,11 +1,7 @@
 import { NextResponse } from 'next/server';
 import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { validateMentorshipForm } from '@/lib/utils/validation';
-import {
-  getCollection,
-  Collections,
-  MentorshipApplicationDocument,
-} from '@/lib/db/mongodb';
+import { connectDB, MentorshipApplication } from '@/lib/db/mongodb';
 
 /**
  * Verify ReCAPTCHA token
@@ -137,12 +133,11 @@ export async function POST(request: Request) {
       'unknown';
     const userAgent = request.headers.get('user-agent') || 'unknown';
 
-    // Save to MongoDB
-    const collection = await getCollection<MentorshipApplicationDocument>(
-      Collections.MENTORSHIP_APPLICATIONS
-    );
+    // Connect to MongoDB
+    await connectDB();
 
-    const document: MentorshipApplicationDocument = {
+    // Save to MongoDB using Mongoose
+    await MentorshipApplication.create({
       name,
       email,
       phone,
@@ -154,9 +149,7 @@ export async function POST(request: Request) {
       user_agent: userAgent,
       recaptcha_score: recaptchaResult.score,
       status: 'pending',
-    };
-
-    await collection.insertOne(document);
+    });
 
     // Send Telegram notification
     const telegramMessage = `📚 *New Mentorship Application*
