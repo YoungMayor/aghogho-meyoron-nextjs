@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { ThemeProvider } from '@/contexts/ThemeContext';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://mayrlabs.com'),
@@ -63,14 +66,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
         <meta name="theme-color" content="#000000" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme-preference');
+                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                  } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
       </head>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <ThemeProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
