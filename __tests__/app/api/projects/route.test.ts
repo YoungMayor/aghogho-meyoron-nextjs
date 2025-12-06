@@ -11,7 +11,7 @@ jest.mock('@/lib/data/projects', () => ({
       owner: 'me',
       show: true,
       priority: 1,
-      technologies: [{ name: 'React' }, { name: 'Node' }],
+      icons: [{ label: 'React' }, { label: 'Node' }],
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ jest.mock('@/lib/data/projects', () => ({
       owner: 'other',
       show: true,
       priority: 2,
-      technologies: [{ name: 'Flutter' }],
+      icons: [{ label: 'Flutter' }],
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ jest.mock('@/lib/data/projects', () => ({
       owner: 'me',
       show: false,
       priority: 3,
-      technologies: [{ name: 'Vue' }],
+      icons: [{ label: 'Vue' }],
     },
   ],
 }));
