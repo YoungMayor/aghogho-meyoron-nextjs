@@ -173,7 +173,12 @@ export const skills: Skill[] = [
     name: 'Other',
     description: null,
     type: 'tech',
-    technologies: [technologies.Solidity, technologies.Ethereum, technologies.Web3],
+    technologies: [
+      technologies.Solidity,
+      technologies.Gemini,
+      technologies.RestAPI,
+      technologies.Markdown,
+    ],
     show: true,
     priority: 8,
   },

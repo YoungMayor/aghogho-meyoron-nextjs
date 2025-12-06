@@ -135,8 +135,6 @@ export const technologies = {
   // Other
   Gemini: { name: 'Gemini', icon: icons.GoogleGemini },
   Markdown: { name: 'Markdown', icon: icons.Markdown },
-  Ethereum: { name: 'Ethereum', icon: icons.Ethereum },
-  Web3: { name: 'Web3', icon: icons.Web3 },
   RestAPI: { name: 'Rest API', icon: icons.RestAPI },
   API: { name: 'API', icon: icons.API },
 } as const;
