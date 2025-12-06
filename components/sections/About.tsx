@@ -1,27 +1,38 @@
+'use client';
+
 import { profile } from '@/lib/data/profile';
 import { technicalSkills } from '@/lib/data/skills';
+import { getRandomQuote } from '@/lib/data/quotes';
 import Card from '@/components/ui/Card';
+import SectionHeader from '@/components/ui/SectionHeader';
+import Typewriter from '@/components/ui/Typewriter';
 import { getVisibleAndSorted } from '@/lib/utils/data';
+import { useState } from 'react';
 
 export default function About() {
   const sortedTechnicalSkills = getVisibleAndSorted(technicalSkills, 'asc');
+  // Get a random quote once using lazy initialization
+  const [quote] = useState(() => getRandomQuote());
 
   return (
     <section className="w-full bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-black py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Get to Know Me</h2>
-          <div className="mx-auto h-1 w-24 rounded-full bg-gradient-to-r from-gray-400 via-gray-600 to-gray-400 dark:from-gray-600 dark:via-gray-400 dark:to-gray-600"></div>
-        </div>
+        <SectionHeader title="Get to Know Me" />
 
-        {/* Biography */}
-        <div className="mb-20">
+        {/* Biography and Quote */}
+        <div className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Biography */}
           <Card variant="bordered" padding="lg">
             <div
               className="prose prose-lg max-w-none dark:prose-invert"
               dangerouslySetInnerHTML={{ __html: profile.biography }}
             />
+          </Card>
+
+          {/* Quote with Typewriter */}
+          <Card variant="elevated" padding="lg">
+            {quote.text && <Typewriter text={quote.text} author={quote.author} />}
           </Card>
         </div>
 
@@ -59,19 +70,6 @@ export default function About() {
             ))}
           </div>
         </div>
-
-        {/* Persona Note */}
-        {profile.notes.persona && (
-          <div className="mt-20">
-            <Card variant="elevated" padding="lg">
-              <blockquote className="text-center">
-                <p className="text-xl italic text-gray-700 dark:text-gray-300">
-                  &ldquo;{profile.notes.persona}&rdquo;
-                </p>
-              </blockquote>
-            </Card>
-          </div>
-        )}
       </div>
     </section>
   );

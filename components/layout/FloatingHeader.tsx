@@ -28,7 +28,7 @@ export default function FloatingHeader() {
       style={{ width: '90%', maxWidth: '1200px' }}
     >
       <nav className="flex items-center justify-between rounded-2xl bg-white/80 dark:bg-gray-900/80 px-6 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl">
-        {/* Avatar */}
+        {/* Avatar and Name */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="overflow-hidden rounded-full h-10 w-10 shadow-[0_2px_8px_rgba(0,0,0,0.1)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.3)] transition-transform duration-200 group-hover:scale-110">
             <Image
@@ -39,6 +39,9 @@ export default function FloatingHeader() {
               className="h-full w-full object-cover"
             />
           </div>
+          <span className="hidden md:inline-block font-semibold text-gray-900 dark:text-white">
+            {profile.name}
+          </span>
         </Link>
 
         {/* Actions */}
