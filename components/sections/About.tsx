@@ -31,16 +31,16 @@ export default function About() {
             Technical Expertise
           </h3>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8">
             {sortedTechnicalSkills.map((skill) => (
-              <Card key={skill.name} variant="bordered" padding="lg" hoverable>
+              <Card key={skill.name} variant="default" padding="lg">
                 {/* Skill Category Name */}
-                <h4 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
+                <h4 className="mb-4 text-xl font-bold text-gray-900 text-center dark:text-white">
                   {skill.name}
                 </h4>
 
                 {/* Technologies Grid */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap justify-center gap-3">
                   {skill.technologies.map((tech) => (
                     <div
                       key={tech.name}

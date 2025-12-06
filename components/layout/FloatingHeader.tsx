@@ -22,8 +22,8 @@ export default function FloatingHeader() {
 
   return (
     <header
-      className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 transition-all duration-500 ${
-        isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0 pointer-events-none'
+      className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 transition-all duration-1000 ${
+        isVisible ? 'translate-y-0' : '-translate-y-40 pointer-events-none'
       }`}
       style={{ width: '90%', maxWidth: '1200px' }}
     >
@@ -34,8 +34,8 @@ export default function FloatingHeader() {
             <Image
               src={profile.avatar_url || '/placeholder-avatar.png'}
               alt={profile.name}
-              width={40}
-              height={40}
+              width={56}
+              height={56}
               className="h-full w-full object-cover"
             />
           </div>

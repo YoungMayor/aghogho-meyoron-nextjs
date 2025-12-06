@@ -9,7 +9,7 @@
   --color-text: #1a1a1a;
   --color-text-secondary: #666666;
   --color-border: #e5e5e5;
-  
+
   /* Gradient colors for soft UI */
   --gradient-start: #f0f2f5;
   --gradient-end: #e8ebef;
@@ -30,7 +30,7 @@
   --color-text: #e5e5e5;
   --color-text-secondary: #a0a0a0;
   --color-border: #2a2a2a;
-  
+
   /* Gradient colors for soft UI */
   --gradient-start: #1a1f28;
   --gradient-end: #0f1419;
@@ -77,12 +77,4 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
-}
-
-/* Smooth transitions for theme changes */
-* {
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
 }

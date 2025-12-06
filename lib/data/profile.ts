@@ -18,7 +18,7 @@ export const profile: Profile = {
   profile_link: null,
   notes: {
     tagline: 'Building the future, one line at a time...',
-    persona: 'Problem Solver, Gamer and Swimmer. And best of all good fucker',
+    persona: 'Problem Solver, Gamer and Swimmer.',
     about: 'MayR Loves solving real-world problems with scalable systems.',
   },
   contact: {
