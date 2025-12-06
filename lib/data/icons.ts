@@ -65,6 +65,8 @@ export const icons = {
   Website: { type: 'simpleicon', value: 'Website', color: null },
 
   // Other
+  GoogleGemini: { type: 'simpleicon', value: 'GoogleGemini', color: null },
+  Markdown: { type: 'devicon', value: 'markdown', color: null },
   Ethereum: { type: 'devicon', value: 'ethereum', color: null },
   Web3: { type: 'devicon', value: 'ethereum', color: null },
   RestAPI: { type: 'devicon', value: 'rest-api', color: null },
