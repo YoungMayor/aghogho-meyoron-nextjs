@@ -1,9 +1,5 @@
 import { Profile } from '@/lib/types';
 
-/**
- * Profile data for Aghogho Meyoron
- * Source: docs/aghogho-meyoron.json (cleaned and restructured)
- */
 export const profile: Profile = {
   name: 'Aghogho Meyoron',
   titles: ['Software Engineer'],

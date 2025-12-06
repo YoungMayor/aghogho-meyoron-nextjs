@@ -1,9 +1,5 @@
 import { CareerItem } from '@/lib/types';
 
-/**
- * Career history items for Aghogho Meyoron
- * Source: docs/aghogho-meyoron.json (cleaned - removed id, profile_id, created_at)
- */
 export const careerItems: CareerItem[] = [
   {
     company_name: 'Glover Techstars',

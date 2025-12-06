@@ -1,0 +1,72 @@
+export const icons = {
+  // Languages
+  HTML5: { type: 'devicon', value: 'language-html5', color: null },
+  CSS3: { type: 'devicon', value: 'language-css3', color: null },
+  SASS: { type: 'devicon', value: 'sass', color: null },
+  JavaScript: { type: 'devicon', value: 'language-javascript', color: null },
+  TypeScript: { type: 'devicon', value: 'language-typescript', color: null },
+  PHP: { type: 'devicon', value: 'language-php', color: null },
+  Python: { type: 'devicon', value: 'language-python', color: null },
+  Dart: { type: 'devicon', value: 'cellphone-link', color: null },
+  CPP: { type: 'devicon', value: 'language-cpp', color: null },
+  CSharp: { type: 'devicon', value: 'language-csharp', color: null },
+  Go: { type: 'devicon', value: 'language-go', color: null },
+  Java: { type: 'devicon', value: 'language-java', color: null },
+  Kotlin: { type: 'devicon', value: 'language-kotlin', color: null },
+  Swift: { type: 'devicon', value: 'language-swift', color: null },
+  Solidity: { type: 'devicon', value: 'ethereum', color: null },
+
+  // Frameworks & Libraries
+  VueJS: { type: 'devicon', value: 'vuejs', color: null },
+  NuxtJS: { type: 'devicon', value: 'nuxt', color: null },
+  React: { type: 'devicon', value: 'react', color: null },
+  NextJS: { type: 'devicon', value: 'nextjs', color: null },
+  Bootstrap: { type: 'devicon', value: 'bootstrap', color: null },
+  TailwindCSS: { type: 'devicon', value: 'tailwind', color: null },
+  Vuetify: { type: 'devicon', value: 'vuetify', color: null },
+  Laravel: { type: 'devicon', value: 'laravel', color: null },
+  NODEJS: { type: 'devicon', value: 'nodejs', color: null },
+  Django: { type: 'devicon', value: 'django', color: null },
+  Flutter: { type: 'devicon', value: 'cellphone-link', color: null },
+  ReactNative: { type: 'devicon', value: 'react', color: null },
+  Expo: { type: 'devicon', value: 'cellphone-link', color: null },
+  jQuery: { type: 'devicon', value: 'jquery', color: null },
+  GenKit: { type: 'devicon', value: 'genkit', color: null },
+  ChartJS: { type: 'devicon', value: 'chartjs', color: null },
+
+  // Databases
+  MySQL: { type: 'devicon', value: 'database', color: null },
+  SQLite: { type: 'devicon', value: 'database', color: null },
+  PostgreSQL: { type: 'devicon', value: 'database', color: null },
+  MongoDB: { type: 'devicon', value: 'database', color: null },
+  Redis: { type: 'devicon', value: 'database', color: null },
+  Firebase: { type: 'devicon', value: 'firebase', color: null },
+
+  // DevOps & Cloud
+  Docker: { type: 'devicon', value: 'docker', color: null },
+  AWS: { type: 'devicon', value: 'aws', color: null },
+  GoogleCloud: { type: 'devicon', value: 'google', color: null },
+  Heroku: { type: 'devicon', value: 'server', color: null },
+  Vercel: { type: 'devicon', value: 'server', color: null },
+  Netlify: { type: 'devicon', value: 'server', color: null },
+  Render: { type: 'devicon', value: 'server', color: null },
+  DigitalOcean: { type: 'devicon', value: 'digital-ocean', color: null },
+  CloudfareWorkers: { type: 'devicon', value: 'cloudfare-workers', color: null },
+
+  // Socials
+  Github: { type: 'simpleicon', value: 'Github', color: null },
+  Instagram: { type: 'simpleicon', value: 'Instagram', color: null },
+  Linkedin: { type: 'simpleicon', value: 'Linkedin', color: null },
+  Link: { type: 'simpleicon', value: 'Link', color: null },
+  Medium: { type: 'simpleicon', value: 'BookA', color: null },
+  TikTok: { type: 'simpleicon', value: 'Music', color: null },
+  Whatsapp: { type: 'simpleicon', value: 'MessageCircle', color: null },
+  Telegram: { type: 'simpleicon', value: 'Send', color: null },
+  Website: { type: 'simpleicon', value: 'Website', color: null },
+
+  // Other
+  Ethereum: { type: 'devicon', value: 'ethereum', color: null },
+  Web3: { type: 'devicon', value: 'ethereum', color: null },
+  RestAPI: { type: 'devicon', value: 'rest-api', color: null },
+  API: { type: 'devicon', value: 'api', color: null },
+} as const;

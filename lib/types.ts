@@ -17,7 +17,7 @@ export interface Technology {
 
 export interface Person {
   name: string;
-  titles: string[]; // First title would be regarded as the main one
+  titles: readonly string[]; // First title would be regarded as the main one
   avatar_url: string | null;
   biography: string; // HTML content
   profile_link: string | null;

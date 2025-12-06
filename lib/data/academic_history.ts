@@ -1,9 +1,5 @@
 import { AcademicRecord } from '@/lib/types';
 
-/**
- * Academic history records for Aghogho Meyoron
- * Source: docs/aghogho-meyoron.json (cleaned - removed id, profile_id, created_at)
- */
 export const academicRecords: AcademicRecord[] = [
   {
     school: 'Sololearn Inc.',

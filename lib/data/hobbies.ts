@@ -1,9 +1,5 @@
 import { Hobby } from '@/lib/types';
 
-/**
- * Hobbies and interests of Aghogho Meyoron
- * Source: docs/aghogho-meyoron.json (cleaned)
- */
 export const hobbies: Hobby[] = [
   {
     name: 'Reading',

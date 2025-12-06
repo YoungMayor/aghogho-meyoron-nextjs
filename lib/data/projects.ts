@@ -1,9 +1,6 @@
 import { Project } from '@/lib/types';
+import { technologies } from './technologies';
 
-/**
- * Projects portfolio for Aghogho Meyoron
- * Source: docs/aghogho-meyoron.json (cleaned and restructured)
- */
 export const projects: Project[] = [
   {
     slug: 'videmand',
@@ -17,62 +14,13 @@ export const projects: Project[] = [
       'Video streaming, preview (for unpurchased videos) and Uploads, with commenting',
     ],
     technologies: [
-      {
-        name: 'HTML5',
-        icon: {
-          type: 'devicon',
-          value: 'html5',
-          color: null,
-        },
-      },
-      {
-        name: 'CSS3',
-        icon: {
-          type: 'devicon',
-          value: 'css3',
-          color: null,
-        },
-      },
-      {
-        name: 'JavaScript',
-        icon: {
-          type: 'devicon',
-          value: 'javascript',
-          color: null,
-        },
-      },
-      {
-        name: 'Vue.js',
-        icon: {
-          type: 'devicon',
-          value: 'vue.js',
-          color: null,
-        },
-      },
-      {
-        name: 'PHP',
-        icon: {
-          type: 'devicon',
-          value: 'php',
-          color: null,
-        },
-      },
-      {
-        name: 'Laravel',
-        icon: {
-          type: 'devicon',
-          value: 'laravel',
-          color: null,
-        },
-      },
-      {
-        name: 'API',
-        icon: {
-          type: 'devicon',
-          value: 'api',
-          color: null,
-        },
-      },
+      technologies.HTML5,
+      technologies.CSS3,
+      technologies.JavaScript,
+      technologies.VueJS,
+      technologies.PHP,
+      technologies.Laravel,
+      technologies.API,
     ],
     type: 'api',
     owner: 'client',
@@ -95,62 +43,13 @@ export const projects: Project[] = [
       'Developer News Retrieval from approved news sources using web scraping',
     ],
     technologies: [
-      {
-        name: 'Vue.js',
-        icon: {
-          type: 'devicon',
-          value: 'vue.js',
-          color: null,
-        },
-      },
-      {
-        name: 'Nuxt',
-        icon: {
-          type: 'devicon',
-          value: 'nuxt',
-          color: null,
-        },
-      },
-      {
-        name: 'Vuetify',
-        icon: {
-          type: 'devicon',
-          value: 'vuetify',
-          color: null,
-        },
-      },
-      {
-        name: 'PHP',
-        icon: {
-          type: 'devicon',
-          value: 'php',
-          color: null,
-        },
-      },
-      {
-        name: 'Laravel',
-        icon: {
-          type: 'devicon',
-          value: 'laravel',
-          color: null,
-        },
-      },
-      {
-        name: 'Node.js',
-        icon: {
-          type: 'devicon',
-          value: 'node.js',
-          color: null,
-        },
-      },
-      {
-        name: 'Rest API',
-        icon: {
-          type: 'devicon',
-          value: 'rest-api',
-          color: null,
-        },
-      },
+      technologies.VueJS,
+      technologies.NuxtJS,
+      technologies.Vuetify,
+      technologies.PHP,
+      technologies.Laravel,
+      technologies.NodeJS,
+      technologies.RestAPI,
     ],
     type: 'other',
     owner: 'client',
@@ -169,24 +68,7 @@ export const projects: Project[] = [
       'PHP API with full Automated Test',
       'Multi Access Level, Teachers, Senior Students, and Senior Students ',
     ],
-    technologies: [
-      {
-        name: 'PHP',
-        icon: {
-          type: 'devicon',
-          value: 'php',
-          color: null,
-        },
-      },
-      {
-        name: 'RestAPI',
-        icon: {
-          type: 'devicon',
-          value: 'restapi',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.PHP, technologies.RestAPI],
     type: 'api',
     owner: 'client',
     demo_link: null,
@@ -201,32 +83,7 @@ export const projects: Project[] = [
     description:
       'iJokes is a frontend API bridge application that fetches and displays jokes from a 3rd party open-source API for users. The application also includes a Telegram bot for more user-friendly interaction.',
     features: ['API consumption', 'Telegram Bot', 'Interactive UIX'],
-    technologies: [
-      {
-        name: 'NextJS',
-        icon: {
-          type: 'devicon',
-          value: 'nextjs',
-          color: null,
-        },
-      },
-      {
-        name: 'Typescript',
-        icon: {
-          type: 'devicon',
-          value: 'typescript',
-          color: null,
-        },
-      },
-      {
-        name: 'Cloudfare Workers',
-        icon: {
-          type: 'devicon',
-          value: 'cloudfare-workers',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.NextJS, technologies.TypeScript, technologies.CloudfareWorkers],
     type: 'api',
     owner: 'personal',
     demo_link: 'https://ijokes.mayrlabs.com',
@@ -246,46 +103,11 @@ export const projects: Project[] = [
       'Chart Plotting using Canvas.JS API to map income to expenses',
     ],
     technologies: [
-      {
-        name: 'VueJS',
-        icon: {
-          type: 'devicon',
-          value: 'vuejs',
-          color: null,
-        },
-      },
-      {
-        name: 'PHP',
-        icon: {
-          type: 'devicon',
-          value: 'php',
-          color: null,
-        },
-      },
-      {
-        name: 'Laravel',
-        icon: {
-          type: 'devicon',
-          value: 'laravel',
-          color: null,
-        },
-      },
-      {
-        name: 'Rest API',
-        icon: {
-          type: 'devicon',
-          value: 'rest-api',
-          color: null,
-        },
-      },
-      {
-        name: 'ChartJS',
-        icon: {
-          type: 'devicon',
-          value: 'chartjs',
-          color: null,
-        },
-      },
+      technologies.VueJS,
+      technologies.PHP,
+      technologies.Laravel,
+      technologies.RestAPI,
+      technologies.ChartJS,
     ],
     type: 'other',
     owner: 'client',
@@ -301,24 +123,7 @@ export const projects: Project[] = [
     description:
       "Eytan is a hospital staff management system developed for tracking patients' hospital records and managing staff tasks. Please note that information about this project is protected by a non-disclosure agreement (NDA) from my previous employer.",
     features: ['Staff Management', 'Stock Management', 'Admin Console', 'Task schedule management'],
-    technologies: [
-      {
-        name: 'JavaScript',
-        icon: {
-          type: 'devicon',
-          value: 'javascript',
-          color: null,
-        },
-      },
-      {
-        name: 'PHP',
-        icon: {
-          type: 'devicon',
-          value: 'php',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.JavaScript, technologies.PHP],
     type: 'other',
     owner: 'client',
     demo_link: null,
@@ -339,40 +144,7 @@ export const projects: Project[] = [
       'Utilized 3rd Party payment gateways',
       'Administrative Management',
     ],
-    technologies: [
-      {
-        name: 'VueJS',
-        icon: {
-          type: 'devicon',
-          value: 'vuejs',
-          color: null,
-        },
-      },
-      {
-        name: 'jQuery',
-        icon: {
-          type: 'devicon',
-          value: 'jquery',
-          color: null,
-        },
-      },
-      {
-        name: 'PHP',
-        icon: {
-          type: 'devicon',
-          value: 'php',
-          color: null,
-        },
-      },
-      {
-        name: 'Python',
-        icon: {
-          type: 'devicon',
-          value: 'python',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.VueJS, technologies.jQuery, technologies.PHP, technologies.Python],
     type: 'api',
     owner: 'client',
     demo_link: null,
@@ -394,54 +166,12 @@ export const projects: Project[] = [
       'User wallets and payment management',
     ],
     technologies: [
-      {
-        name: 'Vue.js',
-        icon: {
-          type: 'devicon',
-          value: 'vue.js',
-          color: null,
-        },
-      },
-      {
-        name: 'Nuxt',
-        icon: {
-          type: 'devicon',
-          value: 'nuxt',
-          color: null,
-        },
-      },
-      {
-        name: 'Vuetify',
-        icon: {
-          type: 'devicon',
-          value: 'vuetify',
-          color: null,
-        },
-      },
-      {
-        name: 'Laravel',
-        icon: {
-          type: 'devicon',
-          value: 'laravel',
-          color: null,
-        },
-      },
-      {
-        name: 'Node.js',
-        icon: {
-          type: 'devicon',
-          value: 'node.js',
-          color: null,
-        },
-      },
-      {
-        name: 'RestAPI',
-        icon: {
-          type: 'devicon',
-          value: 'restapi',
-          color: null,
-        },
-      },
+      technologies.VueJS,
+      technologies.NuxtJS,
+      technologies.Vuetify,
+      technologies.Laravel,
+      technologies.NodeJS,
+      technologies.RestAPI,
     ],
     type: 'api',
     owner: 'client',
@@ -462,24 +192,7 @@ export const projects: Project[] = [
       'Multi-level commenting system',
       'Post voting to improve relevancy',
     ],
-    technologies: [
-      {
-        name: 'VueJS',
-        icon: {
-          type: 'devicon',
-          value: 'vuejs',
-          color: null,
-        },
-      },
-      {
-        name: 'PHP',
-        icon: {
-          type: 'devicon',
-          value: 'php',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.VueJS, technologies.PHP],
     type: 'web-app',
     owner: 'client',
     demo_link: null,
@@ -503,32 +216,7 @@ export const projects: Project[] = [
       'AI Prompt Generator ',
       'Question Generator',
     ],
-    technologies: [
-      {
-        name: 'NextJS',
-        icon: {
-          type: 'devicon',
-          value: 'nextjs',
-          color: null,
-        },
-      },
-      {
-        name: 'TailwindCSS',
-        icon: {
-          type: 'devicon',
-          value: 'tailwindcss',
-          color: null,
-        },
-      },
-      {
-        name: 'GenKit',
-        icon: {
-          type: 'devicon',
-          value: 'genkit',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.NextJS, technologies.TailwindCSS, technologies.GenKit],
     type: 'other',
     owner: 'personal',
     demo_link: 'https://contentforge.mayrlabs.com',
@@ -551,32 +239,7 @@ export const projects: Project[] = [
       'User-Friendly Legal Interface',
       'Accessible Legal Information',
     ],
-    technologies: [
-      {
-        name: 'NextJS',
-        icon: {
-          type: 'devicon',
-          value: 'FileJson',
-          color: null,
-        },
-      },
-      {
-        name: 'GenKit',
-        icon: {
-          type: 'devicon',
-          value: 'CloudCog',
-          color: null,
-        },
-      },
-      {
-        name: 'TailwindCSS',
-        icon: {
-          type: 'devicon',
-          value: 'Brush',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.NextJS, technologies.GenKit, technologies.TailwindCSS],
     type: 'web-app',
     owner: 'personal',
     demo_link: 'https://lexai.mayrlabs.com',
@@ -592,32 +255,7 @@ export const projects: Project[] = [
     name: 'PrepAI',
     description: 'Your personalised prep tool for WAEC, NECO, JAMB, and GCE.',
     features: ['Study Smarter with AI'],
-    technologies: [
-      {
-        name: 'NextJS',
-        icon: {
-          type: 'devicon',
-          value: 'nextjs',
-          color: null,
-        },
-      },
-      {
-        name: 'TailwindCSS',
-        icon: {
-          type: 'devicon',
-          value: 'tailwindcss',
-          color: null,
-        },
-      },
-      {
-        name: 'GenKit',
-        icon: {
-          type: 'devicon',
-          value: 'genkit',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.NextJS, technologies.TailwindCSS, technologies.GenKit],
     type: 'other',
     owner: 'personal',
     demo_link: 'https://prepai.mayrlabs.com/get-started',
@@ -634,32 +272,7 @@ export const projects: Project[] = [
     description:
       'The smart quiz platform built for thinkers, tinkerers, and trailblazers in tech. Every question is generated in real-time using Google’s Gemini AI, so no two quiz sessions are ever quite the same.',
     features: ['Brainy', 'Fast-paced', 'AI-powered'],
-    technologies: [
-      {
-        name: 'NextJS',
-        icon: {
-          type: 'devicon',
-          value: 'nextjs',
-          color: null,
-        },
-      },
-      {
-        name: 'TailwindCSS',
-        icon: {
-          type: 'devicon',
-          value: 'tailwindcss',
-          color: null,
-        },
-      },
-      {
-        name: 'GenKit',
-        icon: {
-          type: 'devicon',
-          value: 'genkit',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.NextJS, technologies.TailwindCSS, technologies.GenKit],
     type: 'web-app',
     owner: 'personal',
     demo_link: 'https://quizwise.mayrlabs.com',
@@ -705,38 +318,10 @@ export const projects: Project[] = [
       'AI-powered resume optimization',
     ],
     technologies: [
-      {
-        name: 'NextS',
-        icon: {
-          type: 'devicon',
-          value: 'nexts',
-          color: null,
-        },
-      },
-      {
-        name: 'TailwindCSS',
-        icon: {
-          type: 'devicon',
-          value: 'tailwindcss',
-          color: null,
-        },
-      },
-      {
-        name: 'GenKit',
-        icon: {
-          type: 'devicon',
-          value: 'genkit',
-          color: null,
-        },
-      },
-      {
-        name: 'Laravel',
-        icon: {
-          type: 'devicon',
-          value: 'laravel',
-          color: null,
-        },
-      },
+      technologies.NextJS, // Assuming NextS in original was a typo for NextJS
+      technologies.TailwindCSS,
+      technologies.GenKit,
+      technologies.Laravel,
     ],
     type: 'other',
     owner: 'personal',
@@ -757,32 +342,7 @@ export const projects: Project[] = [
       'AI powered pricing tool',
       'in-app chat between sellers and buyers',
     ],
-    technologies: [
-      {
-        name: 'NextJS',
-        icon: {
-          type: 'devicon',
-          value: 'nextjs',
-          color: null,
-        },
-      },
-      {
-        name: 'TailwindCSS',
-        icon: {
-          type: 'devicon',
-          value: 'tailwindcss',
-          color: null,
-        },
-      },
-      {
-        name: 'GenKit',
-        icon: {
-          type: 'devicon',
-          value: 'genkit',
-          color: null,
-        },
-      },
-    ],
+    technologies: [technologies.NextJS, technologies.TailwindCSS, technologies.GenKit],
     type: 'other',
     owner: 'personal',
     demo_link: 'https://saleshouse.mayrlabs.com',
@@ -798,346 +358,20 @@ export const projects: Project[] = [
     name: 'ShellBase',
     description:
       'ShellBase is an interactive command-line cheat sheet built using NextJS, designed to streamline your workflow. Unlike static cheat sheets, ShellBase offers dynamic search and filtering, enabling quick access to the commands you need. Boost your productivity and master the command line with ShellBase.',
-    features: ['Interactive Command Search', 'Dynamic Filtering', 'NextJS Powered Performance'],
-    technologies: [
-      {
-        name: 'NextJS',
-        icon: {
-          type: 'devicon',
-          value: 'nextjs',
-          color: null,
-        },
-      },
-      {
-        name: 'Markdown',
-        icon: {
-          type: 'devicon',
-          value: 'markdown',
-          color: null,
-        },
-      },
-      {
-        name: 'GenKit',
-        icon: {
-          type: 'devicon',
-          value: 'genkit',
-          color: null,
-        },
-      },
-      {
-        name: 'Tailwind',
-        icon: {
-          type: 'devicon',
-          value: 'tailwind',
-          color: null,
-        },
-      },
-      {
-        name: 'Lucide',
-        icon: {
-          type: 'devicon',
-          value: 'lucide',
-          color: null,
-        },
-      },
+    features: [
+      'Interactive Command-Line Cheat Sheet',
+      'Dynamic Search and Filtering',
+      'Streamlined Workflow',
+      'Productivity Booster',
+      'Master the Command Line',
     ],
-    type: 'other',
+    technologies: [technologies.NextJS, technologies.TailwindCSS],
+    type: 'web-app',
     owner: 'personal',
     demo_link: 'https://shellbase.mayrlabs.com',
     repo_link: null,
     images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752263224/projects/shellbase-homepage.png',
-    ],
-    show: true,
-    priority: 0,
-  },
-  {
-    slug: 'paylighter',
-    name: 'PayLighter',
-    description:
-      'A fintech application that enables unrestricted and decentralized fund payments. I was responsible for the development and maintenance of this platform, utilizing my skills in backend engineering and web development. Please note that information about this project is protected by a non-disclosure agreement (NDA).',
-    features: ['Payment management', 'User wallets', 'Fund transfer', 'Payment requests'],
-    technologies: [
-      {
-        name: 'Vue.js',
-        icon: {
-          type: 'devicon',
-          value: 'vue.js',
-          color: null,
-        },
-      },
-      {
-        name: 'Nuxt',
-        icon: {
-          type: 'devicon',
-          value: 'nuxt',
-          color: null,
-        },
-      },
-      {
-        name: 'Vuetify',
-        icon: {
-          type: 'devicon',
-          value: 'vuetify',
-          color: null,
-        },
-      },
-      {
-        name: 'Laravel',
-        icon: {
-          type: 'devicon',
-          value: 'laravel',
-          color: null,
-        },
-      },
-      {
-        name: 'Node.js',
-        icon: {
-          type: 'devicon',
-          value: 'node.js',
-          color: null,
-        },
-      },
-      {
-        name: 'RestAPI',
-        icon: {
-          type: 'devicon',
-          value: 'restapi',
-          color: null,
-        },
-      },
-    ],
-    type: 'api',
-    owner: 'client',
-    demo_link: null,
-    repo_link: null,
-    images: [],
-    show: false,
-    priority: 0,
-  },
-  {
-    slug: 'pidifier',
-    name: 'Pidifier',
-    description:
-      'Pidifier is a free SAAS which provides developers with an API for freely converting web pages to PDFs. It was developed mainly using NodeJS on the server and NuxtJS for the SAAS about page',
-    features: [
-      'Opensource API',
-      'Programmatic Webpage to PDF functionality',
-      'Javascript SDK for easy integration',
-    ],
-    technologies: [
-      {
-        name: 'Vue.js',
-        icon: {
-          type: 'devicon',
-          value: 'vue.js',
-          color: null,
-        },
-      },
-      {
-        name: 'Nuxt.js',
-        icon: {
-          type: 'devicon',
-          value: 'nuxt.js',
-          color: null,
-        },
-      },
-      {
-        name: 'Vuetify',
-        icon: {
-          type: 'devicon',
-          value: 'vuetify',
-          color: null,
-        },
-      },
-      {
-        name: 'Node.js',
-        icon: {
-          type: 'devicon',
-          value: 'node.js',
-          color: null,
-        },
-      },
-      {
-        name: 'API',
-        icon: {
-          type: 'devicon',
-          value: 'api',
-          color: null,
-        },
-      },
-    ],
-    type: 'api',
-    owner: 'client',
-    demo_link: null,
-    repo_link: null,
-    images: [],
-    show: false,
-    priority: 0,
-  },
-  {
-    slug: 'glover',
-    name: 'Glover',
-    description:
-      'The Power of Digital service at your fingertips Giftcards, Crypto, Refill, Airtime2Cash etc. with effortless payments in a secured environment.',
-    features: [
-      'Giftcards',
-      'Crypto',
-      'Refill',
-      'Airtime2Cash',
-      'Effortless payments',
-      'Secured environment',
-    ],
-    technologies: [
-      {
-        name: 'NuxtJS',
-        icon: {
-          type: 'devicon',
-          value: 'nuxtjs',
-          color: null,
-        },
-      },
-      {
-        name: 'TailwindCSS',
-        icon: {
-          type: 'devicon',
-          value: 'tailwindcss',
-          color: null,
-        },
-      },
-      {
-        name: 'Laravel',
-        icon: {
-          type: 'devicon',
-          value: 'laravel',
-          color: null,
-        },
-      },
-    ],
-    type: 'other',
-    owner: 'client',
-    demo_link: 'https://gloverapp.co',
-    repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752263451/projects/glover-landing-page.png',
-    ],
-    show: true,
-    priority: 99,
-  },
-  {
-    slug: 'calcplay',
-    name: 'CalcPlay',
-    description: 'A playground for unusual, humorous, and eye-opening calculations.',
-    features: ['Unusual calculations', 'Humorous calculations', 'Eye-opening calculations'],
-    technologies: [
-      {
-        name: 'NextJS',
-        icon: {
-          type: 'devicon',
-          value: 'nextjs',
-          color: null,
-        },
-      },
-      {
-        name: 'Typescript',
-        icon: {
-          type: 'devicon',
-          value: 'typescript',
-          color: null,
-        },
-      },
-      {
-        name: 'TailwindCSS',
-        icon: {
-          type: 'devicon',
-          value: 'tailwindcss',
-          color: null,
-        },
-      },
-    ],
-    type: 'other',
-    owner: 'personal',
-    demo_link: 'https://calcplay.mayrlabs.com',
-    repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752326009/projects/calcplay-homepage.png',
-    ],
-    show: true,
-    priority: 0,
-  },
-  {
-    slug: 'learnflow-ai',
-    name: 'LearnFlow AI',
-    description:
-      'LearnFlow AI creates personalized courses on any topic, tailored to your learning style. Just describe what you want to learn, and let our AI do the rest.',
-    features: [
-      'AI-Powered Course Creation',
-      'Personalized Learning Paths',
-      'Adaptive Learning Style Matching',
-      'Instant Course Generation',
-    ],
-    technologies: [
-      {
-        name: 'NextJS',
-        icon: {
-          type: 'devicon',
-          value: 'nextjs',
-          color: null,
-        },
-      },
-      {
-        name: 'TailwindCSS',
-        icon: {
-          type: 'devicon',
-          value: 'tailwindcss',
-          color: null,
-        },
-      },
-      {
-        name: 'GenKit',
-        icon: {
-          type: 'devicon',
-          value: 'genkit',
-          color: null,
-        },
-      },
-      {
-        name: 'Gemini',
-        icon: {
-          type: 'devicon',
-          value: 'gemini',
-          color: null,
-        },
-      },
-    ],
-    type: 'other',
-    owner: 'personal',
-    demo_link: 'https://learnflow.mayrlabs.com',
-    repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1753786096/projects/learnflow-ai.png',
-    ],
-    show: true,
-    priority: 0,
-  },
-  {
-    slug: 'who-wants-to-be-a-millionaire',
-    name: 'Who wants to be a millionaire',
-    description:
-      "Experience the thrill of a classic game show with 'Who Wants to Be a Millionaire,' powered by MayR Labs' adaptive AI. This interactive experience provides a realistic and engaging platform to test your knowledge. Compete against the AI, climb the money ladder, and see if you have what it takes to win!",
-    features: [
-      'Adaptive AI Opponent',
-      'Realistic Game Show Experience',
-      'Interactive Money Ladder',
-      'Knowledge-Testing Challenges',
-    ],
-    technologies: [],
-    type: 'web-app',
-    owner: 'personal',
-    demo_link: 'https://wwtbam.mayrlabs.com',
-    repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1756661586/projects/wwtbam-game-screen-1.png',
+      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752263309/projects/shellbase-homepage.png',
     ],
     show: true,
     priority: 0,

@@ -1,9 +1,5 @@
 import { Article } from '@/lib/types';
 
-/**
- * Articles written by Aghogho Meyoron
- * Source: docs/aghogho-meyoron.json (cleaned)
- */
 export const articles: Article[] = [
   {
     title: 'From Novice to Pro: A Comprehensive Guide to Product Management',
