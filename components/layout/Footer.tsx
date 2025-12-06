@@ -86,13 +86,7 @@ export default function Footer() {
                 >
                   <span className="sr-only">{social.label}</span>
                   {/* Icon placeholder - will be replaced with actual icons */}
-                  <Icon
-                    type={social.icon.type}
-                    value={social.icon.value}
-                    color={social.icon.color}
-                    size={20}
-                    className="flex-shrink-0"
-                  />
+                  <Icon.fromIcon icon={social.icon} size={20} className="flex-shrink-0" />
                 </a>
               ))}
             </div>

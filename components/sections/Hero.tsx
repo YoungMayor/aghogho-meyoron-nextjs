@@ -68,13 +68,7 @@ export default function Hero() {
               className="transform text-gray-600 transition-all duration-200 hover:scale-110 hover:text-black dark:text-gray-400 dark:hover:text-white"
               aria-label={social.label}
             >
-              <Icon
-                type={social.icon.type}
-                value={social.icon.value}
-                color={social.icon.color}
-                size={24}
-                className="flex-shrink-0"
-              />
+              <Icon.fromIcon icon={social.icon} size={36} className="flex-shrink-0" />
             </a>
           ))}
         </div>

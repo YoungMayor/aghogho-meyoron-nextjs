@@ -60,13 +60,7 @@ export default function About() {
                       title={tech.name}
                     >
                       {/* Technology Icon */}
-                      <Icon
-                        type={tech.icon.type}
-                        value={tech.icon.value}
-                        color={tech.icon.color}
-                        size={20}
-                        className="flex-shrink-0"
-                      />
+                      <Icon.fromIcon icon={tech.icon} size={24} className="flex-shrink-0" />
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         {tech.name}
                       </span>
