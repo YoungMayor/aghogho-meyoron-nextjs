@@ -6,6 +6,7 @@ import { getRandomQuote } from '@/lib/data/quotes';
 import Card from '@/components/ui/Card';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Typewriter from '@/components/ui/Typewriter';
+import Icon from '@/components/ui/Icon';
 import { getVisibleAndSorted } from '@/lib/utils/data';
 import { useState } from 'react';
 
@@ -58,8 +59,14 @@ export default function About() {
                       className="group flex items-center gap-2 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 px-3 py-2 transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:scale-105 dark:from-gray-800 dark:to-gray-900 dark:hover:shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
                       title={tech.name}
                     >
-                      {/* Icon placeholder - will be replaced with DevIcons */}
-                      <div className="h-5 w-5 rounded bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600" />
+                      {/* Technology Icon */}
+                      <Icon
+                        type={tech.icon.type}
+                        value={tech.icon.value}
+                        color={tech.icon.color}
+                        size={20}
+                        className="flex-shrink-0"
+                      />
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                         {tech.name}
                       </span>
