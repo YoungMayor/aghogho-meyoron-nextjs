@@ -51,7 +51,7 @@ export async function GET(request: Request) {
     if (technologiesFilter) {
       const techArray = technologiesFilter.split(',').map((t) => t.trim().toLowerCase());
       filteredProjects = filteredProjects.filter((p) =>
-        p.technologies.some((tech) => techArray.includes(tech.name.toLowerCase()))
+        p.icons.some((icon) => techArray.includes(icon.label.toLowerCase()))
       );
     }
 

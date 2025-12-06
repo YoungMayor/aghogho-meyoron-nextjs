@@ -13,7 +13,7 @@ export const projects: Project[] = [
       'Paystack for payment management',
       'Video streaming, preview (for unpurchased videos) and Uploads, with commenting',
     ],
-    technologies: [
+    icons: [
       techIcons.HTML5,
       techIcons.CSS3,
       techIcons.JavaScript,
@@ -42,7 +42,7 @@ export const projects: Project[] = [
       'Job posting and applications with attachments',
       'Developer News Retrieval from approved news sources using web scraping',
     ],
-    technologies: [
+    icons: [
       techIcons.VueJS,
       techIcons.NuxtJS,
       techIcons.Vuetify,
@@ -68,7 +68,7 @@ export const projects: Project[] = [
       'PHP API with full Automated Test',
       'Multi Access Level, Teachers, Senior Students, and Senior Students ',
     ],
-    technologies: [techIcons.PHP, techIcons.RestAPI],
+    icons: [techIcons.PHP, techIcons.RestAPI],
     type: 'api',
     owner: 'client',
     demo_link: null,
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     description:
       'iJokes is a frontend API bridge application that fetches and displays jokes from a 3rd party open-source API for users. The application also includes a Telegram bot for more user-friendly interaction.',
     features: ['API consumption', 'Telegram Bot', 'Interactive UIX'],
-    technologies: [techIcons.NextJS, techIcons.TypeScript, techIcons.CloudfareWorkers],
+    icons: [techIcons.NextJS, techIcons.TypeScript, techIcons.CloudfareWorkers],
     type: 'api',
     owner: 'personal',
     demo_link: 'https://ijokes.mayrlabs.com',
@@ -102,7 +102,7 @@ export const projects: Project[] = [
       'Multiple Account Types and Account Categories',
       'Chart Plotting using Canvas.JS API to map income to expenses',
     ],
-    technologies: [
+    icons: [
       techIcons.VueJS,
       techIcons.PHP,
       techIcons.Laravel,
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     description:
       "Eytan is a hospital staff management system developed for tracking patients' hospital records and managing staff tasks. Please note that information about this project is protected by a non-disclosure agreement (NDA) from my previous employer.",
     features: ['Staff Management', 'Stock Management', 'Admin Console', 'Task schedule management'],
-    technologies: [techIcons.JavaScript, techIcons.PHP],
+    icons: [techIcons.JavaScript, techIcons.PHP],
     type: 'other',
     owner: 'client',
     demo_link: null,
@@ -144,7 +144,7 @@ export const projects: Project[] = [
       'Utilized 3rd Party payment gateways',
       'Administrative Management',
     ],
-    technologies: [techIcons.VueJS, techIcons.jQuery, techIcons.PHP, techIcons.Python],
+    icons: [techIcons.VueJS, techIcons.jQuery, techIcons.PHP, techIcons.Python],
     type: 'api',
     owner: 'client',
     demo_link: null,
@@ -165,7 +165,7 @@ export const projects: Project[] = [
       'Order management',
       'User wallets and payment management',
     ],
-    technologies: [
+    icons: [
       techIcons.VueJS,
       techIcons.NuxtJS,
       techIcons.Vuetify,
@@ -192,7 +192,7 @@ export const projects: Project[] = [
       'Multi-level commenting system',
       'Post voting to improve relevancy',
     ],
-    technologies: [techIcons.VueJS, techIcons.PHP],
+    icons: [techIcons.VueJS, techIcons.PHP],
     type: 'web-app',
     owner: 'client',
     demo_link: null,
@@ -216,7 +216,7 @@ export const projects: Project[] = [
       'AI Prompt Generator ',
       'Question Generator',
     ],
-    technologies: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit],
+    icons: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit],
     type: 'other',
     owner: 'personal',
     demo_link: 'https://contentforge.mayrlabs.com',
@@ -239,7 +239,7 @@ export const projects: Project[] = [
       'User-Friendly Legal Interface',
       'Accessible Legal Information',
     ],
-    technologies: [techIcons.NextJS, techIcons.GenKit, techIcons.TailwindCSS],
+    icons: [techIcons.NextJS, techIcons.GenKit, techIcons.TailwindCSS],
     type: 'web-app',
     owner: 'personal',
     demo_link: 'https://lexai.mayrlabs.com',
@@ -255,7 +255,7 @@ export const projects: Project[] = [
     name: 'PrepAI',
     description: 'Your personalised prep tool for WAEC, NECO, JAMB, and GCE.',
     features: ['Study Smarter with AI'],
-    technologies: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit],
+    icons: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit],
     type: 'other',
     owner: 'personal',
     demo_link: 'https://prepai.mayrlabs.com/get-started',
@@ -272,7 +272,7 @@ export const projects: Project[] = [
     description:
       'The smart quiz platform built for thinkers, tinkerers, and trailblazers in tech. Every question is generated in real-time using Google’s Gemini AI, so no two quiz sessions are ever quite the same.',
     features: ['Brainy', 'Fast-paced', 'AI-powered'],
-    technologies: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit],
+    icons: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit],
     type: 'web-app',
     owner: 'personal',
     demo_link: 'https://quizwise.mayrlabs.com',
@@ -295,7 +295,7 @@ export const projects: Project[] = [
       'Simple',
       'Ready to play anytime, anywhere',
     ],
-    technologies: [],
+    icons: [],
     type: 'other',
     owner: 'personal',
     demo_link: 'https://arcade.mayrlabs.com',
@@ -317,7 +317,7 @@ export const projects: Project[] = [
       'Professionally designed templates',
       'AI-powered resume optimization',
     ],
-    technologies: [
+    icons: [
       techIcons.NextJS, // Assuming NextS in original was a typo for NextJS
       techIcons.TailwindCSS,
       techIcons.GenKit,
@@ -342,7 +342,7 @@ export const projects: Project[] = [
       'AI powered pricing tool',
       'in-app chat between sellers and buyers',
     ],
-    technologies: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit],
+    icons: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit],
     type: 'other',
     owner: 'personal',
     demo_link: 'https://saleshouse.mayrlabs.com',
@@ -359,7 +359,7 @@ export const projects: Project[] = [
     description:
       'ShellBase is an interactive command-line cheat sheet built using NextJS, designed to streamline your workflow. Unlike static cheat sheets, ShellBase offers dynamic search and filtering, enabling quick access to the commands you need. Boost your productivity and master the command line with ShellBase.',
     features: ['Interactive Command Search', 'Dynamic Filtering', 'NextJS Powered Performance'],
-    technologies: [techIcons.NextJS, techIcons.Markdown, techIcons.GenKit, techIcons.TailwindCSS],
+    icons: [techIcons.NextJS, techIcons.Markdown, techIcons.GenKit, techIcons.TailwindCSS],
     type: 'web-app',
     owner: 'personal',
     demo_link: 'https://shellbase.mayrlabs.com',
@@ -376,7 +376,7 @@ export const projects: Project[] = [
     description:
       'A fintech application that enables unrestricted and decentralized fund payments. I was responsible for the development and maintenance of this platform, utilizing my skills in backend engineering and web development. Please note that information about this project is protected by a non-disclosure agreement (NDA).',
     features: ['Payment management', 'User wallets', 'Fund transfer', 'Payment requests'],
-    technologies: [
+    icons: [
       techIcons.VueJS,
       techIcons.NuxtJS,
       techIcons.Vuetify,
@@ -402,13 +402,7 @@ export const projects: Project[] = [
       'Programmatic Webpage to PDF functionality',
       'Javascript SDK for easy integration',
     ],
-    technologies: [
-      techIcons.VueJS,
-      techIcons.NuxtJS,
-      techIcons.Vuetify,
-      techIcons.NODEJS,
-      techIcons.API,
-    ],
+    icons: [techIcons.VueJS, techIcons.NuxtJS, techIcons.Vuetify, techIcons.NODEJS, techIcons.API],
     type: 'api',
     owner: 'client',
     demo_link: null,
@@ -430,7 +424,7 @@ export const projects: Project[] = [
       'Effortless payments',
       'Secured environment',
     ],
-    technologies: [techIcons.NuxtJS, techIcons.TailwindCSS, techIcons.Laravel],
+    icons: [techIcons.NuxtJS, techIcons.TailwindCSS, techIcons.Laravel],
     type: 'web-app',
     owner: 'client',
     demo_link: 'https://gloverapp.co',
@@ -446,7 +440,7 @@ export const projects: Project[] = [
     name: 'CalcPlay',
     description: 'A playground for unusual, humorous, and eye-opening calculations.',
     features: ['Unusual calculations', 'Humorous calculations', 'Eye-opening calculations'],
-    technologies: [techIcons.NextJS, techIcons.TypeScript, techIcons.TailwindCSS],
+    icons: [techIcons.NextJS, techIcons.TypeScript, techIcons.TailwindCSS],
     type: 'web-app',
     owner: 'personal',
     demo_link: 'https://calcplay.mayrlabs.com',
@@ -468,12 +462,7 @@ export const projects: Project[] = [
       'Adaptive Learning Style Matching',
       'Instant Course Generation',
     ],
-    technologies: [
-      techIcons.NextJS,
-      techIcons.TailwindCSS,
-      techIcons.GenKit,
-      techIcons.GoogleGemini,
-    ],
+    icons: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit, techIcons.GoogleGemini],
     type: 'web-app',
     owner: 'personal',
     demo_link: 'https://learnflow.mayrlabs.com',
@@ -495,7 +484,7 @@ export const projects: Project[] = [
       'Interactive Money Ladder',
       'Knowledge-Testing Challenges',
     ],
-    technologies: [],
+    icons: [],
     type: 'web-app',
     owner: 'personal',
     demo_link: 'https://wwtbam.mayrlabs.com',

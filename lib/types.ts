@@ -64,7 +64,7 @@ export interface Project extends HasVisibility {
   name: string;
   description: string;
   features: string[];
-  technologies: Icon[];
+  icons: Icon[];
   type: 'js-pkg' | 'dart-pkg' | 'web-app' | 'mobile-app' | 'api' | 'other';
   owner: 'personal' | 'client' | 'open-source' | 'other';
   demo_link: string | null;
