@@ -71,24 +71,26 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
     initTheme();
 
-    // Listen for system theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e: MediaQueryListEvent) => {
-      // Only update if no manual preference is saved
-      try {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        if (!stored) {
-          const newTheme = e.matches ? 'dark' : 'light';
-          setThemeState(newTheme);
-          document.documentElement.setAttribute('data-theme', newTheme);
+    // Listen for system theme changes (only in browser)
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = (e: MediaQueryListEvent) => {
+        // Only update if no manual preference is saved
+        try {
+          const stored = localStorage.getItem(STORAGE_KEY);
+          if (!stored) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            setThemeState(newTheme);
+            document.documentElement.setAttribute('data-theme', newTheme);
+          }
+        } catch {
+          // ignore
         }
-      } catch {
-        // ignore
-      }
-    };
+      };
 
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }
   }, []);
 
   return (
