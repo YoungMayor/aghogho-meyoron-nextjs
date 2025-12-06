@@ -598,57 +598,89 @@ Implement custom authentication for internal APIs:
 
 ### Phase 3: Core UI Components & Theming (Week 3)
 
-#### 3.1 Theme System
+#### 3.1 Theme System - Soft UI Design Principles ✅
 
-- [ ] Create Theme Context Provider
+**Design Philosophy**: The application follows a **Soft UI** design approach:
+- **No hard borders** - Use subtle shadows and gradients instead
+- **Ambient shadows** - Soft, layered shadows for depth (0.04-0.12 opacity)
+- **Gradient backgrounds** - Subtle linear/radial gradients instead of solid colors
+- **Rounded corners** - Use `rounded-xl` or `rounded-2xl` for softer feel
+- **Reduced contrast** - Softer background colors (#f8f9fa instead of #ffffff)
+- **Glass morphism** - Backdrop blur effects with transparency
+- **Smooth transitions** - 200-300ms duration on all interactions
+- **Scale effects** - Subtle scale transforms on hover (1.02-1.05)
+
+- [x] Create Theme Context Provider ✅
 
   ```typescript
   // contexts/ThemeContext.tsx
-  type Theme = 'light' | 'dark' | 'system';
+  type Theme = 'light' | 'dark';
 
   interface ThemeContextType {
     theme: Theme;
+    setTheme: (theme: Theme) => void;
     toggleTheme: () => void;
   }
   ```
 
-- [ ] Define CSS Variables for theming:
+- [x] Define CSS Variables for theming (Soft UI): ✅
 
   ```css
-  /* app/globals.css */
+  /* app/globals.css - Soft UI Theme */
   :root {
-    /* Light Mode (Black primary) */
+    /* Light Mode - Softer backgrounds */
     --color-primary: #000000;
-    --color-background: #ffffff;
+    --color-background: #f8f9fa; /* Softer than pure white */
+    --color-surface: #ffffff;
     --color-text: #1a1a1a;
     --color-text-secondary: #666666;
-    --color-border: #e5e5e5;
+    
+    /* Gradients for soft UI */
+    --gradient-start: #f0f2f5;
+    --gradient-end: #e8ebef;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-ambient: rgba(0, 0, 0, 0.04);
   }
 
   [data-theme='dark'] {
-    /* Dark Mode (White primary) */
+    /* Dark Mode - Softer backgrounds */
     --color-primary: #ffffff;
-    --color-background: #0a0a0a;
+    --color-background: #0f1419; /* Softer than pure black */
+    --color-surface: #1a1f28;
     --color-text: #e5e5e5;
     --color-text-secondary: #a0a0a0;
-    --color-border: #2a2a2a;
+    
+    /* Gradients for soft UI */
+    --gradient-start: #1a1f28;
+    --gradient-end: #0f1419;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-ambient: rgba(0, 0, 0, 0.2);
   }
   ```
 
-- [ ] Implement theme toggle component with smooth transition
-- [ ] Persist theme preference in localStorage
+- [x] Implement theme toggle component with smooth transition ✅
+- [x] Persist theme preference in localStorage ✅
 
 #### 3.2 Layout Components
 
-##### Header
+##### Header (Updated for Soft UI) ✅
 
-- [ ] Responsive navigation bar
-- [ ] Logo/Name link to home
-- [ ] Navigation menu (Desktop: horizontal, Mobile: hamburger)
-- [ ] Theme toggle button
-- [ ] Smooth scroll to sections
-- [ ] Active link highlighting
-- [ ] Sticky header with blur effect on scroll
+- [x] **Landing Page**: Floating header with soft UI ✅
+  - Slides in after hero section scroll
+  - 90% width, max 1200px
+  - Rounded corners (`rounded-2xl`)
+  - Glass effect (backdrop-blur-xl with transparency)
+  - Avatar on left
+  - Minimal nav: View Resume, Theme Toggle, Contact icon
+  - Ambient shadow effects
+  - No borders, only soft shadows
+  
+- [x] **Other Pages**: Standard header with soft UI ✅
+  - Removed from global layout
+  - Available for other pages if needed
+  - Updated with soft shadows instead of borders
+  - Rounded elements
+  - Gradient hover effects
 
 ##### Footer
 
@@ -658,11 +690,19 @@ Implement custom authentication for internal APIs:
 - [ ] Contact information
 - [ ] Newsletter subscription (optional)
 
-#### 3.3 Reusable UI Components
+#### 3.3 Reusable UI Components (Soft UI Implementation) ✅
 
-Build a comprehensive component library:
+Built comprehensive component library with soft UI principles:
 
-##### Button Component
+##### Button Component ✅
+
+**Soft UI Features Implemented**:
+- `rounded-xl` instead of `rounded-lg` for softer corners
+- Gradient backgrounds (`bg-gradient-to-br`) instead of solid colors
+- Subtle shadows on hover (`shadow-[0_4px_12px_rgba(...)]`)
+- Scale effect on hover (`hover:scale-[1.02]`)
+- No hard borders
+- Smooth transitions (200ms)
 
 ```typescript
 interface ButtonProps {
@@ -677,7 +717,15 @@ interface ButtonProps {
 }
 ```
 
-##### Card Component
+##### Card Component ✅
+
+**Soft UI Features Implemented**:
+- `rounded-2xl` for very soft corners
+- Gradient backgrounds (`from-white to-gray-50`)
+- Ambient shadows with low opacity (`shadow-[0_2px_8px_rgba(0,0,0,0.04)]`)
+- No borders - using shadows for depth
+- Layered shadow effects for elevated variant
+- Smooth hover transitions with scale
 
 ```typescript
 interface CardProps {

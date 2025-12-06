@@ -1,30 +1,44 @@
 @import 'tailwindcss';
 
-/* Theme Variables - Light Mode (Black primary) */
+/* Theme Variables - Light Mode (Black primary) - Soft UI */
 :root {
   /* Primary Colors */
   --color-primary: #000000;
-  --color-background: #ffffff;
+  --color-background: #f8f9fa;
+  --color-surface: #ffffff;
   --color-text: #1a1a1a;
   --color-text-secondary: #666666;
   --color-border: #e5e5e5;
+  
+  /* Gradient colors for soft UI */
+  --gradient-start: #f0f2f5;
+  --gradient-end: #e8ebef;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-ambient: rgba(0, 0, 0, 0.04);
 
   /* Legacy variables for compatibility */
-  --background: #ffffff;
+  --background: #f8f9fa;
   --foreground: #171717;
 }
 
-/* Theme Variables - Dark Mode (White primary) */
+/* Theme Variables - Dark Mode (White primary) - Soft UI */
 [data-theme='dark'] {
   /* Primary Colors */
   --color-primary: #ffffff;
-  --color-background: #0a0a0a;
+  --color-background: #0f1419;
+  --color-surface: #1a1f28;
   --color-text: #e5e5e5;
   --color-text-secondary: #a0a0a0;
   --color-border: #2a2a2a;
+  
+  /* Gradient colors for soft UI */
+  --gradient-start: #1a1f28;
+  --gradient-end: #0f1419;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-ambient: rgba(0, 0, 0, 0.2);
 
   /* Legacy variables for compatibility */
-  --background: #0a0a0a;
+  --background: #0f1419;
   --foreground: #ededed;
 }
 
@@ -32,11 +46,16 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     --color-primary: #ffffff;
-    --color-background: #0a0a0a;
+    --color-background: #0f1419;
+    --color-surface: #1a1f28;
     --color-text: #e5e5e5;
     --color-text-secondary: #a0a0a0;
     --color-border: #2a2a2a;
-    --background: #0a0a0a;
+    --gradient-start: #1a1f28;
+    --gradient-end: #0f1419;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-ambient: rgba(0, 0, 0, 0.2);
+    --background: #0f1419;
     --foreground: #ededed;
   }
 }

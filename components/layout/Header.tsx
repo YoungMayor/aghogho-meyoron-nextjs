@@ -29,7 +29,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? 'border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-black/80'
+          ? 'shadow-[0_2px_8px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] bg-white/80 backdrop-blur-md dark:bg-gray-900/80'
           : 'bg-transparent'
       }`}
     >
@@ -45,7 +45,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-gray-700 transition-colors hover:text-black dark:text-gray-300 dark:hover:text-white"
+              className="text-sm font-medium text-gray-700 transition-all duration-200 hover:text-black hover:scale-105 dark:text-gray-300 dark:hover:text-white"
             >
               {link.label}
             </Link>
@@ -58,7 +58,7 @@ export default function Header() {
           <ThemeToggle />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="rounded-lg p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="rounded-xl p-2 transition-all duration-200 hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)] dark:hover:from-gray-900 dark:hover:to-gray-800"
             aria-label="Toggle mobile menu"
             type="button"
           >
@@ -100,14 +100,14 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="border-t border-gray-200 bg-white dark:border-gray-800 dark:bg-black md:hidden">
+        <div className="shadow-[0_2px_8px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.2)] bg-white dark:bg-gray-900 md:hidden">
           <div className="space-y-1 px-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block rounded-lg px-3 py-2 text-base font-medium text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                className="block rounded-xl px-3 py-2 text-base font-medium text-gray-700 transition-all duration-200 hover:bg-gradient-to-br hover:from-gray-50 hover:to-gray-100 dark:text-gray-300 dark:hover:from-gray-800 dark:hover:to-gray-900"
               >
                 {link.label}
               </Link>
