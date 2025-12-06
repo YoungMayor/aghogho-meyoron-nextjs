@@ -26,10 +26,10 @@ export function getVisibleAndSorted<T extends HasVisibility>(items: T[]): T[] {
  * @param items Array of items with date properties
  * @param dateField Name of the date field to sort by
  */
-export function sortByDate<T extends Record<string, unknown>>(items: T[], dateField: keyof T): T[] {
+export function sortByDate<T>(items: T[], dateField: keyof T): T[] {
   return [...items].sort((a, b) => {
-    const dateA = new Date(a[dateField] as string).getTime();
-    const dateB = new Date(b[dateField] as string).getTime();
+    const dateA = new Date(a[dateField] as string | number).getTime();
+    const dateB = new Date(b[dateField] as string | number).getTime();
     return dateB - dateA; // Most recent first
   });
 }
