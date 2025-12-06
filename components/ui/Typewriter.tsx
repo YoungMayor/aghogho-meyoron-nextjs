@@ -34,7 +34,10 @@ export default function Typewriter({ text, author, speed = 50 }: TypewriterProps
         <p className="text-xl italic text-gray-700 dark:text-gray-300 leading-relaxed relative z-10">
           {displayedText}
           {!isComplete && (
-            <span className="inline-block w-0.5 h-6 bg-gray-900 dark:bg-white ml-1 animate-pulse"></span>
+            <span
+              className="inline-block w-0.5 h-6 bg-gray-900 dark:bg-white ml-1 animate-pulse"
+              aria-hidden="true"
+            ></span>
           )}
         </p>
         {isComplete && (

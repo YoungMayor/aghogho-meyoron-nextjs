@@ -46,7 +46,8 @@ export default function Icon({ type, value, color, size = 20, className = '' }: 
 
   if (type === 'simpleicon') {
     // For simpleicons/lucide icons, we render a simple SVG placeholder
-    // In production, this would use an actual icon library
+    // NOTE: This is a placeholder implementation. In production, integrate with
+    // a proper icon library like lucide-react or simple-icons for actual icon rendering
     return (
       <svg
         width={size}
@@ -60,7 +61,7 @@ export default function Icon({ type, value, color, size = 20, className = '' }: 
         className={className}
         aria-hidden="true"
       >
-        {/* Default circle icon */}
+        {/* Default circle icon - replace with actual icon implementation */}
         <circle cx="12" cy="12" r="10" />
       </svg>
     );
