@@ -10,15 +10,23 @@ export function getVisibleItems<T extends HasVisibility>(items: T[]): T[] {
 /**
  * Sort items by priority (higher priority first)
  */
-export function sortByPriority<T extends HasVisibility>(items: T[]): T[] {
-  return [...items].sort((a, b) => b.priority - a.priority);
+export function sortByPriority<T extends HasVisibility>(
+  items: T[],
+  direction: 'asc' | 'desc' = 'asc'
+): T[] {
+  return [...items].sort((a, b) =>
+    direction === 'asc' ? a.priority - b.priority : b.priority - a.priority
+  );
 }
 
 /**
  * Get visible items sorted by priority
  */
-export function getVisibleAndSorted<T extends HasVisibility>(items: T[]): T[] {
-  return sortByPriority(getVisibleItems(items));
+export function getVisibleAndSorted<T extends HasVisibility>(
+  items: T[],
+  direction: 'asc' | 'desc' = 'asc'
+): T[] {
+  return sortByPriority(getVisibleItems(items), direction);
 }
 
 /**

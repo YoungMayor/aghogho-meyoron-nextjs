@@ -31,9 +31,6 @@ export const skills: Skill[] = [
     description: null,
     type: 'tech',
     technologies: [
-      technologies.HTML5,
-      technologies.JavaScript,
-      technologies.TypeScript,
       technologies.PHP,
       technologies.Python,
       technologies.Dart,
@@ -88,14 +85,6 @@ export const skills: Skill[] = [
     priority: 4,
   },
   {
-    name: 'Other',
-    description: null,
-    type: 'tech',
-    technologies: [technologies.Solidity, technologies.Ethereum, technologies.Web3],
-    show: true,
-    priority: 6,
-  },
-  {
     name: 'Cloud',
     description: null,
     type: 'tech',
@@ -133,11 +122,25 @@ export const skills: Skill[] = [
       technologies.Webpack,
       technologies.Sentry,
       technologies.Vite,
-      technologies.Figma,
-      technologies.Canva,
     ],
     show: true,
+    priority: 6,
+  },
+  {
+    name: 'Design',
+    description: null,
+    type: 'tech',
+    technologies: [technologies.Figma, technologies.Canva],
+    show: true,
     priority: 7,
+  },
+  {
+    name: 'Other',
+    description: null,
+    type: 'tech',
+    technologies: [technologies.Solidity, technologies.Ethereum, technologies.Web3],
+    show: true,
+    priority: 8,
   },
   {
     name: 'Innovative thinker',
@@ -195,11 +198,6 @@ export const skills: Skill[] = [
   },
 ];
 
-// Separate exports for convenience - filtered by visibility and sorted by priority
-export const technicalSkills = skills
-  .filter((s) => s.type === 'tech' && s.show)
-  .sort((a, b) => b.priority - a.priority);
+export const technicalSkills = skills.filter((s) => s.type === 'tech' && s.show);
 
-export const softSkills = skills
-  .filter((s) => s.type === 'soft' && s.show)
-  .sort((a, b) => b.priority - a.priority);
+export const softSkills = skills.filter((s) => s.type === 'soft' && s.show);

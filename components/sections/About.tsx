@@ -1,9 +1,10 @@
 import { profile } from '@/lib/data/profile';
 import { technicalSkills } from '@/lib/data/skills';
 import Card from '@/components/ui/Card';
+import { getVisibleAndSorted } from '@/lib/utils/data';
 
 export default function About() {
-  // Technical skills are already filtered by visibility and sorted by priority in the data file
+  const sortedTechnicalSkills = getVisibleAndSorted(technicalSkills, 'asc');
 
   return (
     <section className="w-full bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-black py-20">
@@ -31,7 +32,7 @@ export default function About() {
           </h3>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {technicalSkills.map((skill) => (
+            {sortedTechnicalSkills.map((skill) => (
               <Card key={skill.name} variant="bordered" padding="lg" hoverable>
                 {/* Skill Category Name */}
                 <h4 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
