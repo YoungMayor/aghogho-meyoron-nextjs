@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import ThemeToggle from './ThemeToggle';
+
 import { profile } from '@/lib/data/profile';
 
 export default function FloatingHeader() {
@@ -53,9 +53,6 @@ export default function FloatingHeader() {
           >
             View Resume
           </Link>
-
-          {/* Theme Toggle */}
-          <ThemeToggle />
 
           {/* Contact Button */}
           <Link

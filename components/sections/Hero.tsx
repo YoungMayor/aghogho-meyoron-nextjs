@@ -28,7 +28,7 @@ export default function Hero() {
         </div>
 
         {/* Name */}
-        <h1 className="mb-4 text-center text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
+        <h1 className="mb-4 text-center text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
           {profile.name}
         </h1>
 
