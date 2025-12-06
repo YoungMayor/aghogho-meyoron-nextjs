@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 import Footer from '@/components/layout/Footer';
-import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://mayrlabs.com'),

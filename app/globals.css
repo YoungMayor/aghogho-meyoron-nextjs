@@ -1,16 +1,6 @@
 @import 'tailwindcss';
 
-@import 'tailwindcss';
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans:
-    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    sans-serif;
-  --font-mono:
-    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   :root {
@@ -89,10 +79,4 @@ body {
     sans-serif;
   --font-mono:
     ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
-}
-
-body {
-  background: var(--color-background);
-  color: var(--color-text);
-  font-family: var(--font-sans);
 }
