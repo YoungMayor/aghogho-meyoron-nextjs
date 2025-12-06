@@ -2,16 +2,12 @@
 export interface Icon {
   type: 'devicon' | 'simpleicon';
   value: string;
+  label: string;
 }
 
 export interface HasVisibility {
   show: boolean;
   priority: number;
-}
-
-export interface Technology {
-  name: string;
-  icon: Icon;
 }
 
 export interface Person {
@@ -68,7 +64,7 @@ export interface Project extends HasVisibility {
   name: string;
   description: string;
   features: string[];
-  technologies: Technology[];
+  technologies: Icon[];
   type: 'js-pkg' | 'dart-pkg' | 'web-app' | 'mobile-app' | 'api' | 'other';
   owner: 'personal' | 'client' | 'open-source' | 'other';
   demo_link: string | null;
@@ -81,7 +77,7 @@ export interface Skill extends HasVisibility {
   name: string; // Eg. Frontend Development
   description: string | null;
   type: 'tech' | 'soft' | 'other';
-  technologies: Technology[];
+  icons: Icon[];
 }
 
 // Social Links

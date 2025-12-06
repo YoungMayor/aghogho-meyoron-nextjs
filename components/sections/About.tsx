@@ -53,16 +53,16 @@ export default function About() {
 
                 {/* Technologies Grid */}
                 <div className="flex flex-wrap justify-center gap-3">
-                  {skill.technologies.map((tech) => (
+                  {skill.icons.map((icon) => (
                     <div
-                      key={tech.name}
+                      key={`tech-skill-${skill.name}-icon-${icon.label}`}
                       className="group flex items-center gap-2 rounded-xl bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] px-3 py-2 transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:scale-105 dark:hover:shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
-                      title={tech.name}
+                      title={icon.label}
                     >
-                      {/* Technology Icon */}
-                      <Icon.fromIcon icon={tech.icon} size={24} className="flex-shrink-0" />
+                      <Icon.fromIcon icon={icon} size={24} className="flex-shrink-0" />
+
                       <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                        {tech.name}
+                        {icon.label}
                       </span>
                     </div>
                   ))}
