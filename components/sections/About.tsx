@@ -24,7 +24,7 @@ export default function About() {
         {/* Biography and Quote */}
         <div className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Biography */}
-          <Card variant="bordered" padding="lg">
+          <Card variant="default" padding="lg">
             <div
               className="prose prose-lg max-w-none dark:prose-invert"
               dangerouslySetInnerHTML={{ __html: profile.biography }}
@@ -32,7 +32,7 @@ export default function About() {
           </Card>
 
           {/* Quote with Typewriter */}
-          <Card variant="elevated" padding="lg">
+          <Card variant="default" padding="lg">
             {quote.text && <Typewriter text={quote.text} author={quote.author} />}
           </Card>
         </div>
