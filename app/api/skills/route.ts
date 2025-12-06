@@ -1,4 +1,3 @@
-
 import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { ApiResponse } from '@/lib/utils/api-response';
 import { skills, technicalSkills, softSkills } from '@/lib/data/skills';

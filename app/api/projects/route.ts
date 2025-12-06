@@ -1,4 +1,3 @@
-
 import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { ApiResponse } from '@/lib/utils/api-response';
 import { projects } from '@/lib/data/projects';

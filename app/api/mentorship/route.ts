@@ -1,4 +1,3 @@
-
 import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { ApiResponse } from '@/lib/utils/api-response';
 import { validateMentorshipForm } from '@/lib/utils/validation';
@@ -90,7 +89,10 @@ ${goals}
 
     await sendTelegramNotification(telegramMessage);
 
-    return ApiResponse.success(null, 'Your mentorship application has been submitted successfully!');
+    return ApiResponse.success(
+      null,
+      'Your mentorship application has been submitted successfully!'
+    );
   } catch (error) {
     console.error('Mentorship application error:', error);
     return ApiResponse.serverError('Failed to submit mentorship application');

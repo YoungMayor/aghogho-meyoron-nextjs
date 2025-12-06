@@ -1,4 +1,3 @@
-
 import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { ApiResponse } from '@/lib/utils/api-response';
 import { academicRecords } from '@/lib/data/academic_history';
