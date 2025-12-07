@@ -3,8 +3,6 @@ title: Glover
 date: '2024-01-01'
 ---
 
-# Glover
-
 This is a placeholder description for **Glover**.
 
 ## Overview
