@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { projects } from '@/lib/data/projects';
 import { getVisibleItems } from '@/lib/utils/data';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import Icon from '@/components/ui/Icon';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
@@ -39,6 +38,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
       <main className="flex-1">
         {/* Breadcrumb */}
+        {/* This should be a component */}
         <section className="py-6 px-4 border-b border-gray-200 dark:border-gray-800">
           <div className="max-w-7xl mx-auto">
             <nav className="flex items-center gap-2 text-sm">
@@ -122,6 +122,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           </div>
         </section>
 
+        {/* Add Images here */}
+
         {/* Technologies */}
         <section className="py-12 px-4">
           <div className="max-w-7xl mx-auto">
@@ -194,8 +196,6 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

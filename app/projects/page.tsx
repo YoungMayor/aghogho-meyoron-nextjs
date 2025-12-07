@@ -123,8 +123,6 @@ export default function ProjectsPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

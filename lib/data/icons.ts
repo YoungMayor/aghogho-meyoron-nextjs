@@ -143,8 +143,8 @@ export const techIcons = {
   // Other
   GoogleGemini: simpleicon('googlegemini', 'Google Gemini'),
   Markdown: devicon('markdown', 'Markdown'),
-  RestAPI: devicon('rest-api', 'Rest API'),
-  API: devicon('api', 'API'),
+  RestAPI: devicon('swagger', 'Rest API'),
+  API: devicon('swagger', 'API'),
 } as const;
 
 export const socialIcons = {

@@ -1,5 +1,6 @@
 import { Project } from '@/lib/types';
 import { techIcons } from './icons';
+import { cloudinaryImage } from '../utils/helpers';
 
 export const projects: Project[] = [
   {
@@ -221,9 +222,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://contentforge.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752254848/projects/content-forge-dashboard.png',
-    ],
+    images: [cloudinaryImage.project('content-forge-dashboard.png')],
     show: true,
     priority: 0,
   },
@@ -244,9 +243,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://lexai.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752255047/projects/lexai-landing-page.png',
-    ],
+    images: [cloudinaryImage.project('lexai-landing-page.png')],
     show: true,
     priority: 0,
   },
@@ -260,9 +257,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://prepai.mayrlabs.com/get-started',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752255626/projects/prepai-landing-page.png',
-    ],
+    images: [cloudinaryImage.project('prepai-landing-page.png')],
     show: true,
     priority: 0,
   },
@@ -277,9 +272,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://quizwise.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752255911/projects/quiz-wise-getting-started.png',
-    ],
+    images: [cloudinaryImage.project('quiz-wise-getting-started.png')],
     show: true,
     priority: 0,
   },
@@ -300,9 +293,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://arcade.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752260864/projects/fun-arcade-games-preview.png',
-    ],
+    images: [cloudinaryImage.project('fun-arcade-games-preview.png')],
     show: true,
     priority: 0,
   },
@@ -327,9 +318,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://resumes.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752256000/projects/resume-ready-landing-page.png',
-    ],
+    images: [cloudinaryImage.project('resume-ready-landing-page.png')],
     show: true,
     priority: 0,
   },
@@ -347,9 +336,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://saleshouse.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752262928/projects/saleshouse-homepage.png',
-    ],
+    images: [cloudinaryImage.project('saleshouse-homepage.png')],
     show: true,
     priority: 0,
   },
@@ -364,9 +351,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://shellbase.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752263309/projects/shellbase-homepage.png',
-    ],
+    images: [cloudinaryImage.project('shellbase-homepage.png')],
     show: true,
     priority: 0,
   },
@@ -429,9 +414,7 @@ export const projects: Project[] = [
     owner: 'client',
     demo_link: 'https://gloverapp.co',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752263451/projects/glover-landing-page.png',
-    ],
+    images: [cloudinaryImage.project('glover-landing-page.png')],
     show: true,
     priority: 99,
   },
@@ -445,9 +428,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://calcplay.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1752326009/projects/calcplay-homepage.png',
-    ],
+    images: [cloudinaryImage.project('calcplay-homepage.png')],
     show: true,
     priority: 0,
   },
@@ -467,9 +448,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://learnflow.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1753786096/projects/learnflow-ai.png',
-    ],
+    images: [cloudinaryImage.project('learnflow-ai.png')],
     show: true,
     priority: 0,
   },
@@ -489,9 +468,7 @@ export const projects: Project[] = [
     owner: 'personal',
     demo_link: 'https://wwtbam.mayrlabs.com',
     repo_link: null,
-    images: [
-      'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1756661586/projects/wwtbam-game-screen-1.png',
-    ],
+    images: [cloudinaryImage.project('wwtbam-game-screen-1.png')],
     show: true,
     priority: 0,
   },
