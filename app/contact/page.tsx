@@ -2,7 +2,7 @@ import { profile } from '@/lib/data/profile';
 import { socialLinks } from '@/lib/data/social_links';
 import { getVisibleItems } from '@/lib/utils/data';
 import { faqs } from '@/lib/data/faq';
-import Header from '@/components/layout/Header';
+import SubPageHeader from '@/components/layout/SubPageHeader';
 import ContactForm from '@/components/features/ContactForm';
 import Card from '@/components/ui/Card';
 import Icon from '@/components/ui/Icon';
@@ -12,7 +12,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <SubPageHeader />
 
       <main className="flex-1">
         {/* Hero Section */}

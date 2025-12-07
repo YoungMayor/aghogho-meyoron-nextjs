@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { profile } from '@/lib/data/profile';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 
-export default function FloatingHeader() {
+export default function MainPageHeader() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

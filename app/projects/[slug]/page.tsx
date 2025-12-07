@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { projects } from '@/lib/data/projects';
 import { getVisibleItems } from '@/lib/utils/data';
 import { getMarkdownBySlug } from '@/lib/utils/markdown';
-import Header from '@/components/layout/Header';
+import SubPageHeader from '@/components/layout/SubPageHeader';
 import Icon from '@/components/ui/Icon';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
@@ -41,7 +41,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <SubPageHeader />
 
       <main className="flex-1">
         {/* Breadcrumb */}

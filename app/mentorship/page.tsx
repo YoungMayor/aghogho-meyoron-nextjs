@@ -1,7 +1,7 @@
 import { testimonials } from '@/lib/data/testimonials';
 import { mentorshipBenefits, mentorshipProcess } from '@/lib/data/mentorship';
 import { getVisibleItems } from '@/lib/utils/data';
-import Header from '@/components/layout/Header';
+import SubPageHeader from '@/components/layout/SubPageHeader';
 import MentorshipForm from '@/components/features/MentorshipForm';
 import TestimonialCard from '@/components/features/TestimonialCard';
 import Card from '@/components/ui/Card';
@@ -13,7 +13,7 @@ export default function MentorshipPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <SubPageHeader />
 
       <main className="flex-1">
         {/* Hero Section */}

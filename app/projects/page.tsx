@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { projects } from '@/lib/data/projects';
 import { getVisibleItems, sortByPriority } from '@/lib/utils/data';
 import ProjectCard from '@/components/features/ProjectCard';
-import Header from '@/components/layout/Header';
+import SubPageHeader from '@/components/layout/SubPageHeader';
 import Button from '@/components/ui/Button';
 
 type FilterType = 'all' | 'personal' | 'client' | 'open-source';
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <SubPageHeader />
 
       <main className="flex-1">
         {/* Hero Section */}
