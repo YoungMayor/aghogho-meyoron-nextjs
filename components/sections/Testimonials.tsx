@@ -43,7 +43,7 @@ export default function Testimonials() {
   const currentTestimonials = visibleTestimonials.slice(currentIndex * 3, (currentIndex + 1) * 3);
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-transparent dark:from-gray-950 dark:to-transparent">
+    <section className="py-20 px-4 bg-gradient-to-b from-secondary/50 to-transparent">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           title="What People Say"
@@ -69,7 +69,7 @@ export default function Testimonials() {
             <>
               <button
                 onClick={goToPrevious}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-12 h-12 flex items-center justify-center bg-card rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
                 aria-label="Previous testimonials"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ export default function Testimonials() {
 
               <button
                 onClick={goToNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-12 h-12 flex items-center justify-center bg-card rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
                 aria-label="Next testimonials"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,8 +109,8 @@ export default function Testimonials() {
                 onClick={() => goToSlide(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'w-8 bg-black dark:bg-white'
-                    : 'bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600'
+                    ? 'w-8 bg-foreground'
+                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

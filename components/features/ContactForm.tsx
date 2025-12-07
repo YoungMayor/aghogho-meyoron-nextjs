@@ -183,7 +183,7 @@ export default function ContactForm() {
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
 
-      <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
+      <p className="text-sm text-muted-foreground text-center">
         This site is protected by reCAPTCHA and the Google{' '}
         <a
           href="https://policies.google.com/privacy"

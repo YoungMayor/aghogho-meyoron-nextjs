@@ -39,7 +39,7 @@ export default function About() {
 
         {/* Expertise & Skills */}
         <div>
-          <h3 className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white">
+          <h3 className="mb-8 text-center text-3xl font-bold text-foreground">
             Technical Expertise
           </h3>
 
@@ -47,9 +47,7 @@ export default function About() {
             {sortedTechnicalSkills.map((skill) => (
               <Card key={skill.name} variant="default" padding="lg">
                 {/* Skill Category Name */}
-                <h4 className="mb-4 text-xl font-bold text-gray-900 text-center dark:text-white">
-                  {skill.name}
-                </h4>
+                <h4 className="mb-4 text-xl font-bold text-foreground text-center">{skill.name}</h4>
 
                 {/* Technologies Grid */}
                 <div className="flex flex-wrap justify-center gap-3">
@@ -61,7 +59,7 @@ export default function About() {
                     >
                       <Icon.fromIcon icon={icon} size={24} className="flex-shrink-0" />
 
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      <span className="text-sm font-medium text-muted-foreground">
                         {icon.label}
                       </span>
                     </div>

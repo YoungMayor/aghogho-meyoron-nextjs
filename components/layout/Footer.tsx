@@ -18,14 +18,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-gray-200 bg-white dark:border-gray-800 dark:bg-black">
+    <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Top Section */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* About Column */}
           <div>
-            <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-white">{profile.name}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">{profile.notes.tagline}</p>
+            <h3 className="mb-4 text-lg font-bold text-foreground">{profile.name}</h3>
+            <p className="text-sm text-muted-foreground">{profile.notes.tagline}</p>
           </div>
 
           {/* Quick Links Column */}

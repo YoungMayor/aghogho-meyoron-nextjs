@@ -10,7 +10,7 @@ export default function Career() {
   const visibleCareerItems = sortByDate(getVisibleItems(careerItems), 'start_date');
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-transparent to-gray-50 dark:to-gray-950">
+    <section className="py-20 px-4 bg-gradient-to-b from-transparent to-secondary/30">
       <div className="max-w-4xl mx-auto">
         <SectionHeader
           title="Career Journey"

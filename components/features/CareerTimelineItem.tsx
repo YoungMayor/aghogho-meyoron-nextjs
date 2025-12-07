@@ -20,8 +20,8 @@ export default function CareerTimelineItem({ item, isLast = false }: CareerTimel
         <div
           className={`w-4 h-4 rounded-full border-4 transition-all duration-300 ${
             isCurrent
-              ? 'bg-black dark:bg-white border-black dark:border-white shadow-lg'
-              : 'bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-700 group-hover:border-black dark:group-hover:border-white'
+              ? 'bg-foreground border-foreground shadow-lg'
+              : 'bg-background border-border group-hover:border-foreground'
           }`}
         />
 
@@ -34,7 +34,7 @@ export default function CareerTimelineItem({ item, isLast = false }: CareerTimel
       {/* Content */}
       <div className="flex-1 pb-12">
         {/* Year Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-full mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-secondary rounded-full mb-3">
           <span className="text-sm font-semibold">
             {startYear} - {endYear}
           </span>
@@ -42,11 +42,11 @@ export default function CareerTimelineItem({ item, isLast = false }: CareerTimel
         </div>
 
         {/* Card */}
-        <div className="p-6 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-950 rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_8px_16px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-[1.01]">
+        <div className="p-6 bg-card rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_8px_16px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-[1.01]">
           {/* Header */}
           <div className="mb-4">
             <h3 className="text-xl font-bold mb-1">{item.role}</h3>
-            <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+            <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
               <span className="font-semibold">{item.company_name}</span>
               <span>•</span>
               <span>{item.location}</span>
@@ -54,18 +54,16 @@ export default function CareerTimelineItem({ item, isLast = false }: CareerTimel
           </div>
 
           {/* Description */}
-          <p className="text-gray-700 dark:text-gray-300 mb-4">{item.description}</p>
+          <p className="text-muted-foreground mb-4">{item.description}</p>
 
           {/* Duties */}
           {item.duties.length > 0 && (
             <div>
-              <h4 className="text-sm font-semibold mb-2 text-gray-900 dark:text-gray-100">
-                Key Responsibilities:
-              </h4>
+              <h4 className="text-sm font-semibold mb-2 text-foreground">Key Responsibilities:</h4>
               <ul className="space-y-2">
                 {item.duties.map((duty, index) => (
-                  <li key={index} className="text-sm text-gray-600 dark:text-gray-400 flex gap-2">
-                    <span className="text-black dark:text-white mt-1">•</span>
+                  <li key={index} className="text-sm text-muted-foreground flex gap-2">
+                    <span className="text-foreground mt-1">•</span>
                     <span>{duty}</span>
                   </li>
                 ))}

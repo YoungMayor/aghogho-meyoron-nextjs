@@ -46,7 +46,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       <main className="flex-1">
         {/* Breadcrumb */}
         {/* This should be a component */}
-        <section className="py-6 px-4 border-b border-gray-200 dark:border-gray-800">
+        <section className="py-6 px-4 border-b border-border">
           <div className="max-w-7xl mx-auto">
             <Breadcrumb
               items={[
@@ -59,11 +59,11 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </section>
 
         {/* Project Hero */}
-        <section className="py-12 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
+        <section className="py-12 px-4 bg-gradient-to-b from-secondary/50 to-background">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Project Image */}
-              <div className="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative aspect-video bg-muted rounded-2xl overflow-hidden shadow-lg">
                 {mainImage ? (
                   <Image
                     src={mainImage}
@@ -74,7 +74,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                   />
                 ) : (
                   <div className="flex items-center justify-center h-full">
-                    <span className="text-6xl font-bold text-gray-300 dark:text-gray-700">
+                    <span className="text-6xl font-bold text-muted-foreground">
                       {project.name.charAt(0)}
                     </span>
                   </div>
@@ -84,23 +84,21 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               {/* Project Info */}
               <div>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-800 rounded-full capitalize">
+                  <span className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize">
                     {project.owner}
                   </span>
-                  <span className="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-800 rounded-full capitalize">
+                  <span className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize">
                     {project.type.replace('-', ' ')}
                   </span>
                   {markdown && (
-                    <span className="px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100 rounded-full">
+                    <span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full">
                       Documentation Available
                     </span>
                   )}
                 </div>
 
                 <h1 className="text-4xl font-bold mb-4">{project.name}</h1>
-                <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-                  {project.description}
-                </p>
+                <p className="text-lg text-muted-foreground mb-6">{project.description}</p>
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-4">
@@ -126,7 +124,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
         {/* Project Gallery */}
         {project.images.length > 1 && (
-          <section className="py-8 px-4 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
+          <section className="py-8 px-4 bg-background border-b border-border">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-xl font-bold mb-4">Gallery</h2>
               <ProjectGallery images={project.images} title={project.name} />
@@ -144,7 +142,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         )}
 
         {/* Technologies */}
-        <section className="py-12 px-4 bg-gray-50 dark:bg-gray-900/50">
+        <section className="py-12 px-4 bg-secondary/30">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">Technologies Used</h2>
             <div className="flex flex-wrap gap-4">
@@ -162,17 +160,17 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
         {/* Features */}
         {project.features.length > 0 && (
-          <section className="py-12 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
+          <section className="py-12 px-4 bg-gradient-to-b from-background to-secondary/30">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-2xl font-bold mb-6">Key Features</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {project.features.map((feature, index) => (
                   <Card key={index} padding="md">
                     <div className="flex gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-black dark:bg-white flex items-center justify-center text-white dark:text-black text-sm font-bold">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground flex items-center justify-center text-background text-sm font-bold">
                         ✓
                       </div>
-                      <p className="text-gray-700 dark:text-gray-300">{feature}</p>
+                      <p className="text-muted-foreground">{feature}</p>
                     </div>
                   </Card>
                 ))}
@@ -192,7 +190,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                     <Card variant="elevated" hoverable>
                       <div className="p-4">
                         <h3 className="font-bold mb-2">{relatedProject.name}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+                        <p className="text-sm text-muted-foreground line-clamp-2">
                           {relatedProject.description}
                         </p>
                       </div>

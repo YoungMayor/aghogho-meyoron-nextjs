@@ -35,7 +35,7 @@ export default function ArticleCard({ article }: ArticleCardProps) {
         <div className="flex-1 p-6 flex flex-col">
           <h3 className="text-lg font-bold mb-2 line-clamp-2">{article.title}</h3>
 
-          <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3 flex-1">
+          <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-1">
             {article.summary}
           </p>
 

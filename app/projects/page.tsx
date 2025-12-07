@@ -42,10 +42,10 @@ export default function ProjectsPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
+        <section className="py-16 px-4 bg-gradient-to-b from-secondary/50 to-background">
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A comprehensive showcase of my work, from personal experiments to client projects and
               open-source contributions
             </p>
@@ -53,7 +53,7 @@ export default function ProjectsPage() {
         </section>
 
         {/* Filters & Search */}
-        <section className="py-8 px-4 border-b border-gray-200 dark:border-gray-800">
+        <section className="py-8 px-4 border-b border-border">
           <div className="max-w-7xl mx-auto">
             {/* Search */}
             <div className="mb-6">
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
                 placeholder="Search projects by name, description, features, or technologies..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all"
+                className="w-full px-4 py-3 rounded-xl bg-background border border-input focus:outline-none focus:ring-2 focus:ring-primary transition-all"
               />
             </div>
 
@@ -86,7 +86,7 @@ export default function ProjectsPage() {
             </div>
 
             {/* Results Count */}
-            <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+            <div className="mt-4 text-sm text-muted-foreground">
               Showing {filteredProjects.length} of {visibleProjects.length} projects
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function ProjectsPage() {
               </div>
             ) : (
               <div className="text-center py-20">
-                <p className="text-xl text-gray-500 dark:text-gray-400">
+                <p className="text-xl text-muted-foreground">
                   No projects found matching your criteria
                 </p>
                 <Button

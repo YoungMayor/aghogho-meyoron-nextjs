@@ -63,15 +63,15 @@ export default function Modal({
 
       {/* Modal */}
       <div
-        className={`relative w-full ${sizeStyles[size]} rounded-lg bg-white p-6 shadow-xl dark:bg-gray-900`}
+        className={`relative w-full ${sizeStyles[size]} rounded-lg bg-card p-6 shadow-xl border border-border`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h2>
+          <h2 className="text-xl font-bold text-card-foreground">{title}</h2>
           <button
             onClick={onClose}
-            className="rounded-lg p-1 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+            className="rounded-lg p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             aria-label="Close modal"
             type="button"
           >
@@ -93,7 +93,7 @@ export default function Modal({
         </div>
 
         {/* Content */}
-        <div className="text-gray-700 dark:text-gray-300">{children}</div>
+        <div className="text-muted-foreground">{children}</div>
       </div>
     </div>
   );

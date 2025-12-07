@@ -23,7 +23,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Image src={mainImage} alt={project.name} fill className="object-cover" unoptimized />
           ) : (
             <div className="flex items-center justify-center h-full">
-              <span className="text-4xl font-bold text-gray-300 dark:text-gray-700">
+              <span className="text-4xl font-bold text-muted-foreground">
                 {project.name.charAt(0)}
               </span>
             </div>
@@ -41,7 +41,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="flex-1 p-6 flex flex-col">
           <h3 className="text-xl font-bold mb-2 line-clamp-2">{project.name}</h3>
 
-          <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3 flex-1">
+          <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-1">
             {project.description}
           </p>
 
@@ -50,13 +50,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.icons.slice(0, 6).map((icon, index) => (
               <div key={index} className="group relative" title={icon.label}>
                 <Icon.fromIcon icon={icon} size={24} />
-                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-popover text-popover-foreground rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-sm border border-border">
                   {icon.label}
                 </span>
               </div>
             ))}
             {project.icons.length > 6 && (
-              <span className="text-xs text-gray-500 self-center">
+              <span className="text-xs text-muted-foreground self-center">
                 +{project.icons.length - 6} more
               </span>
             )}

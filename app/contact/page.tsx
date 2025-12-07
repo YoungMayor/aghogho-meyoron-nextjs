@@ -16,10 +16,10 @@ export default function ContactPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
+        <section className="py-16 px-4 bg-gradient-to-b from-secondary/50 to-background">
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Have a project in mind or want to discuss opportunities? I&apos;d love to hear from
               you!
             </p>
@@ -38,7 +38,7 @@ export default function ContactPage() {
                   {/* Email */}
                   <Card padding="md">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-xl flex items-center justify-center">
+                      <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
                         <svg
                           className="w-6 h-6"
                           fill="none"
@@ -57,7 +57,7 @@ export default function ContactPage() {
                         <h3 className="font-semibold mb-1">Email</h3>
                         <a
                           href={`mailto:${profile.contact.email}`}
-                          className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white break-all"
+                          className="text-muted-foreground hover:text-foreground break-all"
                         >
                           {profile.contact.email}
                         </a>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                   {/* Phone */}
                   <Card padding="md">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-xl flex items-center justify-center">
+                      <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
                         <svg
                           className="w-6 h-6"
                           fill="none"
@@ -87,7 +87,7 @@ export default function ContactPage() {
                         <h3 className="font-semibold mb-1">Phone</h3>
                         <a
                           href={`tel:${profile.contact.phone}`}
-                          className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
+                          className="text-muted-foreground hover:text-foreground"
                         >
                           {profile.contact.phone}
                         </a>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-xl transition-all duration-300"
+                          className="group flex items-center gap-2 px-4 py-2 bg-secondary hover:bg-secondary/80 rounded-xl transition-all duration-300"
                           title={link.label}
                         >
                           <Icon.fromIcon icon={link.icon} size={20} />
@@ -118,9 +118,7 @@ export default function ContactPage() {
                   {/* Message */}
                   {profile.contact.message && (
                     <Card padding="md">
-                      <div className="text-sm text-gray-600 dark:text-gray-400">
-                        {profile.contact.message}
-                      </div>
+                      <div className="text-sm text-muted-foreground">{profile.contact.message}</div>
                     </Card>
                   )}
                 </div>
@@ -138,7 +136,7 @@ export default function ContactPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-12 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
+        <section className="py-12 px-4 bg-gradient-to-b from-background to-secondary/30">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
 
@@ -146,7 +144,7 @@ export default function ContactPage() {
               {faqs.map((faq, index) => (
                 <Card key={index} padding="md">
                   <h3 className="font-semibold mb-2">{faq.question}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">{faq.answer}</p>
+                  <p className="text-muted-foreground text-sm">{faq.answer}</p>
                 </Card>
               ))}
             </div>

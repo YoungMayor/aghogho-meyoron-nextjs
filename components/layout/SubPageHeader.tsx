@@ -25,7 +25,7 @@ export default function SubPageHeader() {
       <nav
         className={`flex items-center justify-between px-6 py-3 transition-all duration-500 ease-in-out mx-auto ${
           isScrolled
-            ? 'rounded-2xl bg-white/50 dark:bg-gray-900/70 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl w-[90%] mt-2'
+            ? 'rounded-2xl bg-background/70 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl w-[90%] mt-2'
             : 'bg-transparent w-full mt-0'
         }`}
       >
@@ -40,7 +40,7 @@ export default function SubPageHeader() {
               className="h-full w-full object-cover"
             />
           </div>
-          <span className="hidden md:inline-block font-semibold text-gray-900 dark:text-white">
+          <span className="hidden md:inline-block font-semibold text-foreground">
             {profile.name}
           </span>
         </Link>
@@ -49,25 +49,25 @@ export default function SubPageHeader() {
         <div className="flex items-center gap-4">
           <Link
             href="/projects"
-            className="text-sm font-medium text-gray-700 transition-all duration-200 hover:text-black hover:scale-105 dark:text-gray-300 dark:hover:text-white"
+            className="text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-105"
           >
             Projects
           </Link>
           <Link
             href="/mentorship"
-            className="text-sm font-medium text-gray-700 transition-all duration-200 hover:text-black hover:scale-105 dark:text-gray-300 dark:hover:text-white"
+            className="text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-105"
           >
             Mentorship
           </Link>
           <Link
             href="/contact"
-            className="text-sm font-medium text-gray-700 transition-all duration-200 hover:text-black hover:scale-105 dark:text-gray-300 dark:hover:text-white"
+            className="text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-105"
           >
             Contact
           </Link>
           <Link
             href="/resume"
-            className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-gray-900 to-black text-white px-4 py-2 text-sm font-medium transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:scale-105 dark:from-white dark:to-gray-100 dark:text-black transparent-button"
+            className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-primary to-black text-primary-foreground px-4 py-2 text-sm font-medium transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:scale-105 dark:from-white dark:to-gray-100 dark:text-black transparent-button"
           >
             Resume
           </Link>

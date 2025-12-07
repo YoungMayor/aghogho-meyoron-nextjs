@@ -34,12 +34,12 @@ export default function Hero() {
         </h1>
 
         {/* Title */}
-        <p className="mb-6 text-center text-xl font-medium text-gray-700 dark:text-gray-300 sm:text-2xl">
+        <p className="mb-6 text-center text-xl font-medium text-muted-foreground sm:text-2xl">
           {profile.titles[0]}
         </p>
 
         {/* Tagline */}
-        <p className="mb-12 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-400">
+        <p className="mb-12 max-w-2xl text-center text-lg text-muted-foreground">
           {profile.notes.tagline}
         </p>
 
@@ -65,7 +65,7 @@ export default function Hero() {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="transform text-gray-600 transition-all duration-200 hover:scale-110 hover:text-black dark:text-gray-400 dark:hover:text-white"
+              className="transform text-muted-foreground transition-all duration-200 hover:scale-110 hover:text-foreground"
               aria-label={social.label}
             >
               <Icon.fromIcon icon={social.icon} size={36} className="flex-shrink-0" />
@@ -76,7 +76,7 @@ export default function Hero() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <svg
-            className="h-6 w-6 text-gray-600 dark:text-gray-400"
+            className="h-6 w-6 text-muted-foreground"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"

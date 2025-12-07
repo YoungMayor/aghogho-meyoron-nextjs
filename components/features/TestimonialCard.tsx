@@ -21,9 +21,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
             <svg
               key={index}
               className={`w-5 h-5 ${
-                index < rating
-                  ? 'text-yellow-400 fill-yellow-400'
-                  : 'text-gray-300 dark:text-gray-600'
+                index < rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted'
               }`}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -37,7 +35,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
         </div>
 
         {/* Review Text */}
-        <p className="text-gray-700 dark:text-gray-300 text-sm mb-6 flex-1 whitespace-pre-line">
+        <p className="text-muted-foreground text-sm mb-6 flex-1 whitespace-pre-line">
           &quot;{review}&quot;
         </p>
 
@@ -54,8 +52,8 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
               />
             </div>
           ) : (
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center">
-              <span className="text-lg font-bold text-gray-600 dark:text-gray-400">
+            <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
+              <span className="text-lg font-bold text-secondary-foreground">
                 {person.name.charAt(0)}
               </span>
             </div>
@@ -74,8 +72,8 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
             ) : (
               <p className="font-semibold">{person.name}</p>
             )}
-            <p className="text-sm text-gray-600 dark:text-gray-400 truncate">{mainTitle}</p>
-            <p className="text-xs text-gray-500 dark:text-gray-500 capitalize">{type}</p>
+            <p className="text-sm text-muted-foreground truncate">{mainTitle}</p>
+            <p className="text-xs text-muted-foreground capitalize">{type}</p>
           </div>
         </div>
       </div>
