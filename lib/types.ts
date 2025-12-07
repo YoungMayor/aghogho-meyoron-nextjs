@@ -65,11 +65,22 @@ export interface Project extends HasVisibility {
   description: string;
   features: string[];
   icons: Icon[];
-  type: 'js-pkg' | 'dart-pkg' | 'web-app' | 'mobile-app' | 'api' | 'other';
+  type:
+    | 'api'
+    | 'dart-pkg'
+    | 'electron-app'
+    | 'flutter-pkg'
+    | 'go-cli'
+    | 'js-pkg'
+    | 'mobile-app'
+    | 'portfolio'
+    | 'web-app'
+    | 'other';
   owner: 'personal' | 'client' | 'open-source' | 'other';
   demo_link: string | null;
   repo_link: string | null;
   images: string[]; // First image would be used as the main image
+  is_featured?: boolean;
 }
 
 // Skills

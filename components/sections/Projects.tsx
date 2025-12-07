@@ -1,15 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { projects } from '@/lib/data/projects';
+import { featuredProjects } from '@/lib/data/projects';
 import { getVisibleItems, sortByPriority } from '@/lib/utils/data';
 import ProjectCard from '@/components/features/ProjectCard';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
 
 export default function Projects() {
-  // Get top 3 priority projects
-  const visibleProjects = sortByPriority(getVisibleItems(projects)).slice(0, 3);
+  // Get top 3 featured priority projects
+  const visibleProjects = sortByPriority(getVisibleItems(featuredProjects), 'desc').slice(0, 3);
 
   return (
     <section className="py-20 px-4">
