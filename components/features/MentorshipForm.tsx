@@ -6,6 +6,7 @@ import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
 import { generateAuthToken } from '@/lib/utils/api-auth';
+import { getRecaptchaToken } from '@/lib/utils/recaptcha';
 
 interface FormData {
   name: string;
@@ -101,30 +102,14 @@ export default function MentorshipForm() {
     setErrorMessage('');
 
     try {
-      // Generate auth token
       const authToken = generateAuthToken(process.env.NEXT_PUBLIC_INTERNAL_API_SECRET || '');
 
-      // Get reCAPTCHA token
-      const recaptchaToken = await (
-        window as typeof window & {
-          grecaptcha: {
-            execute: (siteKey: string, options: { action: string }) => Promise<string>;
-          };
-        }
-      ).grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '', {
-        action: 'mentorship_form',
-      });
+      const recaptchaToken = await getRecaptchaToken('mentorship_form');
 
       const response = await fetch('/api/mentorship', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Auth-Token': authToken,
-        },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken,
-        }),
+        headers: { 'Content-Type': 'application/json', 'X-Auth-Token': authToken },
+        body: JSON.stringify({ ...formData, recaptchaToken }),
       });
 
       const data = await response.json();
@@ -134,14 +119,7 @@ export default function MentorshipForm() {
       }
 
       setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        background: '',
-        goals: '',
-        commitment: '',
-      });
+      setFormData({ name: '', email: '', phone: '', background: '', goals: '', commitment: '' });
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');

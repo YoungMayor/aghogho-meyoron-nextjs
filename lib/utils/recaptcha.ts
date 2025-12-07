@@ -1,3 +1,19 @@
+export async function getRecaptchaToken(action: string): Promise<string> {
+  const win = window as typeof window & {
+    grecaptcha?: {
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  };
+
+  if (!win.grecaptcha) {
+    throw new Error('reCAPTCHA not loaded');
+  }
+
+  return await win.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '', {
+    action,
+  });
+}
+
 /**
  * Verify ReCAPTCHA token
  */
@@ -23,6 +39,7 @@ export async function verifyRecaptcha(token: string): Promise<{
   });
 
   const data = await response.json();
+
   return {
     success: data.success && data.score > 0.5,
     score: data.score || 0,
