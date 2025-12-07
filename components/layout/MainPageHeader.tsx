@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 import { profile } from '@/lib/data/profile';
 import ThemeToggle from '@/components/ui/ThemeToggle';
+import MailIcon from '@/components/icons/MailIcon';
 
 export default function MainPageHeader() {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,20 +65,7 @@ export default function MainPageHeader() {
             className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] p-2.5 text-gray-900 transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:scale-105 dark:text-white"
             aria-label="Contact me"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
+            <MailIcon />
           </Link>
         </div>
       </nav>

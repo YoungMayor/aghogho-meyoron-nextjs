@@ -5,6 +5,7 @@ import { socialLinks as allSocialLinks } from '@/lib/data/social_links';
 import { getVisibleAndSorted } from '@/lib/utils/data';
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
+import ChevronDownIcon from '@/components/icons/ChevronDownIcon';
 
 export default function Hero() {
   const socialLinks = getVisibleAndSorted(allSocialLinks).slice(0, 5);
@@ -75,17 +76,7 @@ export default function Hero() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="h-6 w-6 text-muted-foreground"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
+          <ChevronDownIcon className="h-6 w-6 text-muted-foreground" />
         </div>
       </div>
     </section>
