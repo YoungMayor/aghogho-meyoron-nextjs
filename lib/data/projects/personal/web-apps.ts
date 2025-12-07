@@ -2,7 +2,7 @@ import { Project } from '@/lib/types';
 import { techIcons } from '../../icons';
 import { cloudinaryImage } from '@/lib/utils/helpers';
 
-// Add learnbits
+// Add learnbits and https://resume.mayrlabs.com
 export const personalWebApps: Project[] = [
   {
     slug: 'contentforge',

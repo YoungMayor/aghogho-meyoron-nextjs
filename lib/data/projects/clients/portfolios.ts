@@ -2,8 +2,32 @@ import { Project } from '@/lib/types';
 import { techIcons } from '../../icons';
 import { cloudinaryImage } from '@/lib/utils/helpers';
 
-// Add ifeoma, fortune, foke, idara, ada
 export const clientPortfolios: Project[] = [
+  {
+    slug: 'tovia-amadi',
+    name: 'Tovia Amadi | Digital Marketer',
+    description:
+      'A dynamic portfolio for a Digital & Email Marketer. Features a custom AI chatbot "TovysAI", showcases his marketing campaigns, design projects, and product management skills.',
+    features: [
+      'AI Chatbot Integration (TovysAI)',
+      'Marketing Campaign Showcase',
+      'Design Portfolio',
+      'Resume Download',
+    ],
+    icons: [techIcons.React, techIcons.NextJS, techIcons.TailwindCSS, techIcons.Netlify],
+    type: 'portfolio',
+    owner: 'client',
+    demo_link: 'https://toviaamadi.com',
+    repo_link: null,
+    images: [
+      cloudinaryImage.portfolio('tovia-amadi-dark.png'),
+      cloudinaryImage.portfolio('tovia-amadi-light.png'),
+      cloudinaryImage.portfolio('tovia-amadi-resume.png'),
+    ],
+    show: true,
+    priority: 0,
+    is_featured: true,
+  },
   {
     slug: 'esther-ubeng',
     name: 'Esther Idara Ubeng | Senior Product Manager',
@@ -23,7 +47,44 @@ export const clientPortfolios: Project[] = [
     repo_link: null,
     images: [cloudinaryImage.portfolio('esther-ubeng.png')],
     show: true,
-    priority: 10,
+    priority: 0,
+    is_featured: true,
+  },
+  {
+    slug: 'enuma-ifeoma',
+    name: 'Enuma Ifeoma | HSE Personnel',
+    description:
+      'A professional portfolio for a dedicated HSE Personnel. The site showcases her commitment to health, safety, and environment standards, featuring her certifications, projects, and professional journey.',
+    features: [
+      'HSE Certifications Showcase',
+      'Safety Projects Gallery',
+      'Professional Biography',
+      'Contact Integration',
+    ],
+    icons: [techIcons.React, techIcons.NextJS, techIcons.TailwindCSS, techIcons.Netlify],
+    type: 'portfolio',
+    owner: 'client',
+    demo_link: 'https://enumaifeoma.netlify.app',
+    repo_link: null,
+    images: [cloudinaryImage.portfolio('enuma-ifeoma.png')],
+    show: true,
+    priority: 0,
+    is_featured: true,
+  },
+  {
+    slug: 'fortune-odjeni',
+    name: 'Fortune Odjeni | Legal Practitioner',
+    description:
+      'A comprehensive portfolio for a Lawyer in the making, Humanitarian Advocate, and Writer. Highlights his legal journey, advocacy work, and collection of written articles.',
+    features: ['Legal Portfolio', 'Advocacy Projects', 'Article Blog', 'Professional Profile'],
+    icons: [techIcons.React, techIcons.NextJS, techIcons.TailwindCSS, techIcons.Netlify],
+    type: 'portfolio',
+    owner: 'client',
+    demo_link: 'https://odjenifortune.netlify.app',
+    repo_link: null,
+    images: [cloudinaryImage.portfolio('fortune-odjeni.png')],
+    show: true,
+    priority: 0,
     is_featured: true,
   },
 ];
