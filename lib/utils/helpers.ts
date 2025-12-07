@@ -6,6 +6,10 @@ cloudinaryImage.project = (filename: string) => {
   return cloudinaryImage(filename, 'projects');
 };
 
+cloudinaryImage.portfolio = (filename: string) => {
+  return cloudinaryImage(filename, 'projects/portfolios');
+};
+
 cloudinaryImage.people = (filename: string) => {
   return cloudinaryImage(filename, 'people');
 };
