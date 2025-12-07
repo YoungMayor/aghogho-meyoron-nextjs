@@ -5,7 +5,6 @@ import { projects } from '@/lib/data/projects';
 import { getVisibleItems, sortByPriority } from '@/lib/utils/data';
 import ProjectCard from '@/components/features/ProjectCard';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import Button from '@/components/ui/Button';
 
 type FilterType = 'all' | 'personal' | 'client' | 'open-source';

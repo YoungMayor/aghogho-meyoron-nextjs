@@ -3,10 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { projects } from '@/lib/data/projects';
 import { getVisibleItems } from '@/lib/utils/data';
+import { getMarkdownBySlug } from '@/lib/utils/markdown';
 import Header from '@/components/layout/Header';
 import Icon from '@/components/ui/Icon';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
+import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
+import ProjectGallery from '@/components/projects/ProjectGallery';
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -31,6 +34,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       (p) => p.slug !== project.slug && (p.owner === project.owner || p.type === project.type)
     )
     .slice(0, 3);
+
+  // Fetch markdown content
+  const markdown = getMarkdownBySlug('lib/data/content', slug);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -66,7 +72,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Project Image */}
-              <div className="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-2xl overflow-hidden">
+              <div className="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-2xl overflow-hidden shadow-lg">
                 {mainImage ? (
                   <Image
                     src={mainImage}
@@ -93,6 +99,11 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                   <span className="px-3 py-1 text-sm font-medium bg-gray-200 dark:bg-gray-800 rounded-full capitalize">
                     {project.type.replace('-', ' ')}
                   </span>
+                  {markdown && (
+                    <span className="px-3 py-1 text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100 rounded-full">
+                      Documentation Available
+                    </span>
+                  )}
                 </div>
 
                 <h1 className="text-4xl font-bold mb-4">{project.name}</h1>
@@ -122,10 +133,27 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
           </div>
         </section>
 
-        {/* Add Images here */}
+        {/* Project Gallery */}
+        {project.images.length > 1 && (
+          <section className="py-8 px-4 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-xl font-bold mb-4">Gallery</h2>
+              <ProjectGallery images={project.images} title={project.name} />
+            </div>
+          </section>
+        )}
+
+        {/* Project Content (Markdown) */}
+        {markdown && (
+          <section className="py-12 px-4">
+            <div className="max-w-4xl mx-auto">
+              <MarkdownRenderer content={markdown.content} />
+            </div>
+          </section>
+        )}
 
         {/* Technologies */}
-        <section className="py-12 px-4">
+        <section className="py-12 px-4 bg-gray-50 dark:bg-gray-900/50">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">Technologies Used</h2>
             <div className="flex flex-wrap gap-4">

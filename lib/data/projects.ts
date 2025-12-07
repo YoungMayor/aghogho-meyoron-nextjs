@@ -227,8 +227,8 @@ export const projects: Project[] = [
     priority: 0,
   },
   {
-    slug: 'lexa-i',
-    name: 'Lexa.i',
+    slug: 'lexai',
+    name: 'LexAI',
     description:
       'Lexa.i is an AI-powered legal inquiry platform providing users with instant, AI-driven insights into a wide range of legal topics. Leveraging cutting-edge artificial intelligence, Lexa.i offers accessible and informative legal guidance, empowering individuals to navigate complex legal landscapes with greater confidence. Please note that the advice provided is for informational purposes only and does not constitute legally binding counsel.',
     features: [
