@@ -10,6 +10,7 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
 import ProjectGallery from '@/components/projects/ProjectGallery';
+import Breadcrumb from '@/components/ui/Breadcrumb';
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -47,23 +48,13 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         {/* This should be a component */}
         <section className="py-6 px-4 border-b border-gray-200 dark:border-gray-800">
           <div className="max-w-7xl mx-auto">
-            <nav className="flex items-center gap-2 text-sm">
-              <Link
-                href="/"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
-              >
-                Home
-              </Link>
-              <span className="text-gray-400">/</span>
-              <Link
-                href="/projects"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
-              >
-                Projects
-              </Link>
-              <span className="text-gray-400">/</span>
-              <span className="text-black dark:text-white">{project.name}</span>
-            </nav>
+            <Breadcrumb
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Projects', href: '/projects' },
+                { label: project.name, active: true },
+              ]}
+            />
           </div>
         </section>
 

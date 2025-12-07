@@ -13,7 +13,7 @@ export default function ProjectsPage() {
   const [filter, setFilter] = useState<FilterType>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const visibleProjects = sortByPriority(getVisibleItems(projects));
+  const visibleProjects = sortByPriority(getVisibleItems(projects), 'desc');
 
   // Filter projects
   const filteredProjects = visibleProjects.filter((project) => {

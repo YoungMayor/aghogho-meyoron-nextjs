@@ -1,7 +1,6 @@
 import { testimonials } from '@/lib/data/testimonials';
 import { getVisibleItems } from '@/lib/utils/data';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import MentorshipForm from '@/components/features/MentorshipForm';
 import TestimonialCard from '@/components/features/TestimonialCard';
 import Card from '@/components/ui/Card';
@@ -290,8 +289,6 @@ export default function MentorshipPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

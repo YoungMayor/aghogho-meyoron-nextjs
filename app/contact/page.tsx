@@ -1,8 +1,8 @@
 import { profile } from '@/lib/data/profile';
 import { socialLinks } from '@/lib/data/social_links';
 import { getVisibleItems } from '@/lib/utils/data';
+import { faqs } from '@/lib/data/faq';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import ContactForm from '@/components/features/ContactForm';
 import Card from '@/components/ui/Card';
 import Icon from '@/components/ui/Icon';
@@ -143,43 +143,16 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
 
             <div className="space-y-4">
-              <Card padding="md">
-                <h3 className="font-semibold mb-2">What&apos;s the best way to reach you?</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Feel free to use either the contact form above or send me a direct email. I
-                  typically respond within 24-48 hours.
-                </p>
-              </Card>
-
-              <Card padding="md">
-                <h3 className="font-semibold mb-2">Do you take on freelance projects?</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Yes, I&apos;m open to freelance opportunities. Please provide details about your
-                  project in the contact form, and I&apos;ll get back to you with my availability.
-                </p>
-              </Card>
-
-              <Card padding="md">
-                <h3 className="font-semibold mb-2">Are you available for consulting?</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Absolutely! I offer consulting services for web development, architecture, and
-                  technical strategy. Reach out to discuss your needs.
-                </p>
-              </Card>
-
-              <Card padding="md">
-                <h3 className="font-semibold mb-2">How long does it take to hear back?</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  I strive to respond to all inquiries within 24-48 hours during business days. For
-                  urgent matters, please mention it in your message.
-                </p>
-              </Card>
+              {faqs.map((faq, index) => (
+                <Card key={index} padding="md">
+                  <h3 className="font-semibold mb-2">{faq.question}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">{faq.answer}</p>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

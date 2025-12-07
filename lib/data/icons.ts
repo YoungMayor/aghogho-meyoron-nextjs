@@ -153,10 +153,10 @@ export const socialIcons = {
   Linkedin: devicon('linkedin', 'Linkedin'),
   Linktree: simpleicon('linktree', 'Linktree'),
   Medium: simpleicon('medium', 'Medium'),
-  TikTok: devicon('tiktok', 'TikTok'),
-  Whatsapp: devicon('whatsapp', 'Whatsapp'),
-  Telegram: devicon('telegram', 'Telegram'),
-  Website: devicon('website', 'Website'),
+  TikTok: simpleicon('tiktok', 'TikTok'),
+  Whatsapp: simpleicon('whatsapp', 'Whatsapp'),
+  Telegram: simpleicon('telegram', 'Telegram'),
+  Website: simpleicon('awwwards', 'Website'),
 } as const;
 
 export const allIcons = {

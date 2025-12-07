@@ -63,7 +63,7 @@ export const socialLinks: SocialLink[] = [
     url: 'https://t.me/YoungMayor_dev',
     label: 'Telegram',
     icon: socialIcons.Telegram,
-    show: false,
+    show: true,
     priority: 0,
   },
   {
@@ -71,7 +71,7 @@ export const socialLinks: SocialLink[] = [
     url: 'https://founder.mayrlabs.com',
     label: 'Website',
     icon: socialIcons.Website,
-    show: true,
+    show: false,
     priority: 0,
   },
 ];
