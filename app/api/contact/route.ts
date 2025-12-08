@@ -4,7 +4,7 @@ import { validateContactForm } from '@/lib/utils/validation';
 import connectDB from '@/lib/db/mongodb';
 import { Contact } from '@/lib/db/models/contact';
 import { sendTelegramNotification } from '@/lib/utils/telegram';
-import { verifyRecaptcha } from '@/lib/utils/recaptcha';
+import { checkRateLimit, getClientIp, RATE_LIMITS } from '@/lib/utils/rate-limit';
 
 /**
  * POST /api/contact
@@ -23,20 +23,25 @@ export async function POST(request: Request) {
     return ApiResponse.unauthorized();
   }
 
+  // Check rate limit
+  const clientIp = getClientIp(request);
+  const rateLimitResult = checkRateLimit(clientIp, RATE_LIMITS.FORM_SUBMISSION);
+
+  if (!rateLimitResult.allowed) {
+    return ApiResponse.error(
+      `Too many requests. Please try again in ${rateLimitResult.resetInSeconds} seconds.`,
+      429
+    );
+  }
+
   try {
     const body = await request.json();
-    const { name, email, subject, message, recaptchaToken } = body;
+    const { name, email, subject, message } = body;
 
     // Validate input
     const validation = validateContactForm({ name, email, subject, message });
     if (!validation.isValid) {
       return ApiResponse.validationError(validation.errors);
-    }
-
-    // Verify ReCAPTCHA
-    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-    if (!recaptchaResult.success) {
-      return ApiResponse.error('ReCAPTCHA verification failed', 400);
     }
 
     // Get client information
@@ -56,7 +61,7 @@ export async function POST(request: Request) {
       submitted_at: new Date(),
       ip_address: ipAddress,
       user_agent: userAgent,
-      recaptcha_score: recaptchaResult.score,
+      recaptcha_score: 0, // Not using reCAPTCHA anymore
       status: 'new',
     });
 
