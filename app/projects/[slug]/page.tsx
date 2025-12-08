@@ -44,7 +44,6 @@ export async function generateMetadata({
     };
   }
 
-  const techStack = project.icons.map((icon) => icon.label).join(', ');
   const mainImage = project.images[0];
 
   return {

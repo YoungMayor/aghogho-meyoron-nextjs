@@ -60,7 +60,7 @@ export function generateWebsiteSchema() {
 export function generateProjectSchema(project: Project) {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
-  const schema: any = {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: project.name,
