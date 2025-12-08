@@ -11,6 +11,9 @@ import ProjectsFilter from '@/components/features/ProjectsFilter';
 import Button from '@/components/ui/Button';
 import { useRouter, usePathname } from 'next/navigation';
 
+// Note: Since this is a client component, metadata is exported from a separate metadata file
+// See: app/projects/metadata.ts (if created) or move metadata to a server component wrapper
+
 function ProjectsContent() {
   const router = useRouter();
   const pathname = usePathname();

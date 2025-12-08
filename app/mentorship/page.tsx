@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { testimonials } from '@/lib/data/testimonials';
 import { mentorshipBenefits, mentorshipProcess } from '@/lib/data/mentorship';
 import { getVisibleItems } from '@/lib/utils/data';
@@ -6,6 +7,37 @@ import MentorshipForm from '@/components/features/MentorshipForm';
 import TestimonialCard from '@/components/features/TestimonialCard';
 import Card from '@/components/ui/Card';
 import Image from 'next/image';
+import { profile } from '@/lib/data/profile';
+
+export const metadata: Metadata = {
+  title: 'Mentorship Program',
+  description: `Apply for mentorship with ${profile.name}. Get guidance on software development, career growth, and technical expertise in Laravel, Next.js, React, and more.`,
+  keywords: [
+    'mentorship',
+    'software development mentorship',
+    'coding mentor',
+    'career guidance',
+    'technical mentorship',
+    'Laravel mentorship',
+    'React mentorship',
+    'web development mentor',
+    profile.name,
+  ],
+  openGraph: {
+    title: 'Mentorship Program',
+    description: `Apply for mentorship with ${profile.name}. Get guidance on software development and career growth.`,
+    type: 'website',
+    url: '/mentorship',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Mentorship Program',
+    description: `Apply for mentorship with ${profile.name}. Get guidance on software development and career growth.`,
+  },
+  alternates: {
+    canonical: '/mentorship',
+  },
+};
 
 export default function MentorshipPage() {
   // Get mentee testimonials

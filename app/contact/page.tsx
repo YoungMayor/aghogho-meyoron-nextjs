@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { profile } from '@/lib/data/profile';
 import { socialLinks } from '@/lib/data/social_links';
 import { getVisibleItems } from '@/lib/utils/data';
@@ -8,6 +9,34 @@ import Card from '@/components/ui/Card';
 import Icon from '@/components/ui/Icon';
 import MailIcon from '@/components/icons/MailIcon';
 import PhoneIcon from '@/components/icons/PhoneIcon';
+
+export const metadata: Metadata = {
+  title: 'Contact Me',
+  description: `Get in touch with ${profile.name}. ${profile.contact.message}`,
+  keywords: [
+    'contact',
+    'get in touch',
+    'email',
+    'reach out',
+    'collaboration',
+    'project inquiry',
+    profile.name,
+  ],
+  openGraph: {
+    title: `Contact ${profile.name}`,
+    description: `Get in touch with ${profile.name}. ${profile.contact.message}`,
+    type: 'website',
+    url: '/contact',
+  },
+  twitter: {
+    card: 'summary',
+    title: `Contact ${profile.name}`,
+    description: `Get in touch with ${profile.name}. ${profile.contact.message}`,
+  },
+  alternates: {
+    canonical: '/contact',
+  },
+};
 
 export default function ContactPage() {
   const visibleSocialLinks = getVisibleItems(socialLinks);

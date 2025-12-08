@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+import Script from 'next/script';
 import Link from 'next/link';
 import Image from 'next/image';
 import { projects } from '@/lib/data/projects';
@@ -11,9 +13,76 @@ import Card from '@/components/ui/Card';
 import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
 import ProjectGallery from '@/components/projects/ProjectGallery';
 import Breadcrumb from '@/components/ui/Breadcrumb';
+import { profile } from '@/lib/data/profile';
+import { generateProjectSchema, generateBreadcrumbSchema } from '@/lib/utils/structured-data';
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
+}
+
+// Generate static params for all visible projects
+export async function generateStaticParams() {
+  const visibleProjects = getVisibleItems(projects);
+  return visibleProjects
+    .filter((project) => project.slug)
+    .map((project) => ({
+      slug: project.slug!,
+    }));
+}
+
+// Generate metadata for each project
+export async function generateMetadata({
+  params,
+}: ProjectDetailPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const visibleProjects = getVisibleItems(projects);
+  const project = visibleProjects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+    };
+  }
+
+  const techStack = project.icons.map((icon) => icon.label).join(', ');
+  const mainImage = project.images[0];
+
+  return {
+    title: project.name,
+    description: project.description,
+    keywords: [
+      ...project.icons.map((icon) => icon.label),
+      project.type,
+      project.owner,
+      'portfolio project',
+      profile.name,
+    ],
+    openGraph: {
+      title: `${project.name} | ${profile.name}`,
+      description: project.description,
+      type: 'article',
+      url: `/projects/${slug}`,
+      images: mainImage
+        ? [
+            {
+              url: mainImage,
+              width: 1200,
+              height: 630,
+              alt: project.name,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.name} | ${profile.name}`,
+      description: project.description,
+      images: mainImage ? [mainImage] : undefined,
+    },
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
+  };
 }
 
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
@@ -39,24 +108,45 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   // Fetch markdown content
   const markdown = getMarkdownBySlug('lib/data/content', slug);
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      <SubPageHeader />
+  // Generate structured data
+  const projectSchema = generateProjectSchema(project);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Projects', url: '/projects' },
+    { name: project.name, url: `/projects/${slug}` },
+  ]);
 
-      <main className="flex-1">
-        {/* Breadcrumb */}
-        {/* This should be a component */}
-        <section className="py-6 px-4 border-b border-border">
-          <div className="max-w-7xl mx-auto">
-            <Breadcrumb
-              items={[
-                { label: 'Home', href: '/' },
-                { label: 'Projects', href: '/projects' },
-                { label: project.name, active: true },
-              ]}
-            />
-          </div>
-        </section>
+  return (
+    <>
+      {/* Structured Data for SEO */}
+      <Script
+        id="project-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+      />
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <div className="min-h-screen flex flex-col">
+        <SubPageHeader />
+
+        <main className="flex-1">
+          {/* Breadcrumb */}
+          {/* This should be a component */}
+          <section className="py-6 px-4 border-b border-border">
+            <div className="max-w-7xl mx-auto">
+              <Breadcrumb
+                items={[
+                  { label: 'Home', href: '/' },
+                  { label: 'Projects', href: '/projects' },
+                  { label: project.name, active: true },
+                ]}
+              />
+            </div>
+          </section>
 
         {/* Project Hero */}
         <section className="py-12 px-4 bg-gradient-to-b from-secondary/50 to-background">
@@ -214,15 +304,6 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </section>
       </main>
     </div>
+    </>
   );
-}
-
-export async function generateStaticParams() {
-  const visibleProjects = getVisibleItems(projects);
-
-  return visibleProjects
-    .filter((project) => project.slug)
-    .map((project) => ({
-      slug: project.slug as string,
-    }));
 }
