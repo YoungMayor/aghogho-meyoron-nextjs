@@ -139,12 +139,15 @@ body {
   }
 
   /* Force light mode colors for printing */
-  * {
+  .resume-header,
+  .resume-body,
+  .resume-section,
+  .resume-item {
     color: #000 !important;
     background-color: white !important;
   }
 
-  a {
+  .resume-body a {
     color: #000 !important;
     text-decoration: none !important;
   }

@@ -74,10 +74,12 @@ export default function ResumePage() {
   const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(true);
   const [initialized, setInitialized] = useState(false);
 
-  // Save config to localStorage whenever it changes
+  // Save config to localStorage whenever it changes (after initialization)
   useEffect(() => {
-    localStorage.setItem('resumeConfig', JSON.stringify(config));
-  }, [config]);
+    if (initialized) {
+      localStorage.setItem('resumeConfig', JSON.stringify(config));
+    }
+  }, [config, initialized]);
 
   // Get filtered data
   const visibleCareer = sortByDate(getVisibleItems(careerItems), 'start_date');
@@ -155,6 +157,7 @@ export default function ResumePage() {
 
   const handleReset = () => {
     setConfig(defaultConfig);
+    setInitialized(false);
     localStorage.removeItem('resumeConfig');
   };
 
