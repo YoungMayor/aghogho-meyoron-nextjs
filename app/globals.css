@@ -126,6 +126,10 @@ body {
     display: none !important;
   }
 
+  .grecaptcha-badge {
+    display: none !important;
+  }
+
   .resume-header {
     page-break-after: avoid;
   }
@@ -135,7 +139,7 @@ body {
   }
 
   .resume-item {
-    page-break-inside: avoid;
+    page-break-inside: auto;
   }
 
   /* Force light mode colors for printing */
