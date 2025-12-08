@@ -47,7 +47,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Technologies */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.icons.slice(0, 6).map((icon, index) => (
+            {project.icons.map((icon, index) => (
               <div key={index} className="group relative" title={icon.label}>
                 <Icon.fromIcon icon={icon} size={24} />
                 <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-popover text-popover-foreground rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-sm border border-border">

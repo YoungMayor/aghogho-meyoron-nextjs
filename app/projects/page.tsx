@@ -73,6 +73,7 @@ export default function ProjectsPage() {
                 { value: 'personal', label: 'Personal' },
                 { value: 'client', label: 'Client' },
                 { value: 'open-source', label: 'Open Source' },
+                { value: 'package', label: 'Packages' },
               ].map((tab) => (
                 <Button
                   key={tab.value}

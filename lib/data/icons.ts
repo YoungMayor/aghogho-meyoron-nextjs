@@ -15,6 +15,7 @@ export const techIcons = {
   SASS: devicon('sass', 'SASS'),
   JavaScript: devicon('javascript', 'JavaScript'),
   TypeScript: devicon('typescript', 'TypeScript'),
+  JSON: devicon('json', 'JSON'), // @ai: Add this to technologies
   PHP: devicon('php', 'PHP'),
   Python: devicon('python', 'Python'),
   Dart: devicon('dart', 'Dart'),

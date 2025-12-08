@@ -10,6 +10,10 @@ cloudinaryImage.goCodeshot = (filename: string) => {
   return cloudinaryImage(filename, 'projects/codeshots/go');
 };
 
+cloudinaryImage.jsCodeshot = (filename: string) => {
+  return cloudinaryImage(filename, 'projects/codeshots/js');
+};
+
 cloudinaryImage.people = (filename: string) => {
   return cloudinaryImage(filename, 'people');
 };
