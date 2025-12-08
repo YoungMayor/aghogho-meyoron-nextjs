@@ -4,7 +4,7 @@ export const people = {
   tovyss: {
     name: 'Tovia Amadi',
     titles: ['Digital Marketer | Product Manager'],
-    avatar_url: cloudinaryImage.people('Tovia-Amadi_rml20q.png'),
+    avatar_url: cloudinaryImage.people('Tovia-Amadi_rml20q'),
     biography:
       'A dedicated digital marketing and design professional who blends creative visions with practical business insights. ',
     profile_link: 'https://toviaamadi.com',
@@ -65,7 +65,7 @@ export const people = {
   laurence702: {
     name: 'Igbokwe Laurence',
     titles: ['Senior Software Engineer'],
-    avatar_url: cloudinaryImage.people('default_msqrmt.png'),
+    avatar_url: cloudinaryImage.people('default_msqrmt'),
     biography:
       'I am a prolific forger of impressive products, a creative Software engineer with more than 3 years experience in delivering result - oriented brands and creative solutions to meet business needs',
     profile_link: 'https://www.linkedin.com/in/francis-igbokwe-166597152/',

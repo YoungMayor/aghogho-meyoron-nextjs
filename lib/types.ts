@@ -81,7 +81,7 @@ export interface Project extends HasVisibility {
     | 'portfolio'
     | 'web-app'
     | 'other';
-  owner: 'personal' | 'client' | 'open-source' | 'other';
+  owner: 'personal' | 'client' | 'open-source' | 'package' | 'other';
   demo_link: string | null;
   repo_link: string | null;
   images: string[]; // First image would be used as the main image

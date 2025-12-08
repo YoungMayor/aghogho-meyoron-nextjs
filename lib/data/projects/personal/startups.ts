@@ -67,7 +67,7 @@ export const personalStartups: Project[] = [
     owner: 'personal',
     demo_link: 'https://saleshouse.mayrlabs.com',
     repo_link: null,
-    images: [cloudinaryImage.project('saleshouse-homepage.png')],
+    images: [cloudinaryImage.project('saleshouse-homepage')],
     show: true,
     priority: 0,
   },

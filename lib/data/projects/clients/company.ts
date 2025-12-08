@@ -31,7 +31,7 @@ export const companyProjects: Project[] = [
     owner: 'client',
     demo_link: 'https://gloverapp.co',
     repo_link: null,
-    images: [cloudinaryImage.project('glover-landing-page.png')],
+    images: [cloudinaryImage.project('glover-landing-page')],
     show: true,
     priority: 99,
     is_featured: true,

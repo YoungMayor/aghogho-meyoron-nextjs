@@ -62,7 +62,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images, title }) => {
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
-            <div className="relative w-full max-w-6xl max-h-[90vh] aspect-video">
+            <div className="relative h-full w-full max-w-6xl max-h-[90vh] aspect-video">
               <Image
                 src={selectedImage}
                 alt={`${title} full screen`}
