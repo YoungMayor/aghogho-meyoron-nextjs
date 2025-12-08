@@ -25,7 +25,7 @@ export default function SubPageHeader() {
   }, []);
 
   return (
-    <header className="z-50 sticky top-0 max-w-[1200px]">
+    <header className="z-50 sticky top-0 w-full max-w-[1200px] mx-auto">
       <nav
         className={`flex items-center justify-between px-6 py-3 transition-all duration-500 ease-in-out mx-auto ${
           isScrolled

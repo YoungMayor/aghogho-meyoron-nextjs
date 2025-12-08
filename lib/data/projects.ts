@@ -1,7 +1,6 @@
 import { Project } from '@/lib/types';
 import { companyProjects } from './projects/clients/company';
 import { personalStartups } from './projects/personal/startups';
-import { legacyProjects } from './projects/personal/legacy';
 import { personalWebApps } from './projects/personal/web-apps';
 import { clientPortfolios } from './projects/clients/portfolios';
 import { electronOpensourceApps } from './projects/personal/electron-opensource-apps';

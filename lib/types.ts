@@ -155,3 +155,42 @@ export interface ApiErrorResponse {
   details?: unknown;
   statusCode: number;
 }
+
+// Resume Builder Types
+export type TemplateId = 'classic' | 'modern' | 'minimal' | 'executive';
+
+export interface ResumeSectionConfig {
+  experience: boolean;
+  education: boolean;
+  skills: boolean;
+  projects: boolean;
+  badges: boolean;
+  hobbies: boolean;
+  contact: boolean;
+  summary: boolean;
+}
+
+export interface ResumeConfig {
+  templateId: TemplateId;
+  showSections: ResumeSectionConfig;
+  hiddenItemIds: string[]; // Using IDs or unique keys (like company_name)
+  customSummary?: string;
+  selectedItems: {
+    // Legacy support or specific selection logic
+    experience: string[];
+    education: string[];
+    skills: string[];
+    projects: string[];
+  };
+}
+
+export interface ResumeData {
+  profile: Profile;
+  careerHistory: CareerItem[];
+  education: AcademicRecord[];
+  skills: Skill[];
+  projects: Project[];
+  socialLinks: SocialLink[];
+  badges: string[];
+  hobbies: Hobby[];
+}
