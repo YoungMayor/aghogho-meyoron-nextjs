@@ -131,7 +131,7 @@ body {
   }
 
   .resume-section {
-    page-break-inside: avoid;
+    /* page-break-inside: avoid; */
   }
 
   .resume-item {
@@ -167,7 +167,6 @@ body {
 }
 
 .resume-modern .resume-header {
-  background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary)));
   border-radius: 0.5rem;
 }
 

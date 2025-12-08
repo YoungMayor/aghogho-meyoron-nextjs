@@ -5,7 +5,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'Github',
     url: 'https://github.com/YoungMayor',
-    label: 'Github',
+    label: '@YoungMayor',
     icon: socialIcons.Github,
     show: true,
     priority: 0,
@@ -13,7 +13,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'Instagram',
     url: 'https://instagram.com/youngmayor.dev',
-    label: 'Instagram',
+    label: '@youngmayor.dev',
     icon: socialIcons.Instagram,
     show: true,
     priority: 0,
@@ -21,7 +21,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'Linkedin',
     url: 'https://linkedin.com/in/meyoron-aghogho',
-    label: 'Linkedin',
+    label: 'in/meyoron-aghogho',
     icon: socialIcons.Linkedin,
     show: true,
     priority: 0,
@@ -29,7 +29,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'LinkTree',
     url: 'https://linktr.ee/YoungMayor',
-    label: 'LinkTree',
+    label: '@YoungMayor',
     icon: socialIcons.Linktree,
     show: true,
     priority: 0,
@@ -37,7 +37,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'Medium',
     url: 'https://medium.com/@youngmayor',
-    label: 'Medium',
+    label: '@youngmayor',
     icon: socialIcons.Medium,
     show: true,
     priority: 0,
@@ -45,7 +45,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'TikTok',
     url: 'https://tiktok.com/@youngmayor.dev',
-    label: 'TikTok',
+    label: '@youngmayor.dev',
     icon: socialIcons.TikTok,
     show: true,
     priority: 0,
@@ -61,7 +61,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'Telegram',
     url: 'https://t.me/YoungMayor_dev',
-    label: 'Telegram',
+    label: 't.me/YoungMayor_dev',
     icon: socialIcons.Telegram,
     show: true,
     priority: 0,
@@ -69,7 +69,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'Website',
     url: 'https://founder.mayrlabs.com',
-    label: 'Website',
+    label: 'founder.mayrlabs.com',
     icon: socialIcons.Website,
     show: false,
     priority: 0,

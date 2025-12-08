@@ -1,15 +1,21 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { ResumeConfig } from '@/lib/types';
+import { ResumeConfig, ResumeData } from '@/lib/types';
 import SubPageHeader from '@/components/layout/SubPageHeader';
 import Button from '@/components/ui/Button';
-import ResumeConfigPanel from './ResumeConfigPanel';
+import Modal from '@/components/ui/Modal';
+import SettingsIcon from '@/components/icons/SettingsIcon';
+import ResumeConfigPanel from '@/components/features/resume/ResumeConfigPanel';
 import ResumePreview from './ResumePreview';
 import { careerItems } from '@/lib/data/career_history';
 import { academicRecords } from '@/lib/data/academic_history';
 import { technicalSkills } from '@/lib/data/skills';
 import { projects } from '@/lib/data/projects';
+import { profile as profileData } from '@/lib/data/profile';
+import { socialLinks } from '@/lib/data/social_links';
+import { badges } from '@/lib/data/badges';
+import { hobbies } from '@/lib/data/hobbies';
 import { getVisibleItems, sortByPriority, sortByDate } from '@/lib/utils/data';
 
 const defaultConfig: ResumeConfig = {
@@ -24,6 +30,9 @@ const defaultConfig: ResumeConfig = {
     badges: false,
     hobbies: false,
   },
+  showAvatar: true,
+  showSkillIcons: true,
+  themeColor: '#2563eb', // Default Blue
   hiddenItemIds: [],
   selectedItems: {
     experience: [],
@@ -34,39 +43,45 @@ const defaultConfig: ResumeConfig = {
 };
 
 export default function ResumeBuilder() {
-  const [config, setConfig] = useState<ResumeConfig>(() => {
-    let initialConfig = defaultConfig;
-    if (typeof window !== 'undefined') {
-      const savedConfig = localStorage.getItem('resumeConfig');
-      if (savedConfig) {
-        try {
-          const parsed = JSON.parse(savedConfig);
-          // robust merge to handle legacy data structure
-          initialConfig = {
-            ...defaultConfig,
-            ...parsed,
-            templateId: parsed.templateId || parsed.template || defaultConfig.templateId,
-            showSections: {
-              ...defaultConfig.showSections,
-              ...(parsed.showSections || parsed.sections),
-            },
-            selectedItems: {
-              ...defaultConfig.selectedItems,
-              ...parsed.selectedItems,
-            },
-          };
-        } catch (e) {
-          console.error('Failed to load saved config:', e);
-        }
+  const [config, setConfig] = useState<ResumeConfig>(defaultConfig);
+  const [isConfigModalOpen, setIsConfigModalOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const isFirstRender = useRef(true);
+
+  // Load saved config on mount
+  useEffect(() => {
+    setIsMounted(true); // eslint-disable-line react-hooks/set-state-in-effect
+    const savedConfig = localStorage.getItem('resumeConfig');
+    let loadedConfig = defaultConfig;
+
+    if (savedConfig) {
+      try {
+        const parsed = JSON.parse(savedConfig);
+        // robust merge to handle legacy data structure
+        loadedConfig = {
+          ...defaultConfig,
+          ...parsed,
+          templateId: parsed.templateId || parsed.template || defaultConfig.templateId,
+          showSections: {
+            ...defaultConfig.showSections,
+            ...(parsed.showSections || parsed.sections),
+          },
+          selectedItems: {
+            ...defaultConfig.selectedItems,
+            ...parsed.selectedItems,
+          },
+        };
+      } catch (e) {
+        console.error('Failed to load saved config:', e);
       }
     }
 
-    // Initialize selected items if empty (logic moved from useEffect to avoid setState in effect)
+    // Initialize selected items if empty
     const needsInitialization =
-      initialConfig.selectedItems.experience.length === 0 &&
-      initialConfig.selectedItems.education.length === 0 &&
-      initialConfig.selectedItems.skills.length === 0 &&
-      initialConfig.selectedItems.projects.length === 0;
+      loadedConfig.selectedItems.experience.length === 0 &&
+      loadedConfig.selectedItems.education.length === 0 &&
+      loadedConfig.selectedItems.skills.length === 0 &&
+      loadedConfig.selectedItems.projects.length === 0;
 
     if (needsInitialization) {
       const visibleCareer = sortByDate(getVisibleItems(careerItems), 'start_date');
@@ -74,8 +89,8 @@ export default function ResumeBuilder() {
       const visibleSkills = sortByPriority(getVisibleItems(technicalSkills), 'desc');
       const visibleProjects = sortByPriority(getVisibleItems(projects), 'desc');
 
-      return {
-        ...initialConfig,
+      loadedConfig = {
+        ...loadedConfig,
         selectedItems: {
           experience: visibleCareer.slice(0, 3).map((item) => item.company_name),
           education: visibleEducation.slice(0, 2).map((item) => item.school),
@@ -85,11 +100,8 @@ export default function ResumeBuilder() {
       };
     }
 
-    return initialConfig;
-  });
-
-  const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(true);
-  const isFirstRender = useRef(true);
+    setConfig(loadedConfig);
+  }, []);
 
   // Persistence
   useEffect(() => {
@@ -99,6 +111,10 @@ export default function ResumeBuilder() {
     }
     localStorage.setItem('resumeConfig', JSON.stringify(config));
   }, [config]);
+
+  if (!isMounted) {
+    return null; // Prevent hydration mismatch by rendering nothing on server/first client render
+  }
 
   const handlePrint = () => {
     window.print();
@@ -123,6 +139,17 @@ export default function ResumeBuilder() {
     localStorage.removeItem('resumeConfig');
   };
 
+  const resumeData: ResumeData = {
+    profile: profileData,
+    careerHistory: careerItems,
+    education: academicRecords,
+    skills: technicalSkills,
+    projects: projects,
+    socialLinks: socialLinks,
+    badges: badges,
+    hobbies: hobbies,
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <div className="print:hidden">
@@ -137,33 +164,50 @@ export default function ResumeBuilder() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Customize your resume by selecting sections and items to include
             </p>
-            <div className="flex gap-4 justify-center">
+            <div className="flex gap-4 justify-center items-center">
               <Button onClick={handlePrint} variant="primary">
                 Print / Save as PDF
               </Button>
-              <Button onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} variant="secondary">
-                {isConfigPanelOpen ? 'Hide' : 'Show'} Configuration
+              <Button
+                onClick={() => setIsConfigModalOpen(true)}
+                variant="secondary"
+                className="p-3 rounded-full md:rounded-md md:px-4 aspect-square md:aspect-auto flex items-center justify-center gap-2"
+                aria-label="Customize Resume"
+              >
+                <SettingsIcon className="w-5 h-5" />
+                <span className="hidden md:inline">Customize</span>
               </Button>
             </div>
           </div>
         </section>
 
         <div className="max-w-7xl mx-auto px-4 py-8 print:p-0">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            {/* Configuration Panel */}
-            {isConfigPanelOpen && (
-              <ResumeConfigPanel config={config} setConfig={setConfig} onReset={handleReset} />
-            )}
-
+          <div className="flex justify-center">
             {/* Resume Preview */}
-            <div
-              className={`${isConfigPanelOpen ? 'lg:col-span-3' : 'lg:col-span-4'} print:col-span-full`}
-            >
+            <div className="w-full max-w-[210mm] print:max-w-none print:w-full">
               <ResumePreview config={config} />
             </div>
           </div>
         </div>
       </main>
+
+      {/* Configuration Modal */}
+      <Modal
+        isOpen={isConfigModalOpen}
+        onClose={() => setIsConfigModalOpen(false)}
+        title="Resume Configuration"
+        size="lg"
+      >
+        <div className="h-[70vh] -m-4">
+          {/* Passing resumeData to ConfigPanel for granular filtering logic inside the panel */}
+          <ResumeConfigPanel
+            config={config}
+            setConfig={setConfig}
+            onReset={handleReset}
+            data={resumeData}
+          />
+        </div>
+      </Modal>
     </div>
   );
 }

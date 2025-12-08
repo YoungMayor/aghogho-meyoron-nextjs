@@ -19,7 +19,8 @@ export const profile: Profile = {
   notes: {
     tagline: 'Building the future, one line at a time...',
     persona: 'Problem Solver, Gamer and Swimmer.',
-    about: 'MayR Loves solving real-world problems with scalable systems.',
+    about:
+      'Innovative Software Engineer with a passion for building scalable, user-centric solutions. Experienced in full-stack development, I specialize in crafting robust web applications and intuitive user interfaces. I thrive in collaborative environments, leveraging technology to solve complex real-world problems and drive impactful results.',
   },
   contact: {
     email: 'youngmayor.dev@gmail.com',

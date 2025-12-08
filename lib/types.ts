@@ -19,7 +19,12 @@ export interface Person {
 }
 
 // Profile
-export interface Profile extends Person {
+export interface Profile {
+  name: string;
+  titles: readonly string[]; // First title would be regarded as the main one
+  avatar_url?: string; // URL to profile image
+  biography: string; // HTML content
+  profile_link: string | null;
   notes: {
     tagline: string;
     persona: string;
@@ -173,6 +178,9 @@ export interface ResumeSectionConfig {
 export interface ResumeConfig {
   templateId: TemplateId;
   showSections: ResumeSectionConfig;
+  showAvatar: boolean;
+  showSkillIcons: boolean;
+  themeColor: string;
   hiddenItemIds: string[]; // Using IDs or unique keys (like company_name)
   customSummary?: string;
   selectedItems: {

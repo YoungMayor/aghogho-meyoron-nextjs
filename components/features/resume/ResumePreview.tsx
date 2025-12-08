@@ -28,7 +28,7 @@ export default function ResumePreview({ config }: ResumePreviewProps) {
 
     const visibleCareer = sortByDate(getVisibleItems(careerItems), 'start_date');
     const visibleEducation = sortByPriority(getVisibleItems(academicRecords), 'desc');
-    const visibleSkills = sortByPriority(getVisibleItems(technicalSkills), 'desc');
+    const visibleSkills = sortByPriority(getVisibleItems(technicalSkills), 'asc');
     const visibleProjects = sortByPriority(getVisibleItems(projects), 'desc');
     const visibleSocialLinks = sortByPriority(getVisibleItems(socialLinks), 'desc');
     const visibleHobbies = sortByPriority(getVisibleItems(hobbies), 'desc');
