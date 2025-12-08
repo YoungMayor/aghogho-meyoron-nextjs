@@ -5,6 +5,26 @@ import { cloudinaryImage } from '@/lib/utils/helpers';
 // Add learnbits and https://resume.mayrlabs.com
 export const personalWebApps: Project[] = [
   {
+    slug: 'learnbits',
+    name: 'Learnbits',
+    description:
+      "Learnbits offers bite-sized, open-access lessons designed for professionals to master various tech skills 'bit by bit'. It provides concise and focused content across areas like software development, data analysis, and cybersecurity.",
+    features: [
+      'Bite-Sized Lessons: Short, focused content for easy consumption.',
+      'Open Access: Available to everyone with optional PDF downloads.',
+      'Structured Learning Journeys: Guided paths from beginner to master.',
+      'Internal API: Developers can build tools on top of the platform.',
+    ],
+    icons: [techIcons.NextJS, techIcons.React, techIcons.TypeScript, techIcons.TailwindCSS],
+    type: 'web-app',
+    owner: 'personal',
+    demo_link: 'https://learnbits.mayrlabs.com',
+    repo_link: null,
+    images: [cloudinaryImage.project('learnbits')],
+    show: true,
+    priority: 0,
+  },
+  {
     slug: 'contentforge',
     name: 'ContentForge',
     description:
