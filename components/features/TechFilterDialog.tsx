@@ -54,11 +54,12 @@ export default function TechFilterDialog({
         {/* Grid */}
         <div className="flex-1 overflow-y-auto min-h-0 border rounded-xl p-4 bg-secondary/10">
           <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
-            {filteredIcons.map((icon) => {
+            {filteredIcons.map((icon, index) => {
               const isSelected = internalSelected.includes(icon.label);
               return (
                 <button
-                  key={icon.label}
+                  key={`filtered-icon-${index}-${icon.value}`}
+                  id={`filtered-icon-${index}-${icon.value}`}
                   onClick={() => toggleTech(icon.label)}
                   className={`
                     flex flex-col items-center justify-center p-3 rounded-xl border transition-all text-center

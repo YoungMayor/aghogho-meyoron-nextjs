@@ -118,7 +118,7 @@ export const techIcons = {
   GitHub: devicon('github', 'GitHub'),
   GitLab: devicon('gitlab', 'GitLab'),
   GitHubActions: devicon('githubactions', 'GitHub Actions'),
-  npm: devicon('npm', 'original-wordmark'),
+  npm: devicon('npm', 'NPM', 'original-wordmark'),
   Yarn: devicon('yarn', 'Yarn'),
   Composer: devicon('composer', 'Composer'),
   Bash: devicon('bash', 'Bash'),
