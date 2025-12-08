@@ -23,7 +23,8 @@ self.addEventListener('install', (event) => {
         console.log('Opened cache');
         return cache.addAll(STATIC_ASSETS).catch((error) => {
           console.error('Failed to cache static assets:', error);
-          // Continue even if some assets fail to cache
+          // Continue even if some assets fail to cache by returning a resolved promise
+          return Promise.resolve();
         });
       })
   );

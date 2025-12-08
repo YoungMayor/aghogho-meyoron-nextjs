@@ -11,19 +11,30 @@ interface RateLimitEntry {
 // In-memory store for rate limiting (per IP)
 const rateLimitStore = new Map<string, RateLimitEntry>();
 
-// Cleanup interval to remove expired entries
+// Track last cleanup time for lazy cleanup
+let lastCleanupTime = Date.now();
 const CLEANUP_INTERVAL = 60000; // 1 minute
 
-// Start cleanup interval
-if (typeof setInterval !== 'undefined') {
-  setInterval(() => {
-    const now = Date.now();
-    for (const [key, entry] of rateLimitStore.entries()) {
-      if (now > entry.resetTime) {
-        rateLimitStore.delete(key);
-      }
+/**
+ * Lazy cleanup function - only runs when needed
+ * This prevents memory leaks in serverless environments
+ */
+function cleanupExpiredEntries() {
+  const now = Date.now();
+  
+  // Only run cleanup if enough time has passed since last cleanup
+  if (now - lastCleanupTime < CLEANUP_INTERVAL) {
+    return;
+  }
+  
+  lastCleanupTime = now;
+  
+  // Remove expired entries
+  for (const [key, entry] of rateLimitStore.entries()) {
+    if (now > entry.resetTime) {
+      rateLimitStore.delete(key);
     }
-  }, CLEANUP_INTERVAL);
+  }
 }
 
 export interface RateLimitConfig {
@@ -62,6 +73,9 @@ export interface RateLimitResult {
  * @returns Rate limit result
  */
 export function checkRateLimit(identifier: string, config: RateLimitConfig): RateLimitResult {
+  // Run lazy cleanup on each check (serverless-friendly)
+  cleanupExpiredEntries();
+  
   const now = Date.now();
   const windowMs = config.windowSeconds * 1000;
 
