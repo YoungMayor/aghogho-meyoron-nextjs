@@ -114,3 +114,99 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-out;
 }
+
+/* Resume Print Styles */
+@media print {
+  body {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .resume-header {
+    page-break-after: avoid;
+  }
+
+  .resume-section {
+    page-break-inside: avoid;
+  }
+
+  .resume-item {
+    page-break-inside: avoid;
+  }
+
+  /* Force light mode colors for printing */
+  .resume-header,
+  .resume-body,
+  .resume-section,
+  .resume-item {
+    color: #000 !important;
+    background-color: white !important;
+  }
+
+  .resume-body a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}
+
+/* Resume Templates */
+.resume-classic .resume-header {
+  border-bottom: 2px solid hsl(var(--border));
+}
+
+.resume-classic .resume-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.resume-modern .resume-header {
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary)));
+  border-radius: 0.5rem;
+}
+
+.resume-modern .resume-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--primary));
+  position: relative;
+  padding-left: 1rem;
+}
+
+.resume-modern .resume-section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 4px;
+  height: 1.25rem;
+  background: hsl(var(--primary));
+  border-radius: 2px;
+}
+
+.resume-minimal .resume-header {
+  text-align: left;
+}
+
+.resume-minimal .resume-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resume-section {
+  margin-bottom: 1.5rem;
+}
+
+.resume-item {
+  margin-bottom: 1rem;
+}

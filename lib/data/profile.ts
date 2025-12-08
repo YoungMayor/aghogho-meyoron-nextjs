@@ -2,7 +2,7 @@ import { Profile } from '@/lib/types';
 
 export const profile: Profile = {
   name: 'Aghogho Meyoron',
-  titles: ['Software Engineer'],
+  titles: ['Software Engineer', 'Tech Mentor', 'Technical Writer'],
   avatar_url:
     'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1730326249/closeups/dawn-ai-best_ozyciu.jpg',
   biography: `<div>
