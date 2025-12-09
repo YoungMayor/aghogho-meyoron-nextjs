@@ -1,7 +1,7 @@
 import { POST } from '@/app/api/mentorship/route';
 import { generateAuthToken } from '@/lib/utils/api-auth';
 import { sendTelegramNotification } from '@/lib/utils/telegram';
-import { verifyRecaptcha } from '@/lib/utils/recaptcha';
+
 import connectDB from '@/lib/db/mongodb';
 
 // Mock dependencies
@@ -15,8 +15,16 @@ jest.mock('@/lib/utils/telegram', () => ({
   sendTelegramNotification: jest.fn(),
 }));
 
-jest.mock('@/lib/utils/recaptcha', () => ({
-  verifyRecaptcha: jest.fn(),
+jest.mock('@/lib/utils/rate-limit', () => ({
+  checkRateLimit: jest.fn(() => ({
+    allowed: true,
+    resetInSeconds: 0,
+    remaining: 10,
+  })),
+  getClientIp: jest.fn(() => '127.0.0.1'),
+  RATE_LIMITS: {
+    FORM_SUBMISSION: { maxRequests: 10, windowSeconds: 60 },
+  },
 }));
 
 // Mock Mentorship model
@@ -35,7 +43,6 @@ describe('Mentorship API', () => {
     process.env.INTERNAL_API_SECRET = validSecret;
     // const connect = require('@/lib/db/mongodb').default;
     (connectDB as jest.Mock).mockResolvedValue(true);
-    (verifyRecaptcha as jest.Mock).mockResolvedValue({ success: true, score: 0.9 });
     (sendTelegramNotification as jest.Mock).mockResolvedValue(true);
     mockCreate.mockResolvedValue({ _id: 'new-id' });
   });
