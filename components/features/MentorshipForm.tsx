@@ -6,7 +6,6 @@ import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
 import { generateAuthToken } from '@/lib/utils/api-auth';
-import { getRecaptchaToken } from '@/lib/utils/recaptcha';
 
 interface FormData {
   name: string;
@@ -104,12 +103,10 @@ export default function MentorshipForm() {
     try {
       const authToken = generateAuthToken(process.env.NEXT_PUBLIC_INTERNAL_API_SECRET || '');
 
-      const recaptchaToken = await getRecaptchaToken('mentorship_form');
-
       const response = await fetch('/api/mentorship', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'X-Auth-Token': authToken },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
