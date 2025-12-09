@@ -1,11 +1,7 @@
 import { Metadata } from 'next';
 import Script from 'next/script';
+import dynamic from 'next/dynamic';
 import Hero from '@/components/sections/Hero';
-import About from '@/components/sections/About';
-import Projects from '@/components/sections/Projects';
-import Career from '@/components/sections/Career';
-import Articles from '@/components/sections/Articles';
-import Testimonials from '@/components/sections/Testimonials';
 import MainPageHeader from '@/components/layout/MainPageHeader';
 import { profile } from '@/lib/data/profile';
 import {
@@ -13,6 +9,23 @@ import {
   generateWebsiteSchema,
   generateProfilePageSchema,
 } from '@/lib/utils/structured-data';
+
+// Dynamic imports for below-the-fold components to improve initial page load
+const About = dynamic(() => import('@/components/sections/About'), {
+  loading: () => <div className="min-h-screen" />,
+});
+const Projects = dynamic(() => import('@/components/sections/Projects'), {
+  loading: () => <div className="min-h-screen" />,
+});
+const Career = dynamic(() => import('@/components/sections/Career'), {
+  loading: () => <div className="min-h-screen" />,
+});
+const Articles = dynamic(() => import('@/components/sections/Articles'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
+const Testimonials = dynamic(() => import('@/components/sections/Testimonials'), {
+  loading: () => <div className="min-h-[400px]" />,
+});
 
 export const metadata: Metadata = {
   title: `${profile.name} | ${profile.titles[0]}`,
