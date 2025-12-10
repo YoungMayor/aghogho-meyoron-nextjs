@@ -102,6 +102,14 @@ export default function Footer() {
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Built with ❤️ by {profile.name}
             </p>
+            <a
+              href="https://github.com/YoungMayor/aghogho-meyoron-nextjs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            >
+              View Source Code
+            </a>
           </div>
         </div>
       </div>
