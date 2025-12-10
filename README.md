@@ -129,6 +129,10 @@ npm run lint
     └── aghogho-meyoron.json  # Portfolio data reference
 ```
 
+## Implementation Plan & Roadmap
+
+For a detailed breakdown of completed features, architecture, and the future roadmap, please refer to the [IMPLEMENTATION_PLAN.md](./IMPLEMENTATION_PLAN.md).
+
 ## Data Structure
 
 Data is managed via structured TypeScript files for easy maintenance and type safety:
