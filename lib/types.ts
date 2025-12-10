@@ -72,12 +72,10 @@ export interface Project extends HasVisibility {
   icons: Icon[];
   type:
     | 'api'
-    | 'dart-pkg'
-    | 'electron-app'
-    | 'flutter-pkg'
-    | 'go-cli'
-    | 'js-pkg'
+    | 'cli'
+    | 'desktop-app'
     | 'mobile-app'
+    | 'package'
     | 'portfolio'
     | 'web-app'
     | 'other';

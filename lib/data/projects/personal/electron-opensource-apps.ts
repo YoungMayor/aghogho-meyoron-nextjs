@@ -19,7 +19,7 @@ export const electronOpensourceApps: Project[] = [
       'Tab Tiling & Layout Control: Organize your workspace efficiently.',
     ],
     icons: [techIcons.ElectronJS, techIcons.React, techIcons.TypeScript, techIcons.TailwindCSS],
-    type: 'electron-app',
+    type: 'desktop-app',
     owner: 'personal',
     demo_link: 'https://dockyard.mayrlabs.com',
     repo_link: 'https://github.com/MayR-Labs/dockyard',

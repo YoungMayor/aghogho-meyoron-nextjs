@@ -20,10 +20,12 @@ const projectTypes = [
   { value: 'all', label: 'All Types' },
   { value: 'web-app', label: 'Web App' },
   { value: 'mobile-app', label: 'Mobile App' },
+  { value: 'desktop-app', label: 'Desktop App' },
   { value: 'api', label: 'API' },
   { value: 'portfolio', label: 'Portfolio' },
-  { value: 'package', label: 'Package (Dart/JS)' },
+  { value: 'package', label: 'Package' },
   { value: 'cli', label: 'CLI Tool' },
+  { value: 'other', label: 'Other' },
 ];
 
 export default function ProjectsFilter() {
