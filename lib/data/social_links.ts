@@ -1,0 +1,77 @@
+import { SocialLink } from '@/lib/types';
+import { socialIcons } from './icons';
+
+export const socialLinks: SocialLink[] = [
+  {
+    platform: 'Github',
+    url: 'https://github.com/YoungMayor',
+    label: '@YoungMayor',
+    icon: socialIcons.Github,
+    show: true,
+    priority: 0,
+  },
+  {
+    platform: 'Instagram',
+    url: 'https://instagram.com/youngmayor.dev',
+    label: '@youngmayor.dev',
+    icon: socialIcons.Instagram,
+    show: true,
+    priority: 0,
+  },
+  {
+    platform: 'Linkedin',
+    url: 'https://linkedin.com/in/meyoron-aghogho',
+    label: 'in/meyoron-aghogho',
+    icon: socialIcons.Linkedin,
+    show: true,
+    priority: 0,
+  },
+  {
+    platform: 'LinkTree',
+    url: 'https://linktr.ee/YoungMayor',
+    label: '@YoungMayor',
+    icon: socialIcons.Linktree,
+    show: true,
+    priority: 0,
+  },
+  {
+    platform: 'Medium',
+    url: 'https://medium.com/@youngmayor',
+    label: '@youngmayor',
+    icon: socialIcons.Medium,
+    show: true,
+    priority: 0,
+  },
+  {
+    platform: 'TikTok',
+    url: 'https://tiktok.com/@youngmayor.dev',
+    label: '@youngmayor.dev',
+    icon: socialIcons.TikTok,
+    show: true,
+    priority: 0,
+  },
+  {
+    platform: 'Whatsapp',
+    url: 'https://wa.link/uujcjm',
+    label: 'Whatsapp',
+    icon: socialIcons.Whatsapp,
+    show: true,
+    priority: 0,
+  },
+  {
+    platform: 'Telegram',
+    url: 'https://t.me/YoungMayor_dev',
+    label: 't.me/YoungMayor_dev',
+    icon: socialIcons.Telegram,
+    show: true,
+    priority: 0,
+  },
+  {
+    platform: 'Website',
+    url: 'https://founder.mayrlabs.com',
+    label: 'founder.mayrlabs.com',
+    icon: socialIcons.Website,
+    show: false,
+    priority: 0,
+  },
+];
