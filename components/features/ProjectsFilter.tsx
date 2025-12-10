@@ -111,9 +111,9 @@ export default function ProjectsFilter() {
         </div>
 
         {/* Secondary Filters */}
-        <div className="flex flex-wrap gap-3 w-full lg:w-auto">
+        <div className={`flex w-full lg:w-auto ${activeFiltersCount > 0 ? 'gap-4' : 'gap-3'}`}>
           {/* Type Select */}
-          <div className="w-full sm:w-40">
+          <div className="">
             <Select
               value={currentType}
               onChange={(e) => updateFilters('type', e.target.value)}
@@ -122,7 +122,7 @@ export default function ProjectsFilter() {
           </div>
 
           {/* Skills Select */}
-          <div className="w-full sm:w-40">
+          <div className="">
             <Select
               value={currentSkill}
               onChange={(e) => updateFilters('skill', e.target.value)}
