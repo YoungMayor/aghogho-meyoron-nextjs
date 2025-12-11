@@ -139,7 +139,7 @@ export default function ProjectsFilter() {
           <Button
             variant={currentTechs.length > 0 ? 'primary' : 'outline'}
             onClick={() => setIsTechModalOpen(true)}
-            className="w-full sm:w-auto"
+            className=""
             size="md"
           >
             Technologies {currentTechs.length > 0 && `(${currentTechs.length})`}
@@ -150,9 +150,10 @@ export default function ProjectsFilter() {
             <Button
               variant="ghost"
               onClick={clearFilters}
-              className="text-destructive hover:text-destructive/80 w-full sm:w-auto"
+              className="text-destructive hover:text-destructive/80 "
               size="md"
             >
+              {/* @ai: For mobile displays, use a brush icon instead */}
               Clear
             </Button>
           )}

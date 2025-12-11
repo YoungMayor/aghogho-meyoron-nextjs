@@ -11,7 +11,7 @@ import MentorshipIcon from '@/components/icons/MentorshipIcon';
 import MailIcon from '@/components/icons/MailIcon';
 import FileTextIcon from '@/components/icons/FileTextIcon';
 
-export default function SubPageHeader() {
+export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function SubPageHeader() {
   }, []);
 
   return (
-    <header className="z-50 sticky top-0 w-full max-w-[1200px] mx-auto">
+    <header className="z-50 sticky top-0 w-full max-w-[1200px] mx-auto print:hidden">
       <nav
         className={`flex items-center justify-between px-6 py-3 transition-all duration-500 ease-in-out mx-auto ${
           isScrolled

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
 import PWAProvider from '@/components/providers/PWAProvider';
 import { ThemeProvider } from 'next-themes';
 
@@ -72,6 +73,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <PWAProvider />
           <div className="flex min-h-screen flex-col">
+            <Header />
             <main className="flex-1">{children}</main>
             <Footer />
           </div>

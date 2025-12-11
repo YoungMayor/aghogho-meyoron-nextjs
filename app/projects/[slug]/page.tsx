@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { projects } from '@/lib/data/projects';
 import { getVisibleItems } from '@/lib/utils/data';
 import { getMarkdownBySlug } from '@/lib/utils/markdown';
-import SubPageHeader from '@/components/layout/SubPageHeader';
 import Icon from '@/components/ui/Icon';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
@@ -127,180 +126,176 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <div className="min-h-screen flex flex-col">
-        <SubPageHeader />
+      <main className="flex-1">
+        {/* Breadcrumb */}
+        {/* This should be a component */}
+        <section className="py-6 px-4 border-b border-border">
+          <div className="max-w-7xl mx-auto">
+            <Breadcrumb
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Projects', href: '/projects' },
+                { label: project.name, active: true },
+              ]}
+            />
+          </div>
+        </section>
 
-        <main className="flex-1">
-          {/* Breadcrumb */}
-          {/* This should be a component */}
-          <section className="py-6 px-4 border-b border-border">
-            <div className="max-w-7xl mx-auto">
-              <Breadcrumb
-                items={[
-                  { label: 'Home', href: '/' },
-                  { label: 'Projects', href: '/projects' },
-                  { label: project.name, active: true },
-                ]}
-              />
-            </div>
-          </section>
+        {/* Project Hero */}
+        <section className="py-12 px-4 bg-gradient-to-b from-secondary/50 to-background">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Project Image */}
+              <div className="relative aspect-video bg-muted rounded-2xl overflow-hidden shadow-lg">
+                {mainImage ? (
+                  <Image
+                    src={mainImage}
+                    alt={project.name}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full">
+                    <span className="text-6xl font-bold text-muted-foreground">
+                      {project.name.charAt(0)}
+                    </span>
+                  </div>
+                )}
+              </div>
 
-          {/* Project Hero */}
-          <section className="py-12 px-4 bg-gradient-to-b from-secondary/50 to-background">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Project Image */}
-                <div className="relative aspect-video bg-muted rounded-2xl overflow-hidden shadow-lg">
-                  {mainImage ? (
-                    <Image
-                      src={mainImage}
-                      alt={project.name}
-                      fill
-                      className="object-cover"
-                      unoptimized
-                    />
-                  ) : (
-                    <div className="flex items-center justify-center h-full">
-                      <span className="text-6xl font-bold text-muted-foreground">
-                        {project.name.charAt(0)}
-                      </span>
-                    </div>
+              {/* Project Info */}
+              <div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize">
+                    {project.owner}
+                  </span>
+                  <span className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize">
+                    {project.type.replace('-', ' ')}
+                  </span>
+                  {markdown && (
+                    <span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full">
+                      Documentation Available
+                    </span>
                   )}
                 </div>
 
-                {/* Project Info */}
-                <div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize">
-                      {project.owner}
-                    </span>
-                    <span className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize">
-                      {project.type.replace('-', ' ')}
-                    </span>
-                    {markdown && (
-                      <span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full">
-                        Documentation Available
-                      </span>
-                    )}
-                  </div>
+                <h1 className="text-4xl font-bold mb-4">{project.name}</h1>
+                <p className="text-lg text-muted-foreground mb-6">{project.description}</p>
 
-                  <h1 className="text-4xl font-bold mb-4">{project.name}</h1>
-                  <p className="text-lg text-muted-foreground mb-6">{project.description}</p>
-
-                  {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-4">
-                    {project.demo_link && (
-                      <a href={project.demo_link} target="_blank" rel="noopener noreferrer">
-                        <Button variant="primary" size="lg">
-                          View Demo
-                        </Button>
-                      </a>
-                    )}
-                    {project.repo_link && (
-                      <a href={project.repo_link} target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline" size="lg">
-                          View Repository
-                        </Button>
-                      </a>
-                    )}
-                  </div>
+                {/* Action Buttons */}
+                <div className="flex flex-wrap gap-4">
+                  {project.demo_link && (
+                    <a href={project.demo_link} target="_blank" rel="noopener noreferrer">
+                      <Button variant="primary" size="lg">
+                        View Demo
+                      </Button>
+                    </a>
+                  )}
+                  {project.repo_link && (
+                    <a href={project.repo_link} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="lg">
+                        View Repository
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Project Gallery */}
-          {project.images.length > 1 && (
-            <section className="py-8 px-4 bg-background border-b border-border">
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-xl font-bold mb-4">Gallery</h2>
-                <ProjectGallery images={project.images} title={project.name} />
-              </div>
-            </section>
-          )}
-
-          {/* Project Content (Markdown) */}
-          {markdown && (
-            <section className="py-12 px-4">
-              <div className="max-w-4xl mx-auto">
-                <MarkdownRenderer content={markdown.content} />
-              </div>
-            </section>
-          )}
-
-          {/* Technologies */}
-          <section className="py-12 px-4 bg-secondary/30">
+        {/* Project Gallery */}
+        {project.images.length > 1 && (
+          <section className="py-8 px-4 bg-background border-b border-border">
             <div className="max-w-7xl mx-auto">
-              <h2 className="text-2xl font-bold mb-6">Technologies Used</h2>
-              <div className="flex flex-wrap gap-4">
-                {project.icons.map((icon, index) => (
-                  <Card key={index} padding="sm">
-                    <div className="flex items-center gap-3">
-                      <Icon.fromIcon icon={icon} size={32} />
-                      <span className="font-medium">{icon.label}</span>
+              <h2 className="text-xl font-bold mb-4">Gallery</h2>
+              <ProjectGallery images={project.images} title={project.name} />
+            </div>
+          </section>
+        )}
+
+        {/* Project Content (Markdown) */}
+        {markdown && (
+          <section className="py-12 px-4">
+            <div className="max-w-4xl mx-auto">
+              <MarkdownRenderer content={markdown.content} />
+            </div>
+          </section>
+        )}
+
+        {/* Technologies */}
+        <section className="py-12 px-4 bg-secondary/30">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-2xl font-bold mb-6">Technologies Used</h2>
+            <div className="flex flex-wrap gap-4">
+              {project.icons.map((icon, index) => (
+                <Card key={index} padding="sm">
+                  <div className="flex items-center gap-3">
+                    <Icon.fromIcon icon={icon} size={32} />
+                    <span className="font-medium">{icon.label}</span>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features */}
+        {project.features.length > 0 && (
+          <section className="py-12 px-4 bg-gradient-to-b from-background to-secondary/30">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-2xl font-bold mb-6">Key Features</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.features.map((feature, index) => (
+                  <Card key={index} padding="md">
+                    <div className="flex gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground flex items-center justify-center text-background text-sm font-bold">
+                        ✓
+                      </div>
+                      <p className="text-muted-foreground">{feature}</p>
                     </div>
                   </Card>
                 ))}
               </div>
             </div>
           </section>
+        )}
 
-          {/* Features */}
-          {project.features.length > 0 && (
-            <section className="py-12 px-4 bg-gradient-to-b from-background to-secondary/30">
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {project.features.map((feature, index) => (
-                    <Card key={index} padding="md">
-                      <div className="flex gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground flex items-center justify-center text-background text-sm font-bold">
-                          ✓
-                        </div>
-                        <p className="text-muted-foreground">{feature}</p>
+        {/* Related Projects */}
+        {relatedProjects.length > 0 && (
+          <section className="py-12 px-4">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-2xl font-bold mb-6">Related Projects</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {relatedProjects.map((relatedProject) => (
+                  <Link key={relatedProject.slug} href={`/projects/${relatedProject.slug}`}>
+                    <Card variant="elevated" hoverable>
+                      <div className="p-4">
+                        <h3 className="font-bold mb-2">{relatedProject.name}</h3>
+                        <p className="text-sm text-muted-foreground line-clamp-2">
+                          {relatedProject.description}
+                        </p>
                       </div>
                     </Card>
-                  ))}
-                </div>
+                  </Link>
+                ))}
               </div>
-            </section>
-          )}
-
-          {/* Related Projects */}
-          {relatedProjects.length > 0 && (
-            <section className="py-12 px-4">
-              <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl font-bold mb-6">Related Projects</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {relatedProjects.map((relatedProject) => (
-                    <Link key={relatedProject.slug} href={`/projects/${relatedProject.slug}`}>
-                      <Card variant="elevated" hoverable>
-                        <div className="p-4">
-                          <h3 className="font-bold mb-2">{relatedProject.name}</h3>
-                          <p className="text-sm text-muted-foreground line-clamp-2">
-                            {relatedProject.description}
-                          </p>
-                        </div>
-                      </Card>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Back to Projects */}
-          <section className="py-12 px-4">
-            <div className="max-w-7xl mx-auto text-center">
-              <Link href="/projects">
-                <Button variant="outline" size="lg">
-                  ← Back to All Projects
-                </Button>
-              </Link>
             </div>
           </section>
-        </main>
-      </div>
+        )}
+
+        {/* Back to Projects */}
+        <section className="py-12 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <Link href="/projects">
+              <Button variant="outline" size="lg">
+                ← Back to All Projects
+              </Button>
+            </Link>
+          </div>
+        </section>
+      </main>
     </>
   );
 }

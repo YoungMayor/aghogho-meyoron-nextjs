@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { ResumeConfig, ResumeData } from '@/lib/types';
-import SubPageHeader from '@/components/layout/SubPageHeader';
+
 import Button from '@/components/ui/Button';
 import Modal from '@/components/ui/Modal';
 import SettingsIcon from '@/components/icons/SettingsIcon';
@@ -152,10 +152,6 @@ export default function ResumeBuilder() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="print:hidden">
-        <SubPageHeader />
-      </div>
-
       <main className="flex-1 print:p-0">
         {/* Hero Section - Hidden on print */}
         <section className="py-16 px-4 bg-gradient-to-b from-secondary/50 to-background print:hidden">

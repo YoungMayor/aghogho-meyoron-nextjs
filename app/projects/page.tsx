@@ -6,7 +6,7 @@ import { projects } from '@/lib/data/projects';
 import { skills } from '@/lib/data/skills';
 import { getVisibleItems, sortByPriority } from '@/lib/utils/data';
 import ProjectCard from '@/components/features/ProjectCard';
-import SubPageHeader from '@/components/layout/SubPageHeader';
+
 import ProjectsFilter from '@/components/features/ProjectsFilter';
 import Button from '@/components/ui/Button';
 import { useRouter, usePathname } from 'next/navigation';
@@ -94,7 +94,7 @@ function ProjectsContent() {
       </section>
 
       {/* Filters & Search */}
-      <section className="py-8 px-4 border-b border-border sticky top-[60px] z-10 bg-background/95 backdrop-blur-sm">
+      <section className="py-8 px-4 border-b border-border sticky top-0 pt-24 z-10 bg-background/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <ProjectsFilter />
 
@@ -135,11 +135,8 @@ function ProjectsContent() {
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <SubPageHeader />
-      <Suspense fallback={<div>Loading projects...</div>}>
-        <ProjectsContent />
-      </Suspense>
-    </div>
+    <Suspense fallback={<div>Loading projects...</div>}>
+      <ProjectsContent />
+    </Suspense>
   );
 }

@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
 import Hero from '@/components/sections/Hero';
-import MainPageHeader from '@/components/layout/MainPageHeader';
 import { profile } from '@/lib/data/profile';
 import {
   generatePersonSchema,
@@ -99,9 +98,8 @@ export default function Home() {
       />
 
       <div>
-        <MainPageHeader />
+        {/* Hero Section */}
         <Hero />
-        <About />
         <Projects />
         <Career />
         <Articles />
