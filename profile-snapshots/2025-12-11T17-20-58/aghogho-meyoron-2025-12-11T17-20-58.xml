@@ -1,0 +1,2499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile>
+  <_generatedAt>2025-12-11T17:20:58.228Z</_generatedAt>
+  <profile>
+    <name>Aghogho Meyoron</name>
+    <titles>
+      <item>Software Engineer</item>
+      <item>Tech Mentor</item>
+      <item>Technical Writer</item>
+    </titles>
+    <avatar_url>
+      https://res.cloudinary.com/meyoron-aghogho/image/upload/v1730326249/closeups/dawn-ai-best_ozyciu.jpg</avatar_url>
+    <biography>&lt;div&gt;
+      Hi, I'm &lt;b class='text-primary'&gt;Aghogho Meyoron&lt;/b&gt;, a seasoned full-stack
+      software engineer specializing in crafting and overseeing web applications.
+      With a proven history of bringing projects to life, I handle everything
+      from inception to planning, wireframing, user experience (UX) design,
+      coding, SEO, optimizations, and ongoing maintenance. My work embodies
+      modernity and adheres to industry standards, featuring rigorous unit and
+      feature testing and efficient coding to guarantee a flawless user experience.
+      My ultimate aim is to deliver a seamless and efficient user journey for my clients.
+      &lt;/div&gt;</biography>
+    <profile_link>null</profile_link>
+    <notes>
+      <tagline>Building the future, one line at a time...</tagline>
+      <persona>Problem Solver, Gamer and Swimmer.</persona>
+      <about>Innovative Software Engineer with a passion for building scalable, user-centric
+        solutions. Experienced in full-stack development, I specialize in crafting robust web
+        applications and intuitive user interfaces. I thrive in collaborative environments,
+        leveraging technology to solve complex real-world problems and drive impactful results.</about>
+    </notes>
+    <contact>
+      <email>youngmayor.dev@gmail.com</email>
+      <phone>+2348075178485</phone>
+      <message>Lets work together!</message>
+    </contact>
+    <copyright>
+      <year>2025</year>
+      <creator_name>MayR Labs</creator_name>
+      <creator_link>https://mayrlabs.com</creator_link>
+    </copyright>
+    <social_links>
+      <item>
+        <platform>Github</platform>
+        <url>https://github.com/YoungMayor</url>
+        <label>@YoungMayor</label>
+      </item>
+      <item>
+        <platform>Instagram</platform>
+        <url>https://instagram.com/youngmayor.dev</url>
+        <label>@youngmayor.dev</label>
+      </item>
+      <item>
+        <platform>Linkedin</platform>
+        <url>https://linkedin.com/in/meyoron-aghogho</url>
+        <label>in/meyoron-aghogho</label>
+      </item>
+      <item>
+        <platform>LinkTree</platform>
+        <url>https://linktr.ee/YoungMayor</url>
+        <label>@YoungMayor</label>
+      </item>
+      <item>
+        <platform>Medium</platform>
+        <url>https://medium.com/@youngmayor</url>
+        <label>@youngmayor</label>
+      </item>
+      <item>
+        <platform>TikTok</platform>
+        <url>https://tiktok.com/@youngmayor.dev</url>
+        <label>@youngmayor.dev</label>
+      </item>
+      <item>
+        <platform>Whatsapp</platform>
+        <url>https://wa.link/uujcjm</url>
+        <label>Whatsapp</label>
+      </item>
+      <item>
+        <platform>Telegram</platform>
+        <url>https://t.me/YoungMayor_dev</url>
+        <label>t.me/YoungMayor_dev</label>
+      </item>
+    </social_links>
+  </profile>
+  <projects>
+    <item>
+      <slug>glover</slug>
+      <name>Glover</name>
+      <description>As a Senior Backend Engineer at Glover, a leading Nigerian Fintech, I played a
+        pivotal role in optimizing and securing the platform which offers services ranging from gift
+        card trading to crypto payments. I led the migration of the legacy codebase from Laravel v7
+        to v12 with zero downtime, significantly boosting system performance and maintainability. My
+        work focused on high-impact features including a custom login security system with anomaly
+        detection, a high-speed rewards distribution engine, and a Google OCR-powered gift card
+        validation system utilizing encryption for data security. I also architected a comprehensive
+        Brand Ambassador dashboard and a fraud-resistant customer reward system, directly
+        contributing to increased user engagement and platform trust.</description>
+      <features>
+        <item>Advanced Login Security &amp; Fraud Detection</item>
+        <item>High-Volume Holiday Rewards System</item>
+        <item>Brand Ambassador Management Dashboard</item>
+        <item>Secure Giftcard OCR Validation</item>
+        <item>Automated Customer Rewards Engine</item>
+        <item>Virtual Card Issuance System</item>
+        <item>Zero-Downtime Infrastructure Upgrade</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>laravel-original</value>
+          <label>Laravel</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>postgresql-original</value>
+          <label>PostgreSQL</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>mariadb-original</value>
+          <label>MariaDB</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>redis-original</value>
+          <label>Redis</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>nodejs-original</value>
+          <label>Node.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>postman-original</value>
+          <label>Postman</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>nuxtjs-original</value>
+          <label>Nuxt.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+      </icons>
+      <type>web-app</type>
+      <owner>client</owner>
+      <demo_link>https://gloverapp.co</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/glover-landing-page</item>
+      </images>
+      <show>true</show>
+      <priority>99</priority>
+      <is_featured>true</is_featured>
+    </item>
+    <item>
+      <slug>learnbits</slug>
+      <name>Learnbits</name>
+      <description>Master the tech skills that matter, one byte at a time. Learnbits reimagines
+        professional development with bite-sized, high-impact lessons designed for the busy modern
+        developer. From React patterns to System Design, simply drop in, learn, and level up.</description>
+      <features>
+        <item>Micro-Learning Architecture: Dense, focused modules for maximum retention.</item>
+        <item>Open Knowledge Graph: Completely free access to high-value technical curriculum.</item>
+        <item>Progressive Complexity: Structured paths that grow with your skill level.</item>
+        <item>Developer API: A headless learning engine built to power external tools.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>react-original</value>
+          <label>React</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>typescript-original</value>
+          <label>TypeScript</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+      </icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://learnbits.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/learnbits</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>contentforge</slug>
+      <name>ContentForge</name>
+      <description>Your personal AI creative studio. ContentForge isn't just a wrapper—it's a
+        sophisticated content engine that harnesses the power of Gemini to generate
+        professional-grade articles, LinkedIn posts, and essays. Built for creators who refuse to
+        compromise on quality or speed.</description>
+      <features>
+        <item>Multi-Modal Generation: Articles, posts, essays, and stories from a single dashboard.</item>
+        <item>Tone &amp; Style Control: Fine-tune the AI to match your specific voice.</item>
+        <item>Privacy-First Design: Bring your own API key for complete data control.</item>
+        <item>Instant Export: Seamlessly move from draft to published content.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>googlecloud-original</value>
+          <label>GenKit</label>
+        </item>
+      </icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://contentforge.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/content-forge-dashboard</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+      <is_featured>true</is_featured>
+    </item>
+    <item>
+      <slug>learnflow-ai</slug>
+      <name>LearnFlow AI</name>
+      <description>The end of one-size-fits-all education. LearnFlow AI builds bespoke curriculums
+        solely for you. By analyzing your goals and preferred learning style, it constructs a unique
+        educational roadmap in seconds, turning "I want to learn" into "I am learning".</description>
+      <features>
+        <item>Adaptive Curriculum Engine: Generates courses tailored to your specific gaps.</item>
+        <item>Style-Matched Content: Explanations that resonate with how you actually think.</item>
+        <item>Instant Roadmap Generation: Go from curiosity to structured learning in seconds.</item>
+        <item>Dynamic Progress Tracking: Visualize your journey through complex topics.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>googlecloud-original</value>
+          <label>GenKit</label>
+        </item>
+        <item>
+          <type>simpleicon</type>
+          <value>googlegemini</value>
+          <label>Google Gemini</label>
+        </item>
+      </icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://learnflow.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/learnflow-ai</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+      <is_featured>true</is_featured>
+    </item>
+    <item>
+      <slug>lexai</slug>
+      <name>LexAI</name>
+      <description>Legal intelligence, democratized. LexAI bridges the gap between complex legal
+        jargon and everyday understanding. Using advanced natural language processing, it provides
+        instant, accessible clarity on legal topics, empowering users to navigate the law with
+        confidence.</description>
+      <features>
+        <item>Instant Legal Clarity: Translates statutes into plain English.</item>
+        <item>Context-Aware Analysis: Understands the nuance of your specific inquiry.</item>
+        <item>Broad Jurisdiction Support: Covers a wide range of legal topics and territories.</item>
+        <item>Safe-Guard Architecture: Engineered with strict disclaimers and safety rails.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>googlecloud-original</value>
+          <label>GenKit</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+      </icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://lexai.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/lexai-landing-page</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>prepai</slug>
+      <name>PrepAI</name>
+      <description>The unfair advantage for your exams. PrepAI transforms study time into high-yield
+        preparation. Whether tackling WAEC, JAMB, or GCE, our AI tutor identifies your weak points
+        and drills you until they become strengths.</description>
+      <features>
+        <item>Past Paper Simulator</item>
+        <item>Intelligent Weakness Detection</item>
+        <item>Essay Grading Assistant</item>
+        <item>24/7 AI Tutor</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>googlecloud-original</value>
+          <label>GenKit</label>
+        </item>
+      </icons>
+      <type>other</type>
+      <owner>personal</owner>
+      <demo_link>https://prepai.mayrlabs.com/get-started</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/prepai-landing-page</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>quizwise</slug>
+      <name>QuizWise</name>
+      <description>A quiz platform that never runs out of questions. Powered by real-time generative
+        AI, QuizWise creates unique, challenging trivia on the fly. It's not just a game—it's a
+        dynamic test of knowledge that evolves with every round.</description>
+      <features>
+        <item>Infinite Question Bank</item>
+        <item>Real-Time Content Generation</item>
+        <item>Adaptive Difficulty Scaling</item>
+        <item>Multi-Category Mastery</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>googlecloud-original</value>
+          <label>GenKit</label>
+        </item>
+      </icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://quizwise.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/quiz-wise-getting-started</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>fun-arcade</slug>
+      <name>Fun Arcade</name>
+      <description>Digital nostalgia, refined. Fun Arcade brings the golden age of gaming to the
+        modern web. Built with a focus on pure performance and offline capability, it delivers
+        distraction-free entertainment that loads in milliseconds and plays anywhere.</description>
+      <features>
+        <item>Zero-Latency Performance: Optimized for instant play.</item>
+        <item>Offline-First Architecture: Play without an internet connection.</item>
+        <item>Classic Game Collection: Faithful recreations of retro hits.</item>
+        <item>Cross-Device Sync: Seamless experience across mobile and desktop.</item>
+      </features>
+      <icons></icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://arcade.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/fun-arcade-games-preview</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>resumeready</slug>
+      <name>ResumeReady</name>
+      <description>Stop wrestling with formatting and start applying. ResumeReady combines
+        professional design principles with AI-powered content optimization to help you build a
+        winning resume. Stand out from the stack with documents that are ATS-friendly and visually
+        striking.</description>
+      <features>
+        <item>AI Content Enhancer: Suggests stronger action verbs and metrics.</item>
+        <item>ATS-Optimized Templates: Designed to pass automated screening tools.</item>
+        <item>Real-Time Preview: See your changes instantly as you type.</item>
+        <item>One-Click Export: Generate polished PDFs in seconds.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>googlecloud-original</value>
+          <label>GenKit</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>laravel-original</value>
+          <label>Laravel</label>
+        </item>
+      </icons>
+      <type>other</type>
+      <owner>personal</owner>
+      <demo_link>https://resumes.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/resume-ready-landing-page</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>shellbase</slug>
+      <name>ShellBase</name>
+      <description>The developer's command center. ShellBase transforms the chaotic world of CLI
+        commands into a structured, searchable knowledge base. Stop Googling syntax and start
+        executing commands with confidence using this high-performance reference tool.</description>
+      <features>
+        <item>Instant Command Search</item>
+        <item>Syntax Highlighting &amp; Copy</item>
+        <item>Category-Based Filtering</item>
+        <item>Community Verified Snippets</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>markdown-original</value>
+          <label>Markdown</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>googlecloud-original</value>
+          <label>GenKit</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+      </icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://shellbase.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/shellbase-homepage</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>ijokes</slug>
+      <name>iJokes</name>
+      <description>A showcase of seamless API integration and multi-platform deployment. iJokes
+        isn't just a humor app—it's a demonstration of modern frontend architecture, featuring a
+        responsive web app and a fully synchronized Telegram bot, all powered by a unified backend.</description>
+      <features>
+        <item>Cross-Platform Sync</item>
+        <item> Telegram Bot Integration</item>
+        <item>Real-Time API Consumption</item>
+        <item>Responsive Material Design</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>typescript-original</value>
+          <label>TypeScript</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>cloudflareworkers-original</value>
+          <label>Cloudflare Workers</label>
+        </item>
+      </icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://ijokes.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images></images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>calcplay</slug>
+      <name>CalcPlay</name>
+      <description>Data Science meets satire. CalcPlay takes mundane numbers and spins them into
+        unexpected, humorous, and sometimes shocking perspectives. It’s a playground for curiosity
+        that challenges how we perceive scale, time, and probability.</description>
+      <features>
+        <item>Novelty Calculation Engine</item>
+        <item>Humorous Data Visualization</item>
+        <item>Interactive Scenarios</item>
+        <item>Shareable Insights</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>typescript-original</value>
+          <label>TypeScript</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+      </icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://calcplay.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/calcplay-homepage</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>who-wants-to-be-a-millionaire</slug>
+      <name>Who wants to be a millionaire</name>
+      <description>The classic game show, reinvented with an AI brain. This isn't a static
+        script—it's a dynamic experience where the 'Host' is powered by advanced AI, generating
+        questions and commentary in real-time. Test your knowledge against a machine that knows how
+        to challenge you.</description>
+      <features>
+        <item>AI Host Persona: Dynamic commentary and interaction.</item>
+        <item>Procedural Question Generation: Never see the same game twice.</item>
+        <item>Authentic Game Mechanics: Lifelines, timers, and climbing the ladder.</item>
+        <item>Immersive Audio-Visuals: High-fidelity recreation of the show's atmosphere.</item>
+      </features>
+      <icons></icons>
+      <type>web-app</type>
+      <owner>personal</owner>
+      <demo_link>https://wwtbam.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/wwtbam-game-screen-1</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>tovia-amadi</slug>
+      <name>Tovia Amadi | Digital Marketer</name>
+      <description>A dynamic portfolio for a Digital &amp; Email Marketer. Features a custom AI
+        chatbot "TovysAI", showcases his marketing campaigns, design projects, and product
+        management skills.</description>
+      <features>
+        <item>AI Chatbot Integration (TovysAI)</item>
+        <item>Marketing Campaign Showcase</item>
+        <item>Design Portfolio</item>
+        <item>Resume Download</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>react-original</value>
+          <label>React</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>netlify-original</value>
+          <label>Netlify</label>
+        </item>
+      </icons>
+      <type>portfolio</type>
+      <owner>client</owner>
+      <demo_link>https://toviaamadi.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/tovia-amadi-dark</item>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/tovia-amadi-light</item>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/tovia-amadi-resume</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+      <is_featured>true</is_featured>
+    </item>
+    <item>
+      <slug>esther-ubeng</slug>
+      <name>Esther Idara Ubeng | Senior Product Manager</name>
+      <description>A professional portfolio for a visionary Senior Product Manager and Scrum Master.
+        The site highlights her extensive experience in driving impactful product strategies,
+        leading agile teams, and her dedication to mentoring aspiring tech professionals.</description>
+      <features>
+        <item>Product Lifecycle Management</item>
+        <item>Agile &amp; Scrum Leadership</item>
+        <item>Mentorship Program Integration</item>
+        <item>Project Case Studies</item>
+        <item>Professional Blog</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>react-original</value>
+          <label>React</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>netlify-original</value>
+          <label>Netlify</label>
+        </item>
+      </icons>
+      <type>portfolio</type>
+      <owner>client</owner>
+      <demo_link>https://estherubeng.netlify.app</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/esther-ubeng</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+      <is_featured>true</is_featured>
+    </item>
+    <item>
+      <slug>enuma-ifeoma</slug>
+      <name>Enuma Ifeoma | HSE Personnel</name>
+      <description>A professional portfolio for a dedicated HSE Personnel. The site showcases her
+        commitment to health, safety, and environment standards, featuring her certifications,
+        projects, and professional journey.</description>
+      <features>
+        <item>HSE Certifications Showcase</item>
+        <item>Safety Projects Gallery</item>
+        <item>Professional Biography</item>
+        <item>Contact Integration</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>react-original</value>
+          <label>React</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>netlify-original</value>
+          <label>Netlify</label>
+        </item>
+      </icons>
+      <type>portfolio</type>
+      <owner>client</owner>
+      <demo_link>https://enumaifeoma.netlify.app</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/enuma-ifeoma</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+      <is_featured>true</is_featured>
+    </item>
+    <item>
+      <slug>fortune-odjeni</slug>
+      <name>Fortune Odjeni | Legal Practitioner</name>
+      <description>A comprehensive portfolio for a Lawyer in the making, Humanitarian Advocate, and
+        Writer. Highlights his legal journey, advocacy work, and collection of written articles.</description>
+      <features>
+        <item>Legal Portfolio</item>
+        <item>Advocacy Projects</item>
+        <item>Article Blog</item>
+        <item>Professional Profile</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>react-original</value>
+          <label>React</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>netlify-original</value>
+          <label>Netlify</label>
+        </item>
+      </icons>
+      <type>portfolio</type>
+      <owner>client</owner>
+      <demo_link>https://odjenifortune.netlify.app</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/fortune-odjeni</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+      <is_featured>true</is_featured>
+    </item>
+    <item>
+      <slug>saleshouse</slug>
+      <name>SalesHouse</name>
+      <description>Buy and sell pre-loved goods, connect with others, and find your next treasure.</description>
+      <features>
+        <item>Auction based sales</item>
+        <item>AI powered pricing tool</item>
+        <item>in-app chat between sellers and buyers</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>nextjs-original</value>
+          <label>Next.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>googlecloud-original</value>
+          <label>GenKit</label>
+        </item>
+      </icons>
+      <type>other</type>
+      <owner>personal</owner>
+      <demo_link>https://saleshouse.mayrlabs.com</demo_link>
+      <repo_link>null</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/saleshouse-homepage</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>dockyard</slug>
+      <name>DockYard</name>
+      <description>A privacy-first desktop workspace for all your web apps. It serves as an
+        open-source alternative to Rambox, offering session isolation, auto-hibernation, and full
+        customization to streamline your workflow.</description>
+      <features>
+        <item>Session Isolation: Keep your accounts separate and secure.</item>
+        <item>Auto-Hibernation: Save memory by suspending inactive apps.</item>
+        <item>Full Customization: Tailor the workspace to your needs.</item>
+        <item>Multiple Profiles: Manage different sets of apps easily.</item>
+        <item>Tab Tiling &amp; Layout Control: Organize your workspace efficiently.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>electron-original</value>
+          <label>ElectronJS</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>react-original</value>
+          <label>React</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>typescript-original</value>
+          <label>TypeScript</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>tailwindcss-original</value>
+          <label>Tailwind CSS</label>
+        </item>
+      </icons>
+      <type>desktop-app</type>
+      <owner>personal</owner>
+      <demo_link>https://dockyard.mayrlabs.com</demo_link>
+      <repo_link>https://github.com/MayR-Labs/dockyard</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/dockyard</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/add-app.png</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/app-layout.png</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/create-workspace.png</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/customise-app-1.png</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/customise-app.png</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/customise-theme.png</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/multi-profile.png</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/responsiveness-setting.png</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/select-app.png</item>
+        <item>https://dockyard.mayrlabs.com/screenshots/switch-workspace.png</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+      <is_featured>true</is_featured>
+    </item>
+    <item>
+      <slug>mayr_dart_extensions</slug>
+      <name>mayr_dart_extensions</name>
+      <description>A comprehensive set of handy Dart extensions to make your code cleaner, shorter,
+        and more expressive. It provides utility methods for Strings, Numbers, Dates, Collections,
+        and more.</description>
+      <features>
+        <item>String extensions (capitalization, truncation, etc.).</item>
+        <item>Number extensions for formatting and calculations.</item>
+        <item>DateTime and Duration utility methods.</item>
+        <item>Collection extensions (List, Map, Set) for easier manipulation.</item>
+        <item>Type conversion and validation helpers.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>dart-original</value>
+          <label>Dart</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>json-original</value>
+          <label>JSON</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://pub.dev/packages/mayr_dart_extensions</demo_link>
+      <repo_link>https://github.com/MayR-Labs/mayr_dart_extensions</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_dart_extensions</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>mayr_fake_api</slug>
+      <name>mayr_fake_api</name>
+      <description>A pure Dart package that intercepts API calls and returns fake JSON responses
+        from local files during development. It streamlines development by simulating backend
+        responses without needing a live server.</description>
+      <features>
+        <item>Intercepts network requests and serves data from local JSON files.</item>
+        <item>Works with both pure Dart and Flutter applications.</item>
+        <item>Supports folder-structured routing (e.g., /api/user/profile.json).</item>
+        <item>Supports multiple HTTP methods (GET, POST, PUT, DELETE).</item>
+        <item>Built-in 404 simulation and error handling.</item>
+        <item>Dynamic data support with Faker-powered placeholders.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>dart-original</value>
+          <label>Dart</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>json-original</value>
+          <label>JSON</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://pub.dev/packages/mayr_fake_api</demo_link>
+      <repo_link>https://github.com/MayR-Labs/mayr_dart_fake_api</repo_link>
+      <images></images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>mayr_stateman</slug>
+      <name>mayr_stateman</name>
+      <description>A lightweight and intuitive state utility for Dart. Easily manage and track
+        states, statuses, messages, and payloads with simple, chainable methods.</description>
+      <features>
+        <item>Simple &amp; Lightweight: Pure Dart state management with zero dependencies.</item>
+        <item>Comprehensive Status Management: Handle idle, loading, success, error, etc.</item>
+        <item>Fluent API: Chain multiple state updates elegantly.</item>
+        <item>Type-Safe Payloads and Message Support.</item>
+        <item>Visual Feedback: Emoji representations for each status.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>dart-original</value>
+          <label>Dart</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>json-original</value>
+          <label>JSON</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://pub.dev/packages/mayr_stateman</demo_link>
+      <repo_link>https://github.com/YoungMayor/mayr_dart_stateman</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_stateman</item>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_stateman_getters</item>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_stateman_setters</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>mayr_i18n_generation</slug>
+      <name>mayr_i18n_generation</name>
+      <description>Provides automatic type-safe translation key generation for projects using
+        mayr_i18n. It scans JSON language files and generates structured Dart classes.</description>
+      <features>
+        <item>Scans JSON language files to generate Dart classes.</item>
+        <item>Provides code completion for translation keys.</item>
+        <item>Ensures type safety for localization.</item>
+        <item>Supports nested JSON structures.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>dart-original</value>
+          <label>Dart</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>json-original</value>
+          <label>JSON</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://pub.dev/packages/mayr_i18n_generation</demo_link>
+      <repo_link>https://github.com/YoungMayor/mayr_dart_i18n_generation</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_i18n_generation</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>mayr_i18n</slug>
+      <name>mayr_i18n</name>
+      <description>A Dart-based, JSON-powered internationalization (i18n) library. It allows
+        managing translations in plain JSON files and provides CLI tools for verification and
+        syncing.</description>
+      <features>
+        <item>JSON-based translation management.</item>
+        <item>CLI tools for key verification, syncing, and auditing.</item>
+        <item>Dynamic string translation with variable interpolation.</item>
+        <item>Helper extension `.tr()` for easy translation lookup.</item>
+        <item>Supports nested keys and multiple languages.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>dart-original</value>
+          <label>Dart</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>json-original</value>
+          <label>JSON</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://pub.dev/packages/mayr_i18n</demo_link>
+      <repo_link>https://github.com/YoungMayor/mayr_dart_i18n</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_i18n</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>mayr_validator</slug>
+      <name>mayr_validator</name>
+      <description>A powerful yet elegant validation library for Dart and Flutter, inspired by
+        Laravel validator syntax and philosophy.</description>
+      <features>
+        <item>Fluent API for chaining validation rules.</item>
+        <item>Reusable validator groups for complex patterns.</item>
+        <item>Custom validator support.</item>
+        <item>Global configuration for defaults and messages.</item>
+        <item>Integrates seamlessly with Flutter TextFormField.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>dart-original</value>
+          <label>Dart</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>json-original</value>
+          <label>JSON</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://pub.dev/packages/mayr_validator</demo_link>
+      <repo_link>https://github.com/MayR-Labs/dart_validator</repo_link>
+      <images></images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>mayr_storage</slug>
+      <name>mayr_storage</name>
+      <description>Simple and unified storage solution for Flutter apps. Easily manage
+        SharedPreferences, EncryptedSharedPreferences, and GetStorage with a clean, consistent API.</description>
+      <features>
+        <item>Unified API for SharedPreferences, EncryptedSharedPreferences, and GetStorage.</item>
+        <item>Type-safe key definition.</item>
+        <item>Simple methods: read(), write(), delete().</item>
+        <item>Supports multiple data types (String, int, bool, List, etc.).</item>
+        <item>Zero boilerplate setup.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>dart-original</value>
+          <label>Dart</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>json-original</value>
+          <label>JSON</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://pub.dev/packages/mayr_storage</demo_link>
+      <repo_link>https://github.com/MayR-Labs/flutter_storage</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_storage</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>mayr_md_cms</slug>
+      <name>mayr_md_cms</name>
+      <description>A flexible Flutter widget that fetches and renders Markdown content from local
+        assets, network URLs, or custom sources with built-in loading and error handling.</description>
+      <features>
+        <item>Fetch and render Markdown from assets, URLs, or custom sources.</item>
+        <item>Automatic handling of links (browser, clipboard, custom actions).</item>
+        <item>Support for internal link actions.</item>
+        <item>Fully customizable loading and error widgets.</item>
+        <item>Customizable Markdown stylesheet.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>dart-original</value>
+          <label>Dart</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>json-original</value>
+          <label>JSON</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://pub.dev/packages/mayr_md_cms</demo_link>
+      <repo_link>https://github.com/MayR-Labs/mayr_flutter_md_cms</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_md_cms</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>mayr_flutter_extensions</slug>
+      <name>mayr_flutter_extensions</name>
+      <description>A comprehensive set of handy Flutter-specific extensions to make your Flutter
+        code cleaner, shorter, and more expressive. Designed to work alongside mayr_dart_extensions.</description>
+      <features>
+        <item>BuildContext extensions for simplified access to theme, media query, etc.</item>
+        <item>Widget extensions for padding, alignment, and more.</item>
+        <item>Image extensions.</item>
+        <item>Reduces boilerplate code in UI development.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>dart-original</value>
+          <label>Dart</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>json-original</value>
+          <label>JSON</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://pub.dev/packages/mayr_flutter_extensions</demo_link>
+      <repo_link>https://github.com/MayR-Labs/mayr_flutter_extensions</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_flutter_extensions</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>prunejs</slug>
+      <name>PruneJS</name>
+      <description>A powerful, configurable CLI tool designed to enhance the cleanliness and
+        maintainability of JavaScript and TypeScript projects by identifying and removing unused
+        code (dead code).</description>
+      <features>
+        <item>Smart scanning for unused exports and non-exported declarations.</item>
+        <item>Safe automatic removal of unused code using syntax-aware analysis.</item>
+        <item>Configurable include/exclude directories.</item>
+        <item>Safety checks to prevent scanning excluded directories like node_modules.</item>
+        <item>Generates comprehensive Markdown reports on codebase health.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>javascript-original</value>
+          <label>JavaScript</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>typescript-original</value>
+          <label>TypeScript</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>nodejs-original</value>
+          <label>Node.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>npm-original-wordmark</value>
+          <label>NPM</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://www.npmjs.com/package/prunejs</demo_link>
+      <repo_link>https://github.com/YoungMayor/prunejs</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/js/prunejs</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>js-pkg-base64</slug>
+      <name>@youngmayor/base64</name>
+      <description>A lightweight and efficient utility package for Base64 encoding and decoding
+        operations.</description>
+      <features>
+        <item>Fast Base64 encoding and decoding.</item>
+        <item>Simple and intuitive API.</item>
+        <item>Lightweight with minimal dependencies.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>javascript-original</value>
+          <label>JavaScript</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>typescript-original</value>
+          <label>TypeScript</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>nodejs-original</value>
+          <label>Node.js</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>npm-original-wordmark</value>
+          <label>NPM</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>package</type>
+      <demo_link>https://www.npmjs.com/package/@youngmayor/base64</demo_link>
+      <repo_link>https://github.com/YoungMayor/base64</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/js/base64</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>secureflow</slug>
+      <name>SecureFlow CLI</name>
+      <description>A CLI application for encrypting and decrypting sensitive files (like Flutter
+        private assets) for secure CI/CD pipelines. It uses AES-256-CBC encryption to keep secrets
+        safe.</description>
+      <features>
+        <item>Strong AES-256-CBC encryption with PBKDF2.</item>
+        <item>Fast and lightweight single binary.</item>
+        <item>Cross-platform support (Linux, macOS, Windows).</item>
+        <item>CI/CD ready with non-interactive mode.</item>
+        <item>Simple YAML-based configuration.</item>
+        <item>Detailed encryption reports.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>go-original</value>
+          <label>Go</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>githubactions-original</value>
+          <label>GitHub Actions</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>cli</type>
+      <demo_link>null</demo_link>
+      <repo_link>https://github.com/MayR-Labs/secureflow-go</repo_link>
+      <images>
+        <item>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/go/secureflow</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <slug>envdoc</slug>
+      <name>EnvDoc</name>
+      <description>A powerful CLI tool for managing, validating, and transforming environment
+        variable files (`.env`). It helps keep environment configurations in sync and documented.</description>
+      <features>
+        <item>Documentation Generation: Create example files and schemas from .env.</item>
+        <item>Auditing: Find duplicate keys and missing variables.</item>
+        <item>Synchronization: Keep .env files in sync across environments.</item>
+        <item>Security: Encrypt/decrypt support.</item>
+        <item>Conversion between .env, JSON, and YAML.</item>
+        <item>Validation against JSON schemas.</item>
+      </features>
+      <icons>
+        <item>
+          <type>devicon</type>
+          <value>go-original</value>
+          <label>Go</label>
+        </item>
+        <item>
+          <type>devicon</type>
+          <value>githubactions-original</value>
+          <label>GitHub Actions</label>
+        </item>
+      </icons>
+      <owner>package</owner>
+      <type>cli</type>
+      <demo_link>null</demo_link>
+      <repo_link>https://github.com/MayR-Labs/envdoc-go</repo_link>
+      <images>
+        <item>https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/go/envdoc</item>
+      </images>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+  </projects>
+  <skills>
+    <technical>
+      <item>
+        <name>Frontend</name>
+        <description>null</description>
+        <type>tech</type>
+        <icons>
+          <item>
+            <type>devicon</type>
+            <value>html5-original</value>
+            <label>HTML5</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>css3-original</value>
+            <label>CSS3</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>sass-original</value>
+            <label>SASS</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>less-plain-wordmark</value>
+            <label>LESS</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>javascript-original</value>
+            <label>JavaScript</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>typescript-original</value>
+            <label>TypeScript</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>vuejs-original</value>
+            <label>Vue.js</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>nuxtjs-original</value>
+            <label>Nuxt.js</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>react-original</value>
+            <label>React</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>bootstrap-original</value>
+            <label>Bootstrap</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>tailwindcss-original</value>
+            <label>Tailwind CSS</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>vuetify-original</value>
+            <label>Vuetify</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>materialui-original</value>
+            <label>Material UI</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>bulma-plain</value>
+            <label>Bulma</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>wordpress-original</value>
+            <label>WordPress</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>angularjs-original</value>
+            <label>Angular</label>
+          </item>
+        </icons>
+        <show>true</show>
+        <priority>1</priority>
+      </item>
+      <item>
+        <name>Backend</name>
+        <description>null</description>
+        <type>tech</type>
+        <icons>
+          <item>
+            <type>devicon</type>
+            <value>php-original</value>
+            <label>PHP</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>python-original</value>
+            <label>Python</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>dart-original</value>
+            <label>Dart</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>c-original</value>
+            <label>C</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>cplusplus-original</value>
+            <label>C++</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>csharp-original</value>
+            <label>C#</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>go-original</value>
+            <label>Go</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>java-original</value>
+            <label>Java</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>kotlin-original</value>
+            <label>Kotlin</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>laravel-original</value>
+            <label>Laravel</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>symfony-original</value>
+            <label>Symfony</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>cakephp-original</value>
+            <label>CakePHP</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>yii-original</value>
+            <label>Yii</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>express-original</value>
+            <label>Express.js</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>django-plain</value>
+            <label>Django</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>dot-net-original</value>
+            <label>.NET</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>flask-original</value>
+            <label>Flask</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>graphql-plain</value>
+            <label>GraphQL</label>
+          </item>
+        </icons>
+        <show>true</show>
+        <priority>2</priority>
+      </item>
+      <item>
+        <name>Mobile</name>
+        <description>null</description>
+        <type>tech</type>
+        <icons>
+          <item>
+            <type>devicon</type>
+            <value>dart-original</value>
+            <label>Dart</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>swift-original</value>
+            <label>Swift</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>flutter-original</value>
+            <label>Flutter</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>react-original</value>
+            <label>React Native</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>expo-original</value>
+            <label>Expo</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>electron-original</value>
+            <label>ElectronJS</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>tauri-original</value>
+            <label>Tauri</label>
+          </item>
+        </icons>
+        <show>true</show>
+        <priority>3</priority>
+      </item>
+      <item>
+        <name>Database</name>
+        <description>null</description>
+        <type>tech</type>
+        <icons>
+          <item>
+            <type>devicon</type>
+            <value>mysql-original</value>
+            <label>MySQL</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>sqlite-original</value>
+            <label>SQLite</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>postgresql-original</value>
+            <label>PostgreSQL</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>mongodb-original</value>
+            <label>MongoDB</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>redis-original</value>
+            <label>Redis</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>firebase-original</value>
+            <label>Firebase</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>supabase-original</value>
+            <label>Supabase</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>prisma-original</value>
+            <label>Prisma</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>mariadb-original</value>
+            <label>MariaDB</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>oracle-original</value>
+            <label>Oracle</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>microsoftsqlserver-original</value>
+            <label>MSSQL</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>dynamodb-original</value>
+            <label>DynamoDB</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>elasticsearch-original</value>
+            <label>Elasticsearch</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>cassandra-original</value>
+            <label>Cassandra</label>
+          </item>
+        </icons>
+        <show>true</show>
+        <priority>4</priority>
+      </item>
+      <item>
+        <name>Cloud</name>
+        <description>null</description>
+        <type>tech</type>
+        <icons>
+          <item>
+            <type>devicon</type>
+            <value>amazonwebservices-line-wordmark</value>
+            <label>AWS</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>googlecloud-original</value>
+            <label>Google Cloud</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>firebase-original</value>
+            <label>Firebase</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>heroku-original</value>
+            <label>Heroku</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>vercel-original</value>
+            <label>Vercel</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>netlify-original</value>
+            <label>Netlify</label>
+          </item>
+          <item>
+            <type>simpleicon</type>
+            <value>render</value>
+            <label>Render</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>digitalocean-original</value>
+            <label>DigitalOcean</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>cloudflare-original</value>
+            <label>Cloudflare</label>
+          </item>
+        </icons>
+        <show>true</show>
+        <priority>5</priority>
+      </item>
+      <item>
+        <name>Tools &amp; DevOps</name>
+        <description>null</description>
+        <type>tech</type>
+        <icons>
+          <item>
+            <type>devicon</type>
+            <value>git-original</value>
+            <label>Git</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>github-original</value>
+            <label>GitHub</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>gitlab-original</value>
+            <label>GitLab</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>githubactions-original</value>
+            <label>GitHub Actions</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>npm-original-wordmark</value>
+            <label>NPM</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>yarn-original</value>
+            <label>Yarn</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>composer-original</value>
+            <label>Composer</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>bash-original</value>
+            <label>Bash</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>linux-original</value>
+            <label>Linux</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>apache-original</value>
+            <label>Apache</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>nginx-original</value>
+            <label>Nginx</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>docker-original</value>
+            <label>Docker</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>webpack-original</value>
+            <label>Webpack</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>sentry-original</value>
+            <label>Sentry</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>vite-original</value>
+            <label>Vite</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>postman-original</value>
+            <label>Postman</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>slack-original</value>
+            <label>Slack</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>trello-original</value>
+            <label>Trello</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>jira-original</value>
+            <label>Jira</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>vscode-original</value>
+            <label>VSCode</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>intellij-original</value>
+            <label>IntelliJ</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>androidstudio-original</value>
+            <label>Android Studio</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>xcode-original</value>
+            <label>Xcode</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>pycharm-original</value>
+            <label>PyCharm</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>webstorm-original</value>
+            <label>WebStorm</label>
+          </item>
+        </icons>
+        <show>true</show>
+        <priority>6</priority>
+      </item>
+      <item>
+        <name>Design</name>
+        <description>null</description>
+        <type>tech</type>
+        <icons>
+          <item>
+            <type>devicon</type>
+            <value>figma-original</value>
+            <label>Figma</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>canva-original</value>
+            <label>Canva</label>
+          </item>
+        </icons>
+        <show>true</show>
+        <priority>7</priority>
+      </item>
+      <item>
+        <name>Other</name>
+        <description>null</description>
+        <type>tech</type>
+        <icons>
+          <item>
+            <type>devicon</type>
+            <value>solidity-original</value>
+            <label>Solidity</label>
+          </item>
+          <item>
+            <type>simpleicon</type>
+            <value>googlegemini</value>
+            <label>Google Gemini</label>
+          </item>
+          <item>
+            <type>devicon</type>
+            <value>markdown-original</value>
+            <label>Markdown</label>
+          </item>
+        </icons>
+        <show>true</show>
+        <priority>8</priority>
+      </item>
+    </technical>
+    <soft>
+      <item>
+        <name>Innovative thinker</name>
+        <description>I leverage my innovative thinking to dismantle conventional approaches and
+          build entirely new frameworks. My approach involves connecting seemingly disparate ideas
+          and applying lateral thinking to create solutions that others haven't even conceived.</description>
+        <type>soft</type>
+        <icons></icons>
+        <show>true</show>
+        <priority>0</priority>
+      </item>
+      <item>
+        <name>Technical Writer</name>
+        <description>I transform complex information into clear, concise, and engaging documentation
+          that empowers users and drives product adoption. My focus is on understanding the audience
+          and tailoring content to their specific needs, ensuring clarity and usability above all
+          else.</description>
+        <type>soft</type>
+        <icons></icons>
+        <show>true</show>
+        <priority>0</priority>
+      </item>
+      <item>
+        <name>Application Security</name>
+        <description>Knowledgeable in secure coding practices and vulnerability mitigation
+          techniques. Familiar with common security threats and methods to protect software from
+          attacks.</description>
+        <type>soft</type>
+        <icons></icons>
+        <show>true</show>
+        <priority>0</priority>
+      </item>
+      <item>
+        <name>Database Designer</name>
+        <description>As a Database Designer, I sculpt robust and efficient data architectures that
+          empower applications to thrive. My approach involves a meticulous understanding of data
+          relationships, ensuring seamless integration and optimal performance to unlock actionable
+          insights.</description>
+        <type>soft</type>
+        <icons></icons>
+        <show>true</show>
+        <priority>0</priority>
+      </item>
+      <item>
+        <name>Problem solver</name>
+        <description>I thrive on dissecting complex issues, rapidly identifying root causes, and
+          developing pragmatic, effective solutions. My approach involves a blend of analytical
+          thinking and creative problem-solving, consistently delivering results that exceed
+          expectations and drive tangible improvements.</description>
+        <type>soft</type>
+        <icons></icons>
+        <show>true</show>
+        <priority>0</priority>
+      </item>
+      <item>
+        <name>Web Engineer</name>
+        <description>As a Web Engineer, I architect and implement scalable web applications,
+          translating complex requirements into clean, efficient, and maintainable code. My focus is
+          on delivering user-centric solutions that drive tangible business results through
+          optimized performance and seamless integration.</description>
+        <type>soft</type>
+        <icons></icons>
+        <show>true</show>
+        <priority>0</priority>
+      </item>
+    </soft>
+  </skills>
+  <experience>
+    <item>
+      <company_name>Glover Techstars</company_name>
+      <role>Senior Backend Developer</role>
+      <start_date>2021-01-01</start_date>
+      <end_date>2025-01-01</end_date>
+      <description>Glover is a digital marketplace enabling users to trade gift cards, airtime, and
+        digital assets.</description>
+      <location>Remote</location>
+      <duties>
+        <item>Developed a security log system to monitor and audit user activities.</item>
+        <item>Implemented an OCR-powered system to detect and prevent duplicate gift card sales.</item>
+        <item>Built an integration layer with Freshdesk to manage user complaints via ticketing,
+          improving user retention and customer support resolution times.</item>
+        <item>Contributed to the development of an automated airtime-to-cash conversion platform.</item>
+        <item>Enhanced the security and performance of the Giftcard system.</item>
+        <item>Built and maintained multiple promotional systems, including: Ambassador programme,
+          Customer rewards, Referral system, Marketing promo engine, Spin-the-wheel game, and
+          Voucher issuance.</item>
+        <item>Helped build an in-house reward currency tied to user milestones and engagement.</item>
+        <item>Optimised and upgraded the bill payment infrastructure for better reliability.</item>
+        <item>Worked on implementing cross-country KYC processes to support international user
+          onboarding.</item>
+        <item>Contributed to authentication upgrades and platform-wide security improvements.</item>
+      </duties>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <company_name>Patricia Technologies</company_name>
+      <role>Senior Backend Developer</role>
+      <start_date>2020-01-01</start_date>
+      <end_date>2021-01-01</end_date>
+      <description>Patricia is a Nigerian cryptocurrency and digital asset company known for
+        enabling users to buy, sell, and store digital currencies securely.</description>
+      <location>Remote</location>
+      <duties>
+        <item>Optimised existing infrastructure and improved backend performance.</item>
+        <item>Refactored and enhanced legacy codebase for better maintainability and scalability.</item>
+        <item>Contributed to the development of an internal admin dashboard for operational
+          efficiency.</item>
+      </duties>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <company_name>Khora Digitals</company_name>
+      <role>Remote Software Engineer</role>
+      <start_date>2019-01-01</start_date>
+      <end_date>2019-01-01</end_date>
+      <description>An Information Technology company with a goal of providing top notch internet
+        solutions to companies globally</description>
+      <location>Remote</location>
+      <duties>
+        <item>Developed a total of two 2 web solutions to client companies in my one month contract
+          period</item>
+        <item>Worked remotely with 2 existing staffs to optimize 2 existing web based projects using
+          the company's in-house framework</item>
+      </duties>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <company_name>Mayor Tech Solutions</company_name>
+      <role>Lead Software Engineer</role>
+      <start_date>2018-01-01</start_date>
+      <end_date>2019-01-01</end_date>
+      <description>Mayor Technology is a web based information technology company specialized in
+        transforming in-house project idea to web and mobile applications.</description>
+      <location>Delta State, Nigeria</location>
+      <duties>
+        <item>Established a team of 5 skilled developers</item>
+        <item>Built the company's internal use dashboard</item>
+        <item>Solely developed in-house projects for the company which includes a developer
+          community platform, blog applications, video download sites, church advertorials and event
+          management applications, e-commerce application and Job Agencies</item>
+        <item>Partnered in over 17 web based projects as contract developers</item>
+      </duties>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <company_name>Flexpert</company_name>
+      <role>Intern Backend Engineer</role>
+      <start_date>2016-01-01</start_date>
+      <end_date>2018-01-01</end_date>
+      <description>Flyte iSystems is a web based information technology company situate in Benin
+        City of Edo State, Nigeria.</description>
+      <location>Benin, Edo State, Nigeria</location>
+      <duties>
+        <item>Gained 2 years of experience in building backend solutions</item>
+        <item>Developed a total of 4 prototype apps which lead to 2 projects to the company</item>
+        <item>Developed from scratch a web platform for fund management as a lead developer in a
+          team of 2 developers</item>
+        <item>Wrote and maintained interfaces with 3rd party providers including payment gateways,
+          job agencies and news platforms</item>
+        <item>More than 5 custom apps created for clients</item>
+        <item>Developed websites for blogs, job agency, e-commerce, social media as well as in-house
+          projects using Core PHP and MySQL with Ajax</item>
+        <item>Attained certificate of Grand Team Player by working ceaselessly and peacefully with a
+          team of 14 developers in fields of Web Development and Mobile App Development</item>
+        <item>Worked in a team of 2 to build the Staff Management Console, Company Academy Student
+          Tracking Panel, and Staff Task Allocation Panel of the company</item>
+      </duties>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+  </experience>
+  <education>
+    <item>
+      <school>Sololearn Inc.</school>
+      <degree>Software Engineering Basics</degree>
+      <start_year>2017</start_year>
+      <end_year>2017</end_year>
+      <achievements>
+        <item>Introduction to programming in C++: Building command line apps and terminal games
+          using C++ as a means of skill development</item>
+        <item>General problem solving using Python: Created algorithms to render help in fields
+          spanning across Science and Day to Day living</item>
+        <item>HTML5, CSS3 and JavaScript: Using HTML to build static and beautified web pages</item>
+        <item>Backend Web Development with PHP and MySQL: Employed the use of PHP and MySQL in
+          cooperation with previously attained Skills to develop Dynamic Web Pages</item>
+      </achievements>
+      <location>Remote</location>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <school>Flexpert iSystems (Flyte) Academy</school>
+      <degree>Advanced Backend Web Engineering</degree>
+      <start_year>2018</start_year>
+      <end_year>2018</end_year>
+      <achievements>
+        <item>jQuery, XML, JSON, Ajax: Made use of Ajax Technologies to develop Web Solutions as a
+          Backend Web Developer working collaboratively with a Co-Staff handling Frontend and UIX
+          Designs</item>
+        <item>MySQL and Database Administration: I functioned as the Database Administrator</item>
+        <item>Server Administrator: I was put in charge of the server on which our projects where
+          hosted, and also the general server on which the firm projects were hosted</item>
+      </achievements>
+      <location>Benin, Edo State, Nigeria</location>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <school>Mayor Tech Solutions, Warri</school>
+      <degree>Advanced Web Engineering</degree>
+      <start_year>2019</start_year>
+      <end_year>2019</end_year>
+      <achievements>
+        <item>Bootstrap: Advanced to building beautiful web pages/sites using the Bootstrap</item>
+        <item>PHP 7: Learnt effectively on the New APIs and functionalities offered by PHP 7 in
+          building more secure and well optimized complex web programs</item>
+        <item>Wordpress: Familiarized myself with building E-Commerce, Landing Page Apps and Blog
+          Webapps using Wordpress for speed and efficiency</item>
+        <item>VueJS: Made effective and proficient use of VueJS, a Javascript Framework, in building
+          well optimized web applications at the front end</item>
+        <item>Modern Web Design: Adopted the use of modern technologies for building robust and
+          highly scalable and slick web applications using NuxtJS, Vuetify, VueSax</item>
+      </achievements>
+      <location>Delta State, Nigeria</location>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <school>Miva University</school>
+      <degree>Bachelor of Science in Computer Science</degree>
+      <start_year>2025</start_year>
+      <end_year>2029</end_year>
+      <achievements></achievements>
+      <location>Lagos, Nigeria</location>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+  </education>
+  <mentorship>
+    <benefits>
+      <item>
+        <title>Code Reviews</title>
+        <description>Get detailed feedback on your code, learn best practices, and improve your
+          coding skills.</description>
+        <icon>/icons/mentorship/code-reviews.svg</icon>
+      </item>
+      <item>
+        <title>Technical Guidance</title>
+        <description>Navigate complex technical challenges with expert advice and practical
+          solutions.</description>
+        <icon>/icons/mentorship/technical-guidance.svg</icon>
+      </item>
+      <item>
+        <title>Career Development</title>
+        <description>Get advice on career paths, job searching, interviews, and professional growth.</description>
+        <icon>/icons/mentorship/career-development.svg</icon>
+      </item>
+      <item>
+        <title>Learning Resources</title>
+        <description>Access curated learning materials, tutorials, and resources tailored to your
+          goals.</description>
+        <icon>/icons/mentorship/learning-resources.svg</icon>
+      </item>
+      <item>
+        <title>Networking</title>
+        <description>Connect with other professionals and expand your network in the tech community.</description>
+        <icon>/icons/mentorship/networking.svg</icon>
+      </item>
+      <item>
+        <title>Regular Check-ins</title>
+        <description>Stay accountable with regular sessions to discuss progress, challenges, and
+          next steps.</description>
+        <icon>/icons/mentorship/regular-check-ins.svg</icon>
+      </item>
+    </benefits>
+    <process>
+      <item>
+        <title>Application Review</title>
+        <description>After submitting your application, I'll review it within 3-5 business days.</description>
+      </item>
+      <item>
+        <title>Initial Call</title>
+        <description>If your application is a good fit, we'll schedule an initial call to discuss
+          your goals and expectations.</description>
+      </item>
+      <item>
+        <title>Create a Plan</title>
+        <description>Together, we'll create a personalized learning plan based on your current
+          skills and goals.</description>
+      </item>
+      <item>
+        <title>Regular Sessions</title>
+        <description>We'll meet regularly (frequency based on your commitment level) to work through
+          challenges and track progress.</description>
+      </item>
+    </process>
+  </mentorship>
+  <hobbies>
+    <item>
+      <name>Reading</name>
+      <color>red</color>
+      <percentage>80</percentage>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <name>Coding</name>
+      <color>orange</color>
+      <percentage>95</percentage>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <name>Social Activities</name>
+      <color>yellow</color>
+      <percentage>50</percentage>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <name>Singing</name>
+      <color>blue</color>
+      <percentage>78</percentage>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <name>Sleeping</name>
+      <color>indigo</color>
+      <percentage>30</percentage>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <name>Exercise</name>
+      <color>green</color>
+      <percentage>60</percentage>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+  </hobbies>
+  <testimonials>
+    <item>
+      <person>
+        <name>Tovia Amadi</name>
+        <titles>
+          <item>Digital Marketer | Product Manager</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Tovia-Amadi_rml20q</avatar_url>
+        <biography>A dedicated digital marketing and design professional who blends creative visions
+          with practical business insights. </biography>
+        <profile_link>https://toviaamadi.com</profile_link>
+      </person>
+      <review>Aghogho Meyoron is an incredible Fullstack developer whose talents never ceases to
+        amaze me, from crafting seamless user experiences to building robust backend systems.
+        He pours skills and passion into every line of code.
+        Beyond his tech brilliance, he is sharp witted, supportive, dedicated, innovative, and
+        consistently delivers high quality work. </review>
+      <rating>5</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Abdusalam Ajayi</name>
+        <titles>
+          <item>Founder - Weandel LLC</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Abdusalam-Ajayi_kk6duy.jpg</avatar_url>
+        <biography></biography>
+        <profile_link>https://www.aj-playground.org</profile_link>
+      </person>
+      <review>Creative, resourceful, and a great team-player. He is good at what he does and always
+        delivers in line with his words</review>
+      <rating>5</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Adekunle Abdul-Roqeeb Adedoyin</name>
+        <titles>
+          <item>Graphics || UI/UX Designer</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Adekunle-Adedoyin_qv8rtk.jpg</avatar_url>
+        <biography></biography>
+        <profile_link>null</profile_link>
+      </person>
+      <review>By far, Mayor is one of the best people I've met in this tech space and he has pushed
+        me to always do better, he never looks down on anyone, even when he's standing his grounds,
+        he is passionate about his work and never hesitates to lend a helping hand. Mayor has built
+        a niche of trust around himself, and his humbleness is the top of it all</review>
+      <rating>5</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Biodun Bamigboye</name>
+        <titles>
+          <item>Head Developer - EPortal Net</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Biodun-Bamigboye_mipsga.jpg</avatar_url>
+        <biography></biography>
+        <profile_link>null</profile_link>
+      </person>
+      <review>Young Mayor is one of the surviving defenders of PHP on earth. He is a professional
+        and he delivers a job well done</review>
+      <rating>3</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Boluwaji Akinsefunmi</name>
+        <titles>
+          <item>Freelance Web and Mobile Developer</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Boluwaji-Akinsefunmi_fnjtch.jpg</avatar_url>
+        <biography>Your ever-whining-dev, mobile app developer at Lexus Technologies Ltd., Lagos</biography>
+        <profile_link>https://iammastercraft.github.io</profile_link>
+      </person>
+      <review>Agba Developer, PHP Lord, Back-end Beast, Heroku Specialist API Demystifier, All-Round
+        Programmer... The titles he posses are just numerous, he is a problem solver that pays keen
+        attention to little details that others might ignore!</review>
+      <rating>5</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Olaifa Boluwatife</name>
+        <titles>
+          <item>Freelance Senior Software Developer</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Olaifa-Boluwatife_vggtzb.jpg</avatar_url>
+        <biography>Software engineer focused on solving solutions.</biography>
+        <profile_link>https://github.com/grandbusta</profile_link>
+      </person>
+      <review>Mayor is always passionate of whatever task or job he is working on</review>
+      <rating>4</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Benjamin Onuoha</name>
+        <titles>
+          <item>Branding Consultant</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Benjamin-Onuoha_f5wjgh.jpg</avatar_url>
+        <biography></biography>
+        <profile_link>null</profile_link>
+      </person>
+      <review>I have a great partnership with Mayor. He is a proficient developer and I can
+        confidently recommend him to anyone who needs a dab hand</review>
+      <rating>4</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Igbokwe Laurence</name>
+        <titles>
+          <item>Senior Software Engineer</item>
+        </titles>
+        <avatar_url>https://res.cloudinary.com/meyoron-aghogho/image/upload/people/default_msqrmt</avatar_url>
+        <biography>I am a prolific forger of impressive products, a creative Software engineer with
+          more than 3 years experience in delivering result - oriented brands and creative solutions
+          to meet business needs</biography>
+        <profile_link>https://www.linkedin.com/in/francis-igbokwe-166597152/</profile_link>
+      </person>
+      <review>Super smart, wonderful engineer and person</review>
+      <rating>5</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Chinaza Obiekwe</name>
+        <titles>
+          <item>Project Manager</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Chinaza-Obiekwe_my83n9.jpg</avatar_url>
+        <biography>I love managing people</biography>
+        <profile_link>https://www.linkedin.com/in/chinaza-obiekwe-aa405310b</profile_link>
+      </person>
+      <review>A focused and determined person</review>
+      <rating>4</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Mohammed Adekunle</name>
+        <titles>
+          <item>Software Developer</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Mohammed-Adekunle_hdelxh.jpg</avatar_url>
+        <biography>A software engineer with specialization in building and deploying server-side and
+          system software. I work with PHP, Node(TS) and C/C++. I also work on web apps with Vue,
+          Nuxt and Webpack.</biography>
+        <profile_link>https://mohammedadekunle.com.ng</profile_link>
+      </person>
+      <review>He is a talented and reliable software engineer.I have worked on several projects with
+        him and I can say he has proven more than competent to deliver excellent results all within
+        reasonable time.</review>
+      <rating>5</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+    <item>
+      <person>
+        <name>Chuba Samuel</name>
+        <titles>
+          <item>Medical student</item>
+        </titles>
+        <avatar_url>
+          https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Chuba-Samuel_pb7hss.jpg</avatar_url>
+        <biography>Nothing is free, but ALL is possible, IF God is on my side.</biography>
+        <profile_link>https://web.facebook.com/jeremiahdavid.samuel</profile_link>
+      </person>
+      <review>He is a young achiever and a source of lively inspiration to me everyday. An ardent
+        fan of Laravel and anything PHP.</review>
+      <rating>4</rating>
+      <type>colleague</type>
+      <show>true</show>
+      <priority>0</priority>
+    </item>
+  </testimonials>
+  <faq>
+    <item>
+      <question>What's the best way to reach you?</question>
+      <answer>Feel free to use either the contact form above or send me a direct email. I typically
+        respond within 24-48 hours.</answer>
+    </item>
+    <item>
+      <question>Do you take on freelance projects?</question>
+      <answer>Yes, I'm open to freelance opportunities. Please provide details about your project in
+        the contact form, and I'll get back to you with my availability.</answer>
+    </item>
+    <item>
+      <question>Are you available for consulting?</question>
+      <answer>Absolutely! I offer consulting services for web development, architecture, and
+        technical strategy. Reach out to discuss your needs.</answer>
+    </item>
+    <item>
+      <question>How long does it take to hear back?</question>
+      <answer>I strive to respond to all inquiries within 24-48 hours during business days. For
+        urgent matters, please mention it in your message.</answer>
+    </item>
+  </faq>
+</profile>

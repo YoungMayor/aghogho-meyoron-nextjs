@@ -12,6 +12,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "analyze": "ANALYZE=true next build",
+    "snapshot": "npx -y tsx scripts/generate-snapshot.ts",
     "prepare": "husky"
   },
   "lint-staged": {
