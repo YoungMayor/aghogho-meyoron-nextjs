@@ -100,6 +100,7 @@ export default function Home() {
       <div>
         {/* Hero Section */}
         <Hero />
+        <About />
         <Projects />
         <Career />
         <Articles />
