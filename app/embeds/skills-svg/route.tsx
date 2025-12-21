@@ -75,11 +75,12 @@ export async function GET() {
       const categoryTitle = `<text x="50%" y="${catY + 20}" class="title" text-anchor="middle">${escapeXml(category.name)}</text>`;
 
       const iconsPerRow = Math.floor((width - 2 * padding) / (iconSize + iconGap));
-      // Calculate active width of the grid to center it
-      // actually, just centering the block defined by iconsPerRow is enough for visual balance
-      // or we could center each row. Standard grids usually are left aligned within a centered container.
-      // Let's center the container.
-      const gridWidth = iconsPerRow * (iconSize + iconGap) - iconGap;
+
+      // Calculate the actual number of columns this category's grid uses
+      const actualCols = Math.min(category.icons.length, iconsPerRow);
+
+      // Calculate active width of the grid based on actual columns
+      const gridWidth = actualCols * (iconSize + iconGap) - iconGap;
       const startX = (width - gridWidth) / 2;
 
       const iconsContent = await Promise.all(
