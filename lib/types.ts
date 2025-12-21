@@ -3,6 +3,7 @@ export interface Icon {
   type: 'devicon' | 'simpleicon';
   value: string;
   label: string;
+  slug?: string;
 }
 
 export interface HasVisibility {

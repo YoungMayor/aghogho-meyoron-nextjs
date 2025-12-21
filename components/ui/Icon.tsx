@@ -8,23 +8,21 @@ interface IconProps {
   className?: string;
 }
 
-/**
- * Icon component that renders icons from CDNs
- * - devicon: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/[folder]/[value].svg
- * - simpleicon: https://cdn.simpleicons.org/[value]/[color]
- * - skillicon: https://skillicons.dev/icons?i=[value]
- * - image: Direct URL
- */
-export default function Icon({ type, value, size = 40, className = '' }: IconProps) {
-  let src = '';
-  const alt = `${value} icon`;
-
+export function iconUrl({ type, value }: IconProps) {
   if (type === 'devicon') {
     const folder = value.startsWith('dot-net') ? 'dot-net' : value.split('-')[0];
-    src = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${folder}/${value}.svg`;
+
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${folder}/${value}.svg`;
   } else if (type === 'simpleicon') {
-    src = `https://cdn.simpleicons.org/${value}`;
+    return `https://cdn.simpleicons.org/${value}`;
   }
+
+  return null;
+}
+
+export default function Icon({ type, value, size = 40, className = '' }: IconProps) {
+  const alt = `${value} icon`;
+  const src = iconUrl({ type, value });
 
   if (!src) return null;
 

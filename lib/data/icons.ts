@@ -4,9 +4,15 @@ const devicon = (value: string, label: string, variant: string = 'original'): Ic
   type: 'devicon',
   value: `${value}-${variant}`,
   label,
+  slug: value,
 });
 
-const simpleicon = (value: string, label: string): Icon => ({ type: 'simpleicon', value, label });
+const simpleicon = (value: string, label: string): Icon => ({
+  type: 'simpleicon',
+  value,
+  label,
+  slug: value,
+});
 
 export const techIcons = {
   // Languages
