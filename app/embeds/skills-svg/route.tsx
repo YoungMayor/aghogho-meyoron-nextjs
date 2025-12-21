@@ -22,6 +22,22 @@ function escapeXml(unsafe: string) {
   });
 }
 
+async function fetchAndEncodeIcon(url: string | null): Promise<string> {
+  if (!url) return '';
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch icon: ${url}`);
+    const arrayBuffer = await response.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const base64 = buffer.toString('base64');
+    const contentType = response.headers.get('content-type') || 'image/svg+xml';
+    return `data:${contentType};base64,${base64}`;
+  } catch (error) {
+    console.warn(`Error fetching icon ${url}:`, error);
+    return url; // Fallback to URL if fetch fails
+  }
+}
+
 export async function GET() {
   const width = 800;
   const padding = 20;
@@ -44,6 +60,50 @@ export async function GET() {
   });
   totalHeight = currentY;
 
+  const categoriesContent = await Promise.all(
+    technicalSkills.map(async (category, catIndex) => {
+      let catY = padding;
+      // Calculate Y offset based on previous categories
+      for (let i = 0; i < catIndex; i++) {
+        const prevCat = technicalSkills[i];
+        const iconsPerRow = Math.floor((width - 2 * padding) / (iconSize + iconGap));
+        const rows = Math.ceil(prevCat.icons.length / iconsPerRow);
+        catY += titleHeight + 10 + rows * (iconSize + iconGap) + categoryGap;
+      }
+
+      // Center the title
+      const categoryTitle = `<text x="50%" y="${catY + 20}" class="title" text-anchor="middle">${escapeXml(category.name)}</text>`;
+
+      const iconsPerRow = Math.floor((width - 2 * padding) / (iconSize + iconGap));
+      // Calculate active width of the grid to center it
+      // actually, just centering the block defined by iconsPerRow is enough for visual balance
+      // or we could center each row. Standard grids usually are left aligned within a centered container.
+      // Let's center the container.
+      const gridWidth = iconsPerRow * (iconSize + iconGap) - iconGap;
+      const startX = (width - gridWidth) / 2;
+
+      const iconsContent = await Promise.all(
+        category.icons.map(async (icon, iconIndex) => {
+          const row = Math.floor(iconIndex / iconsPerRow);
+          const col = iconIndex % iconsPerRow;
+          const x = startX + col * (iconSize + iconGap);
+          const y = catY + titleHeight + 10 + row * (iconSize + iconGap);
+
+          const iconSrc = iconUrl(icon);
+          const base64Icon = await fetchAndEncodeIcon(iconSrc);
+
+          return `
+            <g transform="translate(${x}, ${y})">
+              <image href="${base64Icon}" width="${iconSize}" height="${iconSize}" />
+            </g>
+          `;
+        })
+      );
+
+      return categoryTitle + iconsContent.join('');
+    })
+  );
+
   const svgContent = `
     <svg width="${width}" height="${totalHeight}" viewBox="0 0 ${width} ${totalHeight}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <style>
@@ -56,40 +116,7 @@ export async function GET() {
         }
       </style>
       <rect width="100%" height="100%" fill="transparent" />
-      ${technicalSkills
-        .map((category, catIndex) => {
-          let catY = padding;
-          // Calculate Y offset based on previous categories
-          for (let i = 0; i < catIndex; i++) {
-            const prevCat = technicalSkills[i];
-            const iconsPerRow = Math.floor((width - 2 * padding) / (iconSize + iconGap));
-            const rows = Math.ceil(prevCat.icons.length / iconsPerRow);
-            catY += titleHeight + 10 + rows * (iconSize + iconGap) + categoryGap;
-          }
-
-          const categoryTitle = `<text x="${padding}" y="${catY + 20}" class="title">${escapeXml(category.name)}</text>`;
-
-          const icons = category.icons
-            .map((icon, iconIndex) => {
-              const iconsPerRow = Math.floor((width - 2 * padding) / (iconSize + iconGap));
-              const row = Math.floor(iconIndex / iconsPerRow);
-              const col = iconIndex % iconsPerRow;
-              const x = padding + col * (iconSize + iconGap);
-              const y = catY + titleHeight + 10 + row * (iconSize + iconGap);
-
-              const iconSrc = iconUrl(icon);
-
-              return `
-                <g transform="translate(${x}, ${y})">
-                  <image href="${iconSrc}" width="${iconSize}" height="${iconSize}" />
-                </g>
-              `;
-            })
-            .join('');
-
-          return categoryTitle + icons;
-        })
-        .join('')}
+      ${categoriesContent.join('')}
     </svg>
   `;
 
