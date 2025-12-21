@@ -87,4 +87,20 @@ export const clientPortfolios: Project[] = [
     priority: 0,
     is_featured: true,
   },
+  {
+    slug: 'saxman-afk',
+    name: 'Saxman AFK',
+    description:
+      'Saxman AFK is a Nigerian saxophonist whose sound blends emotion, spirituality, and vibrant African rhythm',
+    features: ['Music Portfolio', 'Musician Biography', 'Contact Integration'],
+    icons: [techIcons.React, techIcons.NextJS, techIcons.TailwindCSS, techIcons.Netlify],
+    type: 'portfolio',
+    owner: 'client',
+    demo_link: 'https://saxmanafk.netlify.app',
+    repo_link: null,
+    images: [cloudinaryImage.portfolio('saxman-afk')],
+    show: true,
+    priority: 0,
+    is_featured: true,
+  },
 ];
