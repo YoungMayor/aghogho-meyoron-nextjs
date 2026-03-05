@@ -1,6 +1,6 @@
 import { POST } from '@/app/api/mentorship/route';
 import { generateAuthToken } from '@/lib/utils/api-auth';
-import { sendTelegramNotification } from '@/lib/utils/telegram';
+import { mentorshipFormTelegramService } from '@/lib/services/telegram/MentorshipFormTelegramService';
 
 import connectDB from '@/lib/db/mongodb';
 
@@ -11,8 +11,10 @@ jest.mock('@/lib/db/mongodb', () => ({
   default: jest.fn(),
 }));
 
-jest.mock('@/lib/utils/telegram', () => ({
-  sendTelegramNotification: jest.fn(),
+jest.mock('@/lib/services/telegram/MentorshipFormTelegramService', () => ({
+  mentorshipFormTelegramService: {
+    sendNotification: jest.fn(),
+  },
 }));
 
 jest.mock('@/lib/utils/rate-limit', () => ({
@@ -43,7 +45,7 @@ describe('Mentorship API', () => {
     process.env.INTERNAL_API_SECRET = validSecret;
     // const connect = require('@/lib/db/mongodb').default;
     (connectDB as jest.Mock).mockResolvedValue(true);
-    (sendTelegramNotification as jest.Mock).mockResolvedValue(true);
+    (mentorshipFormTelegramService.sendNotification as jest.Mock).mockResolvedValue(true);
     mockCreate.mockResolvedValue({ _id: 'new-id' });
   });
 
@@ -111,7 +113,7 @@ describe('Mentorship API', () => {
       expect(res.status).toBe(200);
       expect(data.success).toBe(true);
       expect(mockCreate).toHaveBeenCalled();
-      expect(sendTelegramNotification).toHaveBeenCalled();
+      expect(mentorshipFormTelegramService.sendNotification).toHaveBeenCalled();
     });
 
     it('should handle database errors gracefully', async () => {

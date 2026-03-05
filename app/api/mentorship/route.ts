@@ -13,53 +13,63 @@ import { requestTools } from '@/lib/utils/request-tools';
  * Requires authentication
  */
 export async function POST(request: Request) {
-  return await apiAction({ request, rate_limit: RATE_LIMITS.FORM_SUBMISSION }, async (request) => {
-    const body = await request.json();
+  return await apiAction(
+    {
+      request,
+      rate_limit: RATE_LIMITS.FORM_SUBMISSION,
+      error: {
+        client: 'Failed to submit mentorship application',
+        log: 'Mentorship application error',
+      },
+    },
+    async (request) => {
+      const body = await request.json();
 
-    const { name, email, phone, background, goals, commitment } = body;
+      const { name, email, phone, background, goals, commitment } = body;
 
-    const validation = validateMentorshipForm({
-      name,
-      email,
-      phone,
-      background,
-      goals,
-      commitment,
-    });
+      const validation = validateMentorshipForm({
+        name,
+        email,
+        phone,
+        background,
+        goals,
+        commitment,
+      });
 
-    if (!validation.isValid) return ApiResponse.validationError(validation.errors);
+      if (!validation.isValid) return ApiResponse.validationError(validation.errors);
 
-    const { ipAddress, userAgent } = requestTools(request);
+      const { ipAddress, userAgent } = requestTools(request);
 
-    await connectDB();
+      await connectDB();
 
-    await MentorshipApplication.create({
-      name,
-      email,
-      phone,
-      background,
-      goals,
-      commitment,
-      submitted_at: new Date(),
-      ip_address: ipAddress,
-      user_agent: userAgent,
-      recaptcha_score: 0, // Not using reCAPTCHA anymore
-      status: 'pending',
-    });
+      await MentorshipApplication.create({
+        name,
+        email,
+        phone,
+        background,
+        goals,
+        commitment,
+        submitted_at: new Date(),
+        ip_address: ipAddress,
+        user_agent: userAgent,
+        recaptcha_score: 0, // Not using reCAPTCHA anymore
+        status: 'pending',
+      });
 
-    await mentorshipFormTelegramService.sendNotification({
-      name,
-      email,
-      phone,
-      background,
-      goals,
-      commitment,
-      ipAddress,
-    });
+      await mentorshipFormTelegramService.sendNotification({
+        name,
+        email,
+        phone,
+        background,
+        goals,
+        commitment,
+        ipAddress,
+      });
 
-    return ApiResponse.success(
-      null,
-      'Your mentorship application has been submitted successfully!'
-    );
-  });
+      return ApiResponse.success(
+        null,
+        'Your mentorship application has been submitted successfully!'
+      );
+    }
+  );
 }
