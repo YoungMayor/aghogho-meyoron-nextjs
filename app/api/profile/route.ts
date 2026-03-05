@@ -1,4 +1,3 @@
-import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { ApiResponse } from '@/lib/utils/api-response';
 import { profile } from '@/lib/data/profile';
 import { academicRecords } from '@/lib/data/academic_history';
@@ -11,6 +10,7 @@ import { socialLinks } from '@/lib/data/social_links';
 import { hobbies } from '@/lib/data/hobbies';
 import { badges } from '@/lib/data/badges';
 import { getVisibleAndSorted } from '@/lib/utils/data';
+import { apiAction } from '@/lib/utils/api-action';
 
 /**
  * GET /api/profile
@@ -18,19 +18,7 @@ import { getVisibleAndSorted } from '@/lib/utils/data';
  * Requires authentication
  */
 export async function GET(request: Request) {
-  const secret = process.env.INTERNAL_API_SECRET;
-
-  if (!secret) {
-    return ApiResponse.serverError('Server configuration error');
-  }
-
-  // Verify authentication
-  if (!verifyApiAuth(request, secret)) {
-    return ApiResponse.unauthorized();
-  }
-
-  try {
-    // Build complete profile with all data
+  return apiAction({ request }, async () => {
     const completeProfile = {
       ...profile,
       history: {
@@ -49,8 +37,5 @@ export async function GET(request: Request) {
     };
 
     return ApiResponse.success(completeProfile);
-  } catch (error) {
-    console.error('Profile API error:', error);
-    return ApiResponse.serverError('Failed to fetch profile data');
-  }
+  });
 }

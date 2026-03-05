@@ -1,5 +1,7 @@
 /**
  * Send Telegram notification
+ *
+ * @deprecated: Use telegram service instead
  */
 export async function sendTelegramNotification(message: string): Promise<boolean> {
   const botToken = process.env.TELEGRAM_BOT_TOKEN;

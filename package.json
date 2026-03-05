@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",
-    "telegram:ping": "npx -y tsx scripts/telegram-ping.ts",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "analyze": "ANALYZE=true next build",
@@ -25,6 +24,7 @@
     ]
   },
   "dependencies": {
+    "@mayrlabs/telegram-service": "^0.1.0",
     "@tailwindcss/typography": "^0.5.19",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.1",
