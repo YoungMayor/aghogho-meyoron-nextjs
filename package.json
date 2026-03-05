@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@mayrlabs/telegram-service": "^0.1.0",
+    "@t3-oss/env-nextjs": "^0.13.10",
     "@tailwindcss/typography": "^0.5.19",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.1",
@@ -38,7 +39,8 @@
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
     "remark-math": "^6.0.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^16.0.8",

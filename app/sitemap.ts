@@ -1,13 +1,14 @@
 import { MetadataRoute } from 'next';
 import { projects } from '@/lib/data/projects';
 import { getVisibleItems } from '@/lib/utils/data';
+import { clientEnv } from '@/lib/env/client';
 
 /**
  * Generate dynamic sitemap for the portfolio
  * https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const baseUrl = clientEnv.NEXT_PUBLIC_APP_URL;
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

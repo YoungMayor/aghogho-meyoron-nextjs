@@ -6,6 +6,7 @@ import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
 import { generateAuthToken } from '@/lib/utils/api-auth';
+import { clientEnv } from '@/lib/env/client';
 
 interface FormData {
   name: string;
@@ -101,7 +102,7 @@ export default function MentorshipForm() {
     setErrorMessage('');
 
     try {
-      const authToken = generateAuthToken(process.env.NEXT_PUBLIC_INTERNAL_API_SECRET || '');
+      const authToken = generateAuthToken(clientEnv.NEXT_PUBLIC_INTERNAL_API_SECRET);
 
       const response = await fetch('/api/mentorship', {
         method: 'POST',

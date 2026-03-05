@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { ApiResponse, ApiResponseData } from './api-response';
 import { verifyApiAuth } from './api-auth';
 import { checkRateLimit, getClientIp, RATE_LIMIT_CONFIG } from './rate-limit';
+import { serverEnv } from '@/lib/env/server';
 
 export interface ApiActionConfig {
   request: Request;
@@ -16,7 +17,7 @@ export async function apiAction<T extends NextResponse<ApiResponseData>>(
   config: ApiActionConfig,
   callback: (request: Request) => Promise<T>
 ): Promise<NextResponse<ApiResponseData>> {
-  const secret = process.env.INTERNAL_API_SECRET;
+  const secret = serverEnv.INTERNAL_API_SECRET;
 
   if (!secret) return ApiResponse.serverError('Server configuration error');
 

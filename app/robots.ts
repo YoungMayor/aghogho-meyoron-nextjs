@@ -1,11 +1,12 @@
 import { MetadataRoute } from 'next';
+import { clientEnv } from '@/lib/env/client';
 
 /**
  * Generate robots.txt for search engine crawlers
  * https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots
  */
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const baseUrl = clientEnv.NEXT_PUBLIC_APP_URL;
 
   return {
     rules: {

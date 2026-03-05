@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
+import { serverEnv } from '@/lib/env/server';
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = serverEnv.MONGODB_URI;
 
 if (!MONGODB_URI) {
   throw new Error('Invalid/Missing environment variable: "MONGODB_URI"');
@@ -29,7 +30,7 @@ async function connectDB() {
   if (!cached.promise) {
     const opts = {
       bufferCommands: false,
-      dbName: process.env.MONGODB_DB_NAME,
+      dbName: serverEnv.MONGODB_DB_NAME,
     };
 
     cached.promise = mongoose.connect(MONGODB_URI!, opts).then((mongoose) => {

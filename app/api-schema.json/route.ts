@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getCompleteProfileData } from '@/lib/utils/profile-data';
+import { clientEnv } from '@/lib/env/client';
 
 export async function GET() {
   const data = getCompleteProfileData();
@@ -34,7 +35,7 @@ export async function GET() {
     },
     servers: [
       {
-        url: process.env.NEXT_PUBLIC_APP_URL || 'https://mayrlabs.com',
+        url: clientEnv.NEXT_PUBLIC_APP_URL,
         description: 'Portfolio Website',
       },
     ],
