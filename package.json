@@ -24,9 +24,11 @@
     ]
   },
   "dependencies": {
+    "@ai-sdk/openai": "^3.0.41",
     "@mayrlabs/telegram-service": "^0.1.0",
     "@t3-oss/env-nextjs": "^0.13.10",
     "@tailwindcss/typography": "^0.5.19",
+    "ai": "^6.0.116",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.1",
     "mongoose": "^9.0.1",
