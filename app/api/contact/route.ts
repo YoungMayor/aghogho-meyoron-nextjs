@@ -1,5 +1,5 @@
 import { ApiResponse } from '@/lib/utils/api-response';
-import { validateContactForm } from '@/lib/utils/validation';
+import { contactFormSchema, formatZodError } from '@/lib/utils/validation';
 import connectDB from '@/lib/db/mongodb';
 import { Contact } from '@/lib/db/models/contact';
 import { RATE_LIMITS } from '@/lib/utils/rate-limit';
@@ -26,10 +26,10 @@ export async function POST(request: Request) {
       const body = await request.json();
       const { name, email, subject, message } = body;
 
-      const validation = validateContactForm({ name, email, subject, message });
+      const validation = contactFormSchema.safeParse({ name, email, subject, message });
 
-      if (!validation.isValid) {
-        return ApiResponse.validationError(validation.errors);
+      if (!validation.success) {
+        return ApiResponse.validationError(formatZodError(validation.error).errors);
       }
 
       const { ipAddress, userAgent } = requestTools(request);

@@ -1,5 +1,5 @@
 import { ApiResponse } from '@/lib/utils/api-response';
-import { validateMentorshipForm } from '@/lib/utils/validation';
+import { mentorshipFormSchema, formatZodError } from '@/lib/utils/validation';
 import connectDB from '@/lib/db/mongodb';
 import { MentorshipApplication } from '@/lib/db/models/mentorship_application';
 import { RATE_LIMITS } from '@/lib/utils/rate-limit';
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
       const { name, email, phone, background, goals, commitment } = body;
 
-      const validation = validateMentorshipForm({
+      const validation = mentorshipFormSchema.safeParse({
         name,
         email,
         phone,
@@ -36,7 +36,9 @@ export async function POST(request: Request) {
         commitment,
       });
 
-      if (!validation.isValid) return ApiResponse.validationError(validation.errors);
+      if (!validation.success) {
+        return ApiResponse.validationError(formatZodError(validation.error).errors);
+      }
 
       const { ipAddress, userAgent } = requestTools(request);
 
