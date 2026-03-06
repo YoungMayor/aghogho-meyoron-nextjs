@@ -106,32 +106,6 @@ export function checkRateLimit(identifier: string, config: RateLimitConfig): Rat
   };
 }
 
-/**
- * Get the client's IP address from the request
- * @param request - Next.js request object
- * @returns IP address or 'unknown'
- */
-export function getClientIp(request: Request): string {
-  // Check various headers for the real IP address
-  const forwardedFor = request.headers.get('x-forwarded-for');
-  if (forwardedFor) {
-    // x-forwarded-for can contain multiple IPs, get the first one
-    return forwardedFor.split(',')[0].trim();
-  }
-
-  const realIp = request.headers.get('x-real-ip');
-  if (realIp) {
-    return realIp;
-  }
-
-  const cfConnectingIp = request.headers.get('cf-connecting-ip');
-  if (cfConnectingIp) {
-    return cfConnectingIp;
-  }
-
-  return 'unknown';
-}
-
 export interface RATE_LIMIT_CONFIG {
   maxRequests: number;
   windowSeconds: number;

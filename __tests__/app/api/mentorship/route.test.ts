@@ -23,7 +23,6 @@ jest.mock('@/lib/utils/rate-limit', () => ({
     resetInSeconds: 0,
     remaining: 10,
   })),
-  getClientIp: jest.fn(() => '127.0.0.1'),
   RATE_LIMITS: {
     FORM_SUBMISSION: { maxRequests: 10, windowSeconds: 60 },
   },

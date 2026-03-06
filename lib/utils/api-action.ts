@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
 import { ApiResponse, ApiResponseData } from './api-response';
 import { verifyApiAuth } from './api-auth';
-import { checkRateLimit, getClientIp, RATE_LIMIT_CONFIG } from './rate-limit';
+import { checkRateLimit, RATE_LIMIT_CONFIG } from './rate-limit';
 import { serverEnv } from '@/lib/env/server';
+import { requestTools } from './request-tools';
 
 export interface ApiActionConfig<T extends NextResponse<ApiResponseData>> {
   request: Request;
@@ -21,10 +22,9 @@ export async function apiAction<T extends NextResponse<ApiResponseData>>(
   if (!verifyApiAuth(payload.request, secret)) return ApiResponse.unauthorized();
 
   if (payload.rate_limit) {
-    // @todo: Use request tools
-    const clientIp = getClientIp(payload.request);
+    const { ipAddress } = requestTools(payload.request);
 
-    const rateLimitResult = checkRateLimit(clientIp, payload.rate_limit);
+    const rateLimitResult = checkRateLimit(ipAddress, payload.rate_limit);
 
     if (!rateLimitResult.allowed) {
       return ApiResponse.error(
