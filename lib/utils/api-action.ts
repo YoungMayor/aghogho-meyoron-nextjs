@@ -4,29 +4,27 @@ import { verifyApiAuth } from './api-auth';
 import { checkRateLimit, getClientIp, RATE_LIMIT_CONFIG } from './rate-limit';
 import { serverEnv } from '@/lib/env/server';
 
-export interface ApiActionConfig {
+export interface ApiActionConfig<T extends NextResponse<ApiResponseData>> {
   request: Request;
   rate_limit?: RATE_LIMIT_CONFIG;
-  error?: {
-    client: string;
-    log: string;
-  };
+  error?: { client: string; log: string };
+  callback: () => Promise<T>;
 }
 
 export async function apiAction<T extends NextResponse<ApiResponseData>>(
-  config: ApiActionConfig,
-  callback: (request: Request) => Promise<T>
+  payload: ApiActionConfig<T>
 ): Promise<NextResponse<ApiResponseData>> {
   const secret = serverEnv.INTERNAL_API_SECRET;
 
   if (!secret) return ApiResponse.serverError('Server configuration error');
 
-  if (!verifyApiAuth(config.request, secret)) return ApiResponse.unauthorized();
+  if (!verifyApiAuth(payload.request, secret)) return ApiResponse.unauthorized();
 
-  if (config.rate_limit) {
-    const clientIp = getClientIp(config.request);
+  if (payload.rate_limit) {
+    // @todo: Use request tools
+    const clientIp = getClientIp(payload.request);
 
-    const rateLimitResult = checkRateLimit(clientIp, config.rate_limit);
+    const rateLimitResult = checkRateLimit(clientIp, payload.rate_limit);
 
     if (!rateLimitResult.allowed) {
       return ApiResponse.error(
@@ -37,10 +35,10 @@ export async function apiAction<T extends NextResponse<ApiResponseData>>(
   }
 
   try {
-    return await callback(config.request);
+    return await payload.callback();
   } catch (error) {
-    console.error(config.error?.log || 'Something went wrong: ', error);
+    console.error(payload.error?.log || 'Something went wrong: ', error);
 
-    return ApiResponse.serverError(config.error?.client || 'Something went wrong');
+    return ApiResponse.serverError(payload.error?.client || 'Something went wrong');
   }
 }

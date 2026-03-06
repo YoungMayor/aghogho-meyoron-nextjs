@@ -18,24 +18,27 @@ import { apiAction } from '@/lib/utils/api-action';
  * Requires authentication
  */
 export async function GET(request: Request) {
-  return apiAction({ request }, async () => {
-    const completeProfile = {
-      ...profile,
-      history: {
-        academic: getVisibleAndSorted(academicRecords),
-        career: getVisibleAndSorted(careerItems),
-      },
-      portfolio: {
-        projects: getVisibleAndSorted(projects),
-        articles: getVisibleAndSorted(articles),
-      },
-      skills: getVisibleAndSorted(skills),
-      testimonials: getVisibleAndSorted(testimonials),
-      social_links: getVisibleAndSorted(socialLinks),
-      hobbies: getVisibleAndSorted(hobbies),
-      badges,
-    };
+  return apiAction({
+    request,
+    async callback() {
+      const completeProfile = {
+        ...profile,
+        history: {
+          academic: getVisibleAndSorted(academicRecords),
+          career: getVisibleAndSorted(careerItems),
+        },
+        portfolio: {
+          projects: getVisibleAndSorted(projects),
+          articles: getVisibleAndSorted(articles),
+        },
+        skills: getVisibleAndSorted(skills),
+        testimonials: getVisibleAndSorted(testimonials),
+        social_links: getVisibleAndSorted(socialLinks),
+        hobbies: getVisibleAndSorted(hobbies),
+        badges,
+      };
 
-    return ApiResponse.success(completeProfile);
+      return ApiResponse.success(completeProfile);
+    },
   });
 }

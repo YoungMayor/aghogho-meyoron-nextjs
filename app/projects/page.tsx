@@ -83,7 +83,7 @@ function ProjectsContent() {
   return (
     <main className="flex-1">
       {/* Hero Section */}
-      <section className="py-16 px-4 bg-gradient-to-b from-secondary/50 to-background">
+      <section className="py-16 px-4 bg-linear-to-b from-secondary/50 to-background">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

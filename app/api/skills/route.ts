@@ -9,11 +9,14 @@ import { apiAction } from '@/lib/utils/api-action';
  * Requires authentication
  */
 export async function GET(request: Request) {
-  return apiAction({ request }, async () => {
-    return ApiResponse.success({
-      all: getVisibleAndSorted(skills),
-      technical: getVisibleAndSorted(technicalSkills),
-      soft: getVisibleAndSorted(softSkills),
-    });
+  return apiAction({
+    request,
+    async callback() {
+      return ApiResponse.success({
+        all: getVisibleAndSorted(skills),
+        technical: getVisibleAndSorted(technicalSkills),
+        soft: getVisibleAndSorted(softSkills),
+      });
+    },
   });
 }

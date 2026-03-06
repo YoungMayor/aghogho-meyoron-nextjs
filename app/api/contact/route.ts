@@ -13,16 +13,11 @@ import { requestTools } from '@/lib/utils/request-tools';
  * Requires authentication
  */
 export async function POST(request: Request) {
-  return await apiAction(
-    {
-      request,
-      rate_limit: RATE_LIMITS.FORM_SUBMISSION,
-      error: {
-        client: 'Failed to submit contact form',
-        log: 'Contact form error',
-      },
-    },
-    async (request) => {
+  return await apiAction({
+    request,
+    rate_limit: RATE_LIMITS.FORM_SUBMISSION,
+    error: { client: 'Failed to submit contact form', log: 'Contact form error' },
+    async callback() {
       const body = await request.json();
       const { name, email, subject, message } = body;
 
@@ -58,6 +53,6 @@ export async function POST(request: Request) {
       });
 
       return ApiResponse.success(null, 'Your message has been sent successfully!');
-    }
-  );
+    },
+  });
 }

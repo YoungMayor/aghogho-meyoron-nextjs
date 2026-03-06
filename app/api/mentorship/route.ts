@@ -13,16 +13,14 @@ import { requestTools } from '@/lib/utils/request-tools';
  * Requires authentication
  */
 export async function POST(request: Request) {
-  return await apiAction(
-    {
-      request,
-      rate_limit: RATE_LIMITS.FORM_SUBMISSION,
-      error: {
-        client: 'Failed to submit mentorship application',
-        log: 'Mentorship application error',
-      },
+  return await apiAction({
+    request,
+    rate_limit: RATE_LIMITS.FORM_SUBMISSION,
+    error: {
+      client: 'Failed to submit mentorship application',
+      log: 'Mentorship application error',
     },
-    async (request) => {
+    async callback() {
       const body = await request.json();
 
       const { name, email, phone, background, goals, commitment } = body;
@@ -72,6 +70,6 @@ export async function POST(request: Request) {
         null,
         'Your mentorship application has been submitted successfully!'
       );
-    }
-  );
+    },
+  });
 }
