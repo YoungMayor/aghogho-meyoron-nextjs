@@ -13,6 +13,16 @@ export const serverEnv = createEnv({
 
     INTERNAL_API_SECRET: z.string(),
     RECAPTCHA_SECRET_KEY: z.string().optional(),
+    GEMINI_API_KEY: z.string().optional(),
+    GEMINI_MODEL: z
+      .enum([
+        'gemini-3-flash-preview',
+        'gemini-2.5-flash',
+        'gemini-2.5-pro',
+        'gemini-1.5-flash',
+        'gemini-1.5-pro',
+      ])
+      .default('gemini-3-flash-preview'),
   },
   extends: [netlify()],
   experimental__runtimeEnv: process.env,

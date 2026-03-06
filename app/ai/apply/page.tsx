@@ -7,6 +7,7 @@ import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Spinner from '@/components/ui/Spinner';
 import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
+import { generateJobSummary, generateApplicationOutput } from '@/app/actions/ai/apply';
 
 type Step = 'input' | 'summary' | 'outputs';
 
@@ -48,17 +49,8 @@ export default function AIApplyPage() {
     setError(null);
 
     try {
-      const res = await fetch('/api/ai/summarize', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ companyName, role, link, jobDescription }),
-      });
+      const data = await generateJobSummary(companyName, role, link, jobDescription);
 
-      if (!res.ok) {
-        throw new Error('Failed to generate summary');
-      }
-
-      const data = await res.json();
       setJobSummary(data.jobSummary);
       setApplicationId(data.applicationId);
       setStep('summary');
@@ -82,21 +74,11 @@ export default function AIApplyPage() {
     setIsLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/ai/generate-output', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          applicationId,
-          type,
-          customPrompt: type === 'custom' ? customQuestion : undefined,
-        }),
-      });
-
-      if (!res.ok) {
-        throw new Error(`Failed to generate ${type.replace('_', ' ')}`);
-      }
-
-      const data = await res.json();
+      const data = await generateApplicationOutput(
+        applicationId,
+        type,
+        type === 'custom' ? customQuestion : undefined
+      );
 
       setOutputs((prev) => {
         if (type === 'custom') {
