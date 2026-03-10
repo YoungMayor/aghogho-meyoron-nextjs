@@ -83,6 +83,7 @@ export default function ProjectsFilter() {
               }
             }}
             className="w-full"
+            type="search"
           />
         </div>
 
@@ -91,7 +92,6 @@ export default function ProjectsFilter() {
             variant={activeFiltersCount > (currentSearch ? 1 : 0) ? 'primary' : 'outline'}
             onClick={() => setIsFilterModalOpen(true)}
             className="flex-1 md:flex-none"
-            size="sm"
           >
             Filters{' '}
             {activeFiltersCount > (currentSearch ? 1 : 0) &&
@@ -104,7 +104,6 @@ export default function ProjectsFilter() {
               onClick={clearFilters}
               className="text-destructive hover:text-destructive/80 shrink-0"
               title="Clear all filters"
-              size="sm"
             >
               Clear
             </Button>
