@@ -26,6 +26,7 @@
   "dependencies": {
     "@google/genai": "^1.44.0",
     "@mayrlabs/telegram-service": "^0.1.0",
+    "@mayrlabs/web-icon": "^0.2.0",
     "@t3-oss/env-nextjs": "^0.13.10",
     "@tailwindcss/typography": "^0.5.19",
     "gray-matter": "^4.0.3",

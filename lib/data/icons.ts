@@ -1,14 +1,14 @@
 import { Icon } from '../types';
 
 const devicon = (value: string, label: string, variant: string = 'original'): Icon => ({
-  type: 'devicon',
-  value: `${value}-${variant}`,
+  type: 'dev',
+  value: `${value}:${variant}`,
   label,
   slug: value,
 });
 
 const simpleicon = (value: string, label: string): Icon => ({
-  type: 'simpleicon',
+  type: 'simple',
   value,
   label,
   slug: value,

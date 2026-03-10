@@ -1,6 +1,6 @@
 // Utility Types
 export interface Icon {
-  type: 'devicon' | 'simpleicon';
+  type: 'dev' | 'simple';
   value: string;
   label: string;
   slug?: string;

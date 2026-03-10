@@ -1,32 +1,15 @@
-import Image from 'next/image';
 import { Icon as IconData } from '@/lib/types';
+import CustomIcon from '@mayrlabs/web-icon/next';
 
 interface IconProps {
-  type: 'devicon' | 'simpleicon';
+  type: 'dev' | 'simple';
   value: string;
   size?: number;
   className?: string;
 }
 
-export function iconUrl({ type, value }: IconProps) {
-  if (type === 'devicon') {
-    const folder = value.startsWith('dot-net') ? 'dot-net' : value.split('-')[0];
-
-    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${folder}/${value}.svg`;
-  } else if (type === 'simpleicon') {
-    return `https://cdn.simpleicons.org/${value}`;
-  }
-
-  return null;
-}
-
 export default function Icon({ type, value, size = 40, className = '' }: IconProps) {
-  const alt = `${value} icon`;
-  const src = iconUrl({ type, value });
-
-  if (!src) return null;
-
-  return <Image src={src} alt={alt} width={size} height={size} className={className} unoptimized />;
+  return <CustomIcon icon={`${type}:${value}`} unoptimized size={size} />;
 }
 
 interface FromIconProps {
