@@ -7,7 +7,7 @@ import Input from '@/components/ui/Input';
 import Modal from '@/components/ui/Modal';
 import Accordion from '@/components/ui/Accordion';
 import { skills } from '@/lib/data/skills';
-import { techIcons } from '@/lib/data/icons';
+import { languagesIcons, frameworksIcons, databasesIcons } from '@/lib/data/icons';
 import { segments, stackRoles as importedStackRoles } from '@/lib/data/projects/constants';
 import { useDebounce } from '@/lib/hooks/debounce';
 import CustomIcon from '@/components/ui/Icon';
@@ -98,7 +98,13 @@ export default function ProjectsFilter() {
     setter((prev) => (prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]));
   };
 
-  const allFilteredTechIcons = Object.values(techIcons).filter((icon) =>
+  const filterableTechIcons = [
+    ...Object.values(languagesIcons),
+    ...Object.values(frameworksIcons),
+    ...Object.values(databasesIcons),
+  ];
+
+  const allFilteredTechIcons = filterableTechIcons.filter((icon) =>
     icon.label.toLowerCase().includes(techSearch.toLowerCase())
   );
 
