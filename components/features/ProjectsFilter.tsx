@@ -64,6 +64,7 @@ export default function ProjectsFilter() {
   }, [debouncedSearch, updateFilters]);
 
   const clearFilters = () => {
+    setCurrentSearch('');
     router.replace(pathname, { scroll: false });
   };
 
