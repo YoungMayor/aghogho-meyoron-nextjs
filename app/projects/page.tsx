@@ -21,30 +21,36 @@ function ProjectsContent() {
   const searchParams = useSearchParams();
 
   // Get raw filters
-  const filterSegment = searchParams.get('segment') || 'all';
-  const filterStackRole = searchParams.get('stack_role') || 'all';
+  const filterSegments = searchParams.get('segment') ? searchParams.get('segment')!.split(',') : [];
+  const filterRoles = searchParams.get('stack_role')
+    ? searchParams.get('stack_role')!.split(',')
+    : [];
   const searchQuery = searchParams.get('search') || '';
   const filterTechs = searchParams.get('tech') ? searchParams.get('tech')!.split(',') : [];
-  const filterSkill = searchParams.get('skill') || 'all';
+  const filterSkills = searchParams.get('skill') ? searchParams.get('skill')!.split(',') : [];
 
   const visibleProjects = sortByPriority(getVisibleItems(projects), 'desc');
 
   // Logic for Skill Filter: map skill name to icon labels
   const skillIconLabels =
-    filterSkill !== 'all'
-      ? skills.find((s) => s.name === filterSkill)?.icons.map((i) => i.label) || []
+    filterSkills.length > 0
+      ? skills
+          .filter((s) => filterSkills.includes(s.name))
+          .flatMap((s) => s.icons.map((i) => i.label))
       : [];
 
   // Filter projects
   const filteredProjects = visibleProjects.filter((project) => {
     // 1. Segment
-    if (filterSegment !== 'all' && !(project.segment as string[]).includes(filterSegment)) {
-      return false;
+    if (filterSegments.length > 0) {
+      const hasSegment = (project.segment as string[]).some((seg) => filterSegments.includes(seg));
+      if (!hasSegment) return false;
     }
 
     // 2. Stack Role
-    if (filterStackRole !== 'all' && !(project.stack_role as string[]).includes(filterStackRole)) {
-      return false;
+    if (filterRoles.length > 0) {
+      const hasRole = (project.stack_role as string[]).some((role) => filterRoles.includes(role));
+      if (!hasRole) return false;
     }
 
     // 3. Search
@@ -66,9 +72,7 @@ function ProjectsContent() {
     }
 
     // 5. Skills (OR logic - if any icon from the skill group is present)
-    if (filterSkill !== 'all') {
-      // If skill has no icons (e.g. empty capability), maybe show none?
-      // Or if checking logic: project must have AT LEAST ONE icon from the skill set.
+    if (filterSkills.length > 0) {
       const hasSkillIcon = project.icons.some((icon) => skillIconLabels.includes(icon.label));
       if (!hasSkillIcon) return false;
     }

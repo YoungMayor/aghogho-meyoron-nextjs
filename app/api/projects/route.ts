@@ -19,23 +19,27 @@ export async function GET(request: Request) {
     request,
     async callback() {
       const { searchParams } = new URL(request.url);
-      const stackRoleFilter = searchParams.get('stack_role');
-      const segmentFilter = searchParams.get('segment');
+      const stackRoleFilters = searchParams.get('stack_role')
+        ? searchParams.get('stack_role')!.split(',')
+        : [];
+      const segmentFilters = searchParams.get('segment')
+        ? searchParams.get('segment')!.split(',')
+        : [];
       const technologiesFilter = searchParams.get('technologies');
       const limit = parseInt(searchParams.get('limit') || '10', 10);
       const offset = parseInt(searchParams.get('offset') || '0', 10);
 
       let filteredProjects = getVisibleItems(projects);
 
-      if (stackRoleFilter) {
+      if (stackRoleFilters.length > 0) {
         filteredProjects = filteredProjects.filter((p) =>
-          (p.stack_role as string[]).includes(stackRoleFilter)
+          (p.stack_role as string[]).some((role) => stackRoleFilters.includes(role))
         );
       }
 
-      if (segmentFilter) {
+      if (segmentFilters.length > 0) {
         filteredProjects = filteredProjects.filter((p) =>
-          (p.segment as string[]).includes(segmentFilter)
+          (p.segment as string[]).some((seg) => segmentFilters.includes(seg))
         );
       }
 
