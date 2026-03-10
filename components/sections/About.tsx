@@ -16,7 +16,7 @@ export default function About() {
   const [quote] = useState(() => getRandomQuote());
 
   return (
-    <section className="w-full bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] py-20">
+    <section className="w-full bg-linear-to-br from-(--gradient-start) to-(--gradient-end) py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <SectionHeader title="Get to Know Me" />
@@ -54,10 +54,10 @@ export default function About() {
                   {skill.icons.map((icon) => (
                     <div
                       key={`tech-skill-${skill.name}-icon-${icon.label}`}
-                      className="group flex items-center gap-2 rounded-xl bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] px-3 py-2 transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:scale-105 dark:hover:shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                      className="group flex items-center gap-2 rounded-xl bg-linear-to-br from-(--gradient-start) to-(--gradient-end) px-3 py-2 transition-all duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:scale-105 dark:hover:shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
                       title={icon.label}
                     >
-                      <Icon.fromIcon icon={icon} size={24} className="flex-shrink-0" />
+                      <Icon.fromIcon icon={icon} size={24} className="shrink-0" />
 
                       <span className="text-sm font-medium text-muted-foreground">
                         {icon.label}

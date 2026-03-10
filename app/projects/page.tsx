@@ -83,7 +83,7 @@ function ProjectsContent() {
   return (
     <main className="flex-1">
       {/* Hero Section */}
-      <section className="py-16 px-4 bg-linear-to-b from-secondary/50 to-background">
+      <section className="pt-24 pb-8 px-4 bg-linear-to-b from-secondary/50 to-background">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">My Projects</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -94,16 +94,12 @@ function ProjectsContent() {
       </section>
 
       {/* Filters & Search */}
-      <section className="py-8 px-4 border-b border-border sticky top-0 pt-24 z-10 bg-background/95 backdrop-blur-sm">
+      <section className="py-4 md:py-8 px-4 border-b border-border sticky top-0 pt-18 md:pt-24 z-10 bg-background/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <ProjectsFilter />
 
-          {/* Results Count */}
-          <div className="mt-4 text-sm text-muted-foreground flex justify-between items-center">
-            <span>
-              Showing {filteredProjects.length} of {visibleProjects.length} projects
-            </span>
-            {/* Optional: Add sort here later */}
+          <div className="mt-2 text-xs text-center text-muted-foreground">
+            Showing {filteredProjects.length} of {visibleProjects.length} projects
           </div>
         </div>
       </section>

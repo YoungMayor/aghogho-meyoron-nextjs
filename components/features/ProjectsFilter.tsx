@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
@@ -36,7 +36,6 @@ export default function ProjectsFilter() {
   const currentSkill = searchParams.get('skill') || 'all';
 
   const [currentSearch, setCurrentSearch] = useState(currentSearchUrl);
-  const isInitialMount = useRef(true);
 
   // Update URL helper
   const updateFilters = useCallback(
@@ -57,20 +56,6 @@ export default function ProjectsFilter() {
     [router, pathname, searchParams]
   );
 
-  // Debounce search URL update
-  // useEffect(() => {
-  //   if (isInitialMount.current) {
-  //     isInitialMount.current = false;
-  //     return;
-  //   }
-
-  //   const handler = setTimeout(() => {
-  //     console.log('Searching for ', currentSearch);
-  //     updateFilters('search', currentSearch);
-  //   }, 300);
-  //   return () => clearTimeout(handler);
-  // }, [currentSearch, updateFilters]);
-
   const clearFilters = () => {
     router.replace(pathname, { scroll: false });
   };
@@ -85,7 +70,7 @@ export default function ProjectsFilter() {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-col md:flex-row gap-4 items-center">
+      <div className="flex flex-col md:flex-row gap-3 items-center">
         {/* Search */}
         <div className="flex w-full">
           <Input
@@ -106,6 +91,7 @@ export default function ProjectsFilter() {
             variant={activeFiltersCount > (currentSearch ? 1 : 0) ? 'primary' : 'outline'}
             onClick={() => setIsFilterModalOpen(true)}
             className="flex-1 md:flex-none"
+            size="sm"
           >
             Filters{' '}
             {activeFiltersCount > (currentSearch ? 1 : 0) &&
@@ -118,6 +104,7 @@ export default function ProjectsFilter() {
               onClick={clearFilters}
               className="text-destructive hover:text-destructive/80 shrink-0"
               title="Clear all filters"
+              size="sm"
             >
               Clear
             </Button>
