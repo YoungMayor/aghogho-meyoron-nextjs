@@ -23,9 +23,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <Image src={mainImage} alt={project.name} fill className="object-cover" unoptimized />
           ) : (
             <div className="flex items-center justify-center h-full">
-              <span className="text-4xl font-bold text-muted-foreground">
-                {project.name.charAt(0)}
-              </span>
+              <span className="text-2xl font-bold text-muted-foreground">{project.name}</span>
             </div>
           )}
         </div>
