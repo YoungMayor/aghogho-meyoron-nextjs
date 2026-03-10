@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
@@ -9,6 +9,7 @@ import Modal from '@/components/ui/Modal';
 import TechFilterDialog from './TechFilterDialog';
 import { skills } from '@/lib/data/skills';
 import { segments, stackRoles as importedStackRoles } from '@/lib/data/projects/constants';
+import { useDebounce } from '@/lib/hooks/debounce';
 
 const predefinedSegments = [
   { value: 'all', label: 'All Projects' },
@@ -24,6 +25,7 @@ export default function ProjectsFilter() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const searchParamsString = searchParams.toString();
 
   const [isTechModalOpen, setIsTechModalOpen] = useState(false);
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
@@ -36,11 +38,12 @@ export default function ProjectsFilter() {
   const currentSkill = searchParams.get('skill') || 'all';
 
   const [currentSearch, setCurrentSearch] = useState(currentSearchUrl);
+  const debouncedSearch = useDebounce(currentSearch, 500);
 
   // Update URL helper
   const updateFilters = useCallback(
     (key: string, value: string | string[] | null) => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = new URLSearchParams(searchParamsString);
 
       if (!value || value === 'all' || (Array.isArray(value) && value.length === 0)) {
         params.delete(key);
@@ -53,8 +56,12 @@ export default function ProjectsFilter() {
       // Reset page if we assume pagination later, but for now just push
       router.replace(`${pathname}?${params.toString()}`, { scroll: false });
     },
-    [router, pathname, searchParams]
+    [router, pathname, searchParamsString]
   );
+
+  useEffect(() => {
+    updateFilters('search', debouncedSearch);
+  }, [debouncedSearch, updateFilters]);
 
   const clearFilters = () => {
     router.replace(pathname, { scroll: false });
