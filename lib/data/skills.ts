@@ -51,7 +51,7 @@ export const skills: Skill[] = [
     priority: 5,
   },
   {
-    name: 'Tools & Design',
+    name: 'Tools',
     description: null,
     type: 'tech',
     icons: Object.values(toolsIcons),
@@ -59,12 +59,27 @@ export const skills: Skill[] = [
     priority: 6,
   },
   {
-    name: 'Other',
+    name: 'Design',
     description: null,
     type: 'tech',
-    icons: Object.values(otherIcons),
+    icons: [toolsIcons.Figma, toolsIcons.Canva],
     show: true,
     priority: 7,
+  },
+  {
+    name: 'AI / Data Science',
+    description: null,
+    type: 'tech',
+    icons: [
+      otherIcons.GoogleGemini,
+      librariesIcons.Pandas,
+      librariesIcons.NumPy,
+      librariesIcons.ScikitLearn,
+      librariesIcons.TensorFlow,
+      librariesIcons.PyTorch,
+    ],
+    show: true,
+    priority: 8,
   },
 
   {

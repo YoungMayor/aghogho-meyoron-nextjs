@@ -33,7 +33,7 @@ export interface Profile {
   };
   contact: {
     email: string;
-    phone: string;
+    phone?: string;
     message: string;
   };
   copyright: {
@@ -55,6 +55,7 @@ export interface AcademicRecord extends HasVisibility {
 
 // Career History
 export interface CareerItem extends HasVisibility {
+  slug: string;
   company_name: string;
   role: string;
   start_date: string; // ISO date or "YYYY-MM-DD"
@@ -62,6 +63,10 @@ export interface CareerItem extends HasVisibility {
   description: string;
   location: string;
   duties: string[];
+  roles?: {
+    role: string;
+    technologies: Icon[];
+  }[];
 }
 
 import { ProjectSegment, ProjectRole } from './data/projects/constants';

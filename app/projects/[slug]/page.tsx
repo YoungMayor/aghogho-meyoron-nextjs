@@ -104,7 +104,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
     .slice(0, 3);
 
   // Fetch markdown content
-  const markdown = getMarkdownBySlug('lib/data/content', slug);
+  const markdown = getMarkdownBySlug('lib/data/content/projects', slug);
 
   // Generate structured data
   const projectSchema = generateProjectSchema(project);

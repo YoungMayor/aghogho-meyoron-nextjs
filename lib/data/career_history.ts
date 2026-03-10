@@ -1,11 +1,13 @@
 import { CareerItem } from '@/lib/types';
+import { techIcons } from './icons';
 
 export const careerItems: CareerItem[] = [
   {
+    slug: 'glover',
     company_name: 'Glover Techstars',
     role: 'Senior Backend Developer',
     start_date: '2021-02-01',
-    end_date: '2025-01-01',
+    end_date: '2026-01-01',
     description:
       'Glover is a digital marketplace enabling users to trade gift cards, airtime, and digital assets.',
     location: 'Remote',
@@ -22,10 +24,24 @@ export const careerItems: CareerItem[] = [
       'Worked on implementing cross-country KYC processes to support international user onboarding.',
       'Contributed to authentication upgrades and platform-wide security improvements.',
     ],
+    roles: [
+      {
+        role: 'Senior Backend Developer',
+        technologies: [
+          techIcons.PHP,
+          techIcons.Laravel,
+          techIcons.PostgreSQL,
+          techIcons.Redis,
+          techIcons.Docker,
+          techIcons.GitHubActions,
+        ],
+      },
+    ],
     show: true,
     priority: 0,
   },
   {
+    slug: 'patricia',
     company_name: 'Patricia Technologies',
     role: 'Senior Backend Developer',
     start_date: '2020-01-01',
@@ -38,10 +54,26 @@ export const careerItems: CareerItem[] = [
       'Refactored and enhanced legacy codebase for better maintainability and scalability.',
       'Contributed to the development of an internal admin dashboard for operational efficiency.',
     ],
+    roles: [
+      {
+        role: 'Senior Backend Developer',
+        technologies: [
+          techIcons.NODEJS,
+          techIcons.ExpressJS,
+          techIcons.TypeScript,
+          techIcons.PHP,
+          techIcons.PostgreSQL,
+          techIcons.Redis,
+          techIcons.AWS,
+          techIcons.Docker,
+        ],
+      },
+    ],
     show: true,
     priority: 0,
   },
   {
+    slug: 'khora-digitals',
     company_name: 'Khora Digitals',
     role: 'Remote Software Engineer',
     start_date: '2019-01-01',
@@ -53,10 +85,24 @@ export const careerItems: CareerItem[] = [
       'Developed a total of two 2 web solutions to client companies in my one month contract period',
       "Worked remotely with 2 existing staffs to optimize 2 existing web based projects using the company's in-house framework",
     ],
+    roles: [
+      {
+        role: 'Remote Software Engineer',
+        technologies: [
+          techIcons.PHP,
+          techIcons.MySQL,
+          techIcons.HTML5,
+          techIcons.CSS3,
+          techIcons.JavaScript,
+          techIcons.jQuery,
+        ],
+      },
+    ],
     show: true,
     priority: 0,
   },
   {
+    slug: 'mayor-tech',
     company_name: 'Mayor Tech Solutions',
     role: 'Lead Software Engineer',
     start_date: '2018-01-01',
@@ -70,10 +116,26 @@ export const careerItems: CareerItem[] = [
       'Solely developed in-house projects for the company which includes a developer community platform, blog applications, video download sites, church advertorials and event management applications, e-commerce application and Job Agencies',
       'Partnered in over 17 web based projects as contract developers',
     ],
+    roles: [
+      {
+        role: 'Lead Software Engineer',
+        technologies: [
+          techIcons.PHP,
+          techIcons.Laravel,
+          techIcons.JavaScript,
+          techIcons.VueJS,
+          techIcons.Bootstrap,
+          techIcons.MySQL,
+          techIcons.Redis,
+          techIcons.Git,
+        ],
+      },
+    ],
     show: true,
     priority: 0,
   },
   {
+    slug: 'flexpert',
     company_name: 'Flexpert',
     role: 'Intern Backend Engineer',
     start_date: '2016-01-01',
@@ -91,10 +153,17 @@ export const careerItems: CareerItem[] = [
       'Attained certificate of Grand Team Player by working ceaselessly and peacefully with a team of 14 developers in fields of Web Development and Mobile App Development',
       'Worked in a team of 2 to build the Staff Management Console, Company Academy Student Tracking Panel, and Staff Task Allocation Panel of the company',
     ],
+    roles: [
+      {
+        role: 'Intern Backend Engineer',
+        technologies: [techIcons.PHP, techIcons.JavaScript, techIcons.MySQL],
+      },
+    ],
     show: true,
     priority: 0,
   },
   {
+    slug: 'podici',
     company_name: 'Podici',
     role: 'Lead Backend Engineer',
     start_date: '2025-01-01',
@@ -111,6 +180,21 @@ export const careerItems: CareerItem[] = [
       'Collaborated with cross-functional teams including frontend, product, and DevOps to deliver user-focused solutions.',
       'Mentored junior developers and facilitated knowledge sharing through code walkthroughs and documentation.',
       'Oversaw database design and optimisation for high availability and low latency.',
+    ],
+    roles: [
+      {
+        role: 'Lead Backend Engineer',
+        technologies: [
+          techIcons.TypeScript,
+          techIcons.NODEJS,
+          techIcons.NextJS,
+          techIcons.AWS,
+          techIcons.Docker,
+          techIcons.Kubernetes,
+          techIcons.PostgreSQL,
+          techIcons.MongoDB,
+        ],
+      },
     ],
     show: false,
     priority: 0,

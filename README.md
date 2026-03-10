@@ -1,64 +1,52 @@
-# Aghogho Meyoron Portfolio
+# Aghogho Meyoron - Software Architect & Engineer Portfolio
 
-A sophisticated, highly customizable, and SEO-optimized portfolio built with Next.js 16. This project showcases professional history, projects, mentorship, and more, featuring a robust internal API and seamless integrations.
+A sophisticated, highly scalable, and privacy-first engineering portfolio built with **Next.js 16, TypeScript, and Tailwind CSS v4**. Designed not just as a static site, but as a fully fleshed out web application complete with internal APIs, Markdown-driven data structures, automated SEO schemas, a high-fidelity Next/Previous routing implementation, and offline Progressive Web App (PWA) capabilities.
 
-## Overview
+## Technical Philosophy
 
-This portfolio is designed to be a central hub for my professional identity, offering a rich user experience with light/dark mode, offline support (PWA), and dynamic content management via Markdown and TypeScript data files.
+This repository is architected to showcase uncompromising engineering rigor. From defining dynamic type layers over data structures to employing `gray-matter` for parsing external markdown files without relying on heavy CMS frameworks, the portfolio is built to be brutally efficient, self-contained, and structurally scalable.
 
-## Features
+### 🔐 Privacy by Design
 
-### Core Sections
+The architecture explicitly isolates sensitive data (such as direct mobile contact) ensuring complete PWA and web environment privacy.
 
-- **Hero**: Captivating introduction with avatar, name, specializations, tagline, and CTAs (Resume, Contact, Socials).
-- **Get to Know Me**: Bio and proficiency showcase using DevIcons.
-- **Career History**: A beautiful, timeline-based display of professional experience.
-- **Projects**: Comprehensive showcase of JS/Dart packages, apps, API solutions, and open-source contributions.
-  - Supports detailed views via Markdown (gray-matter).
-  - Categorized display.
-- **Mentorship**: Metrics, impact, reviews, and an application form.
-- **Articles**: A section for written content.
-- **Testimonials**: Social proof from colleagues and clients.
-- **Contact**: Functional contact form with ReCAPTCHA v3.
-- **Footer**: Professional footer with relevant links.
+### ⚡ Architectural Performance
 
-### Advanced Features
+- **PWA Ready:** Leverages native service workers for robust offline caching.
+- **Zero-Layout-Shift (ZLS):** All images and graphical layers are constrained implicitly.
+- **Micro-Structured Data:** Generates dynamic LDAP + JSON-LD schemas automatically across projects, career milestones, and article pages.
 
-- **Customizable Resume**: `/resume` page loading data dynamically. Users can select templates and configure visible data before printing.
-- **Announcements**: `/announcement` page powered by Markdown files for news and updates.
-- **Theming**: Automatic Light/Dark mode switching.
-  - Light Mode: Black primary color.
-  - Dark Mode: White primary color.
-- **PWA & Offline Support**: Fully optimized for performance and offline access.
-- **SEO**: Comprehensive SEO optimization for all pages.
+## Key Features
 
-### Integrations & Backend
+- **Careers Subsystem (`/careers`):**
+  - Iteratively parses a multi-layered TS definition dictionary.
+  - Dynamically routes to `/careers/[slug]` with an intelligent fallback system. If `.md` role files exist in `/lib/data/content/career/`, it parses the `gray-matter`. Otherwise, it falls back flawlessly to array-based rendering.
+- **Projects Data-Layer (`/projects`):**
+  - Consistently categorized via heavily typed segments (Open Source, Client, Go, TS).
+  - Dynamically merges inference algorithms linking `Languages`, `Frameworks`, and `Databases` directly from `lib/data/icons.ts`.
+- **Dynamic Resume Builder (`/resume`):**
+  - Instantaneous, strictly typed resume builder that pulls deeply nested component arrays to let users structure and customize their PDF exports.
+- **Custom Internal API:**
+  - Secure endpoints (`/api/**`) exposing isolated public data payloads to allowed clients.
+  - Secured via an immutable Time-Based Timestamp signature validation over a shared secret key header.
 
-- **Forms**: Mentorship and Contact forms integrated with:
-  - **MongoDB**: For persistent storage.
-  - **Telegram**: For instant notifications.
-  - **ReCAPTCHA v3**: For spam prevention.
-- **Internal API**: Secure endpoints (`/api/**`) to expose portfolio data to other applications.
-  - **Security**: Custom authentication using a secret key and time-based encryption (Header verification).
+## Tech Stack Overview
 
-## Tech Stack
+- **Core Framework:** Next.js 16.0.7 (App Router), React 19
+- **Typing Engine:** TypeScript 5
+- **Styling:** Tailwind CSS 4, Radix UI Primitives, Lucide-React
+- **Database (Forms):** MongoDB (Mongoose)
+- **External Integration:** Telegram Bot API (Instantaneous form notifications), Google ReCAPTCHA v3
+- **DevOps:** Prettier, ESLint
 
-- **Framework**: Next.js 16.0.7 with App Router
-- **Language**: TypeScript 5
-- **Styling**: Tailwind CSS 4
-- **Database**: MongoDB (for form submissions)
-- **Data Source**: TypeScript files and Markdown files with gray-matter
-- **PWA**: Service Worker for offline support
-- **Integrations**: Telegram Bot API, Google ReCAPTCHA v3
-
-## Getting Started
+## Local Development
 
 ### Prerequisites
 
 - Node.js 20 or higher
 - npm or yarn
 
-### Installation
+### Installation Steps
 
 1. Clone the repository
 2. Install dependencies:
@@ -67,100 +55,58 @@ This portfolio is designed to be a central hub for my professional identity, off
 npm install
 ```
 
-3. Create a `.env.local` file based on `.env.example`:
+3. Spin up environment variables based on `.env.example`:
 
 ```bash
 cp .env.example .env.local
 ```
 
-4. Fill in the environment variables in `.env.local`
+_(Ensure MongoDB and ReCAPTCHA API keys are populated to successfully test the form mutations.)_
 
-### Development
-
-Run the development server:
+4. Run the development server locally:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-### Build
+## Testing & Linting
 
-Build for production:
+I enforce strict TS validation prior to any build cycle:
 
 ```bash
+# Validate TypeScript compliance
+npx tsc --noEmit
+
+# Run Linter
+npm run lint
+
+# Compile for Production
 npm run build
 ```
 
-### Lint
-
-Check code quality:
-
-```bash
-npm run lint
-```
-
-## Project Structure
+## Application Structure
 
 ```
-├── app/                    # Next.js app directory
-│   ├── layout.tsx         # Root layout with metadata
-│   ├── page.tsx           # Home page
-│   └── globals.css        # Global styles with theme variables
-├── components/            # React components
-│   ├── layout/           # Layout components (Header, Footer)
-│   ├── sections/         # Page sections
-│   ├── ui/               # Reusable UI components
-│   └── features/         # Feature-specific components
-├── lib/                  # Utility functions and data
-│   ├── data/            # Data files (TypeScript)
-│   ├── utils/           # Utility functions
-│   ├── db/              # Database connections
-│   └── types/           # TypeScript type definitions
-├── content/             # Markdown content
-│   ├── projects/        # Project detail pages
-│   └── announcements/   # Announcement pages
-├── public/              # Static assets
-│   ├── icons/          # App icons
-│   ├── manifest.json   # PWA manifest
-│   └── sw.js           # Service worker
-└── docs/               # Documentation
-    └── aghogho-meyoron.json  # Portfolio data reference
+├── app/                      # App Router core (Dynamic Routing, API endpoints)
+│   ├── careers/              # Career Timeline, Detail Views & Markdown fallback layers
+│   ├── projects/             # Projects ecosystem & Detailed Views
+│   ├── api/                  # Secured data-exposure layer
+│   └── page.tsx              # Index Aggregate
+├── components/               # Granular React Components
+│   ├── features/             # Business Logic UI (Filters, Timeline iterators, Cards)
+│   ├── layout/               # High Order layout constructs (Header, Footer)
+│   ├── sections/             # Distinct visual chunks invoked by layout pages
+│   └── ui/                   # Reusable, stateless UI blocks
+├── lib/                      # Core Logic & Utilities
+│   ├── data/                 # SSOT (Single Source of Truth) data dictionaries (.ts)
+│   │   └── content/          # Markdown documents (Careers, Projects, Announcements)
+│   └── utils/                # Schema generators, Markdown parsers, debounce hooks
+└── public/                   # Static and Service Worker execution layers
 ```
 
-## Implementation Plan & Roadmap
+## Maintainer
 
-For a detailed breakdown of completed features, architecture, and the future roadmap, please refer to the [IMPLEMENTATION_PLAN.md](./IMPLEMENTATION_PLAN.md).
-
-## Data Structure
-
-Data is managed via structured TypeScript files for easy maintenance and type safety:
-
-- `academic_records.ts`
-- `career_items.ts`
-- `projects.ts`
-- `skills.ts`
-- ...and others.
-
-## Endpoints
-
-- `/` - Home
-- `/projects` - Project Listing
-- `/projects/{slug}` - Project Details
-- `/mentorship` - Mentorship Info & Application
-- `/contact` - Contact Page
-- `/resume` - Resume Builder/View
-- `/announcement` - Announcements Listing
-- `/announcement/{slug}` - Announcement Details
-- `/api/**` - Internal API for data access (Profile, History, Projects, etc.)
-
-## Security
-
-The internal API is secured via a custom mechanism:
-
-1. **Secret Key**: Stored in `.env`.
-2. **Client**: Encrypts current timestamp using the key.
-3. **Header**: Sends encrypted token in request header.
-4. **Server**: Decrypts and verifies timestamp validity.
-5. **Failure**: Returns `401 Unauthorized` if invalid.
+Built and strictly architected by **Aghogho Meyoron**.
+_Designed to establish robust, auditable infrastructure._

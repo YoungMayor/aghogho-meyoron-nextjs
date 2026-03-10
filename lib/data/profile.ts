@@ -15,7 +15,6 @@ export const profile: Profile = {
   },
   contact: {
     email: 'youngmayor.dev@gmail.com',
-    phone: '+2348075178485',
     message: 'Lets work together!',
   },
   copyright: {

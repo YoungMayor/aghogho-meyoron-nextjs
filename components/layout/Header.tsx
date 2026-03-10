@@ -8,6 +8,7 @@ import { profile } from '@/lib/data/profile';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import ProjectsIcon from '@/components/icons/ProjectsIcon';
 import MentorshipIcon from '@/components/icons/MentorshipIcon';
+import BriefcaseIcon from '@/components/icons/BriefcaseIcon';
 import MailIcon from '@/components/icons/MailIcon';
 import FileTextIcon from '@/components/icons/FileTextIcon';
 
@@ -66,6 +67,14 @@ export default function Header() {
           >
             <MentorshipIcon />
             <span className="hidden md:inline">Mentorship</span>
+          </Link>
+          <Link
+            href="/careers"
+            className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-105"
+            aria-label="Careers"
+          >
+            <BriefcaseIcon />
+            <span className="hidden md:inline">Careers</span>
           </Link>
           <Link
             href="/contact"

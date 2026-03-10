@@ -1,6 +1,9 @@
 'use client';
 
 import { CareerItem } from '@/lib/types';
+import Link from 'next/link';
+import Button from '@/components/ui/Button';
+import Icon from '@/components/ui/Icon';
 
 interface CareerTimelineItemProps {
   item: CareerItem;
@@ -27,7 +30,7 @@ export default function CareerTimelineItem({ item, isLast = false }: CareerTimel
 
         {/* Vertical Line */}
         {!isLast && (
-          <div className="w-0.5 flex-1 min-h-[100px] bg-gradient-to-b from-gray-300 to-gray-200 dark:from-gray-700 dark:to-gray-800" />
+          <div className="w-0.5 flex-1 min-h-[100px] bg-linear-to-b from-gray-300 to-gray-200 dark:from-gray-700 dark:to-gray-800" />
         )}
       </div>
 
@@ -61,15 +64,58 @@ export default function CareerTimelineItem({ item, isLast = false }: CareerTimel
             <div>
               <h4 className="text-sm font-semibold mb-2 text-foreground">Key Responsibilities:</h4>
               <ul className="space-y-2">
-                {item.duties.map((duty, index) => (
+                {item.duties.slice(0, 4).map((duty, index) => (
                   <li key={index} className="text-sm text-muted-foreground flex gap-2">
-                    <span className="text-foreground mt-1">•</span>
+                    <span className="text-foreground">•</span>
                     <span>{duty}</span>
                   </li>
                 ))}
+
+                {item.duties.length > 4 && (
+                  <li className="text-sm text-muted-foreground font-medium italic mt-2">
+                    +{item.duties.length - 4} more
+                  </li>
+                )}
               </ul>
             </div>
           )}
+
+          {/* Roles & Techs */}
+          {item.roles && item.roles.length > 0 && (
+            <div className="mt-4 pt-4 border-t border-border/50">
+              <div className="space-y-4">
+                {item.roles.map((roleObj, i) => (
+                  <div key={i}>
+                    <h5 className="text-sm font-semibold text-foreground mb-2">{roleObj.role}</h5>
+                    <div className="flex flex-wrap gap-2">
+                      {roleObj.technologies.map((tech, j) => (
+                        <div
+                          key={j}
+                          className="flex items-center justify-center p-1.5 rounded-md bg-secondary text-foreground hover:bg-primary/10 transition-colors"
+                          title={tech.label}
+                        >
+                          <Icon.fromIcon
+                            icon={tech}
+                            className="w-5 h-5 opacity-90"
+                            aria-label={tech.label}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* CTA */}
+          <div className="mt-6">
+            <Link href={`/careers/${item.slug}`}>
+              <Button variant="outline" size="sm" className="w-full sm:w-auto">
+                View Role Details
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
