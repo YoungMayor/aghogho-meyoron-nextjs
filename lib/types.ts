@@ -64,23 +64,17 @@ export interface CareerItem extends HasVisibility {
   duties: string[];
 }
 
+import { ProjectSegment, ProjectRole } from './data/projects/constants';
+
 // Projects
 export interface Project extends HasVisibility {
-  slug: string | null; // For routing to individual project pages
+  slug: string;
   name: string;
   description: string;
   features: string[];
   icons: Icon[];
-  type:
-    | 'api'
-    | 'cli'
-    | 'desktop-app'
-    | 'mobile-app'
-    | 'package'
-    | 'portfolio'
-    | 'web-app'
-    | 'other';
-  owner: 'personal' | 'client' | 'open-source' | 'package' | 'other';
+  segment: ProjectSegment[];
+  stack_role: ProjectRole[];
   demo_link: string | null;
   repo_link: string | null;
   images: string[]; // First image would be used as the main image

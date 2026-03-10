@@ -2,6 +2,16 @@ import { AcademicRecord } from '@/lib/types';
 
 export const academicRecords: AcademicRecord[] = [
   {
+    school: 'Miva University',
+    degree: 'Bachelor of Science in Computer Science',
+    start_year: 2025,
+    end_year: 2029,
+    achievements: [],
+    location: 'Lagos, Nigeria',
+    show: true,
+    priority: 0,
+  },
+  {
     school: 'Sololearn Inc.',
     degree: 'Software Engineering Basics',
     start_year: 2017,
@@ -24,7 +34,7 @@ export const academicRecords: AcademicRecord[] = [
     achievements: [
       'jQuery, XML, JSON, Ajax: Made use of Ajax Technologies to develop Web Solutions as a Backend Web Developer working collaboratively with a Co-Staff handling Frontend and UIX Designs',
       'MySQL and Database Administration: I functioned as the Database Administrator',
-      'Server Administrator: I was put in charge of the server on which our projects where hosted, and also the general server on which the firm projects were hosted',
+      'Server Administrator: I was put in charge of the server on which our projects were hosted, and also the general server on which the firm projects were hosted',
     ],
     location: 'Benin, Edo State, Nigeria',
     show: true,
@@ -38,21 +48,11 @@ export const academicRecords: AcademicRecord[] = [
     achievements: [
       'Bootstrap: Advanced to building beautiful web pages/sites using the Bootstrap',
       'PHP 7: Learnt effectively on the New APIs and functionalities offered by PHP 7 in building more secure and well optimized complex web programs',
-      'Wordpress: Familiarized myself with building E-Commerce, Landing Page Apps and Blog Webapps using Wordpress for speed and efficiency',
-      'VueJS: Made effective and proficient use of VueJS, a Javascript Framework, in building well optimized web applications at the front end',
+      'WordPress: Familiarized myself with building E-Commerce, Landing Page Apps and Blog Webapps using WordPress for speed and efficiency',
+      'VueJS: Made effective and proficient use of VueJS, a JavaScript Framework, in building well optimized web applications at the front end',
       'Modern Web Design: Adopted the use of modern technologies for building robust and highly scalable and slick web applications using NuxtJS, Vuetify, VueSax',
     ],
     location: 'Delta State, Nigeria',
-    show: true,
-    priority: 0,
-  },
-  {
-    school: 'Miva University',
-    degree: 'Bachelor of Science in Computer Science',
-    start_year: 2025,
-    end_year: 2029,
-    achievements: [],
-    location: 'Lagos, Nigeria',
     show: true,
     priority: 0,
   },

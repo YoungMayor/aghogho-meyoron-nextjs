@@ -1,6 +1,7 @@
 import { Project } from '@/lib/types';
 import { techIcons } from '../../icons';
 import { cloudinaryImage } from '@/lib/utils/helpers';
+import { segments, stackRoles } from '../constants';
 
 export const personalStartups: Project[] = [
   {
@@ -23,8 +24,8 @@ export const personalStartups: Project[] = [
       techIcons.NODEJS,
       techIcons.RestAPI,
     ],
-    type: 'web-app',
-    owner: 'client',
+    segment: [segments.ecommerce],
+    stack_role: [stackRoles.backend],
     demo_link: null,
     repo_link: null,
     images: [],
@@ -45,8 +46,8 @@ export const personalStartups: Project[] = [
       techIcons.NODEJS,
       techIcons.RestAPI,
     ],
-    type: 'other',
-    owner: 'client',
+    segment: [segments.fintech],
+    stack_role: [stackRoles.backend],
     demo_link: null,
     repo_link: null,
     images: [],
@@ -63,8 +64,8 @@ export const personalStartups: Project[] = [
       'in-app chat between sellers and buyers',
     ],
     icons: [techIcons.NextJS, techIcons.TailwindCSS, techIcons.GenKit],
-    type: 'other',
-    owner: 'personal',
+    segment: [segments.ecommerce],
+    stack_role: [stackRoles.fullstack],
     demo_link: 'https://saleshouse.mayrlabs.com',
     repo_link: null,
     images: [cloudinaryImage.project('saleshouse-homepage')],

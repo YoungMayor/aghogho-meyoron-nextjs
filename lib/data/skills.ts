@@ -193,45 +193,18 @@ export const skills: Skill[] = [
   // },
 
   {
-    name: 'Innovative thinker',
+    name: 'Technical Strategy',
     description:
-      "I leverage my innovative thinking to dismantle conventional approaches and build entirely new frameworks. My approach involves connecting seemingly disparate ideas and applying lateral thinking to create solutions that others haven't even conceived.",
+      "I don't just solve tickets; I dismantle legacy bottlenecks. I specialise in mapping technical debt and architecting scalable migrations that align with long-term business growth.",
     type: 'soft',
     icons: [],
     show: true,
     priority: 0,
   },
   {
-    name: 'Technical Writer',
+    name: 'Open Source Advocacy',
     description:
-      'I transform complex information into clear, concise, and engaging documentation that empowers users and drives product adoption. My focus is on understanding the audience and tailoring content to their specific needs, ensuring clarity and usability above all else.',
-    type: 'soft',
-    icons: [],
-    show: true,
-    priority: 0,
-  },
-  {
-    name: 'Application Security',
-    description:
-      'Knowledgeable in secure coding practices and vulnerability mitigation techniques. Familiar with common security threats and methods to protect software from attacks.',
-    type: 'soft',
-    icons: [],
-    show: true,
-    priority: 0,
-  },
-  {
-    name: 'Database Designer',
-    description:
-      'As a Database Designer, I sculpt robust and efficient data architectures that empower applications to thrive. My approach involves a meticulous understanding of data relationships, ensuring seamless integration and optimal performance to unlock actionable insights.',
-    type: 'soft',
-    icons: [],
-    show: true,
-    priority: 0,
-  },
-  {
-    name: 'Problem solver',
-    description:
-      'I thrive on dissecting complex issues, rapidly identifying root causes, and developing pragmatic, effective solutions. My approach involves a blend of analytical thinking and creative problem-solving, consistently delivering results that exceed expectations and drive tangible improvements.',
+      'Author of multiple Dart and Go packages. I focus on Developer Experience (DX), creating tools that simplify validation, state management, and internationalisation for the global dev community.',
     type: 'soft',
     icons: [],
     show: true,

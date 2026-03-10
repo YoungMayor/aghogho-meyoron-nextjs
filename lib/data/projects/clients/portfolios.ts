@@ -1,6 +1,7 @@
 import { Project } from '@/lib/types';
 import { techIcons } from '../../icons';
 import { cloudinaryImage } from '@/lib/utils/helpers';
+import { segments, stackRoles } from '../constants';
 
 export const clientPortfolios: Project[] = [
   {
@@ -15,8 +16,8 @@ export const clientPortfolios: Project[] = [
       'Resume Download',
     ],
     icons: [techIcons.React, techIcons.NextJS, techIcons.TailwindCSS, techIcons.Netlify],
-    type: 'portfolio',
-    owner: 'client',
+    segment: [segments.portfolio],
+    stack_role: [stackRoles.frontend],
     demo_link: 'https://toviaamadi.com',
     repo_link: null,
     images: [
@@ -41,8 +42,8 @@ export const clientPortfolios: Project[] = [
       'Professional Blog',
     ],
     icons: [techIcons.React, techIcons.NextJS, techIcons.TailwindCSS, techIcons.Netlify],
-    type: 'portfolio',
-    owner: 'client',
+    segment: [segments.portfolio],
+    stack_role: [stackRoles.frontend],
     demo_link: 'https://estherubeng.netlify.app',
     repo_link: null,
     images: [cloudinaryImage.portfolio('esther-ubeng')],
@@ -62,8 +63,8 @@ export const clientPortfolios: Project[] = [
       'Contact Integration',
     ],
     icons: [techIcons.React, techIcons.NextJS, techIcons.TailwindCSS, techIcons.Netlify],
-    type: 'portfolio',
-    owner: 'client',
+    segment: [segments.portfolio],
+    stack_role: [stackRoles.frontend],
     demo_link: 'https://enumaifeoma.netlify.app',
     repo_link: null,
     images: [cloudinaryImage.portfolio('enuma-ifeoma')],
@@ -78,8 +79,8 @@ export const clientPortfolios: Project[] = [
       'A comprehensive portfolio for a Lawyer in the making, Humanitarian Advocate, and Writer. Highlights his legal journey, advocacy work, and collection of written articles.',
     features: ['Legal Portfolio', 'Advocacy Projects', 'Article Blog', 'Professional Profile'],
     icons: [techIcons.React, techIcons.NextJS, techIcons.TailwindCSS, techIcons.Netlify],
-    type: 'portfolio',
-    owner: 'client',
+    segment: [segments.portfolio],
+    stack_role: [stackRoles.frontend],
     demo_link: 'https://odjenifortune.netlify.app',
     repo_link: null,
     images: [cloudinaryImage.portfolio('fortune-odjeni')],
@@ -94,8 +95,8 @@ export const clientPortfolios: Project[] = [
       'Saxman AFK is a Nigerian saxophonist whose sound blends emotion, spirituality, and vibrant African rhythm',
     features: ['Music Portfolio', 'Musician Biography', 'Contact Integration'],
     icons: [techIcons.React, techIcons.NextJS, techIcons.TailwindCSS, techIcons.Netlify],
-    type: 'portfolio',
-    owner: 'client',
+    segment: [segments.portfolio],
+    stack_role: [stackRoles.frontend],
     demo_link: 'https://saxmanafk.netlify.app',
     repo_link: null,
     images: [cloudinaryImage.portfolio('saxman-afk')],

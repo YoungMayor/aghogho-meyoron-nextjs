@@ -1,6 +1,7 @@
 import { Project } from '@/lib/types';
 import { techIcons } from '../../icons';
 import { cloudinaryImage } from '@/lib/utils/helpers';
+import { segments, stackRoles } from '../constants';
 
 export const companyProjects: Project[] = [
   {
@@ -27,8 +28,8 @@ export const companyProjects: Project[] = [
       techIcons.NuxtJS,
       techIcons.TailwindCSS,
     ],
-    type: 'web-app',
-    owner: 'client',
+    segment: [segments.fintech],
+    stack_role: [stackRoles.lead, stackRoles.backend],
     demo_link: 'https://gloverapp.co',
     repo_link: null,
     images: [cloudinaryImage.project('glover-landing-page')],
@@ -43,8 +44,8 @@ export const companyProjects: Project[] = [
       "Eytan is a hospital staff management system developed for tracking patients' hospital records and managing staff tasks. Please note that information about this project is protected by a non-disclosure agreement (NDA) from my previous employer.",
     features: ['Staff Management', 'Stock Management', 'Admin Console', 'Task schedule management'],
     icons: [techIcons.JavaScript, techIcons.PHP],
-    type: 'other',
-    owner: 'client',
+    segment: [segments.healthtech],
+    stack_role: [stackRoles.fullstack],
     demo_link: null,
     repo_link: null,
     images: [],
@@ -64,8 +65,8 @@ export const companyProjects: Project[] = [
       'Administrative Management',
     ],
     icons: [techIcons.VueJS, techIcons.jQuery, techIcons.PHP, techIcons.Python],
-    type: 'api',
-    owner: 'client',
+    segment: [segments.hr],
+    stack_role: [stackRoles.backend],
     demo_link: null,
     repo_link: null,
     images: [],

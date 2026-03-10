@@ -7,25 +7,16 @@ import Input from '@/components/ui/Input';
 import Select from '@/components/ui/Select';
 import TechFilterDialog from './TechFilterDialog';
 import { skills } from '@/lib/data/skills';
+import { segments, stackRoles as importedStackRoles } from '@/lib/data/projects/constants';
 
-const predefinedOwners = [
+const predefinedSegments = [
   { value: 'all', label: 'All Projects' },
-  { value: 'personal', label: 'Personal' },
-  { value: 'client', label: 'Client' },
-  { value: 'open-source', label: 'Open Source' },
-  { value: 'package', label: 'Packages' },
-] as const;
+  ...Object.values(segments).map((segment) => ({ value: segment, label: segment })),
+];
 
-const projectTypes = [
-  { value: 'all', label: 'All Types' },
-  { value: 'web-app', label: 'Web App' },
-  { value: 'mobile-app', label: 'Mobile App' },
-  { value: 'desktop-app', label: 'Desktop App' },
-  { value: 'api', label: 'API' },
-  { value: 'portfolio', label: 'Portfolio' },
-  { value: 'package', label: 'Package' },
-  { value: 'cli', label: 'CLI Tool' },
-  { value: 'other', label: 'Other' },
+const stackRoles = [
+  { value: 'all', label: 'All Roles' },
+  ...Object.values(importedStackRoles).map((role) => ({ value: role, label: role })),
 ];
 
 export default function ProjectsFilter() {
@@ -36,8 +27,8 @@ export default function ProjectsFilter() {
   const [isTechModalOpen, setIsTechModalOpen] = useState(false);
 
   // Read state from URL
-  const currentOwner = searchParams.get('owner') || 'all';
-  const currentType = searchParams.get('type') || 'all';
+  const currentSegment = searchParams.get('segment') || 'all';
+  const currentStackRole = searchParams.get('stack_role') || 'all';
   const currentSearch = searchParams.get('search') || '';
   const currentTechs = searchParams.get('tech') ? searchParams.get('tech')!.split(',') : [];
   const currentSkill = searchParams.get('skill') || 'all';
@@ -63,8 +54,8 @@ export default function ProjectsFilter() {
   };
 
   const activeFiltersCount = [
-    currentOwner !== 'all',
-    currentType !== 'all',
+    currentSegment !== 'all',
+    currentStackRole !== 'all',
     currentSearch !== '',
     currentTechs.length > 0,
     currentSkill !== 'all',
@@ -78,7 +69,9 @@ export default function ProjectsFilter() {
           <Input
             placeholder="Search by name, description, etc..."
             value={currentSearch}
-            onChange={(e) => updateFilters('search', e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              updateFilters('search', e.target.value)
+            }
             className="w-full"
           />
         </div>
@@ -89,41 +82,32 @@ export default function ProjectsFilter() {
       <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
         {/* Filter Groups */}
         <div className="flex flex-wrap gap-3 items-center w-full lg:w-auto">
-          {/* Owner Tabs (Desktop) / Select (Mobile optimized if needed, but tabs exist in design) */}
-          <div className="flex bg-secondary/30 p-1 rounded-xl overflow-x-auto max-w-full no-scrollbar">
-            {predefinedOwners.map((owner) => (
-              <button
-                key={owner.value}
-                onClick={() => updateFilters('owner', owner.value)}
-                className={`
-                  px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap
-                  ${
-                    currentOwner === owner.value
-                      ? 'bg-background shadow-sm text-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
-                  }
-                `}
-              >
-                {owner.label}
-              </button>
-            ))}
+          <div className="">
+            <Select
+              className="text-xs"
+              value={currentSegment}
+              onChange={(e) => updateFilters('segment', e.target.value)}
+              options={predefinedSegments}
+            />
+          </div>
+
+          {/* Type Select */}
+          <div className="">
+            <Select
+              className="text-xs"
+              value={currentStackRole}
+              onChange={(e) => updateFilters('stack_role', e.target.value)}
+              options={stackRoles}
+            />
           </div>
         </div>
 
         {/* Secondary Filters */}
         <div className={`flex w-full lg:w-auto ${activeFiltersCount > 0 ? 'gap-4' : 'gap-3'}`}>
-          {/* Type Select */}
-          <div className="">
-            <Select
-              value={currentType}
-              onChange={(e) => updateFilters('type', e.target.value)}
-              options={projectTypes}
-            />
-          </div>
-
           {/* Skills Select */}
           <div className="">
             <Select
+              className="text-xs"
               value={currentSkill}
               onChange={(e) => updateFilters('skill', e.target.value)}
               options={[
@@ -140,7 +124,7 @@ export default function ProjectsFilter() {
             variant={currentTechs.length > 0 ? 'primary' : 'outline'}
             onClick={() => setIsTechModalOpen(true)}
             className=""
-            size="md"
+            size="sm"
           >
             Technologies {currentTechs.length > 0 && `(${currentTechs.length})`}
           </Button>

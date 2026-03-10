@@ -1,5 +1,6 @@
 import { Project } from '@/lib/types';
 import { techIcons } from '../../icons';
+import { segments, stackRoles } from '../constants';
 
 export const legacyProjects: Project[] = [
   {
@@ -22,8 +23,8 @@ export const legacyProjects: Project[] = [
       techIcons.Laravel,
       techIcons.API,
     ],
-    type: 'web-app',
-    owner: 'client',
+    segment: [segments.media],
+    stack_role: [stackRoles.fullstack],
     demo_link: null,
     repo_link: null,
     images: [],
@@ -51,8 +52,8 @@ export const legacyProjects: Project[] = [
       techIcons.NODEJS,
       techIcons.RestAPI,
     ],
-    type: 'other',
-    owner: 'client',
+    segment: [segments.community],
+    stack_role: [stackRoles.backend],
     demo_link: null,
     repo_link: null,
     images: [],
@@ -69,8 +70,8 @@ export const legacyProjects: Project[] = [
       'Multi Access Level, Teachers, Senior Students, and Senior Students ',
     ],
     icons: [techIcons.PHP, techIcons.RestAPI],
-    type: 'api',
-    owner: 'client',
+    segment: [segments.edtech],
+    stack_role: [stackRoles.backend],
     demo_link: null,
     repo_link: null,
     images: [],
@@ -94,8 +95,8 @@ export const legacyProjects: Project[] = [
       techIcons.RestAPI,
       techIcons.ChartJS,
     ],
-    type: 'other',
-    owner: 'client',
+    segment: [segments.fintech],
+    stack_role: [stackRoles.fullstack],
     demo_link: null,
     repo_link: null,
     images: [],
@@ -114,8 +115,8 @@ export const legacyProjects: Project[] = [
       'Post voting to improve relevancy',
     ],
     icons: [techIcons.VueJS, techIcons.PHP],
-    type: 'web-app',
-    owner: 'client',
+    segment: [segments.community],
+    stack_role: [stackRoles.fullstack],
     demo_link: null,
     repo_link: null,
     images: [],

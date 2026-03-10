@@ -1,5 +1,6 @@
 import { Project } from '@/lib/types';
 import { cloudinaryImage } from '@/lib/utils/helpers';
+import { segments, stackRoles } from '../constants';
 import { techIcons } from '../../icons';
 
 export const goCLIs: Project[] = [
@@ -17,8 +18,8 @@ export const goCLIs: Project[] = [
       'Detailed encryption reports.',
     ],
     icons: [techIcons.Go, techIcons.GitHubActions],
-    owner: 'package',
-    type: 'cli',
+    segment: [segments.devtools, segments.opensource, segments.package],
+    stack_role: [stackRoles.creator, stackRoles.maintainer],
     demo_link: null,
     repo_link: 'https://github.com/MayR-Labs/secureflow-go',
     images: [cloudinaryImage.goCodeshot('secureflow')],
@@ -39,8 +40,8 @@ export const goCLIs: Project[] = [
       'Validation against JSON schemas.',
     ],
     icons: [techIcons.Go, techIcons.GitHubActions],
-    owner: 'package',
-    type: 'cli',
+    segment: [segments.devtools, segments.opensource, segments.package],
+    stack_role: [stackRoles.creator, stackRoles.maintainer],
     demo_link: null,
     repo_link: 'https://github.com/MayR-Labs/envdoc-go',
     images: [cloudinaryImage.goCodeshot('envdoc')],

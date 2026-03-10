@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <Card variant="elevated" hoverable>
       <div className="flex flex-col h-full">
         {/* Project Image */}
-        <div className="relative w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-t-2xl overflow-hidden">
+        <div className="relative w-full h-48 bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-t-2xl overflow-hidden">
           {project.images.length > 0 ? (
             <Image src={mainImage} alt={project.name} fill className="object-cover" unoptimized />
           ) : (
@@ -28,18 +28,22 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </span>
             </div>
           )}
-
-          {/* Owner Badge */}
-          <div className="absolute top-3 right-3">
-            <span className="px-3 py-1 text-xs font-medium bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full">
-              {project.owner}
-            </span>
-          </div>
         </div>
 
         {/* Project Content */}
         <div className="flex-1 p-6 flex flex-col">
           <h3 className="text-xl font-bold mb-2 line-clamp-2">{project.name}</h3>
+
+          <div className="gap-1 flex flex-wrap mb-4">
+            {project.segment.map((seg) => (
+              <span
+                key={seg}
+                className="px-3 py-1 text-xs font-medium bg-white/90 dark:bg-gray-900/90 rounded-full"
+              >
+                {seg}
+              </span>
+            ))}
+          </div>
 
           <p className="text-muted-foreground text-sm mb-4 line-clamp-3 flex-1">
             {project.description}
@@ -47,7 +51,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
           {/* Technologies */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.icons.map((icon, index) => (
+            {project.icons.slice(0, 6).map((icon, index) => (
               <div key={index} className="group relative" title={icon.label}>
                 <Icon.fromIcon icon={icon} size={24} />
                 <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-popover text-popover-foreground rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-sm border border-border">
@@ -62,19 +66,26 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             )}
           </div>
 
+          {/* Stacks */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.stack_role.map((role) => (
+              <span
+                key={role}
+                className="px-3 py-1 text-xs font-medium bg-primary/90 text-primary-foreground rounded-full"
+              >
+                {role}
+              </span>
+            ))}
+          </div>
+
           {/* Actions */}
           <div className="flex gap-2">
-            {project.slug ? (
-              <Link href={`/projects/${project.slug}`} className="flex-1">
-                <Button variant="primary" size="sm" fullWidth>
-                  View Details
-                </Button>
-              </Link>
-            ) : (
-              <Button variant="primary" size="sm" fullWidth disabled>
+            <Link href={`/projects/${project.slug}`} className="flex-1">
+              <Button variant="primary" size="sm" fullWidth>
                 View Details
               </Button>
-            )}
+            </Link>
+
             {project.demo_link && (
               <a
                 href={project.demo_link}

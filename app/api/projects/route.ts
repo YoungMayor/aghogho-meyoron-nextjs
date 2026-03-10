@@ -7,8 +7,8 @@ import { apiAction } from '@/lib/utils/api-action';
  * GET /api/projects
  * Returns all visible projects with optional filtering
  * Query params:
- *  - type: Filter by project type
- *  - owner: Filter by project owner
+ *  - stack_role: Filter by project stack role
+ *  - segment: Filter by project segment
  *  - technologies: Filter by technologies (comma-separated)
  *  - limit: Pagination limit (default: 10)
  *  - offset: Pagination offset (default: 0)
@@ -19,20 +19,24 @@ export async function GET(request: Request) {
     request,
     async callback() {
       const { searchParams } = new URL(request.url);
-      const typeFilter = searchParams.get('type');
-      const ownerFilter = searchParams.get('owner');
+      const stackRoleFilter = searchParams.get('stack_role');
+      const segmentFilter = searchParams.get('segment');
       const technologiesFilter = searchParams.get('technologies');
       const limit = parseInt(searchParams.get('limit') || '10', 10);
       const offset = parseInt(searchParams.get('offset') || '0', 10);
 
       let filteredProjects = getVisibleItems(projects);
 
-      if (typeFilter) {
-        filteredProjects = filteredProjects.filter((p) => p.type === typeFilter);
+      if (stackRoleFilter) {
+        filteredProjects = filteredProjects.filter((p) =>
+          (p.stack_role as string[]).includes(stackRoleFilter)
+        );
       }
 
-      if (ownerFilter) {
-        filteredProjects = filteredProjects.filter((p) => p.owner === ownerFilter);
+      if (segmentFilter) {
+        filteredProjects = filteredProjects.filter((p) =>
+          (p.segment as string[]).includes(segmentFilter)
+        );
       }
 
       if (technologiesFilter) {

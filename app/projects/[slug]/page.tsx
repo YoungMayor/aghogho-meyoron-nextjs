@@ -48,8 +48,8 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
     description: project.description,
     keywords: [
       ...project.icons.map((icon) => icon.label),
-      project.type,
-      project.owner,
+      ...project.stack_role,
+      ...project.segment,
       'portfolio project',
       profile.name,
     ],
@@ -97,7 +97,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   // Get related projects (same owner or type)
   const relatedProjects = visibleProjects
     .filter(
-      (p) => p.slug !== project.slug && (p.owner === project.owner || p.type === project.type)
+      (p) =>
+        (p.slug !== project.slug && project.segment.some((seg) => p.segment.includes(seg))) ||
+        project.stack_role.some((role) => p.stack_role.includes(role))
     )
     .slice(0, 3);
 
@@ -142,7 +144,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
         </section>
 
         {/* Project Hero */}
-        <section className="py-12 px-4 bg-gradient-to-b from-secondary/50 to-background">
+        <section className="py-12 px-4 bg-linear-to-b from-secondary/50 to-background">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Project Image */}
@@ -167,12 +169,22 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               {/* Project Info */}
               <div>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize">
-                    {project.owner}
-                  </span>
-                  <span className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize">
-                    {project.type.replace('-', ' ')}
-                  </span>
+                  {project.segment.map((seg) => (
+                    <span
+                      key={seg}
+                      className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize"
+                    >
+                      {seg}
+                    </span>
+                  ))}
+                  {project.stack_role.map((role) => (
+                    <span
+                      key={role}
+                      className="px-3 py-1 text-sm font-medium bg-secondary rounded-full capitalize"
+                    >
+                      {role}
+                    </span>
+                  ))}
                   {markdown && (
                     <span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full">
                       Documentation Available
@@ -243,14 +255,14 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
         {/* Features */}
         {project.features.length > 0 && (
-          <section className="py-12 px-4 bg-gradient-to-b from-background to-secondary/30">
+          <section className="py-12 px-4 bg-linear-to-b from-background to-secondary/30">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-2xl font-bold mb-6">Key Features</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {project.features.map((feature, index) => (
                   <Card key={index} padding="md">
                     <div className="flex gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-foreground flex items-center justify-center text-background text-sm font-bold">
+                      <div className="shrink-0 w-6 h-6 rounded-full bg-foreground flex items-center justify-center text-background text-sm font-bold">
                         ✓
                       </div>
                       <p className="text-muted-foreground">{feature}</p>

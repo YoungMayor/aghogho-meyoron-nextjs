@@ -21,8 +21,8 @@ function ProjectsContent() {
   const searchParams = useSearchParams();
 
   // Get raw filters
-  const filterOwner = searchParams.get('owner') || 'all';
-  const filterType = searchParams.get('type') || 'all';
+  const filterSegment = searchParams.get('segment') || 'all';
+  const filterStackRole = searchParams.get('stack_role') || 'all';
   const searchQuery = searchParams.get('search') || '';
   const filterTechs = searchParams.get('tech') ? searchParams.get('tech')!.split(',') : [];
   const filterSkill = searchParams.get('skill') || 'all';
@@ -37,13 +37,13 @@ function ProjectsContent() {
 
   // Filter projects
   const filteredProjects = visibleProjects.filter((project) => {
-    // 1. Owner
-    if (filterOwner !== 'all' && project.owner !== filterOwner) {
+    // 1. Segment
+    if (filterSegment !== 'all' && !(project.segment as string[]).includes(filterSegment)) {
       return false;
     }
 
-    // 2. Type
-    if (filterType !== 'all' && project.type !== filterType) {
+    // 2. Stack Role
+    if (filterStackRole !== 'all' && !(project.stack_role as string[]).includes(filterStackRole)) {
       return false;
     }
 

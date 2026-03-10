@@ -1,6 +1,7 @@
 import { Project } from '@/lib/types';
 import { techIcons } from '../../icons';
 import { cloudinaryImage } from '@/lib/utils/helpers';
+import { segments, stackRoles } from '../constants';
 
 export const jsPackages: Project[] = [
   {
@@ -16,8 +17,8 @@ export const jsPackages: Project[] = [
       'Generates comprehensive Markdown reports on codebase health.',
     ],
     icons: [techIcons.JavaScript, techIcons.TypeScript, techIcons.NODEJS, techIcons.npm],
-    owner: 'package',
-    type: 'package',
+    segment: [segments.devtools, segments.opensource, segments.package],
+    stack_role: [stackRoles.creator, stackRoles.maintainer],
     demo_link: 'https://www.npmjs.com/package/prunejs',
     repo_link: 'https://github.com/YoungMayor/prunejs',
     images: [cloudinaryImage.jsCodeshot('prunejs')],
@@ -35,8 +36,8 @@ export const jsPackages: Project[] = [
       'Lightweight with minimal dependencies.',
     ],
     icons: [techIcons.JavaScript, techIcons.TypeScript, techIcons.NODEJS, techIcons.npm],
-    owner: 'package',
-    type: 'package',
+    segment: [segments.devtools, segments.opensource, segments.package],
+    stack_role: [stackRoles.creator, stackRoles.maintainer],
     demo_link: 'https://www.npmjs.com/package/@youngmayor/base64',
     repo_link: 'https://github.com/YoungMayor/base64',
     images: [cloudinaryImage.jsCodeshot('base64')],

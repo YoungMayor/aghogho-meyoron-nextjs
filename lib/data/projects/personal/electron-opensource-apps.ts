@@ -1,6 +1,7 @@
 import { Project } from '@/lib/types';
 import { techIcons } from '../../icons';
 import { cloudinaryImage } from '@/lib/utils/helpers';
+import { segments, stackRoles } from '../constants';
 
 const dockyardImage = (filename: string) =>
   `https://dockyard.mayrlabs.com/screenshots/${filename}.png`;
@@ -19,8 +20,8 @@ export const electronOpensourceApps: Project[] = [
       'Tab Tiling & Layout Control: Organize your workspace efficiently.',
     ],
     icons: [techIcons.ElectronJS, techIcons.React, techIcons.TypeScript, techIcons.TailwindCSS],
-    type: 'desktop-app',
-    owner: 'personal',
+    segment: [segments.productivity, segments.opensource],
+    stack_role: [stackRoles.creator, stackRoles.maintainer],
     demo_link: 'https://dockyard.mayrlabs.com',
     repo_link: 'https://github.com/MayR-Labs/dockyard',
     images: [

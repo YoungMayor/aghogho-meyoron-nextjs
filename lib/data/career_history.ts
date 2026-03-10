@@ -4,15 +4,16 @@ export const careerItems: CareerItem[] = [
   {
     company_name: 'Glover Techstars',
     role: 'Senior Backend Developer',
-    start_date: '2021-01-01',
+    start_date: '2021-02-01',
     end_date: '2025-01-01',
     description:
       'Glover is a digital marketplace enabling users to trade gift cards, airtime, and digital assets.',
     location: 'Remote',
     duties: [
-      'Developed a security log system to monitor and audit user activities.',
-      'Implemented an OCR-powered system to detect and prevent duplicate gift card sales.',
-      'Built an integration layer with Freshdesk to manage user complaints via ticketing, improving user retention and customer support resolution times.',
+      'Architected a zero-downtime migration from Laravel v7 to v12, ensuring continuous service for a leading Nigerian fintech.',
+      'Engineered an OCR-powered validation engine with AES-256 encryption to mitigate gift card fraud.',
+      'Developed a high-concurrency rewards engine and custom anomaly detection system for login security.',
+      'Integrated Freshdesk API for automated ticketing, directly improving customer resolution speed and retention.',
       'Contributed to the development of an automated airtime-to-cash conversion platform.',
       'Enhanced the security and performance of the Giftcard system.',
       'Built and maintained multiple promotional systems, including: Ambassador programme, Customer rewards, Referral system, Marketing promo engine, Spin-the-wheel game, and Voucher issuance.',
@@ -33,7 +34,7 @@ export const careerItems: CareerItem[] = [
       'Patricia is a Nigerian cryptocurrency and digital asset company known for enabling users to buy, sell, and store digital currencies securely.',
     location: 'Remote',
     duties: [
-      'Optimised existing infrastructure and improved backend performance.',
+      'Optimised core infrastructure to enhance backend throughput.',
       'Refactored and enhanced legacy codebase for better maintainability and scalability.',
       'Contributed to the development of an internal admin dashboard for operational efficiency.',
     ],
@@ -44,9 +45,9 @@ export const careerItems: CareerItem[] = [
     company_name: 'Khora Digitals',
     role: 'Remote Software Engineer',
     start_date: '2019-01-01',
-    end_date: '2019-01-01',
+    end_date: '2019-03-31',
     description:
-      'An Information Technology company with a goal of providing top notch internet solutions to companies globally',
+      'Specialised 3-month contract focused on rapid web solution delivery and framework optimisation.',
     location: 'Remote',
     duties: [
       'Developed a total of two 2 web solutions to client companies in my one month contract period',
