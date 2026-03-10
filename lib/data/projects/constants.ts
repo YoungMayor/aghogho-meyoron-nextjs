@@ -11,6 +11,7 @@ export const segments = {
   productivity: 'Desktop & Productivity',
   hr: 'HR & Recruitment',
   api: 'API & Microservices',
+  cli: 'CLI Tool',
   bot: 'Bot & Integrations',
   data: 'Data Visualization',
   gaming: 'Entertainment & Gaming',

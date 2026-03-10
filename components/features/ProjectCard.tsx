@@ -38,7 +38,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.segment.map((seg) => (
               <span
                 key={seg}
-                className="px-3 py-1 text-xs font-medium bg-white/90 dark:bg-gray-900/90 rounded-full"
+                className="px-3 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded-full"
               >
                 {seg}
               </span>
@@ -71,7 +71,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.stack_role.map((role) => (
               <span
                 key={role}
-                className="px-3 py-1 text-xs font-medium bg-primary/90 text-primary-foreground rounded-full"
+                className="px-3 py-1 text-xs font-medium bg-primary text-primary-foreground rounded-full"
               >
                 {role}
               </span>

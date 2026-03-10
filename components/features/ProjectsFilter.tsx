@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Select from '@/components/ui/Select';
+import Modal from '@/components/ui/Modal';
 import TechFilterDialog from './TechFilterDialog';
 import { skills } from '@/lib/data/skills';
 import { segments, stackRoles as importedStackRoles } from '@/lib/data/projects/constants';
@@ -25,29 +26,50 @@ export default function ProjectsFilter() {
   const searchParams = useSearchParams();
 
   const [isTechModalOpen, setIsTechModalOpen] = useState(false);
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
 
   // Read state from URL
   const currentSegment = searchParams.get('segment') || 'all';
   const currentStackRole = searchParams.get('stack_role') || 'all';
-  const currentSearch = searchParams.get('search') || '';
+  const currentSearchUrl = searchParams.get('search') || '';
   const currentTechs = searchParams.get('tech') ? searchParams.get('tech')!.split(',') : [];
   const currentSkill = searchParams.get('skill') || 'all';
 
+  const [currentSearch, setCurrentSearch] = useState(currentSearchUrl);
+  const isInitialMount = useRef(true);
+
   // Update URL helper
-  const updateFilters = (key: string, value: string | string[] | null) => {
-    const params = new URLSearchParams(searchParams.toString());
+  const updateFilters = useCallback(
+    (key: string, value: string | string[] | null) => {
+      const params = new URLSearchParams(searchParams.toString());
 
-    if (!value || value === 'all' || (Array.isArray(value) && value.length === 0)) {
-      params.delete(key);
-    } else if (Array.isArray(value)) {
-      params.set(key, value.join(','));
-    } else {
-      params.set(key, value);
-    }
+      if (!value || value === 'all' || (Array.isArray(value) && value.length === 0)) {
+        params.delete(key);
+      } else if (Array.isArray(value)) {
+        params.set(key, value.join(','));
+      } else {
+        params.set(key, value);
+      }
 
-    // Reset page if we assume pagination later, but for now just push
-    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-  };
+      // Reset page if we assume pagination later, but for now just push
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    },
+    [router, pathname, searchParams]
+  );
+
+  // Debounce search URL update
+  // useEffect(() => {
+  //   if (isInitialMount.current) {
+  //     isInitialMount.current = false;
+  //     return;
+  //   }
+
+  //   const handler = setTimeout(() => {
+  //     console.log('Searching for ', currentSearch);
+  //     updateFilters('search', currentSearch);
+  //   }, 300);
+  //   return () => clearTimeout(handler);
+  // }, [currentSearch, updateFilters]);
 
   const clearFilters = () => {
     router.replace(pathname, { scroll: false });
@@ -62,52 +84,78 @@ export default function ProjectsFilter() {
   ].filter(Boolean).length;
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col md:flex-row gap-4">
+    <div className="space-y-4">
+      <div className="flex flex-col md:flex-row gap-4 items-center">
         {/* Search */}
-        <div className="flex-1">
+        <div className="flex w-full">
           <Input
             placeholder="Search by name, description, etc..."
             value={currentSearch}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              updateFilters('search', e.target.value)
-            }
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCurrentSearch(e.target.value)}
+            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+              if (e.key === 'Enter') {
+                updateFilters('search', currentSearch);
+              }
+            }}
             className="w-full"
           />
         </div>
 
-        {/* Mobile: Simple Filters or Toggle? keeping it expanded for now */}
+        <div className="flex shrink-0">
+          <Button
+            variant={activeFiltersCount > (currentSearch ? 1 : 0) ? 'primary' : 'outline'}
+            onClick={() => setIsFilterModalOpen(true)}
+            className="flex-1 md:flex-none"
+          >
+            Filters{' '}
+            {activeFiltersCount > (currentSearch ? 1 : 0) &&
+              `(${activeFiltersCount - (currentSearch ? 1 : 0)})`}
+          </Button>
+
+          {activeFiltersCount > 0 && (
+            <Button
+              variant="ghost"
+              onClick={clearFilters}
+              className="text-destructive hover:text-destructive/80 shrink-0"
+              title="Clear all filters"
+            >
+              Clear
+            </Button>
+          )}
+        </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
-        {/* Filter Groups */}
-        <div className="flex flex-wrap gap-3 items-center w-full lg:w-auto">
-          <div className="">
+      <Modal
+        isOpen={isFilterModalOpen}
+        onClose={() => setIsFilterModalOpen(false)}
+        title="Filter Projects"
+        size="md"
+      >
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Segment</label>
             <Select
-              className="text-xs"
+              className="w-full"
               value={currentSegment}
               onChange={(e) => updateFilters('segment', e.target.value)}
               options={predefinedSegments}
             />
           </div>
 
-          {/* Type Select */}
-          <div className="">
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Role / Type</label>
             <Select
-              className="text-xs"
+              className="w-full"
               value={currentStackRole}
               onChange={(e) => updateFilters('stack_role', e.target.value)}
               options={stackRoles}
             />
           </div>
-        </div>
 
-        {/* Secondary Filters */}
-        <div className={`flex w-full lg:w-auto ${activeFiltersCount > 0 ? 'gap-4' : 'gap-3'}`}>
-          {/* Skills Select */}
-          <div className="">
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Skill Group</label>
             <Select
-              className="text-xs"
+              className="w-full"
               value={currentSkill}
               onChange={(e) => updateFilters('skill', e.target.value)}
               options={[
@@ -119,30 +167,18 @@ export default function ProjectsFilter() {
             />
           </div>
 
-          {/* Tech Filter Trigger */}
-          <Button
-            variant={currentTechs.length > 0 ? 'primary' : 'outline'}
-            onClick={() => setIsTechModalOpen(true)}
-            className=""
-            size="sm"
-          >
-            Technologies {currentTechs.length > 0 && `(${currentTechs.length})`}
-          </Button>
-
-          {/* Clear All */}
-          {activeFiltersCount > 0 && (
+          <div className="space-y-2 text-center pt-2">
+            <label className="text-sm font-medium block text-left">Specific Technologies</label>
             <Button
-              variant="ghost"
-              onClick={clearFilters}
-              className="text-destructive hover:text-destructive/80 "
-              size="md"
+              variant={currentTechs.length > 0 ? 'primary' : 'outline'}
+              onClick={() => setIsTechModalOpen(true)}
+              className="w-full"
             >
-              {/* @ai: For mobile displays, use a brush icon instead */}
-              Clear
+              Select Technologies {currentTechs.length > 0 && `(${currentTechs.length})`}
             </Button>
-          )}
+          </div>
         </div>
-      </div>
+      </Modal>
 
       {isTechModalOpen && (
         <TechFilterDialog
