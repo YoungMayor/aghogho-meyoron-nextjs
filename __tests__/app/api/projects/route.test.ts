@@ -7,8 +7,8 @@ jest.mock('@/lib/data/projects', () => ({
     {
       id: 1,
       name: 'Project A',
-      type: 'web',
-      owner: 'me',
+      segment: ['web'],
+      stack_role: ['main'],
       show: true,
       priority: 1,
       icons: [{ label: 'React' }, { label: 'Node' }],
@@ -16,8 +16,8 @@ jest.mock('@/lib/data/projects', () => ({
     {
       id: 2,
       name: 'Project B',
-      type: 'mobile',
-      owner: 'other',
+      segment: ['mobile'],
+      stack_role: ['other'],
       show: true,
       priority: 2,
       icons: [{ label: 'Flutter' }],
@@ -25,8 +25,8 @@ jest.mock('@/lib/data/projects', () => ({
     {
       id: 3,
       name: 'Project C',
-      type: 'web',
-      owner: 'me',
+      segment: ['web'],
+      stack_role: ['main'],
       show: false,
       priority: 3,
       icons: [{ label: 'Vue' }],
@@ -76,9 +76,9 @@ describe('Projects API', () => {
       expect(data.pagination.total).toBe(2);
     });
 
-    it('should filter by type', async () => {
+    it('should filter by segment', async () => {
       const token = generateAuthToken(validSecret);
-      const req = new Request('http://localhost/api/projects?type=web', {
+      const req = new Request('http://localhost/api/projects?segment=web', {
         headers: {
           'X-Auth-Token': token,
         },
@@ -91,9 +91,9 @@ describe('Projects API', () => {
       expect(data.data[0].name).toBe('Project A');
     });
 
-    it('should filter by owner', async () => {
+    it('should filter by stack_role', async () => {
       const token = generateAuthToken(validSecret);
-      const req = new Request('http://localhost/api/projects?owner=other', {
+      const req = new Request('http://localhost/api/projects?stack_role=other', {
         headers: {
           'X-Auth-Token': token,
         },
