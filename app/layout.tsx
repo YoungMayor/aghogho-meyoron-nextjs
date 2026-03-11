@@ -5,9 +5,10 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import PWAProvider from '@/components/providers/PWAProvider';
 import { ThemeProvider } from 'next-themes';
+import { clientEnv } from '@/lib/env/client';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://mayrlabs.com'),
+  metadataBase: new URL(clientEnv.NEXT_PUBLIC_APP_URL),
   title: {
     default: 'Aghogho Meyoron | Software Engineer',
     template: '%s | Aghogho Meyoron',
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    url: clientEnv.NEXT_PUBLIC_APP_URL,
     siteName: 'Aghogho Meyoron',
     title: 'Aghogho Meyoron | Software Engineer',
     description:
@@ -69,7 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <PWAProvider />
           <div className="flex min-h-screen flex-col">

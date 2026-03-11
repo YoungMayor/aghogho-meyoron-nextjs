@@ -45,11 +45,8 @@ export function sortByDate<T>(items: T[], dateField: keyof T): T[] {
 /**
  * Paginate items
  */
-export function paginateItems<T>(
-  items: T[],
-  page: number = 1,
-  perPage: number = 10
-): {
+
+export interface PaginatedResult<T> {
   items: T[];
   page: number;
   perPage: number;
@@ -57,7 +54,13 @@ export function paginateItems<T>(
   totalPages: number;
   hasNext: boolean;
   hasPrev: boolean;
-} {
+}
+
+export function paginateItems<T>(
+  items: T[],
+  page: number = 1,
+  perPage: number = 10
+): PaginatedResult<T> {
   const total = items.length;
   const totalPages = Math.ceil(total / perPage);
   const start = (page - 1) * perPage;

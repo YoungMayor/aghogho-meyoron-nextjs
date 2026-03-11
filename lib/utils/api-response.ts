@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
+import { PaginatedResult } from './data';
 
-type ApiResponseData = {
+export type ApiResponseData = {
   success: boolean;
   message?: string;
   data?: unknown;
@@ -28,6 +29,17 @@ export class ApiResponse {
     }
 
     return NextResponse.json(body, { status });
+  }
+
+  static paginated<T>(paginatedResult: PaginatedResult<T>, message?: string) {
+    return this.success(paginatedResult.items, message, 200, {
+      total: paginatedResult.total,
+      page: paginatedResult.page,
+      perPage: paginatedResult.perPage,
+      totalPages: paginatedResult.totalPages,
+      hasNext: paginatedResult.hasNext,
+      hasPrev: paginatedResult.hasPrev,
+    });
   }
 
   /**

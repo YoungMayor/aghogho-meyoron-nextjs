@@ -1,5 +1,6 @@
 import { Project } from '@/lib/types';
 import { cloudinaryImage } from '@/lib/utils/helpers';
+import { segments, stackRoles } from '../constants';
 import { techIcons } from '../../icons';
 
 export const goCLIs: Project[] = [
@@ -16,9 +17,9 @@ export const goCLIs: Project[] = [
       'Simple YAML-based configuration.',
       'Detailed encryption reports.',
     ],
-    icons: [techIcons.Go, techIcons.GitHubActions],
-    owner: 'package',
-    type: 'cli',
+    icons: [techIcons.Go, techIcons.Bash, techIcons.Linux, techIcons.JSON, techIcons.GitHubActions],
+    segment: [segments.devtools, segments.opensource, segments.package, segments.cli],
+    stack_role: [stackRoles.creator, stackRoles.maintainer],
     demo_link: null,
     repo_link: 'https://github.com/MayR-Labs/secureflow-go',
     images: [cloudinaryImage.goCodeshot('secureflow')],
@@ -38,9 +39,9 @@ export const goCLIs: Project[] = [
       'Conversion between .env, JSON, and YAML.',
       'Validation against JSON schemas.',
     ],
-    icons: [techIcons.Go, techIcons.GitHubActions],
-    owner: 'package',
-    type: 'cli',
+    icons: [techIcons.Go, techIcons.Bash, techIcons.Linux, techIcons.JSON, techIcons.GitHubActions],
+    segment: [segments.devtools, segments.opensource, segments.package, segments.cli],
+    stack_role: [stackRoles.creator, stackRoles.maintainer],
     demo_link: null,
     repo_link: 'https://github.com/MayR-Labs/envdoc-go',
     images: [cloudinaryImage.goCodeshot('envdoc')],

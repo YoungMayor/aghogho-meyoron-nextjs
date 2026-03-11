@@ -1,0 +1,2481 @@
+_generatedAt: '2026-03-11T00:09:44.065Z'
+profile:
+  name: Aghogho Meyoron
+  titles:
+    - Software Engineer
+    - Tech Mentor
+    - Technical Writer
+  avatar_url: >-
+    https://res.cloudinary.com/meyoron-aghogho/image/upload/v1730326249/closeups/dawn-ai-best_ozyciu.jpg
+  biography: >-
+    <div>I am <b class='text-primary'>Aghogho Meyoron</b>, a Software Architect
+    focused on high-integrity systems. I bridge the gap between complex backend
+    engineering and seamless user experience, specializing in fintech
+    infrastructure, AI-driven automation, and developer tooling. My work is
+    defined by architectural rigour, automated testing, and a relentless drive
+    for system efficiency.</div>
+  profile_link: null
+  notes:
+    tagline: Architecting resilient systems and the tools that build them.
+    persona: Problem Solver, Gamer and Swimmer.
+    about: >-
+      Strategic Software Engineer with a track record in scaling fintech
+      platforms and authoring open-source developer tools. I specialise in
+      building robust, audited backends and integrating Generative AI into
+      practical business workflows.
+  contact:
+    email: youngmayor.dev@gmail.com
+    message: Lets work together!
+  copyright:
+    year: '2025'
+    creator_name: MayR Labs
+    creator_link: https://mayrlabs.com
+  social_links:
+    - platform: Github
+      url: https://github.com/YoungMayor
+      label: '@YoungMayor'
+    - platform: Instagram
+      url: https://instagram.com/youngmayor.dev
+      label: '@youngmayor.dev'
+    - platform: Linkedin
+      url: https://linkedin.com/in/meyoron-aghogho
+      label: in/meyoron-aghogho
+    - platform: LinkTree
+      url: https://linktr.ee/YoungMayor
+      label: '@YoungMayor'
+    - platform: Medium
+      url: https://medium.com/@youngmayor
+      label: '@youngmayor'
+    - platform: TikTok
+      url: https://tiktok.com/@youngmayor.dev
+      label: '@youngmayor.dev'
+    - platform: Whatsapp
+      url: https://wa.link/uujcjm
+      label: Whatsapp
+    - platform: Telegram
+      url: https://t.me/YoungMayor_dev
+      label: t.me/YoungMayor_dev
+projects:
+  - slug: glover
+    name: Glover
+    description: >-
+      As a Senior Backend Engineer at Glover, a leading Nigerian Fintech, I
+      played a pivotal role in optimizing and securing the platform which offers
+      services ranging from gift card trading to crypto payments. I led the
+      migration of the legacy codebase from Laravel v7 to v12 with zero
+      downtime, significantly boosting system performance and maintainability.
+      My work focused on high-impact features including a custom login security
+      system with anomaly detection, a high-speed rewards distribution engine,
+      and a Google OCR-powered gift card validation system utilizing encryption
+      for data security. I also architected a comprehensive Brand Ambassador
+      dashboard and a fraud-resistant customer reward system, directly
+      contributing to increased user engagement and platform trust.
+    features:
+      - Advanced Login Security & Fraud Detection
+      - High-Volume Holiday Rewards System
+      - Brand Ambassador Management Dashboard
+      - Secure Giftcard OCR Validation
+      - Automated Customer Rewards Engine
+      - Virtual Card Issuance System
+      - Zero-Downtime Infrastructure Upgrade
+    icons:
+      - &ref_11
+        type: dev
+        value: laravel:original
+        label: Laravel
+        slug: laravel
+      - &ref_10
+        type: dev
+        value: php:original
+        label: PHP
+        slug: php
+      - &ref_25
+        type: dev
+        value: postgresql:original
+        label: PostgreSQL
+        slug: postgresql
+      - &ref_27
+        type: dev
+        value: mariadb:original
+        label: MariaDB
+        slug: mariadb
+      - &ref_26
+        type: dev
+        value: redis:original
+        label: Redis
+        slug: redis
+      - &ref_5
+        type: dev
+        value: nodejs:original
+        label: Node.js
+        slug: nodejs
+      - &ref_29
+        type: dev
+        value: postman:original
+        label: Postman
+        slug: postman
+      - &ref_22
+        type: dev
+        value: nuxtjs:original
+        label: Nuxt.js
+        slug: nuxtjs
+      - &ref_19
+        type: dev
+        value: vuejs:original
+        label: Vue.js
+        slug: vuejs
+      - &ref_4
+        type: dev
+        value: tailwindcss:original
+        label: Tailwind CSS
+        slug: tailwindcss
+      - &ref_0
+        type: dev
+        value: html5:original
+        label: HTML5
+        slug: html5
+      - &ref_1
+        type: dev
+        value: css3:original
+        label: CSS3
+        slug: css3
+      - &ref_2
+        type: dev
+        value: javascript:original
+        label: JavaScript
+        slug: javascript
+      - &ref_3
+        type: dev
+        value: typescript:original
+        label: TypeScript
+        slug: typescript
+    segment:
+      - Fintech & Enterprise
+    stack_role:
+      - Lead Developer
+      - Backend Engineer
+    demo_link: https://gloverapp.co
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/glover-landing-page
+    show: true
+    priority: 99
+    is_featured: true
+  - slug: learnbits
+    name: Learnbits
+    description: >-
+      Master the tech skills that matter, one byte at a time. Learnbits
+      reimagines professional development with bite-sized, high-impact lessons
+      designed for the busy modern developer. From React patterns to System
+      Design, simply drop in, learn, and level up.
+    features:
+      - >-
+        Micro-Learning Architecture: Dense, focused modules for maximum
+        retention.
+      - >-
+        Open Knowledge Graph: Completely free access to high-value technical
+        curriculum.
+      - >-
+        Progressive Complexity: Structured paths that grow with your skill
+        level.
+      - 'Developer API: A headless learning engine built to power external tools.'
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - &ref_6
+        type: dev
+        value: react:original
+        label: React
+        slug: react
+      - &ref_7
+        type: dev
+        value: nextjs:original
+        label: Next.js
+        slug: nextjs
+      - *ref_4
+      - *ref_5
+      - &ref_8
+        type: dev
+        value: json:original
+        label: JSON
+        slug: json
+    segment:
+      - EdTech & Learning
+    stack_role:
+      - Full-Stack Developer
+    demo_link: https://learnbits.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/learnbits
+    show: true
+    priority: 0
+  - slug: contentforge
+    name: ContentForge
+    description: >-
+      A multi-modal content orchestration platform powered by Gemini. It
+      implements granular tone control and a 'bring-your-own-key' architecture,
+      allowing creators to generate professional-grade articles and essays while
+      maintaining complete data sovereignty.
+    features:
+      - >-
+        Multi-Modal Generation: Articles, posts, essays, and stories from a
+        single dashboard.
+      - 'Tone & Style Control: Fine-tune the AI to match your specific voice.'
+      - 'Privacy-First Design: Bring your own API key for complete data control.'
+      - 'Instant Export: Seamlessly move from draft to published content.'
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - &ref_9
+        type: dev
+        value: googlecloud:original
+        label: GenKit
+        slug: googlecloud
+      - *ref_5
+      - *ref_8
+    segment:
+      - Artificial Intelligence
+    stack_role:
+      - Full-Stack Developer
+    demo_link: https://contentforge.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/content-forge-dashboard
+    show: true
+    priority: 0
+    is_featured: true
+  - slug: learnflow-ai
+    name: LearnFlow AI
+    description: >-
+      A generative educational engine that constructs personalised learning
+      roadmaps based on user-defined goals and cognitive styles. It features an
+      adaptive curriculum logic that identifies knowledge gaps and dynamically
+      structures modules in real-time.
+    features:
+      - Adaptive Curriculum Logic Engine
+      - Cognitive-Style Content Matching
+      - Real-time Roadmap Generation
+      - Dynamic Progress Data Visualization
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_9
+      - &ref_32
+        type: simple
+        value: googlegemini
+        label: Google Gemini
+        slug: googlegemini
+      - *ref_5
+      - *ref_8
+    segment:
+      - Artificial Intelligence
+      - EdTech & Learning
+    stack_role:
+      - Full-Stack Developer
+    demo_link: https://learnflow.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/learnflow-ai
+    show: true
+    priority: 0
+    is_featured: true
+  - slug: lexai
+    name: LexAI
+    description: >-
+      An NLP-driven legal assistant that deconstructs complex statutes into
+      actionable insights. Built with a focus on jurisdictional accuracy and
+      context-aware analysis to bridge the gap between legalese and public
+      understanding.
+    features:
+      - NLP-Based Statutory Translation
+      - Context-Aware Inquiry Analysis
+      - Multi-Jurisdictional Data Mapping
+      - Safety-First Disclaimer Architecture
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_9
+      - *ref_5
+      - *ref_8
+    segment:
+      - Artificial Intelligence
+    stack_role:
+      - Full-Stack Developer
+    demo_link: https://lexai.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/lexai-landing-page
+    show: true
+    priority: 0
+  - slug: prepai
+    name: PrepAI
+    description: >-
+      The unfair advantage for your exams. PrepAI transforms study time into
+      high-yield preparation. Whether tackling WAEC, JAMB, or GCE, our AI tutor
+      identifies your weak points and drills you until they become strengths.
+    features:
+      - Past Paper Simulator
+      - Intelligent Weakness Detection
+      - Essay Grading Assistant
+      - 24/7 AI Tutor
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_9
+      - *ref_5
+      - *ref_8
+    segment:
+      - EdTech & Learning
+      - Artificial Intelligence
+    stack_role:
+      - Full-Stack Developer
+    demo_link: https://prepai.mayrlabs.com/get-started
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/prepai-landing-page
+    show: true
+    priority: 0
+  - slug: quizwise
+    name: QuizWise
+    description: >-
+      A quiz platform that never runs out of questions. Powered by real-time
+      generative AI, QuizWise creates unique, challenging trivia on the fly.
+      It's not just a game—it's a dynamic test of knowledge that evolves with
+      every round.
+    features:
+      - Infinite Question Bank
+      - Real-Time Content Generation
+      - Adaptive Difficulty Scaling
+      - Multi-Category Mastery
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_9
+      - *ref_5
+      - *ref_8
+    segment:
+      - Entertainment & Gaming
+      - Artificial Intelligence
+    stack_role:
+      - Full-Stack Developer
+    demo_link: https://quizwise.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/quiz-wise-getting-started
+    show: true
+    priority: 0
+  - slug: fun-arcade
+    name: Fun Arcade
+    description: >-
+      Digital nostalgia, refined. Fun Arcade brings the golden age of gaming to
+      the modern web. Built with a focus on pure performance and offline
+      capability, it delivers distraction-free entertainment that loads in
+      milliseconds and plays anywhere.
+    features:
+      - 'Zero-Latency Performance: Optimized for instant play.'
+      - 'Offline-First Architecture: Play without an internet connection.'
+      - 'Classic Game Collection: Faithful recreations of retro hits.'
+      - 'Cross-Device Sync: Seamless experience across mobile and desktop.'
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_5
+      - *ref_8
+    segment:
+      - Entertainment & Gaming
+    stack_role:
+      - Frontend Developer
+    demo_link: https://arcade.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/fun-arcade-games-preview
+    show: true
+    priority: 0
+  - slug: resumeready
+    name: ResumeReady
+    description: >-
+      Stop wrestling with formatting and start applying. ResumeReady combines
+      professional design principles with AI-powered content optimization to
+      help you build a winning resume. Stand out from the stack with documents
+      that are ATS-friendly and visually striking.
+    features:
+      - 'AI Content Enhancer: Suggests stronger action verbs and metrics.'
+      - 'ATS-Optimized Templates: Designed to pass automated screening tools.'
+      - 'Real-Time Preview: See your changes instantly as you type.'
+      - 'One-Click Export: Generate polished PDFs in seconds.'
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_9
+      - *ref_10
+      - *ref_11
+      - &ref_24
+        type: dev
+        value: mysql:original
+        label: MySQL
+        slug: mysql
+      - *ref_5
+      - *ref_8
+    segment:
+      - Desktop & Productivity
+    stack_role:
+      - Full-Stack Developer
+      - Creator
+    demo_link: https://resumes.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/resume-ready-landing-page
+    show: true
+    priority: 0
+  - slug: shellbase
+    name: ShellBase
+    description: >-
+      The developer's command center. ShellBase transforms the chaotic world of
+      CLI commands into a structured, searchable knowledge base. Stop Googling
+      syntax and start executing commands with confidence using this
+      high-performance reference tool.
+    features:
+      - Instant Command Search
+      - Syntax Highlighting & Copy
+      - Category-Based Filtering
+      - Community Verified Snippets
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - &ref_17
+        type: dev
+        value: markdown:original
+        label: Markdown
+        slug: markdown
+      - *ref_9
+      - *ref_5
+      - &ref_15
+        type: dev
+        value: bash:original
+        label: Bash
+        slug: bash
+      - *ref_8
+    segment:
+      - Developer Tools
+      - Open Source
+    stack_role:
+      - Full-Stack Developer
+      - Creator
+      - Maintainer
+    demo_link: https://shellbase.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/shellbase-homepage
+    show: true
+    priority: 0
+  - slug: ijokes
+    name: iJokes
+    description: >-
+      A showcase of seamless API integration and multi-platform deployment.
+      iJokes isn't just a humor app—it's a demonstration of modern frontend
+      architecture, featuring a responsive web app and a fully synchronized
+      Telegram bot, all powered by a unified backend.
+    features:
+      - Cross-Platform Sync
+      - ' Telegram Bot Integration'
+      - Real-Time API Consumption
+      - Responsive Material Design
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - &ref_28
+        type: dev
+        value: cloudflareworkers:original
+        label: Cloudflare Workers
+        slug: cloudflareworkers
+      - type: simple
+        value: telegram
+        label: Telegram
+        slug: telegram
+      - *ref_5
+      - *ref_8
+    segment:
+      - Bot & Integrations
+    stack_role:
+      - Full-Stack Developer
+    demo_link: https://ijokes.mayrlabs.com
+    repo_link: null
+    images: []
+    show: true
+    priority: 0
+  - slug: calcplay
+    name: CalcPlay
+    description: >-
+      Data Science meets satire. CalcPlay takes mundane numbers and spins them
+      into unexpected, humorous, and sometimes shocking perspectives. It’s a
+      playground for curiosity that challenges how we perceive scale, time, and
+      probability.
+    features:
+      - Novelty Calculation Engine
+      - Humorous Data Visualization
+      - Interactive Scenarios
+      - Shareable Insights
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_5
+      - *ref_8
+    segment:
+      - Data Visualization
+    stack_role:
+      - Frontend Developer
+    demo_link: https://calcplay.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/calcplay-homepage
+    show: true
+    priority: 0
+  - slug: who-wants-to-be-a-millionaire
+    name: Who wants to be a millionaire
+    description: >-
+      A procedural recreation of the classic game show featuring a dynamic AI
+      'Host'. Unlike static trivia apps, this uses real-time generative logic to
+      create unique questions and adaptive commentary, delivering a
+      high-fidelity, interactive experience.
+    features:
+      - 'AI Host Persona: Dynamic commentary and interaction.'
+      - 'Procedural Question Generation: Never see the same game twice.'
+      - 'Authentic Game Mechanics: Lifelines, timers, and climbing the ladder.'
+      - >-
+        Immersive Audio-Visuals: High-fidelity recreation of the show's
+        atmosphere.
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_9
+      - *ref_5
+      - *ref_8
+    segment:
+      - Artificial Intelligence
+      - Entertainment & Gaming
+    stack_role:
+      - Full-Stack Developer
+    demo_link: https://wwtbam.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/wwtbam-game-screen-1
+    show: true
+    priority: 0
+  - slug: tovia-amadi
+    name: Tovia Amadi | Digital Marketer
+    description: >-
+      A dynamic portfolio for a Digital & Email Marketer. Features a custom AI
+      chatbot "TovysAI", showcases his marketing campaigns, design projects, and
+      product management skills.
+    features:
+      - AI Chatbot Integration (TovysAI)
+      - Marketing Campaign Showcase
+      - Design Portfolio
+      - Resume Download
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - &ref_12
+        type: dev
+        value: netlify:original
+        label: Netlify
+        slug: netlify
+    segment:
+      - Client Portfolio
+    stack_role:
+      - Frontend Developer
+    demo_link: https://toviaamadi.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/tovia-amadi-dark
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/tovia-amadi-light
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/tovia-amadi-resume
+    show: true
+    priority: 0
+    is_featured: true
+  - slug: esther-ubeng
+    name: Esther Idara Ubeng | Senior Product Manager
+    description: >-
+      A professional portfolio for a visionary Senior Product Manager and Scrum
+      Master. The site highlights her extensive experience in driving impactful
+      product strategies, leading agile teams, and her dedication to mentoring
+      aspiring tech professionals.
+    features:
+      - Product Lifecycle Management
+      - Agile & Scrum Leadership
+      - Mentorship Program Integration
+      - Project Case Studies
+      - Professional Blog
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_12
+    segment:
+      - Client Portfolio
+    stack_role:
+      - Frontend Developer
+    demo_link: https://estherubeng.netlify.app
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/esther-ubeng
+    show: true
+    priority: 0
+    is_featured: true
+  - slug: enuma-ifeoma
+    name: Enuma Ifeoma | HSE Personnel
+    description: >-
+      A professional portfolio for a dedicated HSE Personnel. The site showcases
+      her commitment to health, safety, and environment standards, featuring her
+      certifications, projects, and professional journey.
+    features:
+      - HSE Certifications Showcase
+      - Safety Projects Gallery
+      - Professional Biography
+      - Contact Integration
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_12
+    segment:
+      - Client Portfolio
+    stack_role:
+      - Frontend Developer
+    demo_link: https://enumaifeoma.netlify.app
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/enuma-ifeoma
+    show: true
+    priority: 0
+    is_featured: true
+  - slug: fortune-odjeni
+    name: Fortune Odjeni | Legal Practitioner
+    description: >-
+      A comprehensive portfolio for a Lawyer in the making, Humanitarian
+      Advocate, and Writer. Highlights his legal journey, advocacy work, and
+      collection of written articles.
+    features:
+      - Legal Portfolio
+      - Advocacy Projects
+      - Article Blog
+      - Professional Profile
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_12
+    segment:
+      - Client Portfolio
+    stack_role:
+      - Frontend Developer
+    demo_link: https://odjenifortune.netlify.app
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/fortune-odjeni
+    show: true
+    priority: 0
+    is_featured: true
+  - slug: saxman-afk
+    name: Saxman AFK
+    description: >-
+      Saxman AFK is a Nigerian saxophonist whose sound blends emotion,
+      spirituality, and vibrant African rhythm
+    features:
+      - Music Portfolio
+      - Musician Biography
+      - Contact Integration
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_12
+    segment:
+      - Client Portfolio
+    stack_role:
+      - Frontend Developer
+    demo_link: https://saxmanafk.netlify.app
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/portfolios/saxman-afk
+    show: true
+    priority: 0
+    is_featured: true
+  - slug: saleshouse
+    name: SalesHouse
+    description: >-
+      Buy and sell pre-loved goods, connect with others, and find your next
+      treasure.
+    features:
+      - Auction based sales
+      - AI powered pricing tool
+      - in-app chat between sellers and buyers
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_7
+      - *ref_4
+      - *ref_5
+      - *ref_9
+    segment:
+      - E-commerce & Retail
+    stack_role:
+      - Full-Stack Developer
+    demo_link: https://saleshouse.mayrlabs.com
+    repo_link: null
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/saleshouse-homepage
+    show: true
+    priority: 0
+  - slug: dockyard
+    name: DockYard
+    description: >-
+      A privacy-first desktop workspace for all your web apps. It serves as an
+      open-source alternative to Rambox, offering session isolation,
+      auto-hibernation, and full customization to streamline your workflow.
+    features:
+      - 'Session Isolation: Keep your accounts separate and secure.'
+      - 'Auto-Hibernation: Save memory by suspending inactive apps.'
+      - 'Full Customization: Tailor the workspace to your needs.'
+      - 'Multiple Profiles: Manage different sets of apps easily.'
+      - 'Tab Tiling & Layout Control: Organize your workspace efficiently.'
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_4
+      - &ref_23
+        type: dev
+        value: electron:original
+        label: ElectronJS
+        slug: electron
+      - *ref_5
+      - *ref_8
+    segment:
+      - Desktop & Productivity
+      - Open Source
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://dockyard.mayrlabs.com
+    repo_link: https://github.com/MayR-Labs/dockyard
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/dockyard
+      - https://dockyard.mayrlabs.com/screenshots/add-app.png
+      - https://dockyard.mayrlabs.com/screenshots/app-layout.png
+      - https://dockyard.mayrlabs.com/screenshots/create-workspace.png
+      - https://dockyard.mayrlabs.com/screenshots/customise-app-1.png
+      - https://dockyard.mayrlabs.com/screenshots/customise-app.png
+      - https://dockyard.mayrlabs.com/screenshots/customise-theme.png
+      - https://dockyard.mayrlabs.com/screenshots/multi-profile.png
+      - https://dockyard.mayrlabs.com/screenshots/responsiveness-setting.png
+      - https://dockyard.mayrlabs.com/screenshots/select-app.png
+      - https://dockyard.mayrlabs.com/screenshots/switch-workspace.png
+    show: true
+    priority: 0
+    is_featured: true
+  - slug: mayr_dart_extensions
+    name: mayr_dart_extensions
+    description: >-
+      A comprehensive set of handy Dart extensions to make your code cleaner,
+      shorter, and more expressive. It provides utility methods for Strings,
+      Numbers, Dates, Collections, and more.
+    features:
+      - String extensions (capitalization, truncation, etc.).
+      - Number extensions for formatting and calculations.
+      - DateTime and Duration utility methods.
+      - Collection extensions (List, Map, Set) for easier manipulation.
+      - Type conversion and validation helpers.
+    icons:
+      - &ref_13
+        type: dev
+        value: dart:original
+        label: Dart
+        slug: dart
+      - *ref_8
+      - &ref_14
+        type: dev
+        value: githubactions:original
+        label: GitHub Actions
+        slug: githubactions
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://pub.dev/packages/mayr_dart_extensions
+    repo_link: https://github.com/MayR-Labs/mayr_dart_extensions
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_dart_extensions
+    show: true
+    priority: 0
+  - slug: mayr_fake_api
+    name: mayr_fake_api
+    description: >-
+      A pure Dart package that intercepts API calls and returns fake JSON
+      responses from local files during development. It streamlines development
+      by simulating backend responses without needing a live server.
+    features:
+      - Intercepts network requests and serves data from local JSON files.
+      - Works with both pure Dart and Flutter applications.
+      - Supports folder-structured routing (e.g., /api/user/profile.json).
+      - Supports multiple HTTP methods (GET, POST, PUT, DELETE).
+      - Built-in 404 simulation and error handling.
+      - Dynamic data support with Faker-powered placeholders.
+    icons:
+      - *ref_13
+      - *ref_8
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://pub.dev/packages/mayr_fake_api
+    repo_link: https://github.com/MayR-Labs/mayr_dart_fake_api
+    images: []
+    show: true
+    priority: 0
+  - slug: mayr_stateman
+    name: mayr_stateman
+    description: >-
+      A lightweight and intuitive state utility for Dart. Easily manage and
+      track states, statuses, messages, and payloads with simple, chainable
+      methods.
+    features:
+      - 'Simple & Lightweight: Pure Dart state management with zero dependencies.'
+      - >-
+        Comprehensive Status Management: Handle idle, loading, success, error,
+        etc.
+      - 'Fluent API: Chain multiple state updates elegantly.'
+      - Type-Safe Payloads and Message Support.
+      - 'Visual Feedback: Emoji representations for each status.'
+    icons:
+      - *ref_13
+      - *ref_8
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://pub.dev/packages/mayr_stateman
+    repo_link: https://github.com/YoungMayor/mayr_dart_stateman
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_stateman
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_stateman_getters
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_stateman_setters
+    show: true
+    priority: 0
+  - slug: mayr_i18n_generation
+    name: mayr_i18n_generation
+    description: >-
+      Provides automatic type-safe translation key generation for projects using
+      mayr_i18n. It scans JSON language files and generates structured Dart
+      classes.
+    features:
+      - Scans JSON language files to generate Dart classes.
+      - Provides code completion for translation keys.
+      - Ensures type safety for localization.
+      - Supports nested JSON structures.
+    icons:
+      - *ref_13
+      - *ref_8
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://pub.dev/packages/mayr_i18n_generation
+    repo_link: https://github.com/YoungMayor/mayr_dart_i18n_generation
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_i18n_generation
+    show: true
+    priority: 0
+  - slug: mayr_i18n
+    name: mayr_i18n
+    description: >-
+      A Dart-based, JSON-powered internationalization (i18n) library. It allows
+      managing translations in plain JSON files and provides CLI tools for
+      verification and syncing.
+    features:
+      - JSON-based translation management.
+      - CLI tools for key verification, syncing, and auditing.
+      - Dynamic string translation with variable interpolation.
+      - Helper extension `.tr()` for easy translation lookup.
+      - Supports nested keys and multiple languages.
+    icons:
+      - *ref_13
+      - *ref_8
+      - *ref_15
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://pub.dev/packages/mayr_i18n
+    repo_link: https://github.com/YoungMayor/mayr_dart_i18n
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_i18n
+    show: true
+    priority: 0
+  - slug: mayr_validator
+    name: mayr_validator
+    description: >-
+      A powerful yet elegant validation library for Dart and Flutter, inspired
+      by Laravel validator syntax and philosophy.
+    features:
+      - Fluent API for chaining validation rules.
+      - Reusable validator groups for complex patterns.
+      - Custom validator support.
+      - Global configuration for defaults and messages.
+      - Integrates seamlessly with Flutter TextFormField.
+    icons:
+      - *ref_13
+      - *ref_8
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://pub.dev/packages/mayr_validator
+    repo_link: https://github.com/MayR-Labs/dart_validator
+    images: []
+    show: true
+    priority: 0
+  - slug: mayr_storage
+    name: mayr_storage
+    description: >-
+      Simple and unified storage solution for Flutter apps. Easily manage
+      SharedPreferences, EncryptedSharedPreferences, and GetStorage with a
+      clean, consistent API.
+    features:
+      - >-
+        Unified API for SharedPreferences, EncryptedSharedPreferences, and
+        GetStorage.
+      - Type-safe key definition.
+      - 'Simple methods: read(), write(), delete().'
+      - Supports multiple data types (String, int, bool, List, etc.).
+      - Zero boilerplate setup.
+    icons:
+      - *ref_13
+      - *ref_8
+      - &ref_16
+        type: dev
+        value: flutter:original
+        label: Flutter
+        slug: flutter
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://pub.dev/packages/mayr_storage
+    repo_link: https://github.com/MayR-Labs/flutter_storage
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_storage
+    show: true
+    priority: 0
+  - slug: mayr_md_cms
+    name: mayr_md_cms
+    description: >-
+      A flexible Flutter widget that fetches and renders Markdown content from
+      local assets, network URLs, or custom sources with built-in loading and
+      error handling.
+    features:
+      - Fetch and render Markdown from assets, URLs, or custom sources.
+      - Automatic handling of links (browser, clipboard, custom actions).
+      - Support for internal link actions.
+      - Fully customizable loading and error widgets.
+      - Customizable Markdown stylesheet.
+    icons:
+      - *ref_13
+      - *ref_8
+      - *ref_16
+      - *ref_17
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://pub.dev/packages/mayr_md_cms
+    repo_link: https://github.com/MayR-Labs/mayr_flutter_md_cms
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_md_cms
+    show: true
+    priority: 0
+  - slug: mayr_flutter_extensions
+    name: mayr_flutter_extensions
+    description: >-
+      A comprehensive set of handy Flutter-specific extensions to make your
+      Flutter code cleaner, shorter, and more expressive. Designed to work
+      alongside mayr_dart_extensions.
+    features:
+      - >-
+        BuildContext extensions for simplified access to theme, media query,
+        etc.
+      - Widget extensions for padding, alignment, and more.
+      - Image extensions.
+      - Reduces boilerplate code in UI development.
+    icons:
+      - *ref_13
+      - *ref_8
+      - *ref_16
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://pub.dev/packages/mayr_flutter_extensions
+    repo_link: https://github.com/MayR-Labs/mayr_flutter_extensions
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/dart/mayr_flutter_extensions
+    show: true
+    priority: 0
+  - slug: mayrlabs-genesis
+    name: '@mayrlabs/genesis'
+    description: >-
+      Interactive CLI to fast-track your project setup. Spin up a
+      production-ready environment in seconds without manually copying
+      configuration files.
+    features:
+      - Automates linting, formatting, testing framework configuration.
+      - Interactive CLI experience.
+    icons:
+      - *ref_2
+      - *ref_3
+      - *ref_5
+      - &ref_18
+        type: dev
+        value: npm:original-wordmark
+        label: NPM
+        slug: npm
+      - *ref_8
+      - *ref_15
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+      - CLI Tool
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://www.npmjs.com/package/@mayrlabs/genesis
+    repo_link: https://github.com/MayR-Labs/mayrlabs-js
+    images: []
+    show: true
+    priority: 0
+  - slug: mayrlabs-prunejs
+    name: '@mayrlabs/prunejs'
+    description: >-
+      A powerful, configurable CLI tool designed to keep your JavaScript and
+      TypeScript projects clean and maintainable. It scans your codebase to
+      detect unused files, functions, classes, and exports, and can
+      automatically remove them for you.
+    features:
+      - >-
+        Smart Scanning: Detects unused exports and non-exported declarations
+        (dead code).
+      - >-
+        Safe Fixes: Automatically removes unused code while preserving structure
+        using brace counting and syntax awareness.
+      - >-
+        Configurable: Support for includeDirs (whitelist) and excludeDirs
+        (blacklist) for precise control.
+      - >-
+        Safety Checks: Warns you if you attempt to scan typically excluded
+        directories (like node_modules).
+      - >-
+        Detailed Reports: Generates comprehensive Markdown reports in
+        .mayrlabs/prunejs/reports/ for detailed analysis.
+    icons:
+      - *ref_2
+      - *ref_3
+      - *ref_5
+      - *ref_18
+      - *ref_8
+      - *ref_15
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+      - CLI Tool
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://www.npmjs.com/package/@mayrlabs/prunejs
+    repo_link: https://github.com/MayR-Labs/mayrlabs-js
+    images: []
+    show: true
+    priority: 0
+  - slug: mayrlabs-debugger
+    name: '@mayrlabs/debugger'
+    description: >-
+      A lightweight, environment-aware debugging utility for TypeScript
+      applications. It provides structured logging with timestamps, log levels,
+      color-coded output (in supported environments), and execution timing
+      capabilities.
+    features:
+      - >-
+        Environment Awareness: Helper methods to log only in development
+        environments.
+      - 'Log Levels: Support for log, info, warn, error, and debug.'
+      - 'Custom Colors: Support for custom hex colors using .custom().'
+      - 'Namespaces: Support for organizing logs with namespaces.'
+      - >-
+        Execution Timing: timeBox utility to measure and log the duration of
+        async operations.
+    icons:
+      - *ref_2
+      - *ref_3
+      - *ref_5
+      - *ref_18
+      - *ref_8
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://www.npmjs.com/package/@mayrlabs/debugger
+    repo_link: https://github.com/MayR-Labs/mayrlabs-js
+    images: []
+    show: true
+    priority: 0
+  - slug: mayrlabs-telegram-service
+    name: '@mayrlabs/telegram-service'
+    description: >-
+      A powerful, abstract Telegram bot service wrapper for MayR Labs
+      applications. This package simplifies the creation of Telegram
+      notification services by handling bot creation, error handling, and
+      message dispatching.
+    features:
+      - >-
+        Abstract Service Pattern: Easily create new notification services by
+        extending TelegramService.
+      - >-
+        Environment Driven: Configured via environment variables for security
+        and flexibility.
+      - >-
+        Built-in CLI: Interactive CLI tool to generate new service classes and
+        send test messages.
+      - >-
+        Robust Error Handling: Integrated with @mayrlabs/debugger for consistent
+        logging.
+    icons:
+      - *ref_2
+      - *ref_3
+      - *ref_5
+      - *ref_18
+      - *ref_8
+      - *ref_15
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+      - CLI Tool
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://www.npmjs.com/package/@mayrlabs/telegram-service
+    repo_link: https://github.com/MayR-Labs/mayrlabs-js
+    images: []
+    show: true
+    priority: 0
+  - slug: mayrlabs-web-icon
+    name: '@mayrlabs/web-icon'
+    description: >-
+      A framework-agnostic icon package for React, Vue, and Next.js, supporting
+      Simple Icons, Dev Icons, Local, and Remote icons.
+    features:
+      - Framework agnostic (React, Vue, Next.js).
+      - Supports Simple Icons and Dev Icons natively.
+    icons:
+      - *ref_0
+      - *ref_1
+      - *ref_2
+      - *ref_3
+      - *ref_6
+      - *ref_19
+      - *ref_18
+      - *ref_8
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://www.npmjs.com/package/@mayrlabs/web-icon
+    repo_link: https://github.com/MayR-Labs/mayrlabs-js
+    images: []
+    show: true
+    priority: 0
+  - slug: js-pkg-base64
+    name: '@youngmayor/base64'
+    description: >-
+      A lightweight and efficient utility package for Base64 encoding and
+      decoding operations.
+    features:
+      - Fast Base64 encoding and decoding.
+      - Simple and intuitive API.
+      - Lightweight with minimal dependencies.
+    icons:
+      - *ref_2
+      - *ref_3
+      - *ref_5
+      - *ref_18
+      - *ref_8
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: https://www.npmjs.com/package/@youngmayor/base64
+    repo_link: https://github.com/YoungMayor/base64
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/js/base64
+    show: true
+    priority: 0
+  - slug: secureflow
+    name: SecureFlow CLI
+    description: >-
+      A CLI application for encrypting and decrypting sensitive files (like
+      Flutter private assets) for secure CI/CD pipelines. It uses AES-256-CBC
+      encryption to keep secrets safe.
+    features:
+      - Strong AES-256-CBC encryption with PBKDF2.
+      - Fast and lightweight single binary.
+      - Cross-platform support (Linux, macOS, Windows).
+      - CI/CD ready with non-interactive mode.
+      - Simple YAML-based configuration.
+      - Detailed encryption reports.
+    icons:
+      - &ref_20
+        type: dev
+        value: go:original
+        label: Go
+        slug: go
+      - *ref_15
+      - &ref_21
+        type: dev
+        value: linux:original
+        label: Linux
+        slug: linux
+      - *ref_8
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+      - CLI Tool
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: null
+    repo_link: https://github.com/MayR-Labs/secureflow-go
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/go/secureflow
+    show: true
+    priority: 0
+  - slug: envdoc
+    name: EnvDoc
+    description: >-
+      A powerful CLI tool for managing, validating, and transforming environment
+      variable files (`.env`). It helps keep environment configurations in sync
+      and documented.
+    features:
+      - 'Documentation Generation: Create example files and schemas from .env.'
+      - 'Auditing: Find duplicate keys and missing variables.'
+      - 'Synchronization: Keep .env files in sync across environments.'
+      - 'Security: Encrypt/decrypt support.'
+      - Conversion between .env, JSON, and YAML.
+      - Validation against JSON schemas.
+    icons:
+      - *ref_20
+      - *ref_15
+      - *ref_21
+      - *ref_8
+      - *ref_14
+    segment:
+      - Developer Tools
+      - Open Source
+      - Package/Library
+      - CLI Tool
+    stack_role:
+      - Creator
+      - Maintainer
+    demo_link: null
+    repo_link: https://github.com/MayR-Labs/envdoc-go
+    images:
+      - >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/projects/codeshots/go/envdoc
+    show: true
+    priority: 0
+skills:
+  technical:
+    - name: Languages
+      description: null
+      type: tech
+      icons:
+        - *ref_0
+        - *ref_1
+        - type: dev
+          value: sass:original
+          label: SASS
+          slug: sass
+        - *ref_2
+        - *ref_3
+        - *ref_8
+        - *ref_10
+        - type: dev
+          value: python:original
+          label: Python
+          slug: python
+        - *ref_13
+        - type: dev
+          value: cplusplus:original
+          label: C++
+          slug: cplusplus
+        - type: dev
+          value: csharp:original
+          label: C#
+          slug: csharp
+        - *ref_20
+        - type: dev
+          value: java:original
+          label: Java
+          slug: java
+        - type: dev
+          value: kotlin:original
+          label: Kotlin
+          slug: kotlin
+        - type: dev
+          value: swift:original
+          label: Swift
+          slug: swift
+        - type: dev
+          value: solidity:original
+          label: Solidity
+          slug: solidity
+        - type: dev
+          value: less:plain-wordmark
+          label: LESS
+          slug: less
+        - type: dev
+          value: c:original
+          label: C
+          slug: c
+        - type: dev
+          value: ruby:original
+          label: Ruby
+          slug: ruby
+        - type: dev
+          value: rust:original
+          label: Rust
+          slug: rust
+        - type: dev
+          value: mysql:original
+          label: MySQL
+          slug: mysql
+      show: true
+      priority: 1
+    - name: Frameworks
+      description: null
+      type: tech
+      icons:
+        - *ref_19
+        - *ref_22
+        - *ref_6
+        - *ref_7
+        - *ref_11
+        - *ref_5
+        - &ref_39
+          type: dev
+          value: express:original
+          label: Express.js
+          slug: express
+        - type: dev
+          value: django:plain
+          label: Django
+          slug: django
+        - *ref_16
+        - type: dev
+          value: react:original
+          label: React Native
+          slug: react
+        - type: dev
+          value: expo:original
+          label: Expo
+          slug: expo
+        - type: dev
+          value: dot-net:original
+          label: .NET
+          slug: dot-net
+        - type: dev
+          value: symfony:original
+          label: Symfony
+          slug: symfony
+        - type: dev
+          value: cakephp:original
+          label: CakePHP
+          slug: cakephp
+        - type: dev
+          value: yii:original
+          label: Yii
+          slug: yii
+        - type: dev
+          value: wordpress:original
+          label: WordPress
+          slug: wordpress
+        - *ref_23
+        - type: dev
+          value: tauri:original
+          label: Tauri
+          slug: tauri
+        - type: dev
+          value: angularjs:original
+          label: Angular
+          slug: angularjs
+        - type: dev
+          value: svelte:original
+          label: Svelte
+          slug: svelte
+        - type: dev
+          value: spring:original
+          label: Spring
+          slug: spring
+        - type: dev
+          value: rails:plain-wordmark
+          label: Rails
+          slug: rails
+        - type: dev
+          value: fastapi:original
+          label: FastAPI
+          slug: fastapi
+        - type: dev
+          value: flask:original
+          label: Flask
+          slug: flask
+      show: true
+      priority: 2
+    - name: Libraries
+      description: null
+      type: tech
+      icons:
+        - &ref_42
+          type: dev
+          value: bootstrap:original
+          label: Bootstrap
+          slug: bootstrap
+        - *ref_4
+        - type: dev
+          value: vuetify:original
+          label: Vuetify
+          slug: vuetify
+        - &ref_41
+          type: dev
+          value: jquery:original
+          label: jQuery
+          slug: jquery
+        - *ref_9
+        - type: dev
+          value: chartjs:original
+          label: ChartJS
+          slug: chartjs
+        - type: dev
+          value: materialui:original
+          label: Material UI
+          slug: materialui
+        - type: dev
+          value: bulma:plain
+          label: Bulma
+          slug: bulma
+        - type: dev
+          value: graphql:plain
+          label: GraphQL
+          slug: graphql
+        - type: dev
+          value: apollographql:original
+          label: Apollo
+          slug: apollographql
+        - type: dev
+          value: redux:original
+          label: Redux
+          slug: redux
+        - &ref_33
+          type: dev
+          value: pandas:original
+          label: Pandas
+          slug: pandas
+        - &ref_34
+          type: dev
+          value: numpy:original
+          label: NumPy
+          slug: numpy
+        - &ref_35
+          type: dev
+          value: scikitlearn:original
+          label: Scikit Learn
+          slug: scikitlearn
+        - &ref_36
+          type: dev
+          value: tensorflow:original
+          label: TensorFlow
+          slug: tensorflow
+        - &ref_37
+          type: dev
+          value: pytorch:original
+          label: PyTorch
+          slug: pytorch
+      show: true
+      priority: 3
+    - name: Databases
+      description: null
+      type: tech
+      icons:
+        - *ref_24
+        - type: dev
+          value: sqlite:original
+          label: SQLite
+          slug: sqlite
+        - *ref_25
+        - type: dev
+          value: mongodb:original
+          label: MongoDB
+          slug: mongodb
+        - *ref_26
+        - type: dev
+          value: firebase:original
+          label: Firebase
+          slug: firebase
+        - type: dev
+          value: supabase:original
+          label: Supabase
+          slug: supabase
+        - type: dev
+          value: prisma:original
+          label: Prisma
+          slug: prisma
+        - *ref_27
+        - type: dev
+          value: oracle:original
+          label: Oracle
+          slug: oracle
+        - type: dev
+          value: microsoftsqlserver:original
+          label: MSSQL
+          slug: microsoftsqlserver
+        - type: dev
+          value: dynamodb:original
+          label: DynamoDB
+          slug: dynamodb
+        - type: dev
+          value: elasticsearch:original
+          label: Elasticsearch
+          slug: elasticsearch
+        - type: dev
+          value: cassandra:original
+          label: Cassandra
+          slug: cassandra
+        - type: dev
+          value: realm:original
+          label: Realm
+          slug: realm
+      show: true
+      priority: 4
+    - name: Cloud & DevOps
+      description: null
+      type: tech
+      icons:
+        - &ref_38
+          type: dev
+          value: docker:original
+          label: Docker
+          slug: docker
+        - &ref_40
+          type: dev
+          value: amazonwebservices:line-wordmark
+          label: AWS
+          slug: amazonwebservices
+        - type: dev
+          value: googlecloud:original
+          label: Google Cloud
+          slug: googlecloud
+        - type: dev
+          value: heroku:original
+          label: Heroku
+          slug: heroku
+        - type: dev
+          value: vercel:original
+          label: Vercel
+          slug: vercel
+        - *ref_12
+        - type: simple
+          value: render
+          label: Render
+          slug: render
+        - type: dev
+          value: digitalocean:original
+          label: DigitalOcean
+          slug: digitalocean
+        - *ref_28
+        - type: dev
+          value: cloudflare:original
+          label: Cloudflare
+          slug: cloudflare
+        - type: dev
+          value: azure:original
+          label: Azure
+          slug: azure
+        - type: dev
+          value: kubernetes:original
+          label: Kubernetes
+          slug: kubernetes
+        - type: dev
+          value: terraform:original
+          label: Terraform
+          slug: terraform
+        - type: dev
+          value: ansible:original
+          label: Ansible
+          slug: ansible
+        - type: dev
+          value: jenkins:original
+          label: Jenkins
+          slug: jenkins
+        - type: dev
+          value: circleci:plain-wordmark
+          label: CircleCI
+          slug: circleci
+        - type: dev
+          value: travis:original
+          label: Travis CI
+          slug: travis
+      show: true
+      priority: 5
+    - name: Tools
+      description: null
+      type: tech
+      icons:
+        - &ref_43
+          type: dev
+          value: git:original
+          label: Git
+          slug: git
+        - type: dev
+          value: github:original
+          label: GitHub
+          slug: github
+        - type: dev
+          value: gitlab:original
+          label: GitLab
+          slug: gitlab
+        - *ref_14
+        - *ref_18
+        - type: dev
+          value: yarn:original
+          label: Yarn
+          slug: yarn
+        - type: dev
+          value: composer:original
+          label: Composer
+          slug: composer
+        - *ref_15
+        - *ref_21
+        - type: dev
+          value: apache:original
+          label: Apache
+          slug: apache
+        - type: dev
+          value: nginx:original
+          label: Nginx
+          slug: nginx
+        - type: dev
+          value: webpack:original
+          label: Webpack
+          slug: webpack
+        - type: dev
+          value: sentry:original
+          label: Sentry
+          slug: sentry
+        - type: dev
+          value: vite:original
+          label: Vite
+          slug: vite
+        - &ref_30
+          type: dev
+          value: figma:original
+          label: Figma
+          slug: figma
+        - &ref_31
+          type: dev
+          value: canva:original
+          label: Canva
+          slug: canva
+        - *ref_29
+        - type: dev
+          value: slack:original
+          label: Slack
+          slug: slack
+        - type: dev
+          value: trello:original
+          label: Trello
+          slug: trello
+        - type: dev
+          value: jira:original
+          label: Jira
+          slug: jira
+        - type: dev
+          value: vscode:original
+          label: VSCode
+          slug: vscode
+        - type: dev
+          value: intellij:original
+          label: IntelliJ
+          slug: intellij
+        - type: dev
+          value: androidstudio:original
+          label: Android Studio
+          slug: androidstudio
+        - type: dev
+          value: xcode:original
+          label: Xcode
+          slug: xcode
+        - type: dev
+          value: pycharm:original
+          label: PyCharm
+          slug: pycharm
+        - type: dev
+          value: webstorm:original
+          label: WebStorm
+          slug: webstorm
+      show: true
+      priority: 6
+    - name: Design
+      description: null
+      type: tech
+      icons:
+        - *ref_30
+        - *ref_31
+      show: true
+      priority: 7
+    - name: AI / Data Science
+      description: null
+      type: tech
+      icons:
+        - *ref_32
+        - *ref_33
+        - *ref_34
+        - *ref_35
+        - *ref_36
+        - *ref_37
+      show: true
+      priority: 8
+  soft:
+    - name: Technical Strategy
+      description: >-
+        I don't just solve tickets; I dismantle legacy bottlenecks. I specialise
+        in mapping technical debt and architecting scalable migrations that
+        align with long-term business growth.
+      type: soft
+      icons: []
+      show: true
+      priority: 0
+    - name: Open Source Advocacy
+      description: >-
+        Author of multiple Dart and Go packages. I focus on Developer Experience
+        (DX), creating tools that simplify validation, state management, and
+        internationalisation for the global dev community.
+      type: soft
+      icons: []
+      show: true
+      priority: 0
+    - name: Web Engineer
+      description: >-
+        As a Web Engineer, I architect and implement scalable web applications,
+        translating complex requirements into clean, efficient, and maintainable
+        code. My focus is on delivering user-centric solutions that drive
+        tangible business results through optimized performance and seamless
+        integration.
+      type: soft
+      icons: []
+      show: true
+      priority: 0
+experience:
+  - slug: glover
+    company_name: Glover Techstars
+    role: Senior Backend Developer
+    start_date: '2021-02-01'
+    end_date: '2026-01-01'
+    description: >-
+      Glover is a digital marketplace enabling users to trade gift cards,
+      airtime, and digital assets.
+    location: Remote
+    duties:
+      - >-
+        Architected a zero-downtime migration from Laravel v7 to v12, ensuring
+        continuous service for a leading Nigerian fintech.
+      - >-
+        Engineered an OCR-powered validation engine with AES-256 encryption to
+        mitigate gift card fraud.
+      - >-
+        Developed a high-concurrency rewards engine and custom anomaly detection
+        system for login security.
+      - >-
+        Integrated Freshdesk API for automated ticketing, directly improving
+        customer resolution speed and retention.
+      - >-
+        Contributed to the development of an automated airtime-to-cash
+        conversion platform.
+      - Enhanced the security and performance of the Giftcard system.
+      - >-
+        Built and maintained multiple promotional systems, including: Ambassador
+        programme, Customer rewards, Referral system, Marketing promo engine,
+        Spin-the-wheel game, and Voucher issuance.
+      - >-
+        Helped build an in-house reward currency tied to user milestones and
+        engagement.
+      - >-
+        Optimised and upgraded the bill payment infrastructure for better
+        reliability.
+      - >-
+        Worked on implementing cross-country KYC processes to support
+        international user onboarding.
+      - >-
+        Contributed to authentication upgrades and platform-wide security
+        improvements.
+    roles:
+      - role: Senior Backend Developer
+        technologies:
+          - *ref_10
+          - *ref_11
+          - *ref_25
+          - *ref_26
+          - *ref_38
+          - *ref_14
+    show: true
+    priority: 0
+  - slug: patricia
+    company_name: Patricia Technologies
+    role: Senior Backend Developer
+    start_date: '2020-01-01'
+    end_date: '2021-01-01'
+    description: >-
+      Patricia is a Nigerian cryptocurrency and digital asset company known for
+      enabling users to buy, sell, and store digital currencies securely.
+    location: Remote
+    duties:
+      - Optimised core infrastructure to enhance backend throughput.
+      - >-
+        Refactored and enhanced legacy codebase for better maintainability and
+        scalability.
+      - >-
+        Contributed to the development of an internal admin dashboard for
+        operational efficiency.
+    roles:
+      - role: Senior Backend Developer
+        technologies:
+          - *ref_5
+          - *ref_39
+          - *ref_3
+          - *ref_10
+          - *ref_25
+          - *ref_26
+          - *ref_40
+          - *ref_38
+    show: true
+    priority: 0
+  - slug: khora-digitals
+    company_name: Khora Digitals
+    role: Remote Software Engineer
+    start_date: '2019-01-01'
+    end_date: '2019-03-31'
+    description: >-
+      Specialised 3-month contract focused on rapid web solution delivery and
+      framework optimisation.
+    location: Remote
+    duties:
+      - >-
+        Developed a total of two 2 web solutions to client companies in my one
+        month contract period
+      - >-
+        Worked remotely with 2 existing staffs to optimize 2 existing web based
+        projects using the company's in-house framework
+    roles:
+      - role: Remote Software Engineer
+        technologies:
+          - *ref_10
+          - *ref_24
+          - *ref_0
+          - *ref_1
+          - *ref_2
+          - *ref_41
+    show: true
+    priority: 0
+  - slug: mayor-tech
+    company_name: Mayor Tech Solutions
+    role: Lead Software Engineer
+    start_date: '2018-01-01'
+    end_date: '2019-01-01'
+    description: >-
+      Mayor Technology is a web based information technology company specialized
+      in transforming in-house project idea to web and mobile applications.
+    location: Delta State, Nigeria
+    duties:
+      - Established a team of 5 skilled developers
+      - Built the company's internal use dashboard
+      - >-
+        Solely developed in-house projects for the company which includes a
+        developer community platform, blog applications, video download sites,
+        church advertorials and event management applications, e-commerce
+        application and Job Agencies
+      - Partnered in over 17 web based projects as contract developers
+    roles:
+      - role: Lead Software Engineer
+        technologies:
+          - *ref_10
+          - *ref_11
+          - *ref_2
+          - *ref_19
+          - *ref_42
+          - *ref_24
+          - *ref_26
+          - *ref_43
+    show: true
+    priority: 0
+  - slug: flexpert
+    company_name: Flexpert
+    role: Intern Backend Engineer
+    start_date: '2016-01-01'
+    end_date: '2018-01-01'
+    description: >-
+      Flyte iSystems is a web based information technology company situate in
+      Benin City of Edo State, Nigeria.
+    location: Benin, Edo State, Nigeria
+    duties:
+      - Gained 2 years of experience in building backend solutions
+      - >-
+        Developed a total of 4 prototype apps which lead to 2 projects to the
+        company
+      - >-
+        Developed from scratch a web platform for fund management as a lead
+        developer in a team of 2 developers
+      - >-
+        Wrote and maintained interfaces with 3rd party providers including
+        payment gateways, job agencies and news platforms
+      - More than 5 custom apps created for clients
+      - >-
+        Developed websites for blogs, job agency, e-commerce, social media as
+        well as in-house projects using Core PHP and MySQL with Ajax
+      - >-
+        Attained certificate of Grand Team Player by working ceaselessly and
+        peacefully with a team of 14 developers in fields of Web Development and
+        Mobile App Development
+      - >-
+        Worked in a team of 2 to build the Staff Management Console, Company
+        Academy Student Tracking Panel, and Staff Task Allocation Panel of the
+        company
+    roles:
+      - role: Intern Backend Engineer
+        technologies:
+          - *ref_10
+          - *ref_2
+          - *ref_24
+    show: true
+    priority: 0
+education:
+  - school: Miva University
+    degree: Bachelor of Science in Computer Science
+    start_year: 2025
+    end_year: 2029
+    achievements: []
+    location: Lagos, Nigeria
+    show: true
+    priority: 0
+  - school: Sololearn Inc.
+    degree: Software Engineering Basics
+    start_year: 2017
+    end_year: 2017
+    achievements:
+      - >-
+        Introduction to programming in C++: Building command line apps and
+        terminal games using C++ as a means of skill development
+      - >-
+        General problem solving using Python: Created algorithms to render help
+        in fields spanning across Science and Day to Day living
+      - >-
+        HTML5, CSS3 and JavaScript: Using HTML to build static and beautified
+        web pages
+      - >-
+        Backend Web Development with PHP and MySQL: Employed the use of PHP and
+        MySQL in cooperation with previously attained Skills to develop Dynamic
+        Web Pages
+    location: Remote
+    show: true
+    priority: 0
+  - school: Flexpert iSystems (Flyte) Academy
+    degree: Advanced Backend Web Engineering
+    start_year: 2018
+    end_year: 2018
+    achievements:
+      - >-
+        jQuery, XML, JSON, Ajax: Made use of Ajax Technologies to develop Web
+        Solutions as a Backend Web Developer working collaboratively with a
+        Co-Staff handling Frontend and UIX Designs
+      - >-
+        MySQL and Database Administration: I functioned as the Database
+        Administrator
+      - >-
+        Server Administrator: I was put in charge of the server on which our
+        projects were hosted, and also the general server on which the firm
+        projects were hosted
+    location: Benin, Edo State, Nigeria
+    show: true
+    priority: 0
+  - school: Mayor Tech Solutions, Warri
+    degree: Advanced Web Engineering
+    start_year: 2019
+    end_year: 2019
+    achievements:
+      - >-
+        Bootstrap: Advanced to building beautiful web pages/sites using the
+        Bootstrap
+      - >-
+        PHP 7: Learnt effectively on the New APIs and functionalities offered by
+        PHP 7 in building more secure and well optimized complex web programs
+      - >-
+        WordPress: Familiarized myself with building E-Commerce, Landing Page
+        Apps and Blog Webapps using WordPress for speed and efficiency
+      - >-
+        VueJS: Made effective and proficient use of VueJS, a JavaScript
+        Framework, in building well optimized web applications at the front end
+      - >-
+        Modern Web Design: Adopted the use of modern technologies for building
+        robust and highly scalable and slick web applications using NuxtJS,
+        Vuetify, VueSax
+    location: Delta State, Nigeria
+    show: true
+    priority: 0
+mentorship:
+  benefits:
+    - title: Code Reviews
+      description: >-
+        Get detailed feedback on your code, learn best practices, and improve
+        your coding skills.
+      icon: /icons/mentorship/code-reviews.svg
+    - title: Technical Guidance
+      description: >-
+        Navigate complex technical challenges with expert advice and practical
+        solutions.
+      icon: /icons/mentorship/technical-guidance.svg
+    - title: Career Development
+      description: >-
+        Get advice on career paths, job searching, interviews, and professional
+        growth.
+      icon: /icons/mentorship/career-development.svg
+    - title: Learning Resources
+      description: >-
+        Access curated learning materials, tutorials, and resources tailored to
+        your goals.
+      icon: /icons/mentorship/learning-resources.svg
+    - title: Networking
+      description: >-
+        Connect with other professionals and expand your network in the tech
+        community.
+      icon: /icons/mentorship/networking.svg
+    - title: Regular Check-ins
+      description: >-
+        Stay accountable with regular sessions to discuss progress, challenges,
+        and next steps.
+      icon: /icons/mentorship/regular-check-ins.svg
+  process:
+    - title: Application Review
+      description: >-
+        After submitting your application, I'll review it within 3-5 business
+        days.
+    - title: Initial Call
+      description: >-
+        If your application is a good fit, we'll schedule an initial call to
+        discuss your goals and expectations.
+    - title: Create a Plan
+      description: >-
+        Together, we'll create a personalized learning plan based on your
+        current skills and goals.
+    - title: Regular Sessions
+      description: >-
+        We'll meet regularly (frequency based on your commitment level) to work
+        through challenges and track progress.
+hobbies:
+  - name: Reading
+    color: red
+    percentage: 80
+    show: true
+    priority: 0
+  - name: Coding
+    color: orange
+    percentage: 95
+    show: true
+    priority: 0
+  - name: Social Activities
+    color: yellow
+    percentage: 50
+    show: true
+    priority: 0
+  - name: Singing
+    color: blue
+    percentage: 78
+    show: true
+    priority: 0
+  - name: Sleeping
+    color: indigo
+    percentage: 30
+    show: true
+    priority: 0
+  - name: Exercise
+    color: green
+    percentage: 60
+    show: true
+    priority: 0
+testimonials:
+  - person:
+      name: Tovia Amadi
+      titles:
+        - Digital Marketer | Product Manager
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Tovia-Amadi_rml20q
+      biography: >-
+        A dedicated digital marketing and design professional who blends
+        creative visions with practical business insights. 
+      profile_link: https://toviaamadi.com
+    review: >-
+      Aghogho Meyoron is an incredible Fullstack developer whose talents never
+      ceases to amaze me, from crafting seamless user experiences to building
+      robust backend systems. 
+
+      He pours skills and passion into every line of code. 
+
+      Beyond his tech brilliance, he is sharp witted, supportive, dedicated,
+      innovative, and consistently delivers high quality work. 
+    rating: 5
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Abdusalam Ajayi
+      titles:
+        - Founder - Weandel LLC
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Abdusalam-Ajayi_kk6duy.jpg
+      biography: ''
+      profile_link: https://www.aj-playground.org
+    review: >-
+      Creative, resourceful, and a great team-player. He is good at what he does
+      and always delivers in line with his words
+    rating: 5
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Adekunle Abdul-Roqeeb Adedoyin
+      titles:
+        - Graphics || UI/UX Designer
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Adekunle-Adedoyin_qv8rtk.jpg
+      biography: ''
+      profile_link: null
+    review: >-
+      By far, Mayor is one of the best people I've met in this tech space and he
+      has pushed me to always do better, he never looks down on anyone, even
+      when he's standing his grounds, he is passionate about his work and never
+      hesitates to lend a helping hand. Mayor has built a niche of trust around
+      himself, and his humbleness is the top of it all
+    rating: 5
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Biodun Bamigboye
+      titles:
+        - Head Developer - EPortal Net
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Biodun-Bamigboye_mipsga.jpg
+      biography: ''
+      profile_link: null
+    review: >-
+      Young Mayor is one of the surviving defenders of PHP on earth. He is a
+      professional and he delivers a job well done
+    rating: 3
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Boluwaji Akinsefunmi
+      titles:
+        - Freelance Web and Mobile Developer
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Boluwaji-Akinsefunmi_fnjtch.jpg
+      biography: >-
+        Your ever-whining-dev, mobile app developer at Lexus Technologies Ltd.,
+        Lagos
+      profile_link: https://iammastercraft.github.io
+    review: >-
+      Agba Developer, PHP Lord, Back-end Beast, Heroku Specialist API
+      Demystifier, All-Round Programmer... The titles he posses are just
+      numerous, he is a problem solver that pays keen attention to little
+      details that others might ignore!
+    rating: 5
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Olaifa Boluwatife
+      titles:
+        - Freelance Senior Software Developer
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Olaifa-Boluwatife_vggtzb.jpg
+      biography: Software engineer focused on solving solutions.
+      profile_link: https://github.com/grandbusta
+    review: Mayor is always passionate of whatever task or job he is working on
+    rating: 4
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Benjamin Onuoha
+      titles:
+        - Branding Consultant
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Benjamin-Onuoha_f5wjgh.jpg
+      biography: ''
+      profile_link: null
+    review: >-
+      I have a great partnership with Mayor. He is a proficient developer and I
+      can confidently recommend him to anyone who needs a dab hand
+    rating: 4
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Igbokwe Laurence
+      titles:
+        - Senior Software Engineer
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/default_msqrmt
+      biography: >-
+        I am a prolific forger of impressive products, a creative Software
+        engineer with more than 3 years experience in delivering result -
+        oriented brands and creative solutions to meet business needs
+      profile_link: https://www.linkedin.com/in/francis-igbokwe-166597152/
+    review: Super smart, wonderful engineer and person
+    rating: 5
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Chinaza Obiekwe
+      titles:
+        - Project Manager
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Chinaza-Obiekwe_my83n9.jpg
+      biography: I love managing people
+      profile_link: https://www.linkedin.com/in/chinaza-obiekwe-aa405310b
+    review: A focused and determined person
+    rating: 4
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Mohammed Adekunle
+      titles:
+        - Software Developer
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Mohammed-Adekunle_hdelxh.jpg
+      biography: >-
+        A software engineer with specialization in building and deploying
+        server-side and system software. I work with PHP, Node(TS) and C/C++. I
+        also work on web apps with Vue, Nuxt and Webpack.
+      profile_link: https://mohammedadekunle.com.ng
+    review: >-
+      He is a talented and reliable software engineer.I have worked on several
+      projects with him and I can say he has proven more than competent to
+      deliver excellent results all within reasonable time.
+    rating: 5
+    type: colleague
+    show: true
+    priority: 0
+  - person:
+      name: Chuba Samuel
+      titles:
+        - Medical student
+      avatar_url: >-
+        https://res.cloudinary.com/meyoron-aghogho/image/upload/people/Chuba-Samuel_pb7hss.jpg
+      biography: Nothing is free, but ALL is possible, IF God is on my side.
+      profile_link: https://web.facebook.com/jeremiahdavid.samuel
+    review: >-
+      He is a young achiever and a source of lively inspiration to me everyday.
+      An ardent fan of Laravel and anything PHP.
+    rating: 4
+    type: colleague
+    show: true
+    priority: 0
+faq:
+  - question: What's the best way to reach you?
+    answer: >-
+      Feel free to use either the contact form above or send me a direct email.
+      I typically respond within 24-48 hours.
+  - question: Do you take on freelance projects?
+    answer: >-
+      Yes, I'm open to freelance opportunities. Please provide details about
+      your project in the contact form, and I'll get back to you with my
+      availability.
+  - question: Are you available for consulting?
+    answer: >-
+      Absolutely! I offer consulting services for web development, architecture,
+      and technical strategy. Reach out to discuss your needs.
+  - question: How long does it take to hear back?
+    answer: >-
+      I strive to respond to all inquiries within 24-48 hours during business
+      days. For urgent matters, please mention it in your message.

@@ -5,26 +5,16 @@ export const profile: Profile = {
   titles: ['Software Engineer', 'Tech Mentor', 'Technical Writer'],
   avatar_url:
     'https://res.cloudinary.com/meyoron-aghogho/image/upload/v1730326249/closeups/dawn-ai-best_ozyciu.jpg',
-  biography: `<div>
-    Hi, I'm <b class='text-primary'>Aghogho Meyoron</b>, a seasoned full-stack
-    software engineer specializing in crafting and overseeing web applications.
-    With a proven history of bringing projects to life, I handle everything
-    from inception to planning, wireframing, user experience (UX) design,
-    coding, SEO, optimizations, and ongoing maintenance. My work embodies
-    modernity and adheres to industry standards, featuring rigorous unit and
-    feature testing and efficient coding to guarantee a flawless user experience.
-    My ultimate aim is to deliver a seamless and efficient user journey for my clients.
-  </div>`,
+  biography: `<div>I am <b class='text-primary'>Aghogho Meyoron</b>, a Software Architect focused on high-integrity systems. I bridge the gap between complex backend engineering and seamless user experience, specializing in fintech infrastructure, AI-driven automation, and developer tooling. My work is defined by architectural rigour, automated testing, and a relentless drive for system efficiency.</div>`,
   profile_link: null,
   notes: {
-    tagline: 'Building the future, one line at a time...',
+    tagline: 'Architecting resilient systems and the tools that build them.',
     persona: 'Problem Solver, Gamer and Swimmer.',
     about:
-      'Innovative Software Engineer with a passion for building scalable, user-centric solutions. Experienced in full-stack development, I specialize in crafting robust web applications and intuitive user interfaces. I thrive in collaborative environments, leveraging technology to solve complex real-world problems and drive impactful results.',
+      'Strategic Software Engineer with a track record in scaling fintech platforms and authoring open-source developer tools. I specialise in building robust, audited backends and integrating Generative AI into practical business workflows.',
   },
   contact: {
     email: 'youngmayor.dev@gmail.com',
-    phone: '+2348075178485',
     message: 'Lets work together!',
   },
   copyright: {

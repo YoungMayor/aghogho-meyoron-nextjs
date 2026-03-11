@@ -1,6 +1,6 @@
 import { POST } from '@/app/api/contact/route';
 import { generateAuthToken } from '@/lib/utils/api-auth';
-import { sendTelegramNotification } from '@/lib/utils/telegram';
+import { contactFormTelegramService } from '@/lib/services/telegram/ContactFormTelegramService';
 import connectDB from '@/lib/db/mongodb';
 
 // Mock dependencies
@@ -10,8 +10,10 @@ jest.mock('@/lib/db/mongodb', () => ({
   default: jest.fn(),
 }));
 
-jest.mock('@/lib/utils/telegram', () => ({
-  sendTelegramNotification: jest.fn(),
+jest.mock('@/lib/services/telegram/ContactFormTelegramService', () => ({
+  contactFormTelegramService: {
+    sendNotification: jest.fn(),
+  },
 }));
 
 jest.mock('@/lib/utils/rate-limit', () => ({
@@ -20,7 +22,6 @@ jest.mock('@/lib/utils/rate-limit', () => ({
     resetInSeconds: 0,
     remaining: 10,
   })),
-  getClientIp: jest.fn(() => '127.0.0.1'),
   RATE_LIMITS: {
     FORM_SUBMISSION: { maxRequests: 10, windowSeconds: 60 },
   },
@@ -42,7 +43,7 @@ describe('Contact API', () => {
     process.env.INTERNAL_API_SECRET = validSecret;
     // const connect = require('@/lib/db/mongodb').default;
     (connectDB as jest.Mock).mockResolvedValue(true);
-    (sendTelegramNotification as jest.Mock).mockResolvedValue(true);
+    (contactFormTelegramService.sendNotification as jest.Mock).mockResolvedValue(true);
     mockCreate.mockResolvedValue({ _id: 'new-id' });
   });
 
@@ -106,7 +107,7 @@ describe('Contact API', () => {
       expect(res.status).toBe(200);
       expect(data.success).toBe(true);
       expect(mockCreate).toHaveBeenCalled();
-      expect(sendTelegramNotification).toHaveBeenCalled();
+      expect(contactFormTelegramService.sendNotification).toHaveBeenCalled();
     });
 
     it('should handle database errors gracefully', async () => {

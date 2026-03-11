@@ -1,4 +1,4 @@
-import { iconUrl } from '@/components/ui/Icon';
+import { type Icon } from '@/lib/types';
 import { technicalSkills } from '@/lib/data/skills';
 import { NextResponse } from 'next/server';
 
@@ -20,6 +20,18 @@ function escapeXml(unsafe: string) {
     }
     return c;
   });
+}
+
+function iconUrl({ type, value }: Icon) {
+  if (type === 'dev') {
+    const iconName = value.split(':')[0];
+    const folder = iconName.startsWith('dot-net') ? 'dot-net' : iconName;
+    const variant = value.split(':')[1] || 'original';
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${folder}/${iconName}-${variant}.svg`;
+  } else if (type === 'simple') {
+    return `https://cdn.simpleicons.org/${value}`;
+  }
+  return null;
 }
 
 async function fetchAndEncodeIcon(url: string | null): Promise<string> {

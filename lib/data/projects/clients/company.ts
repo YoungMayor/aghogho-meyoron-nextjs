@@ -1,6 +1,7 @@
 import { Project } from '@/lib/types';
 import { techIcons } from '../../icons';
 import { cloudinaryImage } from '@/lib/utils/helpers';
+import { segments, stackRoles } from '../constants';
 
 export const companyProjects: Project[] = [
   {
@@ -19,16 +20,22 @@ export const companyProjects: Project[] = [
     ],
     icons: [
       techIcons.Laravel,
+      techIcons.PHP,
       techIcons.PostgreSQL,
       techIcons.MariaDB,
       techIcons.Redis,
       techIcons.NODEJS,
       techIcons.Postman,
       techIcons.NuxtJS,
+      techIcons.VueJS,
       techIcons.TailwindCSS,
+      techIcons.HTML5,
+      techIcons.CSS3,
+      techIcons.JavaScript,
+      techIcons.TypeScript,
     ],
-    type: 'web-app',
-    owner: 'client',
+    segment: [segments.fintech],
+    stack_role: [stackRoles.lead, stackRoles.backend],
     demo_link: 'https://gloverapp.co',
     repo_link: null,
     images: [cloudinaryImage.project('glover-landing-page')],
@@ -42,9 +49,9 @@ export const companyProjects: Project[] = [
     description:
       "Eytan is a hospital staff management system developed for tracking patients' hospital records and managing staff tasks. Please note that information about this project is protected by a non-disclosure agreement (NDA) from my previous employer.",
     features: ['Staff Management', 'Stock Management', 'Admin Console', 'Task schedule management'],
-    icons: [techIcons.JavaScript, techIcons.PHP],
-    type: 'other',
-    owner: 'client',
+    icons: [techIcons.HTML5, techIcons.CSS3, techIcons.JavaScript, techIcons.PHP, techIcons.MySQL],
+    segment: [segments.healthtech],
+    stack_role: [stackRoles.fullstack],
     demo_link: null,
     repo_link: null,
     images: [],
@@ -63,9 +70,18 @@ export const companyProjects: Project[] = [
       'Utilized 3rd Party payment gateways',
       'Administrative Management',
     ],
-    icons: [techIcons.VueJS, techIcons.jQuery, techIcons.PHP, techIcons.Python],
-    type: 'api',
-    owner: 'client',
+    icons: [
+      techIcons.HTML5,
+      techIcons.CSS3,
+      techIcons.JavaScript,
+      techIcons.VueJS,
+      techIcons.jQuery,
+      techIcons.PHP,
+      techIcons.MySQL,
+      techIcons.Python,
+    ],
+    segment: [segments.hr],
+    stack_role: [stackRoles.backend],
     demo_link: null,
     repo_link: null,
     images: [],

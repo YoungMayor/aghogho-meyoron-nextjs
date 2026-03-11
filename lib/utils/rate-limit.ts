@@ -106,51 +106,27 @@ export function checkRateLimit(identifier: string, config: RateLimitConfig): Rat
   };
 }
 
-/**
- * Get the client's IP address from the request
- * @param request - Next.js request object
- * @returns IP address or 'unknown'
- */
-export function getClientIp(request: Request): string {
-  // Check various headers for the real IP address
-  const forwardedFor = request.headers.get('x-forwarded-for');
-  if (forwardedFor) {
-    // x-forwarded-for can contain multiple IPs, get the first one
-    return forwardedFor.split(',')[0].trim();
-  }
-
-  const realIp = request.headers.get('x-real-ip');
-  if (realIp) {
-    return realIp;
-  }
-
-  const cfConnectingIp = request.headers.get('cf-connecting-ip');
-  if (cfConnectingIp) {
-    return cfConnectingIp;
-  }
-
-  return 'unknown';
+export interface RATE_LIMIT_CONFIG {
+  maxRequests: number;
+  windowSeconds: number;
 }
 
 /**
  * Default rate limit configurations for different endpoints
  */
-export const RATE_LIMITS = {
-  // Strict limit for form submissions (contact, mentorship)
+export const RATE_LIMITS: Record<string, RATE_LIMIT_CONFIG> = {
   FORM_SUBMISSION: {
     maxRequests: 3,
-    windowSeconds: 300, // 5 minutes
+    windowSeconds: 300,
   },
 
-  // Moderate limit for API data endpoints
   API_READ: {
     maxRequests: 60,
-    windowSeconds: 60, // 1 minute
+    windowSeconds: 60,
   },
 
-  // Very strict limit for authentication attempts
   AUTH: {
     maxRequests: 5,
-    windowSeconds: 900, // 15 minutes
+    windowSeconds: 900,
   },
-} as const;
+};

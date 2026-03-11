@@ -1,6 +1,6 @@
 // Utility Types
 export interface Icon {
-  type: 'devicon' | 'simpleicon';
+  type: 'dev' | 'simple';
   value: string;
   label: string;
   slug?: string;
@@ -33,7 +33,7 @@ export interface Profile {
   };
   contact: {
     email: string;
-    phone: string;
+    phone?: string;
     message: string;
   };
   copyright: {
@@ -55,6 +55,7 @@ export interface AcademicRecord extends HasVisibility {
 
 // Career History
 export interface CareerItem extends HasVisibility {
+  slug: string;
   company_name: string;
   role: string;
   start_date: string; // ISO date or "YYYY-MM-DD"
@@ -62,25 +63,23 @@ export interface CareerItem extends HasVisibility {
   description: string;
   location: string;
   duties: string[];
+  roles?: {
+    role: string;
+    technologies: Icon[];
+  }[];
 }
+
+import { ProjectSegment, ProjectRole } from './data/projects/constants';
 
 // Projects
 export interface Project extends HasVisibility {
-  slug: string | null; // For routing to individual project pages
+  slug: string;
   name: string;
   description: string;
   features: string[];
   icons: Icon[];
-  type:
-    | 'api'
-    | 'cli'
-    | 'desktop-app'
-    | 'mobile-app'
-    | 'package'
-    | 'portfolio'
-    | 'web-app'
-    | 'other';
-  owner: 'personal' | 'client' | 'open-source' | 'package' | 'other';
+  segment: ProjectSegment[];
+  stack_role: ProjectRole[];
   demo_link: string | null;
   repo_link: string | null;
   images: string[]; // First image would be used as the main image

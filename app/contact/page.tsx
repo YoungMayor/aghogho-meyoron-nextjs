@@ -43,7 +43,7 @@ export default function ContactPage() {
   return (
     <main className="flex-1">
       {/* Hero Section */}
-      <section className="py-16 px-4 bg-gradient-to-b from-secondary/50 to-background">
+      <section className="py-16 px-4 bg-linear-to-b from-secondary/50 to-background">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 {/* Email */}
                 <Card padding="md">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
+                    <div className="shrink-0 w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
                       <MailIcon className="w-6 h-6" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 {/* Phone */}
                 <Card padding="md">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
+                    <div className="shrink-0 w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
                       <PhoneIcon className="w-6 h-6" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -138,7 +138,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-12 px-4 bg-gradient-to-b from-background to-secondary/30">
+      <section className="py-12 px-4 bg-linear-to-b from-background to-secondary/30">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
 

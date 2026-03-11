@@ -1,3 +1,6 @@
+import { clientEnv } from '@/lib/env/client';
+import { serverEnv } from '@/lib/env/server';
+
 export async function getRecaptchaToken(action: string): Promise<string> {
   const win = window as typeof window & {
     grecaptcha?: {
@@ -9,7 +12,7 @@ export async function getRecaptchaToken(action: string): Promise<string> {
     throw new Error('reCAPTCHA not loaded');
   }
 
-  return await win.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '', {
+  return await win.grecaptcha.execute(clientEnv.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '', {
     action,
   });
 }
@@ -21,7 +24,7 @@ export async function verifyRecaptcha(token: string): Promise<{
   success: boolean;
   score: number;
 }> {
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  const secretKey = serverEnv.RECAPTCHA_SECRET_KEY;
 
   if (!secretKey) {
     throw new Error('ReCAPTCHA secret key not configured');

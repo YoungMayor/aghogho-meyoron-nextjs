@@ -1,61 +1,7 @@
-import {
-  isValidEmail,
-  isValidPhone,
-  isValidLength,
-  validateContactForm,
-  validateMentorshipForm,
-  sanitizeInput,
-} from '@/lib/utils/validation';
+import { contactFormSchema, mentorshipFormSchema, sanitizeInput } from '@/lib/utils/validation';
 
 describe('Validation Utility Functions', () => {
-  describe('isValidEmail', () => {
-    it('should validate correct email addresses', () => {
-      expect(isValidEmail('test@example.com')).toBe(true);
-      expect(isValidEmail('user.name@domain.co.uk')).toBe(true);
-      expect(isValidEmail('user+tag@example.com')).toBe(true);
-    });
-
-    it('should reject invalid email addresses', () => {
-      expect(isValidEmail('invalid')).toBe(false);
-      expect(isValidEmail('invalid@')).toBe(false);
-      expect(isValidEmail('@invalid.com')).toBe(false);
-      expect(isValidEmail('invalid@domain')).toBe(false);
-      expect(isValidEmail('')).toBe(false);
-    });
-  });
-
-  describe('isValidPhone', () => {
-    it('should validate correct phone numbers', () => {
-      expect(isValidPhone('+1234567890')).toBe(true);
-      expect(isValidPhone('(555) 123-4567')).toBe(true);
-      expect(isValidPhone('1234567890')).toBe(true);
-    });
-
-    it('should reject invalid phone numbers', () => {
-      expect(isValidPhone('abc')).toBe(false);
-      expect(isValidPhone('')).toBe(false);
-    });
-  });
-
-  describe('isValidLength', () => {
-    it('should pass when length is within range', () => {
-      expect(isValidLength('test', 2, 10)).toBe(true);
-      expect(isValidLength('hello', 5, 10)).toBe(true);
-      expect(isValidLength('hi', 2, 5)).toBe(true);
-    });
-
-    it('should fail when length is outside range', () => {
-      expect(isValidLength('hi', 3, 10)).toBe(false);
-      expect(isValidLength('hello world', 1, 5)).toBe(false);
-      expect(isValidLength('', 1, 10)).toBe(false);
-    });
-
-    it('should handle edge cases', () => {
-      expect(isValidLength('  test  ', 2, 10)).toBe(true); // trims spaces
-    });
-  });
-
-  describe('validateContactForm', () => {
+  describe('contactFormSchema', () => {
     it('should pass validation for valid contact form', () => {
       const validData = {
         name: 'John Doe',
@@ -64,9 +10,8 @@ describe('Validation Utility Functions', () => {
         message: 'This is a test message that is long enough to pass validation',
       };
 
-      const result = validateContactForm(validData);
-      expect(result.isValid).toBe(true);
-      expect(result.errors).toHaveLength(0);
+      const result = contactFormSchema.safeParse(validData);
+      expect(result.success).toBe(true);
     });
 
     it('should fail validation for invalid name', () => {
@@ -77,9 +22,11 @@ describe('Validation Utility Functions', () => {
         message: 'This is a test message that is long enough to pass validation',
       };
 
-      const result = validateContactForm(invalidData);
-      expect(result.isValid).toBe(false);
-      expect(result.errors.some((e) => e.field === 'name')).toBe(true);
+      const result = contactFormSchema.safeParse(invalidData);
+      expect(result.success).toBe(false);
+      if (!result.success) {
+        expect(result.error.issues.some((i) => i.path.includes('name'))).toBe(true);
+      }
     });
 
     it('should fail validation for invalid email', () => {
@@ -90,9 +37,11 @@ describe('Validation Utility Functions', () => {
         message: 'This is a test message that is long enough to pass validation',
       };
 
-      const result = validateContactForm(invalidData);
-      expect(result.isValid).toBe(false);
-      expect(result.errors.some((e) => e.field === 'email')).toBe(true);
+      const result = contactFormSchema.safeParse(invalidData);
+      expect(result.success).toBe(false);
+      if (!result.success) {
+        expect(result.error.issues.some((i) => i.path.includes('email'))).toBe(true);
+      }
     });
 
     it('should fail validation for short message', () => {
@@ -103,13 +52,15 @@ describe('Validation Utility Functions', () => {
         message: 'Too short',
       };
 
-      const result = validateContactForm(invalidData);
-      expect(result.isValid).toBe(false);
-      expect(result.errors.some((e) => e.field === 'message')).toBe(true);
+      const result = contactFormSchema.safeParse(invalidData);
+      expect(result.success).toBe(false);
+      if (!result.success) {
+        expect(result.error.issues.some((i) => i.path.includes('message'))).toBe(true);
+      }
     });
   });
 
-  describe('validateMentorshipForm', () => {
+  describe('mentorshipFormSchema', () => {
     it('should pass validation for valid mentorship form', () => {
       const validData = {
         name: 'Jane Smith',
@@ -120,9 +71,8 @@ describe('Validation Utility Functions', () => {
         commitment: '10 hours/week',
       };
 
-      const result = validateMentorshipForm(validData);
-      expect(result.isValid).toBe(true);
-      expect(result.errors).toHaveLength(0);
+      const result = mentorshipFormSchema.safeParse(validData);
+      expect(result.success).toBe(true);
     });
 
     it('should pass validation without phone', () => {
@@ -134,8 +84,8 @@ describe('Validation Utility Functions', () => {
         commitment: '10 hours/week',
       };
 
-      const result = validateMentorshipForm(validData);
-      expect(result.isValid).toBe(true);
+      const result = mentorshipFormSchema.safeParse(validData);
+      expect(result.success).toBe(true);
     });
 
     it('should fail validation for invalid phone', () => {
@@ -148,9 +98,11 @@ describe('Validation Utility Functions', () => {
         commitment: '10 hours/week',
       };
 
-      const result = validateMentorshipForm(invalidData);
-      expect(result.isValid).toBe(false);
-      expect(result.errors.some((e) => e.field === 'phone')).toBe(true);
+      const result = mentorshipFormSchema.safeParse(invalidData);
+      expect(result.success).toBe(false);
+      if (!result.success) {
+        expect(result.error.issues.some((i) => i.path.includes('phone'))).toBe(true);
+      }
     });
 
     it('should fail validation for short background', () => {
@@ -162,9 +114,11 @@ describe('Validation Utility Functions', () => {
         commitment: '10 hours/week',
       };
 
-      const result = validateMentorshipForm(invalidData);
-      expect(result.isValid).toBe(false);
-      expect(result.errors.some((e) => e.field === 'background')).toBe(true);
+      const result = mentorshipFormSchema.safeParse(invalidData);
+      expect(result.success).toBe(false);
+      if (!result.success) {
+        expect(result.error.issues.some((i) => i.path.includes('background'))).toBe(true);
+      }
     });
   });
 

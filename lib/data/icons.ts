@@ -1,53 +1,49 @@
 import { Icon } from '../types';
 
 const devicon = (value: string, label: string, variant: string = 'original'): Icon => ({
-  type: 'devicon',
-  value: `${value}-${variant}`,
+  type: 'dev',
+  value: `${value}:${variant}`,
   label,
   slug: value,
 });
 
 const simpleicon = (value: string, label: string): Icon => ({
-  type: 'simpleicon',
+  type: 'simple',
   value,
   label,
   slug: value,
 });
 
-export const techIcons = {
-  // Languages
+export const languagesIcons = {
   HTML5: devicon('html5', 'HTML5'),
   CSS3: devicon('css3', 'CSS3'),
   SASS: devicon('sass', 'SASS'),
   JavaScript: devicon('javascript', 'JavaScript'),
   TypeScript: devicon('typescript', 'TypeScript'),
-  JSON: devicon('json', 'JSON'), // @ai: Add this to technologies
+  JSON: devicon('json', 'JSON'),
   PHP: devicon('php', 'PHP'),
   Python: devicon('python', 'Python'),
   Dart: devicon('dart', 'Dart'),
   CPP: devicon('cplusplus', 'C++'),
   CSharp: devicon('csharp', 'C#'),
-  // Add dotnet
   Go: devicon('go', 'Go'),
   Java: devicon('java', 'Java'),
   Kotlin: devicon('kotlin', 'Kotlin'),
   Swift: devicon('swift', 'Swift'),
   Solidity: devicon('solidity', 'Solidity'),
   Less: devicon('less', 'LESS', 'plain-wordmark'),
-  C: devicon('c', 'C'), // I think I will remove this
+  C: devicon('c', 'C'),
   Ruby: devicon('ruby', 'Ruby'),
   Rust: devicon('rust', 'Rust'),
   SQL: devicon('mysql', 'MySQL'),
-  Lua: devicon('lua', 'Lua'),
+  // Lua: devicon('lua', 'Lua'),
+};
 
-  // Frameworks & Libraries
+export const frameworksIcons = {
   VueJS: devicon('vuejs', 'Vue.js'),
   NuxtJS: devicon('nuxtjs', 'Nuxt.js'),
   React: devicon('react', 'React'),
   NextJS: devicon('nextjs', 'Next.js'),
-  Bootstrap: devicon('bootstrap', 'Bootstrap'),
-  TailwindCSS: devicon('tailwindcss', 'Tailwind CSS'),
-  Vuetify: devicon('vuetify', 'Vuetify'),
   Laravel: devicon('laravel', 'Laravel'),
   NODEJS: devicon('nodejs', 'Node.js'),
   ExpressJS: devicon('express', 'Express.js'),
@@ -55,15 +51,10 @@ export const techIcons = {
   Flutter: devicon('flutter', 'Flutter'),
   ReactNative: devicon('react', 'React Native'),
   Expo: devicon('expo', 'Expo'),
-  jQuery: devicon('jquery', 'jQuery'),
-  GenKit: devicon('googlecloud', 'GenKit'),
-  ChartJS: devicon('chartjs', 'ChartJS'),
   DOTNET: devicon('dot-net', '.NET'),
   Symfony: devicon('symfony', 'Symfony'),
   CakePHP: devicon('cakephp', 'CakePHP'),
   Yii: devicon('yii', 'Yii'),
-  MaterialUI: devicon('materialui', 'Material UI'),
-  Bulma: devicon('bulma', 'Bulma', 'plain'),
   WordPress: devicon('wordpress', 'WordPress'),
   ElectronJS: devicon('electron', 'ElectronJS'),
   Tauri: devicon('tauri', 'Tauri'),
@@ -73,6 +64,17 @@ export const techIcons = {
   Rails: devicon('rails', 'Rails', 'plain-wordmark'),
   FastAPI: devicon('fastapi', 'FastAPI'),
   Flask: devicon('flask', 'Flask'),
+} as const;
+
+export const librariesIcons = {
+  Bootstrap: devicon('bootstrap', 'Bootstrap'),
+  TailwindCSS: devicon('tailwindcss', 'Tailwind CSS'),
+  Vuetify: devicon('vuetify', 'Vuetify'),
+  jQuery: devicon('jquery', 'jQuery'),
+  GenKit: devicon('googlecloud', 'GenKit'),
+  ChartJS: devicon('chartjs', 'ChartJS'),
+  MaterialUI: devicon('materialui', 'Material UI'),
+  Bulma: devicon('bulma', 'Bulma', 'plain'),
   GraphQL: devicon('graphql', 'GraphQL', 'plain'),
   Apollo: devicon('apollographql', 'Apollo'),
   Redux: devicon('redux', 'Redux'),
@@ -81,8 +83,9 @@ export const techIcons = {
   ScikitLearn: devicon('scikitlearn', 'Scikit Learn'),
   TensorFlow: devicon('tensorflow', 'TensorFlow'),
   PyTorch: devicon('pytorch', 'PyTorch'),
+} as const;
 
-  // Databases
+export const databasesIcons = {
   MySQL: devicon('mysql', 'MySQL'),
   SQLite: devicon('sqlite', 'SQLite'),
   PostgreSQL: devicon('postgresql', 'PostgreSQL'),
@@ -98,8 +101,9 @@ export const techIcons = {
   Elasticsearch: devicon('elasticsearch', 'Elasticsearch'),
   Cassandra: devicon('cassandra', 'Cassandra'),
   Realm: devicon('realm', 'Realm'),
+} as const;
 
-  // DevOps & Cloud
+export const devopsIcons = {
   Docker: devicon('docker', 'Docker'),
   AWS: devicon('amazonwebservices', 'AWS', 'line-wordmark'),
   GoogleCloud: devicon('googlecloud', 'Google Cloud'),
@@ -107,7 +111,6 @@ export const techIcons = {
   Vercel: devicon('vercel', 'Vercel'),
   Netlify: devicon('netlify', 'Netlify'),
   Render: simpleicon('render', 'Render'),
-  // Add cpanel
   DigitalOcean: devicon('digitalocean', 'DigitalOcean'),
   CloudfareWorkers: devicon('cloudflareworkers', 'Cloudflare Workers'),
   Cloudflare: devicon('cloudflare', 'Cloudflare'),
@@ -118,8 +121,9 @@ export const techIcons = {
   Jenkins: devicon('jenkins', 'Jenkins'),
   CircleCI: devicon('circleci', 'CircleCI', 'plain-wordmark'),
   TravisCI: devicon('travis', 'Travis CI'),
+} as const;
 
-  // Tools
+export const toolsIcons = {
   Git: devicon('git', 'Git'),
   GitHub: devicon('github', 'GitHub'),
   GitLab: devicon('gitlab', 'GitLab'),
@@ -146,12 +150,23 @@ export const techIcons = {
   Xcode: devicon('xcode', 'Xcode'),
   PyCharm: devicon('pycharm', 'PyCharm'),
   WebStorm: devicon('webstorm', 'WebStorm'),
+} as const;
 
-  // Other
+export const otherIcons = {
   GoogleGemini: simpleicon('googlegemini', 'Google Gemini'),
   Markdown: devicon('markdown', 'Markdown'),
   RestAPI: devicon('swagger', 'Rest API'),
   API: devicon('swagger', 'API'),
+} as const;
+
+export const techIcons = {
+  ...languagesIcons,
+  ...frameworksIcons,
+  ...librariesIcons,
+  ...databasesIcons,
+  ...devopsIcons,
+  ...toolsIcons,
+  ...otherIcons,
 } as const;
 
 export const socialIcons = {

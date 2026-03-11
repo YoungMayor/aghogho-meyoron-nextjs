@@ -154,7 +154,7 @@ export default function ResumeBuilder() {
     <div className="min-h-screen flex flex-col">
       <main className="flex-1 print:p-0">
         {/* Hero Section - Hidden on print */}
-        <section className="py-16 px-4 bg-gradient-to-b from-secondary/50 to-background print:hidden">
+        <section className="py-16 px-4 bg-linear-to-b from-secondary/50 to-background print:hidden">
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Resume Builder</h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -178,9 +178,9 @@ export default function ResumeBuilder() {
         </section>
 
         <div className="max-w-7xl mx-auto px-4 py-8 print:p-0">
-          <div className="flex justify-center">
+          <div className="overflow-x-auto">
             {/* Resume Preview */}
-            <div className="w-full max-w-[210mm] print:max-w-none print:w-full">
+            <div className="w-[210mm] print:max-w-none print:w-full mx-auto">
               <ResumePreview config={config} />
             </div>
           </div>

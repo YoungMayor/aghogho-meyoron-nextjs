@@ -1,3 +1,5 @@
+import { z } from 'zod';
+
 export interface ValidationError {
   field: string;
   message: string;
@@ -9,142 +11,76 @@ export interface ValidationResult {
 }
 
 /**
- * Validate email format
+ * Zod schema for Contact Form validation
  */
-export function isValidEmail(email: string): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
+export const contactFormSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(2, 'Name must be at least 2 characters')
+    .max(100, 'Name must be at most 100 characters'),
+  email: z.string().email('Please provide a valid email address'),
+  subject: z
+    .string()
+    .trim()
+    .min(5, 'Subject must be at least 5 characters')
+    .max(200, 'Subject must be at most 200 characters'),
+  message: z
+    .string()
+    .trim()
+    .min(20, 'Message must be at least 20 characters')
+    .max(2000, 'Message must be at most 2000 characters'),
+});
+
+export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 /**
- * Validate phone format (international format)
+ * Zod schema for Mentorship Form validation
  */
-export function isValidPhone(phone: string): boolean {
-  const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/;
-  return phoneRegex.test(phone);
-}
+export const mentorshipFormSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(2, 'Name must be at least 2 characters')
+    .max(100, 'Name must be at most 100 characters'),
+  email: z.string().email('Please provide a valid email address'),
+  phone: z
+    .string()
+    .regex(
+      /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/,
+      'Please provide a valid phone number'
+    )
+    .optional()
+    .or(z.literal('')),
+  background: z
+    .string()
+    .trim()
+    .min(50, 'Background must be at least 50 characters')
+    .max(1000, 'Background must be at most 1000 characters'),
+  goals: z
+    .string()
+    .trim()
+    .min(50, 'Goals must be at least 50 characters')
+    .max(1000, 'Goals must be at most 1000 characters'),
+  commitment: z
+    .string()
+    .trim()
+    .min(2, 'Please select a commitment level')
+    .max(50, 'Commitment level must be at most 50 characters'),
+});
+
+export type MentorshipFormData = z.infer<typeof mentorshipFormSchema>;
 
 /**
- * Validate string length
+ * Helper to convert ZodError to the legacy ValidationResult format
  */
-export function isValidLength(value: string, min: number, max: number): boolean {
-  const length = value.trim().length;
-  return length >= min && length <= max;
-}
-
-/**
- * Validate contact form data
- */
-export function validateContactForm(data: {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}): ValidationResult {
-  const errors: ValidationError[] = [];
-
-  // Validate name
-  if (!data.name || !isValidLength(data.name, 2, 100)) {
-    errors.push({
-      field: 'name',
-      message: 'Name must be between 2 and 100 characters',
-    });
-  }
-
-  // Validate email
-  if (!data.email || !isValidEmail(data.email)) {
-    errors.push({
-      field: 'email',
-      message: 'Please provide a valid email address',
-    });
-  }
-
-  // Validate subject
-  if (!data.subject || !isValidLength(data.subject, 5, 200)) {
-    errors.push({
-      field: 'subject',
-      message: 'Subject must be between 5 and 200 characters',
-    });
-  }
-
-  // Validate message
-  if (!data.message || !isValidLength(data.message, 20, 2000)) {
-    errors.push({
-      field: 'message',
-      message: 'Message must be between 20 and 2000 characters',
-    });
-  }
-
+export function formatZodError(error: z.ZodError): ValidationResult {
   return {
-    isValid: errors.length === 0,
-    errors,
-  };
-}
-
-/**
- * Validate mentorship form data
- */
-export function validateMentorshipForm(data: {
-  name: string;
-  email: string;
-  phone?: string;
-  background: string;
-  goals: string;
-  commitment: string;
-}): ValidationResult {
-  const errors: ValidationError[] = [];
-
-  // Validate name
-  if (!data.name || !isValidLength(data.name, 2, 100)) {
-    errors.push({
-      field: 'name',
-      message: 'Name must be between 2 and 100 characters',
-    });
-  }
-
-  // Validate email
-  if (!data.email || !isValidEmail(data.email)) {
-    errors.push({
-      field: 'email',
-      message: 'Please provide a valid email address',
-    });
-  }
-
-  // Validate phone (optional)
-  if (data.phone && !isValidPhone(data.phone)) {
-    errors.push({
-      field: 'phone',
-      message: 'Please provide a valid phone number',
-    });
-  }
-
-  // Validate background
-  if (!data.background || !isValidLength(data.background, 50, 1000)) {
-    errors.push({
-      field: 'background',
-      message: 'Background must be between 50 and 1000 characters',
-    });
-  }
-
-  // Validate goals
-  if (!data.goals || !isValidLength(data.goals, 50, 1000)) {
-    errors.push({
-      field: 'goals',
-      message: 'Goals must be between 50 and 1000 characters',
-    });
-  }
-
-  // Validate commitment
-  if (!data.commitment || !isValidLength(data.commitment, 2, 50)) {
-    errors.push({
-      field: 'commitment',
-      message: 'Please select a commitment level',
-    });
-  }
-
-  return {
-    isValid: errors.length === 0,
-    errors,
+    isValid: false,
+    errors: error.issues.map((issue) => ({
+      field: issue.path.join('.'),
+      message: issue.message,
+    })),
   };
 }
 

@@ -1,173 +1,278 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
-import Select from '@/components/ui/Select';
-import TechFilterDialog from './TechFilterDialog';
+import Modal from '@/components/ui/Modal';
+import Accordion from '@/components/ui/Accordion';
 import { skills } from '@/lib/data/skills';
+import { languagesIcons, frameworksIcons, databasesIcons } from '@/lib/data/icons';
+import { segments, stackRoles as importedStackRoles } from '@/lib/data/projects/constants';
+import { useDebounce } from '@/lib/hooks/debounce';
+import CustomIcon from '@/components/ui/Icon';
 
-const predefinedOwners = [
-  { value: 'all', label: 'All Projects' },
-  { value: 'personal', label: 'Personal' },
-  { value: 'client', label: 'Client' },
-  { value: 'open-source', label: 'Open Source' },
-  { value: 'package', label: 'Packages' },
-] as const;
+const predefinedSegments = [
+  ...Object.values(segments).map((segment) => ({ value: segment, label: segment })),
+];
 
-const projectTypes = [
-  { value: 'all', label: 'All Types' },
-  { value: 'web-app', label: 'Web App' },
-  { value: 'mobile-app', label: 'Mobile App' },
-  { value: 'desktop-app', label: 'Desktop App' },
-  { value: 'api', label: 'API' },
-  { value: 'portfolio', label: 'Portfolio' },
-  { value: 'package', label: 'Package' },
-  { value: 'cli', label: 'CLI Tool' },
-  { value: 'other', label: 'Other' },
+const stackRoles = [
+  ...Object.values(importedStackRoles).map((role) => ({ value: role, label: role })),
 ];
 
 export default function ProjectsFilter() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const searchParamsString = searchParams.toString();
 
-  const [isTechModalOpen, setIsTechModalOpen] = useState(false);
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
 
   // Read state from URL
-  const currentOwner = searchParams.get('owner') || 'all';
-  const currentType = searchParams.get('type') || 'all';
-  const currentSearch = searchParams.get('search') || '';
+  const currentSegments = searchParams.get('segment')
+    ? searchParams.get('segment')!.split(',')
+    : [];
+  const currentRoles = searchParams.get('stack_role')
+    ? searchParams.get('stack_role')!.split(',')
+    : [];
+  const currentSkills = searchParams.get('skill') ? searchParams.get('skill')!.split(',') : [];
   const currentTechs = searchParams.get('tech') ? searchParams.get('tech')!.split(',') : [];
-  const currentSkill = searchParams.get('skill') || 'all';
+  const currentSearchUrl = searchParams.get('search') || '';
+
+  const [currentSearch, setCurrentSearch] = useState(currentSearchUrl);
+  const debouncedSearch = useDebounce(currentSearch, 500);
+
+  // Local state for the modal
+  const [localSegments, setLocalSegments] = useState<string[]>([]);
+  const [localRoles, setLocalRoles] = useState<string[]>([]);
+  const [localSkills, setLocalSkills] = useState<string[]>([]);
+  const [localTechs, setLocalTechs] = useState<string[]>([]);
+  const [techSearch, setTechSearch] = useState('');
 
   // Update URL helper
-  const updateFilters = (key: string, value: string | string[] | null) => {
-    const params = new URLSearchParams(searchParams.toString());
+  const updateFilters = useCallback(
+    (updates: { key: string; value: string | string[] | null }[]) => {
+      const params = new URLSearchParams(searchParamsString);
 
-    if (!value || value === 'all' || (Array.isArray(value) && value.length === 0)) {
-      params.delete(key);
-    } else if (Array.isArray(value)) {
-      params.set(key, value.join(','));
-    } else {
-      params.set(key, value);
-    }
+      updates.forEach(({ key, value }) => {
+        if (!value || (Array.isArray(value) && value.length === 0)) {
+          params.delete(key);
+        } else if (Array.isArray(value)) {
+          params.set(key, value.join(','));
+        } else {
+          params.set(key, value);
+        }
+      });
 
-    // Reset page if we assume pagination later, but for now just push
-    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-  };
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    },
+    [router, pathname, searchParamsString]
+  );
+
+  useEffect(() => {
+    updateFilters([{ key: 'search', value: debouncedSearch }]);
+  }, [debouncedSearch, updateFilters]);
 
   const clearFilters = () => {
+    setCurrentSearch('');
     router.replace(pathname, { scroll: false });
   };
 
-  const activeFiltersCount = [
-    currentOwner !== 'all',
-    currentType !== 'all',
-    currentSearch !== '',
-    currentTechs.length > 0,
-    currentSkill !== 'all',
-  ].filter(Boolean).length;
+  const activeFiltersCount =
+    currentSegments.length + currentRoles.length + currentSkills.length + currentTechs.length;
+
+  const handleApplyFilters = () => {
+    updateFilters([
+      { key: 'segment', value: localSegments },
+      { key: 'stack_role', value: localRoles },
+      { key: 'skill', value: localSkills },
+      { key: 'tech', value: localTechs },
+    ]);
+    setIsFilterModalOpen(false);
+  };
+
+  const toggleArrayItem = (
+    setter: React.Dispatch<React.SetStateAction<string[]>>,
+    item: string
+  ) => {
+    setter((prev) => (prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]));
+  };
+
+  const filterableTechIcons = [
+    ...Object.values(languagesIcons),
+    ...Object.values(frameworksIcons),
+    ...Object.values(databasesIcons),
+  ];
+
+  const allFilteredTechIcons = filterableTechIcons.filter((icon) =>
+    icon.label.toLowerCase().includes(techSearch.toLowerCase())
+  );
+
+  const renderChips = (
+    options: { label: string; value: string }[],
+    selected: string[],
+    setter: React.Dispatch<React.SetStateAction<string[]>>
+  ) => (
+    <div className="flex flex-wrap gap-2">
+      {options.map((opt) => {
+        const isSelected = selected.includes(opt.value);
+        return (
+          <button
+            key={opt.value}
+            onClick={() => toggleArrayItem(setter, opt.value)}
+            className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+              isSelected
+                ? 'bg-primary text-primary-foreground border-primary'
+                : 'bg-background hover:bg-secondary/50 border-border text-muted-foreground'
+            }`}
+          >
+            {opt.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+
+  const accordionItems = [
+    {
+      id: 'segments',
+      title: 'Segment',
+      badge: localSegments.length,
+      defaultOpen: true,
+      content: renderChips(predefinedSegments, localSegments, setLocalSegments),
+    },
+    {
+      id: 'roles',
+      title: 'Role',
+      badge: localRoles.length,
+      defaultOpen: false,
+      content: renderChips(stackRoles, localRoles, setLocalRoles),
+    },
+    {
+      id: 'skills',
+      title: 'Skill Group',
+      badge: localSkills.length,
+      defaultOpen: false,
+      content: renderChips(
+        skills.filter((s) => s.type === 'tech').map((s) => ({ label: s.name, value: s.name })),
+        localSkills,
+        setLocalSkills
+      ),
+    },
+    {
+      id: 'tech',
+      title: 'Technologies',
+      badge: localTechs.length,
+      defaultOpen: false,
+      content: (
+        <div className="flex flex-col gap-4">
+          <Input
+            placeholder="Search technologies..."
+            value={techSearch}
+            onChange={(e) => setTechSearch(e.target.value)}
+            className="w-full text-sm h-9"
+          />
+          <div className="max-h-64 overflow-y-auto no-scrollbar grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 pb-2">
+            {allFilteredTechIcons.map((icon, index) => {
+              const isSelected = localTechs.includes(icon.label);
+              return (
+                <button
+                  key={`${index}-${icon.value}`}
+                  onClick={() => toggleArrayItem(setLocalTechs, icon.label)}
+                  className={`flex flex-col items-center justify-center p-2 rounded-lg border transition-all text-center ${
+                    isSelected
+                      ? 'bg-primary/10 border-primary shadow-sm scale-95'
+                      : 'bg-background border-border hover:border-primary/50 hover:bg-secondary/20'
+                  }`}
+                >
+                  <CustomIcon.fromIcon
+                    icon={icon}
+                    className={`w-6 h-6 mb-1 ${isSelected ? 'opacity-100' : 'opacity-70 grayscale'}`}
+                  />
+                  <span className="text-[10px] font-medium truncate w-full">{icon.label}</span>
+                </button>
+              );
+            })}
+            {allFilteredTechIcons.length === 0 && (
+              <div className="col-span-full text-center py-4 text-xs text-muted-foreground">
+                No technologies found.
+              </div>
+            )}
+          </div>
+        </div>
+      ),
+    },
+  ];
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col md:flex-row gap-4">
+    <div className="space-y-4">
+      <div className="flex flex-col md:flex-row gap-3 items-center">
         {/* Search */}
-        <div className="flex-1">
+        <div className="flex w-full">
           <Input
             placeholder="Search by name, description, etc..."
             value={currentSearch}
-            onChange={(e) => updateFilters('search', e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCurrentSearch(e.target.value)}
+            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+              if (e.key === 'Enter') {
+                updateFilters([{ key: 'search', value: currentSearch }]);
+              }
+            }}
             className="w-full"
+            type="search"
           />
         </div>
 
-        {/* Mobile: Simple Filters or Toggle? keeping it expanded for now */}
-      </div>
-
-      <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
-        {/* Filter Groups */}
-        <div className="flex flex-wrap gap-3 items-center w-full lg:w-auto">
-          {/* Owner Tabs (Desktop) / Select (Mobile optimized if needed, but tabs exist in design) */}
-          <div className="flex bg-secondary/30 p-1 rounded-xl overflow-x-auto max-w-full no-scrollbar">
-            {predefinedOwners.map((owner) => (
-              <button
-                key={owner.value}
-                onClick={() => updateFilters('owner', owner.value)}
-                className={`
-                  px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap
-                  ${
-                    currentOwner === owner.value
-                      ? 'bg-background shadow-sm text-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
-                  }
-                `}
-              >
-                {owner.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Secondary Filters */}
-        <div className={`flex w-full lg:w-auto ${activeFiltersCount > 0 ? 'gap-4' : 'gap-3'}`}>
-          {/* Type Select */}
-          <div className="">
-            <Select
-              value={currentType}
-              onChange={(e) => updateFilters('type', e.target.value)}
-              options={projectTypes}
-            />
-          </div>
-
-          {/* Skills Select */}
-          <div className="">
-            <Select
-              value={currentSkill}
-              onChange={(e) => updateFilters('skill', e.target.value)}
-              options={[
-                { value: 'all', label: 'All Skills' },
-                ...skills
-                  .filter((s) => s.type === 'tech')
-                  .map((s) => ({ value: s.name, label: s.name })),
-              ]}
-            />
-          </div>
-
-          {/* Tech Filter Trigger */}
+        <div className="flex shrink-0">
           <Button
-            variant={currentTechs.length > 0 ? 'primary' : 'outline'}
-            onClick={() => setIsTechModalOpen(true)}
-            className=""
-            size="md"
+            variant={activeFiltersCount > 0 ? 'primary' : 'outline'}
+            onClick={() => {
+              setLocalSegments(currentSegments);
+              setLocalRoles(currentRoles);
+              setLocalSkills(currentSkills);
+              setLocalTechs(currentTechs);
+              setTechSearch('');
+              setIsFilterModalOpen(true);
+            }}
+            className="flex-1 md:flex-none"
           >
-            Technologies {currentTechs.length > 0 && `(${currentTechs.length})`}
+            Filters {activeFiltersCount > 0 && `(${activeFiltersCount})`}
           </Button>
 
-          {/* Clear All */}
           {activeFiltersCount > 0 && (
             <Button
               variant="ghost"
               onClick={clearFilters}
-              className="text-destructive hover:text-destructive/80 "
-              size="md"
+              className="text-destructive hover:text-destructive/80 shrink-0 ml-2"
+              title="Clear all filters"
             >
-              {/* @ai: For mobile displays, use a brush icon instead */}
               Clear
             </Button>
           )}
         </div>
       </div>
 
-      {isTechModalOpen && (
-        <TechFilterDialog
-          isOpen={isTechModalOpen}
-          onClose={() => setIsTechModalOpen(false)}
-          selectedTechs={currentTechs}
-          onApply={(techs) => updateFilters('tech', techs)}
-        />
-      )}
+      <Modal
+        isOpen={isFilterModalOpen}
+        onClose={() => setIsFilterModalOpen(false)}
+        title="Filter Projects"
+        size="lg"
+      >
+        <div className="flex flex-col gap-6 max-h-[80vh]">
+          <div className="overflow-y-auto pr-2 no-scrollbar">
+            <Accordion items={accordionItems} />
+          </div>
+
+          <div className="flex justify-end gap-3 pt-4 border-t border-border mt-auto">
+            <Button variant="ghost" onClick={() => setIsFilterModalOpen(false)}>
+              Cancel
+            </Button>
+            <Button variant="primary" onClick={handleApplyFilters}>
+              Apply Filters
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }

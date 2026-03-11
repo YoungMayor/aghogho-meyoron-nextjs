@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { techIcons } from '@/lib/data/icons';
+import { languagesIcons, frameworksIcons, databasesIcons } from '@/lib/data/icons';
 import Modal from '@/components/ui/Modal';
 import Button from '@/components/ui/Button';
 import CustomIcon from '@/components/ui/Icon';
@@ -21,7 +21,11 @@ export default function TechFilterDialog({
   const [internalSelected, setInternalSelected] = useState<string[]>(selectedTechs);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const allIcons = Object.values(techIcons);
+  const allIcons = [
+    ...Object.values(languagesIcons),
+    ...Object.values(frameworksIcons),
+    ...Object.values(databasesIcons),
+  ];
 
   const filteredIcons = allIcons.filter((icon) =>
     icon.label.toLowerCase().includes(searchQuery.toLowerCase())

@@ -20,7 +20,7 @@ export default function ModernTemplate({ data, config }: ModernTemplateProps) {
         <div className="flex justify-between items-center gap-4 relative z-10">
           {config.showAvatar && profile.avatar_url && (
             <div
-              className="relative w-24 h-24 rounded-lg overflow-hidden border-2 flex-shrink-0"
+              className="relative w-24 h-24 rounded-lg overflow-hidden border-2 shrink-0"
               style={{ borderColor: config.themeColor }}
             >
               <Image src={profile.avatar_url} alt={profile.name} fill className="object-cover" />

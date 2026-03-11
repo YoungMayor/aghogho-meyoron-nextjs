@@ -19,9 +19,6 @@ const Projects = dynamic(() => import('@/components/sections/Projects'), {
 const Career = dynamic(() => import('@/components/sections/Career'), {
   loading: () => <div className="min-h-screen" />,
 });
-const Articles = dynamic(() => import('@/components/sections/Articles'), {
-  loading: () => <div className="min-h-[400px]" />,
-});
 const Testimonials = dynamic(() => import('@/components/sections/Testimonials'), {
   loading: () => <div className="min-h-[400px]" />,
 });
@@ -103,7 +100,6 @@ export default function Home() {
         <About />
         <Projects />
         <Career />
-        <Articles />
         <Testimonials />
       </div>
     </>

@@ -5,6 +5,7 @@ import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Button from '@/components/ui/Button';
 import { generateAuthToken } from '@/lib/utils/api-auth';
+import { clientEnv } from '@/lib/env/client';
 
 interface FormData {
   name: string;
@@ -84,7 +85,7 @@ export default function ContactForm() {
     setErrorMessage('');
 
     try {
-      const authToken = generateAuthToken(process.env.NEXT_PUBLIC_INTERNAL_API_SECRET || '');
+      const authToken = generateAuthToken(clientEnv.NEXT_PUBLIC_INTERNAL_API_SECRET);
 
       const response = await fetch('/api/contact', {
         method: 'POST',

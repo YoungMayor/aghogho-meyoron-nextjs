@@ -1,10 +1,11 @@
-import { verifyApiAuth } from '@/lib/utils/api-auth';
 import { ApiResponse } from '@/lib/utils/api-response';
-import { validateContactForm } from '@/lib/utils/validation';
+import { contactFormSchema, formatZodError } from '@/lib/utils/validation';
 import connectDB from '@/lib/db/mongodb';
 import { Contact } from '@/lib/db/models/contact';
-import { sendTelegramNotification } from '@/lib/utils/telegram';
-import { checkRateLimit, getClientIp, RATE_LIMITS } from '@/lib/utils/rate-limit';
+import { RATE_LIMITS } from '@/lib/utils/rate-limit';
+import { apiAction } from '@/lib/utils/api-action';
+import { contactFormTelegramService } from '@/lib/services/telegram/ContactFormTelegramService';
+import { requestTools } from '@/lib/utils/request-tools';
 
 /**
  * POST /api/contact
@@ -12,77 +13,46 @@ import { checkRateLimit, getClientIp, RATE_LIMITS } from '@/lib/utils/rate-limit
  * Requires authentication
  */
 export async function POST(request: Request) {
-  const secret = process.env.INTERNAL_API_SECRET;
+  return await apiAction({
+    request,
+    rate_limit: RATE_LIMITS.FORM_SUBMISSION,
+    error: { client: 'Failed to submit contact form', log: 'Contact form error' },
+    async callback() {
+      const body = await request.json();
+      const { name, email, subject, message } = body;
 
-  if (!secret) {
-    return ApiResponse.serverError('Server configuration error');
-  }
+      const validation = contactFormSchema.safeParse({ name, email, subject, message });
 
-  // Verify authentication
-  if (!verifyApiAuth(request, secret)) {
-    return ApiResponse.unauthorized();
-  }
+      if (!validation.success) {
+        return ApiResponse.validationError(formatZodError(validation.error).errors);
+      }
 
-  // Check rate limit
-  const clientIp = getClientIp(request);
-  const rateLimitResult = checkRateLimit(clientIp, RATE_LIMITS.FORM_SUBMISSION);
+      const { ipAddress, userAgent } = requestTools(request);
 
-  if (!rateLimitResult.allowed) {
-    return ApiResponse.error(
-      `Too many requests. Please try again in ${rateLimitResult.resetInSeconds} seconds.`,
-      429
-    );
-  }
+      await connectDB();
 
-  try {
-    const body = await request.json();
-    const { name, email, subject, message } = body;
+      await Contact.create({
+        name,
+        email,
+        subject,
+        message,
+        submitted_at: new Date(),
+        ip_address: ipAddress,
+        user_agent: userAgent,
+        recaptcha_score: 0, // Not using reCAPTCHA anymore
+        status: 'new',
+      });
 
-    // Validate input
-    const validation = validateContactForm({ name, email, subject, message });
-    if (!validation.isValid) {
-      return ApiResponse.validationError(validation.errors);
-    }
+      await contactFormTelegramService.sendNotification({
+        name,
+        email,
+        subject,
+        message,
+        ipAddress,
+        userAgent,
+      });
 
-    // Get client information
-    const ipAddress =
-      request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
-    const userAgent = request.headers.get('user-agent') || 'unknown';
-
-    // Connect to MongoDB
-    await connectDB();
-
-    // Save to MongoDB using Mongoose
-    await Contact.create({
-      name,
-      email,
-      subject,
-      message,
-      submitted_at: new Date(),
-      ip_address: ipAddress,
-      user_agent: userAgent,
-      recaptcha_score: 0, // Not using reCAPTCHA anymore
-      status: 'new',
-    });
-
-    // Send Telegram notification
-    const telegramMessage = `🔔 *New Contact Form Submission*
-
-👤 *Name:* ${name}
-📧 *Email:* ${email}
-📋 *Subject:* ${subject}
-
-💬 *Message:*
-${message}
-
-⏰ *Submitted:* ${new Date().toLocaleString()}
-🌐 *IP:* ${ipAddress}`;
-
-    await sendTelegramNotification(telegramMessage);
-
-    return ApiResponse.success(null, 'Your message has been sent successfully!');
-  } catch (error) {
-    console.error('Contact form error:', error);
-    return ApiResponse.serverError('Failed to submit contact form');
-  }
+      return ApiResponse.success(null, 'Your message has been sent successfully!');
+    },
+  });
 }
