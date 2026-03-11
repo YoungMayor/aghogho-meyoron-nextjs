@@ -16,15 +16,18 @@ export interface ValidationResult {
 export const contactFormSchema = z.object({
   name: z
     .string()
+    .trim()
     .min(2, 'Name must be at least 2 characters')
     .max(100, 'Name must be at most 100 characters'),
   email: z.string().email('Please provide a valid email address'),
   subject: z
     .string()
+    .trim()
     .min(5, 'Subject must be at least 5 characters')
     .max(200, 'Subject must be at most 200 characters'),
   message: z
     .string()
+    .trim()
     .min(20, 'Message must be at least 20 characters')
     .max(2000, 'Message must be at most 2000 characters'),
 });
@@ -37,6 +40,7 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 export const mentorshipFormSchema = z.object({
   name: z
     .string()
+    .trim()
     .min(2, 'Name must be at least 2 characters')
     .max(100, 'Name must be at most 100 characters'),
   email: z.string().email('Please provide a valid email address'),
@@ -50,14 +54,17 @@ export const mentorshipFormSchema = z.object({
     .or(z.literal('')),
   background: z
     .string()
+    .trim()
     .min(50, 'Background must be at least 50 characters')
     .max(1000, 'Background must be at most 1000 characters'),
   goals: z
     .string()
+    .trim()
     .min(50, 'Goals must be at least 50 characters')
     .max(1000, 'Goals must be at most 1000 characters'),
   commitment: z
     .string()
+    .trim()
     .min(2, 'Please select a commitment level')
     .max(50, 'Commitment level must be at most 50 characters'),
 });
