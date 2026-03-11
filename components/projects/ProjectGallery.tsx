@@ -22,7 +22,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ images, title }) => {
           <button
             key={index}
             onClick={() => setSelectedImage(img)}
-            className="relative flex-shrink-0 aspect-video h-48 md:h-64 rounded-xl overflow-hidden cursor-zoom-in hover:opacity-90 transition-opacity snap-center border-2 border-transparent hover:border-black dark:hover:border-white"
+            className="relative shrink-0 aspect-video h-48 md:h-64 rounded-xl overflow-hidden cursor-zoom-in hover:opacity-90 transition-opacity snap-center border-2 border-transparent hover:border-black dark:hover:border-white"
           >
             <Image
               src={img}
