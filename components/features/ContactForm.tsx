@@ -4,9 +4,8 @@ import { useState } from 'react';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Button from '@/components/ui/Button';
-import { generateAuthToken } from '@/lib/utils/api-auth';
-import { clientEnv } from '@/lib/env/client';
 import { contactFormSchema } from '@/lib/utils/validation';
+import { submitContactForm } from '@/app/actions/contact';
 
 interface FormData {
   name: string;
@@ -74,19 +73,9 @@ export default function ContactForm() {
     setErrorMessage('');
 
     try {
-      const authToken = generateAuthToken(clientEnv.NEXT_PUBLIC_INTERNAL_API_SECRET);
+      const result = await submitContactForm(formData);
 
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Auth-Token': authToken },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to submit form');
-      }
+      if (!result.success) throw new Error(result.error);
 
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });

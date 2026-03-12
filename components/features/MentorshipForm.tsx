@@ -5,9 +5,8 @@ import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
-import { generateAuthToken } from '@/lib/utils/api-auth';
-import { clientEnv } from '@/lib/env/client';
 import { mentorshipFormSchema } from '@/lib/utils/validation';
+import { submitMentorshipForm } from '@/app/actions/mentorship';
 
 interface FormData {
   name: string;
@@ -83,19 +82,9 @@ export default function MentorshipForm() {
     setErrorMessage('');
 
     try {
-      const authToken = generateAuthToken(clientEnv.NEXT_PUBLIC_INTERNAL_API_SECRET);
+      const result = await submitMentorshipForm(formData);
 
-      const response = await fetch('/api/mentorship', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Auth-Token': authToken },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to submit application');
-      }
+      if (!result.success) throw new Error(result.error);
 
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '', background: '', goals: '', commitment: '' });
