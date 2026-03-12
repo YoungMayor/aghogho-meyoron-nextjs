@@ -98,8 +98,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   const relatedProjects = visibleProjects
     .filter(
       (p) =>
-        (p.slug !== project.slug && project.segment.some((seg) => p.segment.includes(seg))) ||
-        project.stack_role.some((role) => p.stack_role.includes(role))
+        p.slug !== project.slug &&
+        (project.segment.some((seg) => p.segment.includes(seg)) ||
+          project.stack_role.some((role) => p.stack_role.includes(role)))
     )
     .slice(0, 3);
 

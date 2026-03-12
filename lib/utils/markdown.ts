@@ -86,23 +86,3 @@ export function getAllMarkdownContents<T = Record<string, unknown>>(
     };
   });
 }
-
-/**
- * Render markdown to HTML (basic implementation)
- * For production, consider using a library like 'marked' or 'remark'
- */
-export function markdownToHtml(markdown: string): string {
-  // This is a very basic implementation
-  // In production, use a proper markdown parser like 'marked' or 'remark'
-  return markdown
-    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^(.+)$/gm, '<p>$1</p>')
-    .replace(/<p><h/g, '<h')
-    .replace(/<\/h[1-6]><\/p>/g, '</h1>');
-}

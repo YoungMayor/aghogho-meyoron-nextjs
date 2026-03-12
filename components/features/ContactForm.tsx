@@ -6,6 +6,7 @@ import Textarea from '@/components/ui/Textarea';
 import Button from '@/components/ui/Button';
 import { generateAuthToken } from '@/lib/utils/api-auth';
 import { clientEnv } from '@/lib/env/client';
+import { contactFormSchema } from '@/lib/utils/validation';
 
 interface FormData {
   name: string;
@@ -34,34 +35,22 @@ export default function ContactForm() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
+    const result = contactFormSchema.safeParse(formData);
 
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'Name must be at least 2 characters';
+    if (!result.success) {
+      const newErrors: FormErrors = {};
+      result.error.issues.forEach((issue) => {
+        const field = issue.path[0] as keyof FormErrors;
+        if (!newErrors[field]) {
+          newErrors[field] = issue.message;
+        }
+      });
+      setErrors(newErrors);
+      return false;
     }
 
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
-    } else if (formData.subject.trim().length < 5) {
-      newErrors.subject = 'Subject must be at least 5 characters';
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    } else if (formData.message.trim().length < 20) {
-      newErrors.message = 'Message must be at least 20 characters';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors({});
+    return true;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -180,28 +169,6 @@ export default function ContactForm() {
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
-
-      <p className="text-sm text-muted-foreground text-center">
-        This site is protected by reCAPTCHA and the Google{' '}
-        <a
-          href="https://policies.google.com/privacy"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Privacy Policy
-        </a>{' '}
-        and{' '}
-        <a
-          href="https://policies.google.com/terms"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Terms of Service
-        </a>{' '}
-        apply.
-      </p>
     </form>
   );
 }

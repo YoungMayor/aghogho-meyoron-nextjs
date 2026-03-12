@@ -2,7 +2,6 @@ import { ApiResponse } from '@/lib/utils/api-response';
 import { contactFormSchema, formatZodError } from '@/lib/utils/validation';
 import connectDB from '@/lib/db/mongodb';
 import { Contact } from '@/lib/db/models/contact';
-import { RATE_LIMITS } from '@/lib/utils/rate-limit';
 import { apiAction } from '@/lib/utils/api-action';
 import { contactFormTelegramService } from '@/lib/services/telegram/ContactFormTelegramService';
 import { requestTools } from '@/lib/utils/request-tools';
@@ -15,7 +14,6 @@ import { requestTools } from '@/lib/utils/request-tools';
 export async function POST(request: Request) {
   return await apiAction({
     request,
-    rate_limit: RATE_LIMITS.FORM_SUBMISSION,
     error: { client: 'Failed to submit contact form', log: 'Contact form error' },
     async callback() {
       const body = await request.json();
@@ -31,26 +29,26 @@ export async function POST(request: Request) {
 
       await connectDB();
 
-      await Contact.create({
-        name,
-        email,
-        subject,
-        message,
-        submitted_at: new Date(),
-        ip_address: ipAddress,
-        user_agent: userAgent,
-        recaptcha_score: 0, // Not using reCAPTCHA anymore
-        status: 'new',
-      });
-
-      await contactFormTelegramService.sendNotification({
-        name,
-        email,
-        subject,
-        message,
-        ipAddress,
-        userAgent,
-      });
+      await Promise.all([
+        Contact.create({
+          name,
+          email,
+          subject,
+          message,
+          submitted_at: new Date(),
+          ip_address: ipAddress,
+          user_agent: userAgent,
+          status: 'new',
+        }),
+        contactFormTelegramService.sendNotification({
+          name,
+          email,
+          subject,
+          message,
+          ipAddress,
+          userAgent,
+        }),
+      ]);
 
       return ApiResponse.success(null, 'Your message has been sent successfully!');
     },

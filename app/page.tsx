@@ -9,16 +9,10 @@ import {
   generateProfilePageSchema,
 } from '@/lib/utils/structured-data';
 
-// Dynamic imports for below-the-fold components to improve initial page load
-const About = dynamic(() => import('@/components/sections/About'), {
-  loading: () => <div className="min-h-screen" />,
-});
-const Projects = dynamic(() => import('@/components/sections/Projects'), {
-  loading: () => <div className="min-h-screen" />,
-});
-const Career = dynamic(() => import('@/components/sections/Career'), {
-  loading: () => <div className="min-h-screen" />,
-});
+import About from '@/components/sections/About';
+import Projects from '@/components/sections/Projects';
+import Career from '@/components/sections/Career';
+
 const Testimonials = dynamic(() => import('@/components/sections/Testimonials'), {
   loading: () => <div className="min-h-[400px]" />,
 });

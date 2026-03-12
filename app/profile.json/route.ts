@@ -1,7 +1,0 @@
-import { NextResponse } from 'next/server';
-import { getCompleteProfileData } from '@/lib/utils/profile-data';
-
-export async function GET() {
-  const data = getCompleteProfileData();
-  return NextResponse.json(data);
-}

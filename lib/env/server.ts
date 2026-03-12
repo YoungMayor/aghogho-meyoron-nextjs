@@ -12,7 +12,6 @@ export const serverEnv = createEnv({
     TELEGRAM_DEFAULT_CHAT_IDS: z.string().optional(),
 
     INTERNAL_API_SECRET: z.string(),
-    RECAPTCHA_SECRET_KEY: z.string().optional(),
   },
   extends: [netlify()],
   experimental__runtimeEnv: process.env,
