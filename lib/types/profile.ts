@@ -1,4 +1,4 @@
-import { Icon, HasVisibility, Person } from './common';
+import { Icon, HasVisibility } from './common';
 
 export interface Profile {
   name: string;

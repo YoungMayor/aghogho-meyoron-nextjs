@@ -1,4 +1,3 @@
-import { Person } from './common';
 import { Profile, SocialLink, Hobby } from './profile';
 import { CareerItem, AcademicRecord } from './experience';
 import { Skill } from './skills';
