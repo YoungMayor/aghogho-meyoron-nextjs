@@ -8,7 +8,6 @@ export interface IContact {
   submitted_at: Date;
   ip_address: string;
   user_agent: string;
-  recaptcha_score: number;
   status: 'new' | 'read' | 'replied';
   replied_at?: Date;
 }
@@ -22,7 +21,6 @@ const ContactSchema = new Schema<IContact>(
     submitted_at: { type: Date, required: true, default: Date.now },
     ip_address: { type: String, required: true },
     user_agent: { type: String, required: true },
-    recaptcha_score: { type: Number, required: true },
     status: {
       type: String,
       enum: ['new', 'read', 'replied'],
