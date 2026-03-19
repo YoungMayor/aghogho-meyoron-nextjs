@@ -413,4 +413,31 @@ export const personalWebApps: Project[] = [
     show: true,
     priority: 0,
   },
+  {
+    slug: 'portfolio-mcp-server',
+    name: 'Portfolio MCP Server',
+    description:
+      "A Model Context Protocol (MCP) implementation that makes this portfolio AI-ready. It exposes a set of tools that allow AI agents to query professional data, career history, and even send contact messages directly via the portfolio's infrastructure.",
+    features: [
+      'MCP SSE Transport: Seamless integration with AI tools like Claude and Cursor.',
+      'Real-time Data Access: Direct access to projects, career history, and profile data.',
+      'AI Messaging Tool: Allows agents to send contact messages via Telegram/MongoDB.',
+      'JSON-RPC 2.0: Industry-standard protocol for robust AI-agent communication.',
+    ],
+    icons: [
+      techIcons.TypeScript,
+      techIcons.NextJS,
+      techIcons.GenKit,
+      techIcons.API,
+      techIcons.JSON,
+    ],
+    segment: [segments.ai, segments.devtools],
+    stack_role: [stackRoles.fullstack, stackRoles.creator],
+    demo_link: '/mcp',
+    repo_link: null,
+    images: [],
+    show: true,
+    priority: 10,
+    is_featured: true,
+  },
 ];
