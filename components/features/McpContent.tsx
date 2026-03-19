@@ -6,7 +6,7 @@ import { clientEnv } from '@/lib/env/client';
 import Button from '@/components/ui/Button';
 
 export default function McpContent() {
-  const mcpUrl = `${clientEnv.NEXT_PUBLIC_APP_URL}/api/mcp`;
+  const mcpUrl = `${clientEnv.NEXT_PUBLIC_APP_URL}/portfolio-mcp-server`;
 
   return (
     <main className="flex-1">
@@ -22,7 +22,7 @@ export default function McpContent() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4 leading-relaxed">
             This portfolio is built with the <strong>Model Context Protocol (MCP)</strong>. You can
             now connect my professional data, career history, and projects directly to your AI
-            agents like Claude, Cursor, or Windsurf.
+            agents.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="#setup">
@@ -107,57 +107,66 @@ export default function McpContent() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold mb-6">How to use with Claude Desktop</h2>
-              <div className="space-y-6">
-                <div className="bg-secondary/30 p-5 rounded-xl border border-border">
-                  <p className="text-sm font-medium p-3">Add this to your configuration:</p>
-                  <pre className="bg-background p-4 rounded-lg text-xs font-mono overflow-x-auto border border-border">
-                    {`{
+              <h2 className="text-2xl font-bold mb-6">How to use</h2>
+              <div className="space-y-8">
+                {/* Claude Desktop */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold flex items-center gap-2">Claude Desktop</h3>
+                  <div className="bg-secondary/30 p-4 rounded-xl border border-border">
+                    <pre className="bg-background p-3 rounded-lg text-xs font-mono overflow-x-auto border border-border">
+                      {`{
   "mcpServers": {
     "aghogho-portfolio": {
       "url": "${mcpUrl}"
     }
   }
 }`}
-                  </pre>
+                    </pre>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Add the config to <code>claude_desktop_config.json</code> and restart.
+                  </p>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
-                    1
-                  </div>
-                  <div>
-                    <p className="font-semibold mb-1">Open Configuration</p>
-                    <p className="text-sm text-muted-foreground">
-                      Open your Claude Desktop config file (usually at ~/Library/Application\\
-                      Support/Claude/claude_desktop_config.json on macOS).
+                {/* Cursor */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold flex items-center gap-2">Cursor IDE</h3>
+                  <div className="text-sm text-muted-foreground space-y-2">
+                    <p>
+                      1. Go to <b>Settings</b> &gt; <b>Cursor Settings</b> &gt; <b>General</b> &gt;{' '}
+                      <b>MCP</b>.
+                    </p>
+                    <p>
+                      2. Click <b>+ Add New MCP Server</b>.
+                    </p>
+                    <p>
+                      3. Name: <code>Aghogho Portfolio</code>.
+                    </p>
+                    <p>
+                      4. Type: <code>http</code>.
+                    </p>
+                    <p>
+                      5. URL: <code>${mcpUrl}</code>.
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
-                    2
-                  </div>
-                  <div>
-                    <p className="font-semibold mb-1">Add the Server</p>
-                    <p className="text-sm text-muted-foreground">
-                      Add the JSON snippet above to the <code>mcpServers</code> object.
-                    </p>
-                  </div>
+                {/* Windsurf */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold flex items-center gap-2">Windsurf</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Open <b>Settings</b> &gt; <b>MCP</b>, add a new server with the type <b>SSE</b>{' '}
+                    and the URL provided above.
+                  </p>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
-                    3
-                  </div>
-                  <div>
-                    <p className="font-semibold mb-1">Restart Claude</p>
-                    <p className="text-sm text-muted-foreground">
-                      Restart the Claude Desktop app. You should see a hammer icon indicating the
-                      tools are available.
-                    </p>
-                  </div>
+                {/* VS Code */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold flex items-center gap-2">VS Code</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Use extensions like <b>Roo Code</b> (formerly Claude Dev) or <b>MCP Client</b>.
+                    Add an HTTP/SSE server using the endpoint URL.
+                  </p>
                 </div>
               </div>
             </div>
