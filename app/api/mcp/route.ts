@@ -12,6 +12,7 @@ import { profile } from '@/lib/data/profile';
 import { projects } from '@/lib/data/projects';
 import { careerItems } from '@/lib/data/career_history';
 import { submitContactForm } from '@/app/actions/contact';
+import { checkRateLimit, RATE_LIMITS } from '@/lib/utils/rate-limit';
 
 // Define the server
 const server = new Server(
@@ -88,6 +89,17 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         throw new McpError(ErrorCode.InvalidParams, 'Arguments must be an object');
       }
       const { name, email, subject, message } = args as Record<string, string>;
+      if (!email) {
+        throw new McpError(ErrorCode.InvalidParams, 'email is required for send_message');
+      }
+      const senderKey = `mcp:send_message:${email}`;
+      const rateLimit = checkRateLimit(senderKey, RATE_LIMITS.FORM_SUBMISSION);
+      if (!rateLimit.allowed) {
+        throw new McpError(
+          ErrorCode.InvalidRequest,
+          `Rate limit exceeded. Please try again in ${rateLimit.resetInSeconds} seconds.`
+        );
+      }
       const result = await submitContactForm({ name, email, subject, message });
       return {
         content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],

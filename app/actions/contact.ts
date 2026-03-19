@@ -6,6 +6,7 @@ import { Contact } from '@/lib/db/models/contact';
 import { contactFormTelegramService } from '@/lib/services/telegram/ContactFormTelegramService';
 import { headers } from 'next/headers';
 import z from 'zod';
+import { checkRateLimit, RATE_LIMITS } from '@/lib/utils/rate-limit';
 
 export async function submitContactForm(formData: unknown) {
   const validation = contactFormSchema.safeParse(formData);
@@ -26,6 +27,14 @@ export async function submitContactForm(formData: unknown) {
     const userAgent = headerList.get('user-agent') || 'unknown';
     const forwardedFor = headerList.get('x-forwarded-for');
     const ipAddress = forwardedFor ? forwardedFor.split(',')[0].trim() : 'unknown';
+
+    const rateLimit = checkRateLimit(`contact:${ipAddress}`, RATE_LIMITS.FORM_SUBMISSION);
+    if (!rateLimit.allowed) {
+      return {
+        success: false,
+        error: `Too many requests. Please try again in ${rateLimit.resetInSeconds} seconds.`,
+      };
+    }
 
     await connectDB();
 

@@ -6,6 +6,7 @@ import { MentorshipApplication } from '@/lib/db/models/mentorship_application';
 import { mentorshipFormTelegramService } from '@/lib/services/telegram/MentorshipFormTelegramService';
 import { headers } from 'next/headers';
 import z from 'zod';
+import { checkRateLimit, RATE_LIMITS } from '@/lib/utils/rate-limit';
 
 export async function submitMentorshipForm(formData: unknown) {
   const validation = mentorshipFormSchema.safeParse(formData);
@@ -25,6 +26,14 @@ export async function submitMentorshipForm(formData: unknown) {
     const userAgent = headerList.get('user-agent') || 'unknown';
     const forwardedFor = headerList.get('x-forwarded-for');
     const ipAddress = forwardedFor ? forwardedFor.split(',')[0].trim() : 'unknown';
+
+    const rateLimit = checkRateLimit(`mentorship:${ipAddress}`, RATE_LIMITS.FORM_SUBMISSION);
+    if (!rateLimit.allowed) {
+      return {
+        success: false,
+        error: `Too many requests. Please try again in ${rateLimit.resetInSeconds} seconds.`,
+      };
+    }
 
     await connectDB();
 

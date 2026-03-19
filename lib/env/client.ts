@@ -5,7 +5,7 @@ import { z } from 'zod';
 export const clientEnv = createEnv({
   client: {
     NEXT_PUBLIC_APP_URL: z.url(),
-    NEXT_PUBLIC_INTERNAL_API_SECRET: z.string(),
+    NEXT_PUBLIC_INTERNAL_API_SECRET: z.string().optional(),
     NEXT_PUBLIC_RECAPTCHA_SITE_KEY: z.string().optional(),
   },
   extends: [netlify()],

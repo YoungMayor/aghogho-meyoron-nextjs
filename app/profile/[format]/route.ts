@@ -12,17 +12,19 @@ export async function GET(request: Request, { params }: { params: Promise<{ form
   const data = getCompleteProfileData();
 
   switch (format.toLowerCase()) {
-    case 'xml':
+    case 'xml': {
       const xml = serializeToXML(data as Record<string, unknown>);
       return new NextResponse(xml, {
         headers: { 'Content-Type': 'application/xml' },
       });
+    }
     case 'yaml':
-    case 'yml':
+    case 'yml': {
       const yamlString = yaml.dump(data);
       return new NextResponse(yamlString, {
         headers: { 'Content-Type': 'application/x-yaml' },
       });
+    }
     case 'json':
     default:
       return NextResponse.json(data);
