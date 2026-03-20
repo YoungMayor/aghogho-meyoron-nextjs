@@ -1,6 +1,5 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { createMcpHandler } from 'mcp-handler';
-import { z } from 'zod';
 import { profile } from '@/lib/data/profile';
 import { projects } from '@/lib/data/projects';
 import { careerItems } from '@/lib/data/career_history';
@@ -11,13 +10,16 @@ import { badges } from '@/lib/data/badges';
 import { hobbies } from '@/lib/data/hobbies';
 import { skills } from '@/lib/data/skills';
 import { socialLinks } from '@/lib/data/social_links';
+import { contactFormSchema } from '@/lib/utils/validation';
 
 const handler = createMcpHandler(
   (server: McpServer) => {
-    server.tool(
+    server.registerTool(
       'get_profile',
-      "Get Aghogho Meyoron's professional profile summary and contact info.",
-      {},
+      {
+        title: 'Get Profile',
+        description: "Get Aghogho Meyoron's professional profile summary and contact info.",
+      },
       async () => {
         const completeProfile = {
           ...profile,
@@ -42,10 +44,12 @@ const handler = createMcpHandler(
       }
     );
 
-    server.tool(
+    server.registerTool(
       'list_projects',
-      'List all projects in the portfolio with their tech stack and links.',
-      {},
+      {
+        title: 'List Projects',
+        description: 'List all projects in the portfolio with their tech stack and links.',
+      },
       async () => {
         const visibleProjects = getVisibleAndSorted(projects);
 
@@ -55,10 +59,12 @@ const handler = createMcpHandler(
       }
     );
 
-    server.tool(
+    server.registerTool(
       'list_experience',
-      "Get Aghogho's career history and work experience.",
-      {},
+      {
+        title: 'List Experience',
+        description: "Get Aghogho's career history and work experience.",
+      },
       async () => {
         const visibleExperience = getVisibleAndSorted(careerItems);
 
@@ -68,20 +74,20 @@ const handler = createMcpHandler(
       }
     );
 
-    server.tool(
+    server.registerTool(
       'send_message',
-      "Send a contact message to Aghogho via the portfolio's contact system.",
       {
-        name: z.string().describe('Name of the sender'),
-        email: z.string().email().describe('Email address of the sender'),
-        subject: z.string().describe('Subject of the message'),
-        message: z.string().describe('The message content'),
+        title: 'Send Message',
+        description: "Send a contact message to Aghogho via the portfolio's contact system.",
+        inputSchema: contactFormSchema,
       },
       async (args) => {
         // @todo: This should be removed
         const { name, email, subject, message } = args;
         const result = await submitContactForm({ name, email, subject, message });
+
         return {
+          isError: !result.success,
           content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
         };
       }
@@ -92,7 +98,7 @@ const handler = createMcpHandler(
   },
   {
     basePath: '/api/mcp',
-    verboseLogs: true,
+    verboseLogs: false,
     redisUrl: serverEnv.REDIS_URL,
     disableSse: false,
   }
