@@ -4,15 +4,19 @@ import { z } from 'zod';
 
 export const serverEnv = createEnv({
   server: {
+    ENABLE_TELEGRAM_NOTIFICATIONS: z.coerce.boolean().default(false),
+
+    INTERNAL_API_SECRET: z.string(),
+
     MONGODB_URI: z.url(),
     MONGODB_DB_NAME: z.string(),
 
-    ENABLE_TELEGRAM_NOTIFICATIONS: z.coerce.boolean().default(false),
+    RECAPTCHA_SECRET_KEY: z.string().optional(),
+
+    REDIS_URL: z.url(),
+
     TELEGRAM_BOT_TOKEN: z.string().optional(),
     TELEGRAM_DEFAULT_CHAT_IDS: z.string().optional(),
-
-    INTERNAL_API_SECRET: z.string(),
-    RECAPTCHA_SECRET_KEY: z.string().optional(),
   },
   extends: [netlify()],
   experimental__runtimeEnv: process.env,
