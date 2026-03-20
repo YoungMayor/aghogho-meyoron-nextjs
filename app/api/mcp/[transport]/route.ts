@@ -7,6 +7,10 @@ import { careerItems } from '@/lib/data/career_history';
 import { submitContactForm } from '@/app/actions/contact';
 import { serverEnv } from '@/lib/env/server';
 import { getVisibleAndSorted } from '@/lib/utils/data';
+import { badges } from '@/lib/data/badges';
+import { hobbies } from '@/lib/data/hobbies';
+import { skills } from '@/lib/data/skills';
+import { socialLinks } from '@/lib/data/social_links';
 
 const handler = createMcpHandler(
   (server: McpServer) => {
@@ -14,9 +18,28 @@ const handler = createMcpHandler(
       'get_profile',
       "Get Aghogho Meyoron's professional profile summary and contact info.",
       {},
-      async () => ({
-        content: [{ type: 'text', text: JSON.stringify(profile, null, 2) }],
-      })
+      async () => {
+        const completeProfile = {
+          ...profile,
+          socials: getVisibleAndSorted(socialLinks).map((social) => ({
+            platform: social.platform,
+            url: social.url,
+            label: social.label,
+          })),
+          badges,
+          hobbies: getVisibleAndSorted(hobbies).map((hobby) => hobby.name),
+          skills: getVisibleAndSorted(skills).map((skill) => ({
+            name: skill.name,
+            description: skill.description,
+            type: skill.type,
+            tools: skill.icons.map((icon) => icon.label),
+          })),
+        };
+
+        return {
+          content: [{ type: 'text', text: JSON.stringify(completeProfile, null, 2) }],
+        };
+      }
     );
 
     server.tool(
