@@ -10,7 +10,6 @@ export interface IMentorshipApplication {
   submitted_at: Date;
   ip_address: string;
   user_agent: string;
-  recaptcha_score: number;
   status: 'pending' | 'approved' | 'rejected' | 'completed';
   reviewed_at?: Date;
   notes?: string;
@@ -27,7 +26,6 @@ const MentorshipApplicationSchema = new Schema<IMentorshipApplication>(
     submitted_at: { type: Date, required: true, default: Date.now },
     ip_address: { type: String, required: true },
     user_agent: { type: String, required: true },
-    recaptcha_score: { type: Number, required: true },
     status: {
       type: String,
       enum: ['pending', 'approved', 'rejected', 'completed'],

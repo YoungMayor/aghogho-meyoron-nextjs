@@ -1,3 +1,4 @@
+import { clientEnv } from '@/lib/env/client';
 import { profile } from '@/lib/data/profile';
 import { socialLinks } from '@/lib/data/social_links';
 import { getVisibleItems } from './data';
@@ -15,7 +16,7 @@ export function generatePersonSchema() {
     name: profile.name,
     jobTitle: profile.titles[0],
     description: profile.notes.about,
-    url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    url: clientEnv.NEXT_PUBLIC_APP_URL,
     image: profile.avatar_url,
     email: profile.contact.email,
     telephone: profile.contact.phone,
@@ -38,7 +39,7 @@ export function generatePersonSchema() {
  * Generate WebSite schema for structured data
  */
 export function generateWebsiteSchema() {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const baseUrl = clientEnv.NEXT_PUBLIC_APP_URL;
 
   return {
     '@context': 'https://schema.org',
@@ -58,7 +59,7 @@ export function generateWebsiteSchema() {
  * Generate SoftwareApplication schema for a project
  */
 export function generateProjectSchema(project: Project) {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const baseUrl = clientEnv.NEXT_PUBLIC_APP_URL;
 
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
@@ -100,7 +101,7 @@ export function generateProjectSchema(project: Project) {
  * Generate BreadcrumbList schema
  */
 export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const baseUrl = clientEnv.NEXT_PUBLIC_APP_URL;
 
   return {
     '@context': 'https://schema.org',
@@ -118,7 +119,7 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
  * Generate ProfilePage schema
  */
 export function generateProfilePageSchema() {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+  const baseUrl = clientEnv.NEXT_PUBLIC_APP_URL;
 
   return {
     '@context': 'https://schema.org',

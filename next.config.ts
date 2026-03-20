@@ -23,6 +23,15 @@ const nextConfig: NextConfig = {
   /* Performance: Compression */
   compress: true,
 
+  /* Backward-compatible redirects for old profile export URLs */
+  async redirects() {
+    return [
+      { source: '/profile.json', destination: '/profile/json', permanent: true },
+      { source: '/profile.xml', destination: '/profile/xml', permanent: true },
+      { source: '/profile.yaml', destination: '/profile/yaml', permanent: true },
+    ];
+  },
+
   /* Headers for PWA support and security */
   async headers() {
     return [

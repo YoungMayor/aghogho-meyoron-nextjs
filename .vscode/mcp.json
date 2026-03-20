@@ -1,0 +1,28 @@
+{
+  "servers": {
+    "aghogho-portfolio": {
+      "url": "http://aghogho.mayrlabs.com/api/mcp/sse",
+      "type": "http"
+    },
+    "aghogho-portfolio-local": {
+      "url": "http://localhost:3000/api/mcp/sse",
+      "type": "http"
+    },
+    "aghogho-portfolio-npx": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "http://aghogho.mayrlabs.com/api/mcp/sse"],
+      "env": {}
+    },
+    "aghogho-portfolio-local-npx": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "http://localhost:3000/api/mcp/sse"],
+      "env": {}
+    },
+    "next-devtools": {
+      "command": "npx",
+      "args": ["-y", "next-devtools-mcp@latest"]
+    }
+  }
+}

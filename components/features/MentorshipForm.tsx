@@ -5,8 +5,8 @@ import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
-import { generateAuthToken } from '@/lib/utils/api-auth';
-import { clientEnv } from '@/lib/env/client';
+import { mentorshipFormSchema } from '@/lib/utils/validation';
+import { submitMentorshipForm } from '@/app/actions/mentorship';
 
 interface FormData {
   name: string;
@@ -41,42 +41,22 @@ export default function MentorshipForm() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
+    const result = mentorshipFormSchema.safeParse(formData);
 
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'Name must be at least 2 characters';
+    if (!result.success) {
+      const newErrors: FormErrors = {};
+      result.error.issues.forEach((issue) => {
+        const field = issue.path[0] as keyof FormErrors;
+        if (!newErrors[field]) {
+          newErrors[field] = issue.message;
+        }
+      });
+      setErrors(newErrors);
+      return false;
     }
 
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
-    }
-
-    if (formData.phone && !/^[\d\s\-\+\(\)]+$/.test(formData.phone)) {
-      newErrors.phone = 'Please enter a valid phone number';
-    }
-
-    if (!formData.background.trim()) {
-      newErrors.background = 'Background information is required';
-    } else if (formData.background.trim().length < 50) {
-      newErrors.background = 'Please provide at least 50 characters';
-    }
-
-    if (!formData.goals.trim()) {
-      newErrors.goals = 'Goals information is required';
-    } else if (formData.goals.trim().length < 50) {
-      newErrors.goals = 'Please provide at least 50 characters';
-    }
-
-    if (!formData.commitment) {
-      newErrors.commitment = 'Please select your commitment level';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors({});
+    return true;
   };
 
   const handleChange = (
@@ -102,19 +82,9 @@ export default function MentorshipForm() {
     setErrorMessage('');
 
     try {
-      const authToken = generateAuthToken(clientEnv.NEXT_PUBLIC_INTERNAL_API_SECRET);
+      const result = await submitMentorshipForm(formData);
 
-      const response = await fetch('/api/mentorship', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Auth-Token': authToken },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to submit application');
-      }
+      if (!result.success) throw new Error(result.error);
 
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '', background: '', goals: '', commitment: '' });
@@ -227,28 +197,6 @@ export default function MentorshipForm() {
       >
         {isSubmitting ? 'Submitting...' : 'Submit Application'}
       </Button>
-
-      <p className="text-sm text-muted-foreground text-center">
-        This site is protected by reCAPTCHA and the Google{' '}
-        <a
-          href="https://policies.google.com/privacy"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Privacy Policy
-        </a>{' '}
-        and{' '}
-        <a
-          href="https://policies.google.com/terms"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          Terms of Service
-        </a>{' '}
-        apply.
-      </p>
     </form>
   );
 }

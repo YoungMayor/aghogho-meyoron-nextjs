@@ -15,7 +15,7 @@ interface CareerDetailPageProps {
 
 export async function generateStaticParams() {
   return careerItems
-    .filter((item) => item.slug)
+    .filter((item) => item.show && item.slug)
     .map((item) => ({
       slug: item.slug,
     }));
@@ -42,7 +42,7 @@ export default async function CareerDetailPage({ params }: CareerDetailPageProps
   const { slug } = await params;
   const careerIndex = careerItems.findIndex((c) => c.slug === slug);
 
-  if (careerIndex === -1) {
+  if (careerIndex === -1 || !careerItems[careerIndex].show) {
     notFound();
   }
 

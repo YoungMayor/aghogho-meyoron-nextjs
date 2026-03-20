@@ -1,5 +1,4 @@
-import { POST } from '@/app/api/contact/route';
-import { generateAuthToken } from '@/lib/utils/api-auth';
+import { submitContactForm } from '@/app/actions/contact';
 import { contactFormTelegramService } from '@/lib/services/telegram/ContactFormTelegramService';
 import connectDB from '@/lib/db/mongodb';
 
@@ -16,123 +15,82 @@ jest.mock('@/lib/services/telegram/ContactFormTelegramService', () => ({
   },
 }));
 
-jest.mock('@/lib/utils/rate-limit', () => ({
-  checkRateLimit: jest.fn(() => ({
-    allowed: true,
-    resetInSeconds: 0,
-    remaining: 10,
-  })),
-  RATE_LIMITS: {
-    FORM_SUBMISSION: { maxRequests: 10, windowSeconds: 60 },
-  },
-}));
-
 // Mock Contact model
 jest.mock('@/lib/db/models/contact', () => ({
   Contact: { create: jest.fn() },
 }));
 import { Contact } from '@/lib/db/models/contact';
 
+// Mock next/headers
+jest.mock('next/headers', () => ({
+  headers: jest.fn(() => ({
+    get: jest.fn((key: string) => {
+      if (key === 'user-agent') return 'jest-test-agent';
+      if (key === 'x-forwarded-for') return '127.0.0.1';
+      return null;
+    }),
+  })),
+}));
+
 const mockCreate = Contact.create as jest.Mock;
 
-describe('Contact API', () => {
-  const validSecret = 'valid-secret';
-
+describe('submitContactForm action', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    process.env.INTERNAL_API_SECRET = validSecret;
-    // const connect = require('@/lib/db/mongodb').default;
     (connectDB as jest.Mock).mockResolvedValue(true);
     (contactFormTelegramService.sendNotification as jest.Mock).mockResolvedValue(true);
     mockCreate.mockResolvedValue({ _id: 'new-id' });
   });
 
-  afterEach(() => {
-    delete process.env.INTERNAL_API_SECRET;
+  describe('validation', () => {
+    it('should return validation error when required fields are missing', async () => {
+      const result = await submitContactForm({ name: 'Test' });
+
+      expect(result.success).toBe(false);
+      expect(result.error).toBe('Validation failed');
+    });
+
+    it('should return validation error for invalid email', async () => {
+      const result = await submitContactForm({
+        name: 'Test User',
+        email: 'not-an-email',
+        subject: 'Hello',
+        message: 'Hello there, this is a longer test message to meet validation.',
+      });
+
+      expect(result.success).toBe(false);
+      expect(result.error).toBe('Validation failed');
+    });
   });
 
-  describe('POST', () => {
-    it('should return 401 if unauthorized', async () => {
-      const req = new Request('http://localhost/api/contact', {
-        method: 'POST',
-        body: JSON.stringify({}),
-        headers: {
-          'X-Auth-Token': 'invalid-token',
-        },
-      });
-      const res = await POST(req);
-      const data = await res.json();
-
-      expect(res.status).toBe(401);
-      expect(data.error).toBe('Unauthorized');
-    });
-
-    it('should return 422 if validation fails', async () => {
-      const token = generateAuthToken(validSecret);
-      // Missing required fields
-      const req = new Request('http://localhost/api/contact', {
-        method: 'POST',
-        body: JSON.stringify({ name: 'Test' }),
-        headers: {
-          'X-Auth-Token': token,
-        },
-      });
-      const res = await POST(req);
-      const data = await res.json();
-
-      expect(res.status).toBe(422);
-      expect(data.error).toBe('Validation error');
-    });
-
-    it('should success on valid request', async () => {
-      const token = generateAuthToken(validSecret);
-      const body = {
+  describe('success', () => {
+    it('should succeed on valid request', async () => {
+      const result = await submitContactForm({
         name: 'Test User',
         email: 'test@example.com',
         subject: 'Hello',
         message: 'Hello there, this is a longer test message to meet validation.',
-        recaptchaToken: 'valid-token',
-      };
-      const req = new Request('http://localhost/api/contact', {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-          'X-Auth-Token': token,
-        },
       });
 
-      const res = await POST(req);
-      const data = await res.json();
-
-      expect(res.status).toBe(200);
-      expect(data.success).toBe(true);
+      expect(result.success).toBe(true);
       expect(mockCreate).toHaveBeenCalled();
       expect(contactFormTelegramService.sendNotification).toHaveBeenCalled();
     });
+  });
 
+  describe('error handling', () => {
     it('should handle database errors gracefully', async () => {
-      const token = generateAuthToken(validSecret);
       mockCreate.mockRejectedValue(new Error('DB Error'));
-      const body = {
+
+      const result = await submitContactForm({
         name: 'Test User',
         email: 'test@example.com',
         subject: 'Hello',
         message: 'Hello there, this is a longer test message to meet validation.',
-        recaptchaToken: 'valid-token',
-      };
-      const req = new Request('http://localhost/api/contact', {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-          'X-Auth-Token': token,
-        },
       });
 
-      const res = await POST(req);
-      const data = await res.json();
-
-      expect(res.status).toBe(500);
-      expect(data.error).toBe('Failed to submit contact form');
+      expect(result.success).toBe(false);
+      expect(result.error).toBe('Failed to submit contact form. Please try again later.');
     });
   });
 });
