@@ -5,7 +5,7 @@ import connectDB from '@/lib/db/mongodb';
 import { MentorshipApplication } from '@/lib/db/models/mentorship_application';
 import { mentorshipFormTelegramService } from '@/lib/services/telegram/MentorshipFormTelegramService';
 import { headers } from 'next/headers';
-import z from 'zod';
+import { z } from 'zod';
 
 export async function submitMentorshipForm(formData: unknown) {
   const validation = mentorshipFormSchema.safeParse(formData);

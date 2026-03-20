@@ -18,6 +18,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ form
         headers: { 'Content-Type': 'application/xml' },
       });
     }
+
     case 'yaml':
     case 'yml': {
       const yamlString = yaml.dump(data);
@@ -25,8 +26,13 @@ export async function GET(request: Request, { params }: { params: Promise<{ form
         headers: { 'Content-Type': 'application/x-yaml' },
       });
     }
-    case 'json':
-    default:
+
+    case 'json': {
       return NextResponse.json(data);
+    }
+
+    default: {
+      return NextResponse.json({ error: 'Unsupported profile format' }, { status: 404 });
+    }
   }
 }

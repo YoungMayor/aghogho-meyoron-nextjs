@@ -5,7 +5,7 @@ import connectDB from '@/lib/db/mongodb';
 import { Contact } from '@/lib/db/models/contact';
 import { contactFormTelegramService } from '@/lib/services/telegram/ContactFormTelegramService';
 import { headers } from 'next/headers';
-import z from 'zod';
+import { z } from 'zod';
 
 export async function submitContactForm(formData: unknown) {
   const validation = contactFormSchema.safeParse(formData);

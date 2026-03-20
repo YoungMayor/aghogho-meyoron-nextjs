@@ -6,8 +6,6 @@ export const serverEnv = createEnv({
   server: {
     ENABLE_TELEGRAM_NOTIFICATIONS: z.coerce.boolean().default(false),
 
-    INTERNAL_API_SECRET: z.string(),
-
     MONGODB_URI: z.url(),
     MONGODB_DB_NAME: z.string(),
 

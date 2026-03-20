@@ -6,6 +6,7 @@ import { projects } from '@/lib/data/projects';
 import { careerItems } from '@/lib/data/career_history';
 import { submitContactForm } from '@/app/actions/contact';
 import { serverEnv } from '@/lib/env/server';
+import { getVisibleAndSorted } from '@/lib/utils/data';
 
 const handler = createMcpHandler(
   (server: McpServer) => {
@@ -22,18 +23,26 @@ const handler = createMcpHandler(
       'list_projects',
       'List all projects in the portfolio with their tech stack and links.',
       {},
-      async () => ({
-        content: [{ type: 'text', text: JSON.stringify(projects, null, 2) }],
-      })
+      async () => {
+        const visibleProjects = getVisibleAndSorted(projects);
+
+        return {
+          content: [{ type: 'text', text: JSON.stringify(visibleProjects, null, 2) }],
+        };
+      }
     );
 
     server.tool(
       'list_experience',
       "Get Aghogho's career history and work experience.",
       {},
-      async () => ({
-        content: [{ type: 'text', text: JSON.stringify(careerItems, null, 2) }],
-      })
+      async () => {
+        const visibleExperience = getVisibleAndSorted(careerItems);
+
+        return {
+          content: [{ type: 'text', text: JSON.stringify(visibleExperience, null, 2) }],
+        };
+      }
     );
 
     server.tool(
@@ -46,6 +55,7 @@ const handler = createMcpHandler(
         message: z.string().describe('The message content'),
       },
       async (args) => {
+        // @todo: This should be removed
         const { name, email, subject, message } = args;
         const result = await submitContactForm({ name, email, subject, message });
         return {

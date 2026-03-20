@@ -12,6 +12,8 @@
     "test:coverage": "jest --coverage",
     "analyze": "ANALYZE=true next build",
     "snapshot": "npx -y tsx scripts/generate-snapshot.ts",
+    "mcp:inspect": "npx @modelcontextprotocol/inspector http://localhost:3000/api/mcp/sse",
+    "mcp:remote": "npx mcp-remote http://localhost:3000/api/mcp/sse",
     "prepare": "husky"
   },
   "lint-staged": {

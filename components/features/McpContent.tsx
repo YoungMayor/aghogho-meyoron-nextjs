@@ -6,7 +6,7 @@ import { clientEnv } from '@/lib/env/client';
 import Button from '@/components/ui/Button';
 
 export default function McpContent() {
-  const mcpUrl = `${clientEnv.NEXT_PUBLIC_APP_URL}/api/mcp`;
+  const mcpUrl = `${clientEnv.NEXT_PUBLIC_APP_URL}/api/mcp/sse`;
 
   return (
     <main className="flex-1">
