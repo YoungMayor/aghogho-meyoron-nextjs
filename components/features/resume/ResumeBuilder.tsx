@@ -32,6 +32,7 @@ const defaultConfig: ResumeConfig = {
   },
   showAvatar: true,
   showSkillIcons: true,
+  showDateMonths: true,
   themeColor: '#2563eb', // Default Blue
   hiddenItemIds: [],
   selectedItems: {

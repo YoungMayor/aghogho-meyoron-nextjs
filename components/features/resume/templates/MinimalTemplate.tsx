@@ -1,6 +1,7 @@
 import Icon from '@/components/ui/Icon';
 import { ResumeData, ResumeConfig } from '@/lib/types';
 import Image from 'next/image';
+import { formatDateRange } from '@/lib/utils/date';
 
 interface MinimalTemplateProps {
   data: ResumeData;
@@ -110,8 +111,8 @@ export default function MinimalTemplate({ data, config }: MinimalTemplateProps) 
                 <div className="flex flex-col md:flex-row justify-between md:items-baseline mb-2">
                   <h3 className="font-bold text-base">{item.company_name}</h3>
                   <div className="text-sm italic text-gray-600">
-                    {item.location} | {new Date(item.start_date).getFullYear()} –{' '}
-                    {item.end_date ? new Date(item.end_date).getFullYear() : 'Present'}
+                    {item.location} |{' '}
+                    {formatDateRange(item.start_date, item.end_date, config.showDateMonths)}
                   </div>
                 </div>
                 <div className="mb-2 italic text-sm">{item.role}</div>
@@ -165,7 +166,10 @@ export default function MinimalTemplate({ data, config }: MinimalTemplateProps) 
               <div key={item.school} className="mb-2">
                 <div className="font-bold text-sm">{item.school}</div>
                 <div className="text-sm italic">
-                  {item.degree} — {item.end_year}
+                  {item.degree} —{' '}
+                  {item.start_year === item.end_year
+                    ? item.start_year
+                    : `${item.start_year} - ${item.end_year}`}
                 </div>
               </div>
             ))}

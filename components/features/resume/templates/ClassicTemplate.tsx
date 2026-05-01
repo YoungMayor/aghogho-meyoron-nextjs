@@ -1,6 +1,7 @@
 import Icon from '@/components/ui/Icon';
 import { ResumeData, ResumeConfig } from '@/lib/types';
 import Image from 'next/image';
+import { formatDateRange } from '@/lib/utils/date';
 
 interface ClassicTemplateProps {
   data: ResumeData;
@@ -109,8 +110,7 @@ export default function ClassicTemplate({ data, config }: ClassicTemplateProps) 
                     </div>
                     <div className="text-sm text-gray-600 text-right">
                       <p>
-                        {new Date(item.start_date).getFullYear()} -{' '}
-                        {item.end_date ? new Date(item.end_date).getFullYear() : 'Present'}
+                        {formatDateRange(item.start_date, item.end_date, config.showDateMonths)}
                       </p>
                       <p>{item.location}</p>
                     </div>
@@ -147,7 +147,9 @@ export default function ClassicTemplate({ data, config }: ClassicTemplateProps) 
                     </div>
                     <div className="text-sm text-gray-600 text-right">
                       <p>
-                        {item.start_year} - {item.end_year}
+                        {item.start_year === item.end_year
+                          ? item.start_year
+                          : `${item.start_year} - ${item.end_year}`}
                       </p>
                       <p>{item.location}</p>
                     </div>

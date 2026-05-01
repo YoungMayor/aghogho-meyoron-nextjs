@@ -21,6 +21,7 @@ export interface ResumeConfig {
   showSections: ResumeSectionConfig;
   showAvatar: boolean;
   showSkillIcons: boolean;
+  showDateMonths: boolean;
   themeColor: string;
   hiddenItemIds: string[];
   customSummary?: string;

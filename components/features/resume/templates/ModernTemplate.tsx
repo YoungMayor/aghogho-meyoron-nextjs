@@ -1,6 +1,7 @@
 import Icon from '@/components/ui/Icon';
 import { ResumeData, ResumeConfig } from '@/lib/types';
 import Image from 'next/image';
+import { formatDateRange } from '@/lib/utils/date';
 
 interface ModernTemplateProps {
   data: ResumeData;
@@ -95,8 +96,7 @@ export default function ModernTemplate({ data, config }: ModernTemplateProps) {
                       <div className="flex justify-between text-sm text-gray-600">
                         <span className="font-semibold">{item.company_name}</span>
                         <span>
-                          {new Date(item.start_date).getFullYear()} -{' '}
-                          {item.end_date ? new Date(item.end_date).getFullYear() : 'Present'}
+                          {formatDateRange(item.start_date, item.end_date, config.showDateMonths)}
                         </span>
                       </div>
                     </div>
@@ -161,7 +161,9 @@ export default function ModernTemplate({ data, config }: ModernTemplateProps) {
                     <h3 className="font-bold text-sm">{item.degree}</h3>
                     <p className="text-sm text-gray-600 mb-1">{item.school}</p>
                     <p className="text-xs text-gray-500">
-                      {item.start_year} - {item.end_year}
+                      {item.start_year === item.end_year
+                        ? item.start_year
+                        : `${item.start_year} - ${item.end_year}`}
                     </p>
                   </div>
                 ))}

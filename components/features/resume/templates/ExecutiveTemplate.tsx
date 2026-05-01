@@ -1,6 +1,7 @@
 import Icon from '@/components/ui/Icon';
 import { ResumeData, ResumeConfig } from '@/lib/types';
 import Image from 'next/image';
+import { formatDateRange } from '@/lib/utils/date';
 
 interface ExecutiveTemplateProps {
   data: ResumeData;
@@ -82,8 +83,7 @@ export default function ExecutiveTemplate({ data, config }: ExecutiveTemplatePro
                     <div className="flex justify-between items-baseline">
                       <h3 className="font-bold text-sm">{item.role}</h3>
                       <span className="text-xs font-semibold">
-                        {new Date(item.start_date).getFullYear()} -{' '}
-                        {item.end_date ? new Date(item.end_date).getFullYear() : 'Present'}
+                        {formatDateRange(item.start_date, item.end_date, config.showDateMonths)}
                       </span>
                     </div>
                     <div className="text-xs italic mb-1 text-gray-700">
@@ -137,7 +137,11 @@ export default function ExecutiveTemplate({ data, config }: ExecutiveTemplatePro
                   <div key={item.school}>
                     <div className="font-bold text-xs">{item.school}</div>
                     <div className="text-xs">{item.degree}</div>
-                    <div className="text-xs italic text-gray-500">{item.end_year}</div>
+                    <div className="text-xs italic text-gray-500">
+                      {item.start_year === item.end_year
+                        ? item.start_year
+                        : `${item.start_year} - ${item.end_year}`}
+                    </div>
                   </div>
                 ))}
               </div>

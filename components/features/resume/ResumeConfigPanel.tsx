@@ -175,6 +175,13 @@ export default function ResumeConfigPanel({
                     onChange={(e) => setConfig({ ...config, showSkillIcons: e.target.checked })}
                   />
                 </div>
+                <div className="flex items-center justify-between p-3 rounded-lg bg-secondary/30">
+                  <span className="text-sm font-medium">Show Months in Career</span>
+                  <Switch
+                    checked={config.showDateMonths}
+                    onChange={(e) => setConfig({ ...config, showDateMonths: e.target.checked })}
+                  />
+                </div>
               </div>
             </div>
           </div>
