@@ -7,3 +7,4 @@ export * from './blog';
 export * from './resume';
 export * from './testimonial';
 export * from './api';
+export * from './book';

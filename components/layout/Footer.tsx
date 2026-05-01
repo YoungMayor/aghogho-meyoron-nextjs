@@ -25,14 +25,16 @@ export default function Footer() {
           {/* About Column */}
           <div>
             <h3 className="mb-4 text-lg font-bold text-foreground">{profile.name}</h3>
-            <p className="text-sm text-muted-foreground">{profile.notes.tagline}</p>
+            <p
+              className="text-sm text-muted-foreground"
+              dangerouslySetInnerHTML={{ __html: profile.biography }}
+              suppressHydrationWarning
+            />
           </div>
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-white">
-              Quick Links
-            </h3>
+            <h3 className="mb-4 text-lg font-bold uppercase tracking-wider">Quick Links</h3>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.href}>
@@ -49,9 +51,7 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-white">
-              Get in Touch
-            </h3>
+            <h3 className="mb-4 text-lg font-bold uppercase tracking-wider ">Get in Touch</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -86,7 +86,7 @@ export default function Footer() {
                 >
                   <span className="sr-only">{social.label}</span>
                   {/* Icon placeholder - will be replaced with actual icons */}
-                  <Icon.fromIcon icon={social.icon} size={20} className="flex-shrink-0" />
+                  <Icon.fromIcon icon={social.icon} size={20} className="shrink-0" />
                 </a>
               ))}
             </div>

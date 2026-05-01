@@ -7,13 +7,20 @@ import Image from 'next/image';
 import { profile } from '@/lib/data/profile';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import ProjectsIcon from '@/components/icons/ProjectsIcon';
-import MentorshipIcon from '@/components/icons/MentorshipIcon';
+import BookIcon from '@/components/icons/BookIcon';
 import BriefcaseIcon from '@/components/icons/BriefcaseIcon';
 import MailIcon from '@/components/icons/MailIcon';
 import FileTextIcon from '@/components/icons/FileTextIcon';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const headerActions = [
+    { href: '/careers', label: 'Careers', icon: <BriefcaseIcon /> },
+    { href: '/books', label: 'Books', icon: <BookIcon /> },
+    { href: '/projects', label: 'Projects', icon: <ProjectsIcon /> },
+    { href: '/contact', label: 'Contact', icon: <MailIcon /> },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,38 +59,19 @@ export default function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          <Link
-            href="/projects"
-            className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-105"
-            aria-label="Projects"
-          >
-            <ProjectsIcon />
-            <span className="hidden md:inline">Projects</span>
-          </Link>
-          <Link
-            href="/mentorship"
-            className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-105"
-            aria-label="Mentorship"
-          >
-            <MentorshipIcon />
-            <span className="hidden md:inline">Mentorship</span>
-          </Link>
-          <Link
-            href="/careers"
-            className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-105"
-            aria-label="Careers"
-          >
-            <BriefcaseIcon />
-            <span className="hidden md:inline">Careers</span>
-          </Link>
-          <Link
-            href="/contact"
-            className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-105"
-            aria-label="Contact"
-          >
-            <MailIcon width={18} height={18} />
-            <span className="hidden md:inline">Contact</span>
-          </Link>
+          {headerActions.map((headerAction) => (
+            <Link
+              key={headerAction.label}
+              href={headerAction.href}
+              className="flex items-center gap-2 text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-105"
+              aria-label={headerAction.label}
+            >
+              {headerAction.icon}
+
+              <span className="hidden md:inline">{headerAction.label}</span>
+            </Link>
+          ))}
+
           <Link
             href="/resume"
             className="flex items-center gap-2 rounded-xl bg-primary text-primary-foreground px-3 md:px-4 py-2 text-sm font-medium transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:scale-105"

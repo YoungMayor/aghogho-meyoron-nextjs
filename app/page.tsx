@@ -11,6 +11,7 @@ import {
 
 import About from '@/components/sections/About';
 import Projects from '@/components/sections/Projects';
+import Books from '@/components/sections/Books';
 import Career from '@/components/sections/Career';
 
 const Testimonials = dynamic(() => import('@/components/sections/Testimonials'), {
@@ -93,6 +94,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
+        <Books />
         <Career />
         <Testimonials />
       </div>
