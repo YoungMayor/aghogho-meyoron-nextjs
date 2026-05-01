@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "analyze": "ANALYZE=true next build",

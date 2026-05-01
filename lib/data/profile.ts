@@ -1,10 +1,9 @@
 import { Profile } from '@/lib/types';
-import { gravatar } from '../utils/helpers';
 
 export const profile: Profile = {
   name: 'Aghogho Meyoron',
   titles: ['Software Engineer', 'Tech Mentor', 'Technical Writer'],
-  avatar_url: await gravatar('youngmayor.dev@gmail.com'),
+  avatar_url: `https://www.gravatar.com/avatar/45771b7793feb7b6a95418eeef3748a1?s=400&d=mp`,
   biography: `<div>I am <b class='text-primary'>Aghogho Meyoron</b>, a Software Architect focused on high-integrity systems. I bridge the gap between complex backend engineering and seamless user experience, specializing in fintech infrastructure, AI-driven automation, and developer tooling. My work is defined by architectural rigour, automated testing, and a relentless drive for system efficiency.</div>`,
   profile_link: null,
   notes: {

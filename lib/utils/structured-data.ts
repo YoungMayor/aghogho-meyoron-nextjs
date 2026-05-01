@@ -2,7 +2,7 @@ import { clientEnv } from '@/lib/env/client';
 import { profile } from '@/lib/data/profile';
 import { socialLinks } from '@/lib/data/social_links';
 import { getVisibleItems } from './data';
-import type { Project } from '@/lib/types';
+import type { Project, Book } from '@/lib/types';
 
 /**
  * Generate Person schema for structured data
@@ -129,4 +129,66 @@ export function generateProfilePageSchema() {
     name: `${profile.name} - ${profile.titles[0]}`,
     description: profile.notes.tagline,
   };
+}
+
+/**
+ * Generate Book schema for structured data
+ */
+export function generateBookSchema(book: Book) {
+  const baseUrl = clientEnv.NEXT_PUBLIC_APP_URL;
+
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    name: book.title,
+    description: book.short_description || book.title,
+    author: {
+      '@type': 'Person',
+      name: profile.name,
+    },
+    url: `${baseUrl}/books/${book.slug}`,
+    image: book.cover_image,
+    genre: book.category,
+    keywords: book.seo_keywords.join(', '),
+    datePublished: book.published_date,
+  };
+
+  if (book.reviews && book.reviews.length > 0) {
+    schema.review = book.reviews.map((r) => ({
+      '@type': 'Review',
+      reviewBody: r.review,
+      author: {
+        '@type': 'Person',
+        name: r.name,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: r.rating,
+        bestRating: '5',
+      },
+    }));
+
+    // Aggregate rating
+    const totalRating = book.reviews.reduce((acc, r) => acc + r.rating, 0);
+    schema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: (totalRating / book.reviews.length).toFixed(1),
+      reviewCount: book.reviews.length,
+      bestRating: '5',
+    };
+  }
+
+  // Simple heuristic for currency and price extraction
+  const priceValue = (book.sale_price || book.price).replace(/[^0-9.]/g, '');
+  const currency = (book.sale_price || book.price).includes('NGN') ? 'NGN' : 'USD';
+
+  schema.offers = {
+    '@type': 'Offer',
+    url: book.link,
+    price: priceValue,
+    priceCurrency: currency,
+    availability: 'https://schema.org/InStock',
+  };
+
+  return schema;
 }

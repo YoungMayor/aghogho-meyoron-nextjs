@@ -26,6 +26,10 @@ cloudinaryImage.project = (filename: string) => {
   return cloudinaryImage(filename, 'projects');
 };
 
+cloudinaryImage.book = (filename: string) => {
+  return cloudinaryImage(filename, 'books');
+};
+
 export const gravatar = async (email: string) => {
   const encoder = new TextEncoder();
   const data = encoder.encode(email);
