@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node init && next dev",
+    "dev": "next dev",
     "portless": "portless aghogho next dev",
-    "build": "node init && next build",
-    "start": "node init && next start",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",
     "type-check": "tsc --noEmit",
